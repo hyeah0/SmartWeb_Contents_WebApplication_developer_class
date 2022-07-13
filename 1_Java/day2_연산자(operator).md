@@ -320,7 +320,7 @@
                 int num1 = 10, num2 =5 ; // 10의 이진수 = 1010, 5의 이진수 = 0101
                 
                 System.out.println(num1 << 2); // 40 왼쪽쉬프트 2의 5승
-                System.out.println(num2 >> 1); // 2 오른쪽쉬프트 2의 4승
+                System.out.println(num2 >> 1); // 2 
                 
             }
 
