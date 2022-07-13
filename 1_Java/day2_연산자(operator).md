@@ -430,6 +430,19 @@ JOptionPane 클래스에 있는 showInputDialog() 메서드 사용
 #### 3. Scanner 사용 
 - scanner 사용시 이슈 : next(aaa bbbb) 로 입력 받을 경우 : aaa 만 확인 됨 (예시코드)
 
+##### Scanner의 입력 메서드 종류
+|메서드 | 설명 |
+| ---- | ---- | 
+|nextByte() | byte형 입력|
+|nextShort() |short형 입력 | 
+|nextInt() | int형 입력|
+|nextLong() |long형 입력 |
+|nextFloat() | float형 입력|
+|nextDouble() | double형 입력|
+|nextBoolean()| boolean형 입력|
+|next() | String형 입력 및 (공백 기준 앞에 문자열만)|
+|nextLine() | String형 입력 및 (공백포함 한줄) |
+
 ##### 예시 코드
 
         import java.util.Scanner;
@@ -448,3 +461,5 @@ JOptionPane 클래스에 있는 showInputDialog() 메서드 사용
             }
 
         }
+	
+
