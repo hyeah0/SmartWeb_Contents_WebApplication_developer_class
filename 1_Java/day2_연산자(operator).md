@@ -407,7 +407,7 @@
 
 #### 2. JOptionPane.showInputDialog("첫번째 정수 입력") 사용
 JOptionPane 클래스에 있는 showInputDialog() 메서드 사용 
-scanner 보다 더 자주 사용하는 방법
+문자열을 입력받을시 scanner 보다 더 자주 사용하는 방법
 
 > JOptionPane.showInputDialog(팝업창에 나타낼 텍스트)
 
