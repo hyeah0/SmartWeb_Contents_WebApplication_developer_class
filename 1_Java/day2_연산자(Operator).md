@@ -429,6 +429,7 @@ JOptionPane 클래스에 있는 showInputDialog() 메서드 사용
 
 #### 3. Scanner 사용 
 - scanner 사용시 이슈 : next(aaa bbbb) 로 입력 받을 경우 : aaa 만 확인 됨 (예시코드)
+- scanner 사용 후 가장 마지막 부분에 __.close(); 입력 (생략가능)
 
 ##### Scanner의 입력 메서드 종류
 |메서드 | 설명 |
@@ -440,10 +441,10 @@ JOptionPane 클래스에 있는 showInputDialog() 메서드 사용
 |nextFloat() | float형 입력|
 |nextDouble() | double형 입력|
 |nextBoolean()| boolean형 입력|
-|next() | String형 입력 및 (공백 기준 앞에 문자열만)|
-|nextLine() | String형 입력 및 (공백포함 한줄) |
+|next() | String형 입력 (공백 기준 앞에 문자열만)|
+|nextLine() | String형 입력 (공백포함 한줄) |
 
-##### 예시 코드
+##### 1. 예시 코드
 
         import java.util.Scanner;
 
@@ -462,4 +463,75 @@ JOptionPane 클래스에 있는 showInputDialog() 메서드 사용
 
         }
 	
+##### 2. 예시 코드 (__.close(); 포함)
 
+	/*
+	 * [문제]
+	 * 키보드로 입력받은 정수값이 음수이면 "입력받은 정수는 음수입니다" 라는 메세지를 화면에 출력해 보세요
+	 * 방법은 scanner 를 사용하시오
+	 */ 
+	import java.util.Scanner;
+
+	public class Ex04 {
+
+		public static void main(String[] args) {
+
+			//키보드로 입력받는 방법
+			//System.out : 표준 출력장치(화면, 콘솔창)
+			//System.in : 표준 입력장치(키보드)
+			Scanner sc = new Scanner(System.in);
+			System.out.print("숫자를 입력하세요(음수,양수포함) >>> ");
+			int num = sc.nextInt();
+			System.out.println("입력받은 수 >>> " + num);
+
+			if(num<0) {
+				System.out.println("입력 받은 "+ num +  "은  음수입니다.");
+			}
+
+			sc.close();
+		}
+
+	}
+	
+##### 3. 예시 코드 (JOptionPane, scanner 둘다 사용)
+
+	/*
+	 * [문제]
+	 * 키보드로부터 입력받은 점수가 60점 이상이면, "합격입니다" 라는 메세지를 화면에 출력해 보세요
+	 */
+
+	import java.util.Scanner;
+
+	import javax.swing.JOptionPane;
+
+	public class Ex05 {
+
+		public static void main(String[] args) {
+
+			int num1 = Integer.parseInt(JOptionPane.showInputDialog("점수를 입력하세요"));
+
+			if(num1>=60) {
+				System.out.println("점수가 " + num1 + "으로 합격입니다." );
+			}
+			else {
+				System.out.println("점수가 60점 미만으로 불합격입니다" );
+			}
+
+			//////////////////////////////////////////////////////////////////////
+
+			Scanner sc = new Scanner(System.in);
+			System.out.print("점수를 입력하세요 >>> ");
+			int num = sc.nextInt();
+
+			if(num>=60) {
+				System.out.println("합격입니다");
+			}
+			else {
+				System.out.println("점수가 60점 미만으로 불합격입니다");
+			}
+
+			sc.close();
+
+		}
+
+	}
