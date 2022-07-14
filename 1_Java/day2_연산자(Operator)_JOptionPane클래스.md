@@ -77,7 +77,7 @@
         String[] fruits = {"키위","포도","사과"};
         String ch_fruit = (String) JOptionPane.showInputDialog(null,"선호과일","과일",JOptionPane.PLAIN_MESSAGE,fruits,fruits[0]);
 
-### 4. showOptionDialog : 선택값 모두 확인 가능 팝업
+#### 4. showOptionDialog : 선택값 모두 확인 가능 팝업
 
 - 형식 ) JOptionPane.showInputDialog(parentComponent,message,title, optionType,messageType,icon,value[],JOptionPane.initialmessage);
 
