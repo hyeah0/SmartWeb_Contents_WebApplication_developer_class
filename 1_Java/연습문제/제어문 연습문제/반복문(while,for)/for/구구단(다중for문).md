@@ -30,7 +30,7 @@
 			for(int su=1; su<=9; su++) {
 
 				for(int dan=2; dan<=9; dan++) {
-					//System.out.print(dan + " X " + su + " = " + (dan*su) + "\"); 
+					//System.out.print(dan + " X " + su + " = " + (dan*su) + "\t"); 
 					System.out.printf("%dX%d=%d\t",dan, su, dan*su);	
 				}
 
@@ -144,6 +144,6 @@
         2X9=18	3X9=27	4X9=36	5X9=45	6X9=54	7X9=63	8X9=72	9X9=81	
 
 ### 4. 참고
-- 가로형 구구단 출력시 print로 출력할경우 줄맞춤 안됨
-- printf를 사용하여 줄맞춤 
+- 가로형 구구단 출력시 print로 출력할경우 출력문 끝에 꼭 "\t" 작성 필요 없을경우 밀림
+- 또는 printf를 사용하여 줄맞춤 
 - 상단 for에는 고정값, 하단 for에는 변경  
