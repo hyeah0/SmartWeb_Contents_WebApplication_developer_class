@@ -317,7 +317,7 @@
     1. while문
         - while문
         - do while문
-    2.  for문
+    2. for문
 
 #### 2-1. while
 - 조건식을 비교하여 참인 경우 계속해서 반복 실행문을 실행하고, 거짓인 경우에는 반복문을 빠져 나간다.
@@ -325,10 +325,17 @@
 - 반복문에는 반드시 초기식, 조건식, 증감식이 존재해야 한다.
 
 - 형식)
-
-        while(조건식){
-                        반복실행 문장;
-                    }
+- 
+        1. 초기식 
+            while(2.조건식){
+                            3.반복실행 문장(실행문);
+                            4.증감식
+            }
+		    
+    1. 반복문 초기식
+    2. 반복문 조건식(조건식에 true가 들어갈 경우 무한반복)
+    3. 참일때 실행문
+    4. 반복문 증감식
 
 
 ##### while 예시
@@ -432,5 +439,226 @@
 
 
 
-#### 2-2. for
+#### 2-2. for (***중요***)
+- 변수의 값을 이용하여 반복 실행 하는 명령문
+- 일정 횟수에 대한 반복 구현시 사용되는 반복문
+- 즉, 반복해야하는 횟수를 알고 있을 경우에 사용
+#### 형식) 
+		for(1.초기식 ; 2.조건식 ; 4.증감식){
+					 3.실행문(반복실행문장)
+		}
+
+#### for 반복문 실행 순서
+1. 초기식 : 처음에 한번만 실행 됨(변수 선언 및 초기화)
+2. 조건식 : 조건이 참이면 반복 실행, 거짓이면 종료
+3. 실행문 : 조건이 참일때 반복 대상인 반복 실행문이 실행 
+4. 증감식 : 변수를 대상으로 증가 또는 감소(++, --);
+
 ##### for 예시
+###### while문과 for문 비교 예시
+
+        public class Ex26_for {
+        
+            public static void main(String[] args) {
+                
+                // while 
+                //1. 초기식
+                int num = 1;
+                
+                //2. 조건식
+                while (num <=10) {
+                    //3. 실행문
+                    System.out.println("while문 num >>> " + num);
+                    //4. 증감식
+                    num++;
+                }
+                        
+                //for
+                //1. 초기식 ; 2. 조건식 ; 4. 증감식 
+                for(int i=0; i<=10; i++ ) {
+                    //3. 실행문
+                    System.out.println("for문 i >>> " + i);
+                }
+                    
+            }
+        }
+
+- 결과
+
+        while문 num >>> 1
+        while문 num >>> 2
+        while문 num >>> 3
+        while문 num >>> 4
+        while문 num >>> 5
+        while문 num >>> 6
+        while문 num >>> 7
+        while문 num >>> 8
+        while문 num >>> 9
+        while문 num >>> 10
+        for문 i >>> 0
+        for문 i >>> 1
+        for문 i >>> 2
+        for문 i >>> 3
+        for문 i >>> 4
+        for문 i >>> 5
+        for문 i >>> 6
+        for문 i >>> 7
+        for문 i >>> 8
+        for문 i >>> 9
+        for문 i >>> 10
+
+#### 2-2. 다중 for
+- 반복문 안에 또 다른 반복문을 포함하는 형태 (반복문 중첩)
+- 외부반복문과 내부 반복문 간의 변수값 변화 주의
+- 형식
+
+        for(1.초기식1; 2.조건식1; 9.증감식1){
+                    3.실행문1
+                for(4.초기식2; 5.조건식2; 7.증감식2){
+                    6.실행문2
+                }
+                    8.실행문1
+        }
+
+    - 1번 for문 실행후 -> 2번 for문 실행 
+    - 2번 for문 조건 종료후에 다시 1번 for문 실행
+    - 2번 for문의 초기식 다시 초기화 및 실행  
+
+###### 다중 for문 예시
+
+        public class Ex29 {
+
+            public static void main(String[] args) {
+
+                for(int i=1; i<=3; i++) {
+                    for(int j=1; j<=4; j++) {
+                        System.out.println("[ i : " + i + " , j : " + j + "]");
+                    }
+                    System.out.println();
+                }	
+            }
+        }
+
+-  결과
+
+        [ i : 1 , j : 1]
+        [ i : 1 , j : 2]
+        [ i : 1 , j : 3]
+        [ i : 1 , j : 4]
+
+        [ i : 2 , j : 1]
+        [ i : 2 , j : 2]
+        [ i : 2 , j : 3]
+        [ i : 2 , j : 4]
+
+        [ i : 3 , j : 1]
+        [ i : 3 , j : 2]
+        [ i : 3 , j : 3]
+        [ i : 3 , j : 4]
+
+
+
+### 3. 기타(보조제어문)
+1. break
+2. continue
+
+#### 3-1. break
+- break 명령어
+- 현재 제어문을 빠져나가는 명령어
+- 보통 switch case문과 반복문(while), 유효성검사 에서 사용됨
+- 반복문에서 if문 블럭을 제외한 첫번째 블럭에서 빠져나가는 명령어
+
+##### break 예시
+
+        public class Ex32_break_continue {
+
+            public static void main(String[] args) {
+
+                for(int i=1; i<=100; i++) {
+                    if(i>10) { // i가 11이 되었을때 for문 종료
+                        break; 
+                    }
+                    System.out.println("i : " + i);
+                }
+                
+            }
+
+        }
+
+- 결과
+
+        i : 1
+        i : 2
+        i : 3
+        i : 4
+        i : 5
+        i : 6
+        i : 7
+        i : 8
+        i : 9
+        i : 10
+
+
+
+
+#### 3-2. continue
+
+- continue 명령어
+- 반복문에서만 사용되는 명령어
+- 반복문 탈출이아닌 다음 증감식으로 가는 명령어
+
+##### continue 예시
+
+        public class Ex34 {
+
+            public static void main(String[] args) {
+                
+                // 1부터 10까지 짝수만 반환하세요
+                for(int i=1; i<=10; i++) {
+                    if((i%2)==1) { //i가 홀수인경우
+                        continue; //하단 실행문 실행하지 않고 for문으로 감
+                    }
+                    System.out.println("i >>> " + i);
+                }
+                
+                //1부터 100까지의 누적 합
+                int sum = 0;
+                for(int i=1; i<=100; i++) {
+                    sum += i;
+                }
+                System.out.println("sum >>> " + sum);
+                
+                //continue를 이용한 홀수의 합
+                int oddSum= 0;
+                for(int i=1; i<=100; i++) {
+                    if((i%2)==0) { //짝수일경우 실행 x
+                        continue;
+                    }
+                    oddSum += i;
+                }
+                System.out.println("홀수의 합 >>> " + oddSum);
+                
+                //continue를 이용한 짝수의 합
+                int evenSum = 0;
+                for(int i=1; i<=100; i++) {
+                    if((i%2)==1) { //홀수일경우 실행 x
+                        continue;
+                    }
+                    evenSum += i;
+                }
+                System.out.println("짝수의 합 >>> " + evenSum);
+
+            }
+
+        }
+
+- 결과
+
+        i >>> 2
+        i >>> 4
+        i >>> 6
+        i >>> 8
+        i >>> 10
+        sum >>> 5050
+        홀수의 합 >>> 2500
+        짝수의 합 >>> 2550
