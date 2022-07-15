@@ -30,7 +30,7 @@
 			for(int su=1; su<=9; su++) {
 
 				for(int dan=2; dan<=9; dan++) {
-					//System.out.print(dan + " X " + su + " = " + (dan*su) + "   "); 
+					//System.out.print(dan + " X " + su + " = " + (dan*su) + "\"); 
 					System.out.printf("%dX%d=%d\t",dan, su, dan*su);	
 				}
 
