@@ -20,7 +20,7 @@
                 int input = 0; // 입력한 숫자
                 int count = 0; // 몇 번만에 숫자를 맞추는지 
                 
-                while(input != ran) { //랜덤 값과 작성값이 같으면 while 문 종료
+                while(input != ran) { //랜덤 값과 input 값이 같지 않으면 true, 같지 않으면 false, false일때 while 문 종료
                     
                     System.out.print("숫자를 입력해 주세요 >> ");
                     input = sc.nextInt(); // 입력한 숫자
