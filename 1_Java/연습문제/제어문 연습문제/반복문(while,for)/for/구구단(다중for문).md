@@ -31,7 +31,7 @@
 
 				for(int dan=2; dan<=9; dan++) {
 					//System.out.print(dan + " X " + su + " = " + (dan*su) + "\t"); 
-					System.out.printf("%dX%d=%d\t",dan, su, dan*su);	
+					System.out.printf("%dX%d=%2d\t",dan, su, dan*su);	
 				}
 
 				System.out.println();
@@ -145,5 +145,6 @@
 
 ### 4. 참고
 - 가로형 구구단 출력시 print로 출력할경우 출력문 끝에 꼭 "\t" 작성 필요 없을경우 밀림
-- 또는 printf를 사용하여 줄맞춤 
+- 또는 printf를 사용하여 줄맞춤 (결과값 끝쪽에 맞추고 싶을경우 2d 입력)
+    - %dX%d=%2d\t
 - 상단 for에는 고정값, 하단 for에는 변경  
