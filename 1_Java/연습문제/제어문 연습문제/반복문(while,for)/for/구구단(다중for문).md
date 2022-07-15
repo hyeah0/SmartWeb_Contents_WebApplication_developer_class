@@ -6,39 +6,39 @@
 ### 2. 코드
 #### 1. 세로형 구구단
 
-public class Ex30 {
+	public class Ex30 {
 
-	public static void main(String[] args) {
+		public static void main(String[] args) {
 
-		for(int dan=2; dan<=9; dan++) {
-			System.out.println(dan +"단");
-			for(int j=1; j<=9; j++) {
-				System.out.println(dan + " X " + j + " = " + (dan * j));
+			for(int dan=2; dan<=9; dan++) {
+				System.out.println(dan +"단");
+				for(int j=1; j<=9; j++) {
+					System.out.println(dan + " X " + j + " = " + (dan * j));
+				}
+				System.out.println();
 			}
-			System.out.println();
 		}
-	}
 
-}
+	}
 
 #### 2. 가로형 구구단
 
-public class Ex30 {
+	public class Ex30 {
 
-	public static void main(String[] args) {
+		public static void main(String[] args) {
 
-		for(int su=1; su<=9; su++) {
-			
-			for(int dan=2; dan<=9; dan++) {
-				//System.out.print(dan + " X " + su + " = " + (dan*su) + "   "); 
-				System.out.printf("%dX%d=%d\t",dan, su, dan*su);	
+			for(int su=1; su<=9; su++) {
+
+				for(int dan=2; dan<=9; dan++) {
+					//System.out.print(dan + " X " + su + " = " + (dan*su) + "   "); 
+					System.out.printf("%dX%d=%d\t",dan, su, dan*su);	
+				}
+
+				System.out.println();
 			}
-			
-			System.out.println();
 		}
-	}
 
-}
+	}
 
 ### 3. 결과
 #### 1. 세로형 결과
