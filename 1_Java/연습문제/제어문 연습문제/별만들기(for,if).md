@@ -24,11 +24,11 @@
         ooooo
 
         직삼각형 상하 반대 만들기
-        ooooo-
-        oooo--
-        ooo---
-        oo----
-        o-----
+        ooooo
+        oooo-
+        ooo--
+        oo---
+        o----
 
         직삼각형 좌우 반대 만들기
         -----o
@@ -98,7 +98,7 @@
 
                 System.out.println("직삼각형 상하 반대 만들기");
                 for(int i=0; i<row; i++) {
-                    for(int j=row; j>=0; j--) {
+                    for(int j=row; j>0; j--) {
                         if(j<=i) {
                             System.out.print("-");
                         }else {
