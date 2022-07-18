@@ -133,3 +133,110 @@
             }
 
         }
+	
+### - length 속성
+- 배열의 크기(길이)를 정수값으로 알려주는 명령어
+- 형식) 
+
+        배열명.length
+        예) int size = arr.length
+
+#### - length 속성 예시
+##### - 배열의 크기를 입력받은 값으로 지정 
+
+        public class Ex05 {
+
+            public static void main(String[] args) {
+                Scanner sc = new Scanner(System.in);
+                int[] arr = new int[3];
+                System.out.println("arr 배열의 크기는 ? >>> " + arr.length );
+
+                for(int i=0; i<arr.length; i++) {
+                    System.out.print( i + "번째 정수 입력 >>> ");
+                    arr[i] = sc.nextInt();
+                }
+                
+                System.out.println(Arrays.toString(arr));
+                sc.close();	
+            }
+        }
+
+        - 결과
+        arr 배열의 크기는 ? >>> 3
+        0번째 정수 입력 >>> 1
+        1번째 정수 입력 >>> 2
+        2번째 정수 입력 >>> 3
+        [1, 2, 3]
+
+##### - 배열의 크기를 입력받은 값으로 지정, 배열에 저장된 문자열 검색
+
+        public class Ex06 {
+
+            public static void main(String[] args) {
+
+                Scanner sc = new Scanner(System.in);
+            
+                // 배열크기를 입력받은값으로 지정
+                // 첫번째 방법(효율적인 방법)
+                System.out.print("arr 배열의 크기를 입력해 주세요 >>> ");
+                String[] arr = new String[sc.nextInt()];
+                
+                // 두번째 방법
+                // System.out.print("str 배열의 크기를 입력해 주세요 >>> ");
+                // int size = sc.nextInt();
+                // String[] str = new String[size];
+                
+                System.out.println("arr 배열의 크기는 ? " + arr.length);
+            
+                for(int i=0; i<arr.length; i++) {
+                    System.out.print((i+1) + "번째 문자열 입력 >>> ");
+                    arr[i] = sc.next();	
+                }
+                
+                System.out.println();
+                System.out.println(Arrays.toString(arr));
+                
+                for(int i=0; i<arr.length; i++) {
+                    System.out.println("arr[" + i + "] = " + arr[i]);
+                }
+                
+                System.out.println();
+                
+                // 배열에 저장된 문자열 검색
+                System.out.print("검색할 문자열 입력하세요. >>> ");
+                String search = sc.next();
+                
+                for(int i=0; i<arr.length; i++) {
+                    if(search.equals(arr[i])) {
+                        System.out.println("찾은 문자열 >>> " + arr[i]);
+                        System.out.println("찾은 인덱스 >>> arr[" + i + "]");
+                    }else {
+                    System.out.println("검색한 문자열이 없습니다.");
+                    break;
+                    }
+                }
+                
+                sc.close();
+            }
+
+        }
+
+        - 결과
+
+        arr 배열의 크기를 입력해 주세요 >>> 3
+        arr 배열의 크기는 ? 3
+        1번째 문자열 입력 >>> 사과
+        2번째 문자열 입력 >>> 포도
+        3번째 문자열 입력 >>> 오렌지
+
+        [사과, 포도, 오렌지]
+        arr[0] = 사과
+        arr[1] = 포도
+        arr[2] = 오렌지
+
+        검색할 문자열 입력하세요. >>> 오렌지
+        찾은 문자열 >>> 오렌지
+        찾은 인덱스 >>> arr[2]
+	
+	검색할 문자열 입력하세요. >>> 키위
+	검색한 문자열이 없습니다.
