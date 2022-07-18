@@ -240,3 +240,73 @@
 	
 	검색할 문자열 입력하세요. >>> 키위
 	검색한 문자열이 없습니다.
+
+### - 주소값 복사
+- strCopy 에 str 주소값 복사
+- 주소값을 복사하면 strCopy 에서 데이터 입력시
+str 배열에도 동일하게 데이터가 입력된다.
+
+        String[] str = new String[sc.nextInt()];
+        String[] strCopy = str; 
+		
+#### - 주소값 복사 예시
+
+        import java.util.Arrays;
+        import java.util.Scanner;
+
+        public class Ex07 {
+
+            public static void main(String[] args) {
+                
+                Scanner sc = new Scanner(System.in);
+                
+                System.out.print("문자열 배열의 크기 입력 : ");
+                String[] str = new String[sc.nextInt()];
+                String[] strCopy = str; //******************
+                //ㄴ strCopy 에 str 주소값 복사
+                
+                System.out.println("str 주소값 : " + str); // str 주소값 : [Ljava.lang.String;@66d33a
+                System.out.println("strCopy 주소값 : " + strCopy); //strCopy 주소값 : [Ljava.lang.String;@66d33a
+                
+                
+                
+                /*
+                * String[] strCopy = str;
+                * strCopy 배열명에 str 배열 주소값을 복사
+                * 배열의 이름은 heap 영역의 시작 주소값을 저장하고 있기 때문데 
+                * 시작 주소값을 다른 배열의 배열명에 복사해주는 명령문, 
+                * 즉, 배열의 공유가 이뤄진다.
+                */
+                
+                //strCopy 배열에 초기값 할당
+                for(int i=0; i<strCopy.length; i++) {
+                    System.out.print((i+1) + "번째 문자입력 >>> ");
+                    strCopy[i] = sc.next();
+                }
+                
+                for(int i=0; i<str.length; i++) {
+                    System.out.println("str[" + i + "] >>> " + str[i]);
+                }
+                
+                System.out.println(Arrays.toString(str));
+                System.out.println(Arrays.toString(strCopy));
+                
+                
+                sc.close();
+            }
+
+        }
+
+        - 결과
+
+        문자열 배열의 크기 입력 : 3
+        str 주소값 : [Ljava.lang.String;@66d33a
+        strCopy 주소값 : [Ljava.lang.String;@66d33a
+        1번째 문자입력 >>> aaa
+        2번째 문자입력 >>> bbb
+        3번째 문자입력 >>> ccc
+        str[0] >>> aaa
+        str[1] >>> bbb
+        str[2] >>> ccc
+        [aaa, bbb, ccc]
+        [aaa, bbb, ccc]
