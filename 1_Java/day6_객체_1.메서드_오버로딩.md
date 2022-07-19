@@ -13,11 +13,11 @@
 
 1. 매개변수 이름 동일, 자료형만 상이
 
-    sum(int k, int e)
-    sum(int k, double e)
+	    sum(int k, int e)
+	    sum(int k, double e)
   
 2. 매개변수 이름 동일, 자료형의 갯수 상이
 
-    sum(int kor, int eng)
-    sum(int kor, int eng, int mat)
-    sum(int kor, int eng, int mat, int java)
+	    sum(int kor, int eng)
+	    sum(int kor, int eng, int mat)
+	    sum(int kor, int eng, int mat, int java)
