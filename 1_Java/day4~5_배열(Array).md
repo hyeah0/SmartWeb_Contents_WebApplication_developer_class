@@ -245,6 +245,8 @@
 - strCopy 에 str 주소값 복사
 - 주소값을 복사하면 strCopy 에서 데이터 입력시
 str 배열에도 동일하게 데이터가 입력된다.
+- str배열이 변경되면 strCopy도 변경된다.
+- strCopy배열이 변경되면 str도 변경된다.
 
         String[] str = new String[sc.nextInt()];
         String[] strCopy = str; 
