@@ -152,7 +152,7 @@
         num = 200
         메서드 호출 후.........
         num = 200
-        num = 
+        num = 100
         
 #### 2. call by reference 방식
 
