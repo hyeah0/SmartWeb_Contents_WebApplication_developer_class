@@ -1,0 +1,115 @@
+## day8_객체 4대 특징_캡슐화
+
+### - 캡슐화(Encapsulation)?
+
+- 객체지향 프로그램 4대 특징 중 하나
+- 데이터를 감추기, 데이터를 외부에서 함부로 변경하지 못하도록 외부의 접근을 제한하는 방법
+- 정보 은닉 : 클래스 멤버 접근 제어 기법
+	* private : 외부에서 직접 접근 차단
+	* public : 누구나 접근 가능
+- setter() / getter() 메서드로 접근 가능
+	- setter() 
+ 	    - 지정자 메서드
+		- 멤버변수에 변경할 값을 전달 받아서 값을 변경하는 메서드
+    - getter()
+  	    - 획득자 메서드
+		- 멤버변수의 값을 읽어 와서 코드로 읽을 값을 넘겨주는 
+        
+### - 캡슐화 형식
+
+    private 자료형 변수명;
+
+### - 캡슐화된 매개변수 수정 및 사용
+#### - setter() 메서드
+- 캡슐화된 멤버 변수 초기값 설정
+- private 멤버변수에 값을 지정하는 역할
+
+- 형식)
+
+1. 멤버변수명과 매개변수명이 동일할때
+
+        public void set멤버변수명(자료형 매개변수){
+                    this.멤버변수명 = 매개변수;
+                }
+
+2. 멤버변수명과 매개변수명이 상이할때 this 생략 가능
+
+        public void setNum2(int num2) {
+                this.num2 = num2;
+            }
+
+##### - this 키워드
+1. 객체(Number 클래스) 자기 자신을 의미한다.
+
+2. 주로 멤버변수와 메서드 또는 생성자의 매개변수 이름이 동일할때 객체의 멤버임을 명확하게 하기 위하여 사용되는 키워드
+
+3. 매개변수(지역변수)의 이름과 멤버변수(전역변수)의 이름이 같을 때, 멤버변수(전역변수) 앞에 this.라는 키워드를 붙여서 구분하여 사용한다.
+
+4. 지역 변수와 전역변수의 이름이 같으면 지역변수의 우선순위가 더 높다.
+
+#### - getter() 메서드
+
+- getter() 메서드로 멤버변수에 할당된 값을 가져오는 메서드
+- private 멤버변수에 할당된 값을 가져오는 역할을 하는 메서드
+
+- 형식)
+
+		public 멤버변수자료형 get멤버변수명(){
+			    return 멤버변수명;
+		}
+
+#### - 이클립스에서 간단히 getter,setter 생성하기
+
+> 이클립스 상단 source >> generate Getters and Setters 
+
+### - 캡슐화 예시
+
+- 클래스 코드
+
+        public class Number {
+
+            // 멤버변수
+            public int num1; 	// public : 외부에서 접근 가능
+            private int num2;	// private : 외부에서 접근 불가능
+            
+            // setter()
+            // public void setNum2(int n2) {
+            //	 	num2 = n2;
+            //	}
+            // 또는 
+            // 
+                public void setNum2(int num2) {
+                    this.num2 = num2;
+                }
+            
+            // getter()
+                public int getNum2() {
+                    return num2;
+                }
+        }
+
+- 클래스 실행 
+
+        public class Ex10_Number {
+
+            public static void main(String[] args) {
+                
+                Number num = new Number();
+                
+                // num1은 public 으로 직접접근 가능
+                num.num1 = 350;
+                
+                // num2는 private 으로 직접접근 안됨
+                // num.num2 = 150; 
+                num.setNum2(200);
+                
+                System.out.println("num1  >>> " + num.num1);
+                System.out.println("num2  >>> " + num.getNum2());
+            }
+
+        }
+
+- 결과
+
+        num1  >>> 350
+        num2  >>> 200
