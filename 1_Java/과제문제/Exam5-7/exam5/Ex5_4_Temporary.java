@@ -7,8 +7,8 @@ class Temporary{
 	String name;
 	int time;
 	int pay;	//시급
-	int total;
-	int tax;
+// 	int total;
+// 	int tax;
 	//= (int) (total * 0.03);
 	
 	//기본생성자
