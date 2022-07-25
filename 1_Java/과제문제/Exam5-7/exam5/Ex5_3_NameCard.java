@@ -1,6 +1,7 @@
 package exam5;
 
 import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 class NameCard{
 	//멤버변수
@@ -40,6 +41,14 @@ public class Ex5_3_NameCard {
 		String addr = JOptionPane.showInputDialog("주소를 입력하세요");
 		String cmpRank = JOptionPane.showInputDialog("직급을 입력하세요");
 		NameCard nameCard = new NameCard(name,tel,addr,cmpRank);
+		
+//		Scanner sc = new Scanner(System.in);
+//		String name = sc.nextLine();
+//		String tel = sc.nextLine();
+//		String addr = sc.nextLine();
+//		String cmpRank = sc.nextLine();
+//		NameCard nameCard = new NameCard(name, tel, addr, cmpRank);  //또는
+//		NameCard nameCard = new NameCard(sc.nextLine(),sc.nextLine(),sc.nextLine(),sc.nextLine());
 		
 		System.out.println("============================");
 		nameCard.outPutNCard();
