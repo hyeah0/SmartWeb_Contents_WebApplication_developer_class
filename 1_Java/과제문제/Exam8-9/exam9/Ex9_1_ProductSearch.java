@@ -23,7 +23,14 @@ class ProductSearchData{
 	// 인자생성자
 	
 	// 멤버메서드
-	void search(String productName){
+	String search(String productName){
+		String pInfo = null;
+		for(int i=0; i<proTable.length; i++) {
+			if(productName.equals(proTable[i][0])) {
+				pInfo = proTable[i][1];
+			}
+		}
+		return pInfo;
 	}
 }
 
@@ -45,22 +52,15 @@ public class Ex9_1_ProductSearch {
 		}
 		
 		// 검색
-		String search = JOptionPane.showInputDialog("검색할 상품명을 입력하세요.");
+		String pSearch = JOptionPane.showInputDialog("검색할 상품명을 입력하세요.");
+		String info = psd.search(pSearch);
+
 		try {
-			for(int i=0; i<psd.proTable.length; i++) {
-				if(search.equals(psd.proTable[i][0])) {
-					JOptionPane.showMessageDialog(null,psd.proTable[i][1]);
-					break;
-				}
-				else {
-					Exception e = new Exception("고의로 발생시킨 예외");
-			        throw e;
-				}
-			}
+			info.length();
+			JOptionPane.showMessageDialog(null, info);
 		}catch(Exception e) {
-			JOptionPane.showMessageDialog(null,"해당 상품이 없습니다.");
+			JOptionPane.showMessageDialog(null, "해당상품이 없습니다.");
 		}
-		
 	}
 }
 
@@ -77,19 +77,7 @@ public class Ex9_1_ProductSearch {
 //	}
 // }
 
-// 메서드
-// 	void search(String productName){
-// for(int i=0; i<proTable.length; i++) {
-//	 if(productName.equals(proTable[i][0])) {
-//		JOptionPane.showMessageDialog(null,proTable[i][1]);
-//		break;
-//	 }else {
-//	 }
-// }
-// }
-// psd.search(JOptionPane.showInputDialog("검색할 상품명을 입력하세요."));
-
-// 에러 
+// 고의 발생 에러 
 // String search = JOptionPane.showInputDialog("검색할 상품명을 입력하세요.");
 // try {
 //	 for(int i=0; i<psd.proTable.length; i++) {
