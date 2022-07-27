@@ -9,6 +9,48 @@
     - 단, extends 키워드를 사용하지 않은 클래스에만 상속이 된다.
 	  - 이미 object 클래스를 자동으로 상속받았기 때문에 단일상속으로 이미 상속받은 클래스에는 사용 불가
 
+### - Object 클래스 예시
+- 자료형이 object 타입인 변수는 모든 자료형 값이 들어갈 수 있다.
+- object타입으로 선언된 변수의 값이 다른 자료형에 변수에 들어갈 경우 형변환이 필요한다.
+- 자주 형변환 할 경우 프로그램 성능 저하된다.
+
+-코드
+
+	  class Box{
+		    private Object obj; //자료형이 Object 타입 , 모든자료형 다 들어올수있다.
+
+		    public Object getObj() {
+			return obj;
+		    }
+
+		    public void setObj(Object obj) {
+			this.obj = obj;
+		    }
+
+		}
+
+		public class Ex01 {
+
+		    public static void main(String[] args) {
+			Box box = new Box();
+			box.setObj("이것은 문자열!"); // string 자료형
+			// String str = box.getObj(); //에러, 사유 반환타입이 object 타입, String으로 형변환 필요
+			String str = (String)(box.getObj());
+
+			/*
+			* Object 타입으로 선언된 변수에 데이터가 들어가는 경우 반드시 형변환 작업을 해주어야 한다.
+			* 이러한 형변환 작업이 자주 일어나게 되면 프로그램 성능이 저하된다.
+			*/
+
+			System.out.println(box.getObj());
+		    }
+
+		}
+
+	- 결과
+
+	      이것은 문자열!
+
 ## Object 메서드
 - 형식) 
 
