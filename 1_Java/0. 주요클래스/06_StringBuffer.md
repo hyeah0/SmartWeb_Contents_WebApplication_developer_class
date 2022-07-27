@@ -1,7 +1,7 @@
-# StringBuffer class
+# StringBuffer class 
 
         - java.lang.Object
-            - java.util.Random  
+            - java.lang.StringBuffer
 
 ## - StringBuffer 클래스란?
 - String 클래스의 메모리를 많이 차지하는 단점을 개선한 클래스
