@@ -1,6 +1,6 @@
 ## day12_제네릭(Generic)
 
-### 제네릭이란?
+### - 제네릭이란?
 
 - 포괄적인, 총괄적인
 - 특정한 클래스에 원하는 객체 타입을 지정하여 지정된 객체만 저장하게 하는 자바 문법
@@ -13,8 +13,16 @@
   - 클래스 내부에서 사용할 데이터를 외부에서 지정하는 방법
   - 데이터의 명확성과 안정성을 보장해 준다.
   - 다른 데이터 타입의 데이터가 들어올 경우 컴파일 시점에서 error 발생
+  - 자료형이 자유롭게 저장되는 object 타입에는 지네릭클래스가 도입
+    - 예시> ArrayList 자료형이 자유롭게 저장되는 object 
+        
+          - 기존 : ArrayList list = new ArrayList();
+          - 변경 : ArrayList<Object> list = new ArrayList<Object>()  
+          ※ 기존방식으로도 코드 작성이 가능하나 변경된 방법으로 작성 권장
 
-### 제네릭 적용 전 예시
+- ArrayList 참고 [ArrayList](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_1_ArrayList.md) 
+
+### - 제네릭 적용 전 예시
 
 - 만약 String 배열, 변수 또는 기본자료형 배열, 변수 생성을 원할경우 각자료형에 맞게 하나씩 코드를 작성해야한다. (상세 예시 참고)
 
@@ -100,9 +108,9 @@
         iarr 배열요소 >>> 50
         ivar >>> 500
 
-### 제네릭 예시
+### - 제네릭 예시
 
-#### 제네릭 클래스
+#### - 제네릭 클래스
 
 - 형식
 
