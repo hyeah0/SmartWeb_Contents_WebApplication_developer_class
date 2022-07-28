@@ -32,7 +32,7 @@
 ### - 숫자 -> 문자 / 문자 -> 숫자 
 1. 숫자를 문자로 변경 방법
     1. toString() 메서드 사용
-        > 참고 [toString](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/0.%20%EC%A3%BC%EC%9A%94%ED%81%B4%EB%9E%98%EC%8A%A4/05_String.md)
+        > 참고 [toString](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/0.%20%EC%A3%BC%EC%9A%94%ED%81%B4%EB%9E%98%EC%8A%A4/08_Object.md)
     2. String.valuOf(숫자)
 
 2. 문자를 숫자로 변경 방법
