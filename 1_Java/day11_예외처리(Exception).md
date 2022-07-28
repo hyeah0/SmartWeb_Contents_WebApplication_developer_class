@@ -66,12 +66,12 @@
             - NoSuchFieldException
             - NoSuchMethodException
         - RuntimeException
-            - ArithmeticException
-            - IndexOutOfBoundsException
+            - ArithmeticException : 0으로 나눔
+            - IndexOutOfBoundsException : 배열 범위 벗어남
                 - ArrayIndexOutOfBoundsException
                 - StringIndexOutOfBoundsException
             - ArrayStoreException
-            - ClassCastException
+            - ClassCastException : 형변환 예외
             - EnumConstantNotPresentException
             - IllegalArgumentException 
             	- IllegalThreadStateException
@@ -79,10 +79,11 @@
             - IllegalMonitorStateException
             - IllegalStateException
             - NegativeArraySizeException
-            - NullPointerException
+            - NullPointerException : null 값
             - SecurityException
             - TypeNotPresentException
             - UnsupportedOperationException 
+            - InputMismatchException : 자료형 
 
 - [자바 api](https://docs.oracle.com/javase/8/docs/api/)
 
