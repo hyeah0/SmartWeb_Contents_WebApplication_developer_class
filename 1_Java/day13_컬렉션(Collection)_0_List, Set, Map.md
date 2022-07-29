@@ -24,24 +24,24 @@
 
 - Collection interface
     - List interface
-        - [ArrayList class]()
-        - [stack class]()
-        - [Queue interface]()
-            - [LinkedList class]()
+        - [ArrayList class](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_1_ArrayList.md)
+        - [stack class](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_3_Stack.md)
+        - [Queue interface](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_4_Queue.md)
+            - [LinkedList class](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_2_LinkedList.md)
     - Set interface
-        - [hashSet]()
+        - [hashSet](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_2_Set_1_hashSet.md)
     - Map interface
-        - [HashMap]()
+        - [HashMap](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_3_Map_1_HashMap.md)
         - HashTable
         - Properties
 
 ### 1. List 계열
 - Collection interface
     - List interface
-        - [ArrayList class]()
-        - [stack class]()
-        - [Queue interface]()
-            - [LinkedList class]()
+        - [ArrayList class](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_1_ArrayList.md)
+        - [stack class](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_3_Stack.md)
+        - [Queue interface](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_4_Queue.md)
+            - [LinkedList class](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_2_LinkedList.md)
 
 - 형식)
 
@@ -61,7 +61,7 @@
 - Collection interface
     - List interface
     - Set interface
-        - [hashSet]()
+        - [hashSet](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_2_Set_1_hashSet.md)
 
 #### - Set 계열 컬렉션 프레임 워크 특징
 - 자료의 순서가 없다.(정렬 기능 없다. index 없다)
@@ -96,7 +96,7 @@
 #### 리스트 배열 전체 출력시
 1. 단축 for문 
 2. for문
-3. Iterator [예시]()
+3. Iterator [예시](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_1_ArrayList.md)
     - 자바의 클렉션 프레임워크에서 저장되어 있는 요소들을 읽어 오는 방법을 표준화해 놓은 객체
     - for문대신 사용 가능
     - 형식)
@@ -122,7 +122,7 @@
     - List interface
     - Set interface
     - Map interface
-        - [HashMap class]()
+        - [HashMap class](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_3_Map_1_HashMap.md)
         - HashTable class 
         - Properties class
 
