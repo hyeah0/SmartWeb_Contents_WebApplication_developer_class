@@ -33,4 +33,11 @@
 | JMenuItem        | 메뉴바에 들어간 메뉴에 들어갈 아이템              |                       |
 |                  | .addSeparator()                          | 구분선                                 |
 
-####
+#### 메서드
+- pack()
+    - JFrame에 올라는 컴포넌트를 알맞게 프레임 크기를 조절해주는 메서드
+    - 공백 제거 메서드
+ 
+- setResizable(false); 
+    - 창고정 
+    - default값 true, false로 할경우 화면창 사이즈 변경 
