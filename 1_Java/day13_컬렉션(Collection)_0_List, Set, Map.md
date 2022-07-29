@@ -39,7 +39,7 @@
 - Collection interface
     - List interface
         - [ArrayList class](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_1_ArrayList.md)
-        - [stack class](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_3_Stack.md)
+        - [tack class](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_3_Stack.md)
         - [Queue interface](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_4_Queue.md)
             - [LinkedList class](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day13_%EC%BB%AC%EB%A0%89%EC%85%98(Collection)_1_List_2_LinkedList.md)
 
