@@ -24,6 +24,7 @@
 | TextField        | 텍스트입력\_input                          |                           |
 | PasswordField    | 텍스트입력*input*입력값 ●●● 보호처리           |   [패스워드](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/2.%20GUI%EC%9D%91%EC%9A%A9/Ex17_ETC.java)                         |
 | TextArea         | 텍스트입력*input*여러줄 작성가능               |                          |
+| JScrollPane      | new JScrollPane(TextArea 참조변수 , <br> ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, <br> ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);||
 |                  | .setLineWrap()                           | 줄바꿈 기능                             |
 | Table            | 표                                       |   [표](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/2.%20GUI%EC%9D%91%EC%9A%A9/Ex14_JTable.java)                         |
 | JScrollPane      | 스크롤바                                   |                          |
