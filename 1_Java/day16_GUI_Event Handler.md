@@ -102,3 +102,15 @@
 #### - 예시코드
 
 [익명 클래스]()
+
+### 리스너 인터페이스 정리
+
+| 이벤트      | 이벤트리스너   | 설명                               |
+| ----------- | -------------- | ---------------------------------- |
+| ActionEvent | ActionListener | 컴포넌트별 특정 행동에 따른 이벤트 |
+| WindowEvent | WindowListener | GUI프레임창 관련 이벤트
+| AdjustMentEvent | AdjustmenListner | 스크롤바 이벤트 | 
+| TextEvent | TextLisner | 텍스트 관련 컴포넌트 문자 편집 이벤트 |
+| ItemEvent | ItemListner | 선택 관련 이벤트 |
+| MouseEvent | MouseListner | 마우스 관련 이벤트 |
+| MouseEvent | MouseMothionListner | 마우스 움직임 관련 이벤트 |
