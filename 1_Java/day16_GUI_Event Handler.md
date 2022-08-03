@@ -53,7 +53,7 @@
 
 #### - 예시코드
 
-[Listener 인터페이스](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/1_Java/2.%20GUI%EC%9D%91%EC%9A%A9)
+[Listener 인터페이스](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/2.%20GUI%EC%9D%91%EC%9A%A9/Ex27_Event_Listener.java)
 
 ### 2. Adapter 클래스 구현
 
@@ -64,7 +64,7 @@
 
 #### - 예시코드
 
-[Adapter 클래스]()
+[Adapter 클래스](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/2.%20GUI%EC%9D%91%EC%9A%A9/Ex28_Event_Adapter.java)
 
 ### 3. Frame 클래스 구현
 
@@ -77,7 +77,7 @@
 
 #### - 예시코드
 
-[Frame 클래스]()
+[Frame 클래스](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/2.%20GUI%EC%9D%91%EC%9A%A9/Ex29_Event_Frame.java)
 
 ### 4. 익명클래스 이용
 
