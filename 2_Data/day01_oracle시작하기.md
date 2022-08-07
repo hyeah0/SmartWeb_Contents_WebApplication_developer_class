@@ -1,6 +1,7 @@
 ## day01_oracle_20220804
 
 - 오라클 버전 : 11.2.0.2.0
+- mac : 19c
 
 ### - sql developer 주석
 
