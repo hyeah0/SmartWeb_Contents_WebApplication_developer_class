@@ -231,9 +231,9 @@
             , substr('abcdefg',-3,2) as substr2        -- ef (-붙을경우 뒤에서부터 n번째 자리부터)
             , lpad('abcdefg',15,'*') as lpad           -- ********abcdefg
             , rpad('abcdefg',15,'*') as rpad           -- abcdefg********
-            , ltrim('abcdefg','a') as ltrim
-            , rtrim('abcdefg','g') as rtrim
-            , replace('java program','java','jsp')
+            , ltrim('abcdefg','a') as ltrim            -- bcdefg
+            , rtrim('abcdefg','g') as rtrim            -- abcdef
+            , replace('java program','java','jsp')     -- jsp grogram
         from dual;
 
 ##### 3. 숫자와 관련된 함수들
