@@ -77,7 +77,7 @@
 
 - emp, dept 모두 확인 가능 (중복데이터 발생)
 
-        select \*
+        select *
         from emp, dept;
 
 #### 2. equi join(inner join)
