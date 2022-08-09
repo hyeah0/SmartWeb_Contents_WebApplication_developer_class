@@ -165,7 +165,9 @@
                     values(제약조건 컬럼수에 해당하는 정보기재);
 
 ### - 테이블에 데이터 삭제 
-#### - delecte from 테이블명
+ 
+        delecte from 테이블명
+        
 - 컬럼은 유지되고 데이터만 삭제 된다.
 
 ### - rollback, commit 
