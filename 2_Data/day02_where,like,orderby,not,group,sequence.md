@@ -125,3 +125,39 @@ emp 테이블에서 등록되어 있는 <br>
                 start with 1
             increment by 1
                 nocache;
+
+#### 6. 시퀀스 사용 예시
+
+- memo 테이블 생성
+
+            create table memo(
+                bunho number(5) primary key, 
+                title varchar2(100) not null,
+                writer varchar2(50) not null,
+                cont varchar2(1000) not null,
+                regdate date
+            );
+
+- memo 테이블 이용시 사용할 시퀀스 생성
+- 
+            create sequence memo_seq
+                      start with 1
+                  increment by 1
+                    nocache;
+            
+- memo 테이블에 데이터 저장
+
+            insert into memo values(memo_seq.nextval, '메모1', '홍길동', '길동이 메모', sysdate);
+            insert into memo values(memo_seq.nextval, '메모2', '이ㅇㅇ', '이씨의 메모', sysdate);
+            insert into memo values(memo_seq.nextval, '메모3', '김ㅇㅇ', '김씨의 메모', sysdate);
+            insert into memo values(memo_seq.nextval, '메모4', '배ㅇㅇ', '배씨의 메모', sysdate);
+            insert into memo values(memo_seq.nextval, '메모5', '오ㅇㅇ', '오씨의 메모', sysdate);
+
+- 첫번째열은 시퀀스로 중복되지 않은 연속적인 번호가 만들어진다
+
+|bunho | title | writer | con |   regdate|
+| ---- | ---- |---- |---- |---- |
+| 1 | 메모1 | 홍길동 | 길동이 메모 | 2022-08-05 |
+| 2 | 메모2 | 이ㅇㅇ | 이씨의 메모 | 2022-08-05 |
+| ....................................... |
+| 5 | 메모5 | 오ㅇㅇ | 오씨의 메모 | 2022-08-05 |
