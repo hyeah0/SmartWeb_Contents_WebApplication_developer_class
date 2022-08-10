@@ -95,16 +95,16 @@
         -- equi join
         select e.ename
             , d.deptno, d.dname
-        from emp e, dept d
+         from emp e, dept d
         where e.deptno = d.deptno
-        and e.ename = 'SCOTT';
+          and e.ename = 'SCOTT';
 
         -- inner join
         select ename, e.deptno, dname
-        from emp e
-        inner join dept d
+          from emp e
+         inner join dept d
             on e.deptno = d.deptno
-        where ename = 'SCOTT';
+         where ename = 'SCOTT';
 
 #### 3. self join
 
