@@ -6,15 +6,15 @@
 - Oracle : Oracle Database 19c 19.0.0.0.0
 - Visulal Studio Code : 1.70.0
 
-# jdk verion check
+## jdk verion check
 
 iterm >> java -version
 
-# Eclipse IDE version check
+## Eclipse IDE version check
 
 Eclipse >> about Eclipse
 
-# Oracle version check
+## Oracle version check
 
 SQL Developer >> 쿼리문 실행
 
@@ -22,6 +22,6 @@ SQL Developer >> 쿼리문 실행
     from v$version
     where banner like 'Oracle%';
 
-# Visual Studio Code version check
+## Visual Studio Code version check
 
 Code >> about Visual Studio Code
