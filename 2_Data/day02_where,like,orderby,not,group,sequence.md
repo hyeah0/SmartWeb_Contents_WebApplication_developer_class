@@ -139,7 +139,7 @@ emp 테이블에서 등록되어 있는 <br>
             );
 
 - memo 테이블 이용시 사용할 시퀀스 생성
-- 
+ 
             create sequence memo_seq
                       start with 1
                   increment by 1
@@ -155,6 +155,7 @@ emp 테이블에서 등록되어 있는 <br>
 
 - 첫번째열은 시퀀스로 중복되지 않은 연속적인 번호가 만들어진다
 
+- 결과
 |bunho | title | writer | con |   regdate|
 | ---- | ---- |---- |---- |---- |
 | 1 | 메모1 | 홍길동 | 길동이 메모 | 2022-08-05 |
