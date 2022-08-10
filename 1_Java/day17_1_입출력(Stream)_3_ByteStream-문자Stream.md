@@ -1,4 +1,4 @@
-## day17_입출력_바이트스트림
+## day17_입출력_바이트스트림을 문자스트림으로 변환
 
 java 스트림의 종류
 1. 바이트 스트림 관련 클래스
@@ -18,4 +18,30 @@ java 스트림의 종류
 		2바이트씩 문자를 출력
 
 
-### 
+### 바이트 -> 문자 스트림 변환 
+- 예시
+
+public class P2_inputStream {
+
+	public static void main(String[] args) {
+		System.out.println("입력 후 끝이라고 입력하세요");
+		InputStreamReader isr = new InputStreamReader(System.in);
+	
+			try {
+				while(true) {
+				int readByte = isr.read();
+				if(readByte == '끝') {
+					break;
+				}
+				System.out.print((char)readByte);
+				}
+				isr.close(); 
+			} catch (IOException e) {
+				e.printStackTrace();
+
+			} finally {
+				// 입출력 스트림은 종료시켜주는 것이 좋다. (close)
+					}		
+	}
+
+}
