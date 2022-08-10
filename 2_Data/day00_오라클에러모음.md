@@ -10,6 +10,6 @@
 
 
 ## ORA-02438 케이스
-발생사유 : 테이블 생성시 check 제약조건 컬럼 컬럼명 사이하게 작성
-as-is : studentType varchar2(3) CONSTRAINT type_ck check(type in('학부생','대학원생'))
-to-be : studentType varchar2(3) CONSTRAINT studentType_ck check(studentType in('학부생','대학원생'))
+- 발생사유 : 테이블 생성시 check 제약조건 컬럼 컬럼명 사이하게 작성
+- as-is : studentType varchar2(3) CONSTRAINT type_ck check(type in('학부생','대학원생'))
+- to-be : studentType varchar2(3) CONSTRAINT studentType_ck check(studentType in('학부생','대학원생'))
