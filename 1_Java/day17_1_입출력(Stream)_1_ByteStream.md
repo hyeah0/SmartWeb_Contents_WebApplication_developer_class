@@ -17,7 +17,7 @@ java 스트림의 종류
 		InputStreamReader / OutputStreamReader 
 		2바이트씩 문자를 출력
 
-## 바이트스트링
+## 바이트스트림
 
 	- java.lang.Object
 			- java.io.InputStream
