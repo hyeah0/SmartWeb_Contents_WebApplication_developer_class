@@ -129,12 +129,12 @@
 #### 1-3. 테이블복사
 - 형식)
  
-    create table 복사후 지정할 테이블명
-        as
-    select 컬럼 , 컬럼 또는 *
-      from 복사할 테이블명
+        create table 복사후 지정할 테이블명
+            as
+        select 컬럼 , 컬럼 또는 *
+          from 복사할 테이블명
       
-- [테이블 복사 예시]()      
+- [테이블 복사 예시](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/2_Data/day04_view%2Ctanscaction%2Csavepoint%2Csql%2Cwhere%2Cfor%2Ccase.md)      
 
 ### 2. 테이블 컬럼 추가 
 - 형식)
