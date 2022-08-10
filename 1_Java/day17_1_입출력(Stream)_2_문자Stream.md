@@ -18,4 +18,31 @@ java 스트림의 종류
 		2바이트씩 문자를 출력
 
 
-### 
+### 문자스트림
+- 예시
+- 입력값을 받으면 화면에 보여주고 끝이라고 하면 더이상 입력값을 받지 않는다.
+
+		public class P2_inputStream {
+
+			public static void main(String[] args) {
+				System.out.println("입력 후 끝이라고 입력하세요");
+				InputStreamReader isr = new InputStreamReader(System.in);
+
+					try {
+						while(true) {
+						int readByte = isr.read();
+						if(readByte == '끝') {
+							break;
+						}
+						System.out.print((char)readByte);
+						}
+						isr.close(); 
+					} catch (IOException e) {
+						e.printStackTrace();
+
+					} finally {
+						// 입출력 스트림은 종료시켜주는 것이 좋다. (close)
+							}		
+			}
+
+		}
