@@ -116,7 +116,7 @@
 
 #### 2~3 commit, rollback, savepoint 예시
 
-- [테이블 복사 참고]()
+- [테이블 복사 참고](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/2_Data/day01_oracle%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md)
 - dept_03 테이블 deptno(pk) 값 : 10,20,30,40
 
         -- 1. dept 테이블을 복사하여 dept_03 테이블을 생성
