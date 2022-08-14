@@ -1,14 +1,20 @@
 ## Jbutton
 
 ### 1. 일반 버튼
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/2.%20GUI%EC%9D%91%EC%9A%A9/GUI%EC%B6%94%EA%B0%80%EC%A0%95%EB%A6%AC/img/01_button.png" width="300" height="300">
 
 ### 2. for문을 이용한 버튼
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/2.%20GUI%EC%9D%91%EC%9A%A9/GUI%EC%B6%94%EA%B0%80%EC%A0%95%EB%A6%AC/img/02_button_for.png" width="300" height="200">
 
 ### 3. 배열을 통한 버튼
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/2.%20GUI%EC%9D%91%EC%9A%A9/GUI%EC%B6%94%EA%B0%80%EC%A0%95%EB%A6%AC/img/03_button_array.png" width="300" height="100">
 
 ### 4. 이차원 배열을 통한 버튼1
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/2.%20GUI%EC%9D%91%EC%9A%A9/GUI%EC%B6%94%EA%B0%80%EC%A0%95%EB%A6%AC/img/04_button_multiarry1.png" width="300" height="150">
 
 ### 4. 이차원 배열을 통한 버튼2
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/2.%20GUI%EC%9D%91%EC%9A%A9/GUI%EC%B6%94%EA%B0%80%EC%A0%95%EB%A6%AC/img/04_button_multiarry2.png" width="300" height="150">
+
 
 - 좌석버튼
 
