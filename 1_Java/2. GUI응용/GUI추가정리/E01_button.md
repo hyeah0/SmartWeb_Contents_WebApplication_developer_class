@@ -43,22 +43,22 @@ public class P4_Button extends JFrame implements ActionListener{
 		label = new JLabel();
 		label.setIcon(icon2);
 		label.setBounds(350,500,150,150);
-		label.setVisible(false);										// 버튼 클릭시 확인 할 수 있게 이벤트 처리
+		label.setVisible(false);					// 버튼 클릭시 확인 할 수 있게 이벤트 처리
 
 		button = new JButton();
-		button.setBounds(200,100,400,400); 								// 가로 padding, 세로 padding, 버튼 크기 가로, 버튼크기 세로
-		button.addActionListener(this);	  								// actionPerformed(ActionEvent e)  오버라이딩
+		button.setBounds(200,100,400,400); 				// 가로 padding, 세로 padding, 버튼 크기 가로, 버튼크기 세로
+		button.addActionListener(this);	  				// actionPerformed(ActionEvent e)  오버라이딩
 		// button.addActionListener(e -> System.out.println("hi!"));	// 버튼클릭시 콘솔창 텍스트 (람다식)
 		button.setText("I'm button!");
-		button.setFocusable(false); 									// default : true : 버튼 선택되어있음 / false : 버튼 선택되어있지 않음.
-		button.setIcon(icon);											// 버튼에 이미지 삽입
-		button.setHorizontalTextPosition(JButton.CENTER);				// 버튼 내부 텍스트 가로정렬 타입
-		button.setVerticalTextPosition(JButton.BOTTOM);					// 버튼 내부 텍스트 세로정렬 타입
-		button.setFont(new Font("Comic sans", Font.BOLD, 25));			// 버튼 내부 텍스트 폰트, 특징, 크기
-		button.setIconTextGap(20);										// 버튼 내부 아이콘과 텍스트 사이 크기
-		button.setForeground(Color.pink);								// 버튼 내부 텍스트 컬러
-		button.setBackground(Color.orange);								// 버튼 컬러 ( 이슈 : 색상 확인 되지 않음 )
-		// button.setBorder(BorderFactory.createEtchedBorder());		// 버튼 3d효과
+		button.setFocusable(false); 					// default : true : 버튼 선택되어있음 / false : 버튼 선택되어있지 않음.
+		button.setIcon(icon);						// 버튼에 이미지 삽입
+		button.setHorizontalTextPosition(JButton.CENTER);		// 버튼 내부 텍스트 가로정렬 타입
+		button.setVerticalTextPosition(JButton.BOTTOM);			// 버튼 내부 텍스트 세로정렬 타입
+		button.setFont(new Font("Comic sans", Font.BOLD, 25));		// 버튼 내부 텍스트 폰트, 특징, 크기
+		button.setIconTextGap(20);					// 버튼 내부 아이콘과 텍스트 사이 크기
+		button.setForeground(Color.pink);				// 버튼 내부 텍스트 컬러
+		button.setBackground(Color.orange);				// 버튼 컬러 ( 이슈 : 색상 확인 되지 않음 )
+		// button.setBorder(BorderFactory.createEtchedBorder());	// 버튼 3d효과
 		// button.setBorder(BorderFactory.createDashedBorder(Color.pink));
 
 
