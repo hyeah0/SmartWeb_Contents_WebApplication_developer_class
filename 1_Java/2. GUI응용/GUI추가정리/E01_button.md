@@ -90,7 +90,7 @@ public class P4_Button extends JFrame implements ActionListener{
 
 
 //		--------- 이차원 배열 -------------------------------------------------------------
-//      JPanel con = new JPanel(new GridLayout(3,5,10,10));
+//      	JPanel con = new JPanel(new GridLayout(3,5,10,10));
 //		String[] name = {"1","2","3"};
 //		JButton[][] btn = new JButton[3][5];
 //		for(int i=0; i<3; i++) {
