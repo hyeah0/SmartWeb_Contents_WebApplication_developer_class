@@ -27,9 +27,9 @@ public class SignIn {
 	ResultSet rs = null; 			// 값 저장
 	String sql = null;				// sql문
 	
-	private JFrame frame;
-	private JTextField txtf_id;
-	private JPasswordField txtf_pwd;
+	public JFrame frame;
+	public JTextField txtf_id;
+	public JPasswordField txtf_pwd;
 
 	// 메인메서드
 	public static void main(String[] args) {
@@ -71,6 +71,7 @@ public class SignIn {
 		
 		JButton btn_login = new JButton("로그인");
 		btn_login.setBounds(526, 367, 89, 76);
+		btn_login.setContentAreaFilled(false); // 버튼 투명하게
 		frame.getContentPane().add(btn_login);
 		
 		JLabel label_pwd = new JLabel("비밀번호");
@@ -89,21 +90,24 @@ public class SignIn {
 		btn_signup.setForeground(Color.GRAY);
 		btn_signup.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
 		btn_signup.setBounds(129, 478, 130, 44);
-		btn_signup.setBorder(null); 	// 버튼 테두리 없음
+		btn_signup.setBorder(null); 				// 버튼 테두리 없음
+		btn_signup.setContentAreaFilled(false); 	// 버튼 투명하게
 		frame.getContentPane().add(btn_signup);
 		
 		JButton btn_find_id = new JButton("아이디찾기");
 		btn_find_id.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
 		btn_find_id.setForeground(Color.GRAY);
 		btn_find_id.setBounds(285, 479, 130, 44);
-		btn_find_id.setBorder(null); 	// 버튼 테두리 없음
+		btn_find_id.setBorder(null); 				// 버튼 테두리 없음
+		btn_find_id.setContentAreaFilled(false); 	// 버튼 투명하게
 		frame.getContentPane().add(btn_find_id);
 		
 		JButton btn_find_pwd = new JButton("비밀번호찾기");
 		btn_find_pwd.setFont(new Font("Lucida Grande", Font.PLAIN, 12));
 		btn_find_pwd.setForeground(Color.GRAY);
 		btn_find_pwd.setBounds(438, 479, 130, 44);
-		btn_find_pwd.setBorder(null); 	// 버튼 테두리 없음
+		btn_find_pwd.setBorder(null); 				// 버튼 테두리 없음
+		btn_find_pwd.setContentAreaFilled(false); 	// 버튼 투명하게
 		frame.getContentPane().add(btn_find_pwd);
 		
 		JLabel logo = new JLabel(" ");
