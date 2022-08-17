@@ -21,14 +21,14 @@ public class SignUp {
 	
 	Member_DTO mem_dto = new Member_DTO();
 	
-	private JFrame frame;
-	private JTextField txtf_id;
-	private JTextField txtf_pwd;
-	private JTextField txtf_pwd_ck;
-	private JTextField txtf_name;
-	private JTextField txtf_phone;
-	private JTextField txtf_card_num;
-	private JTextField txtf_card_pwd;
+	public JFrame frame;
+	public JTextField txtf_id;
+	public JTextField txtf_pwd;
+	public JTextField txtf_pwd_ck;
+	public JTextField txtf_name;
+	public JTextField txtf_phone;
+	public JTextField txtf_card_num;
+	public JTextField txtf_card_pwd;
 
 	JLabel label_id_txt;
 	JLabel label_pwd_txt;
@@ -79,6 +79,7 @@ public class SignUp {
 		btn_back.setBounds(22, 30, 70, 70);
 		btn_back.setIcon(icon_back);
 		btn_back.setBorder(null);
+		btn_back.setContentAreaFilled(false); // 버튼 투명하게
 		frame.getContentPane().add(btn_back);
 		
 		JLabel logo = new JLabel(" ");
@@ -105,6 +106,7 @@ public class SignUp {
 		
 		btn_id_ck = new JButton("아이디 확인");
 		btn_id_ck.setBounds(602, 127, 74, 44);
+		btn_id_ck.setContentAreaFilled(false); // 버튼 투명하게
 		frame.getContentPane().add(btn_id_ck);
 		
 		JLabel label_pwd = new JLabel("비밀번호");
@@ -202,6 +204,7 @@ public class SignUp {
 		btn_signUp.setForeground(Color.RED);
 		btn_signUp.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		btn_signUp.setBounds(239, 770, 215, 65);
+		btn_signUp.setContentAreaFilled(false); // 버튼 투명하게
 		frame.getContentPane().add(btn_signUp);
 		
 		// * 이벤트 -------------------------------------------------------------------------------
