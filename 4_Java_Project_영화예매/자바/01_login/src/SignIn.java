@@ -131,31 +131,31 @@ public class SignIn {
 				});
 	
 			// 회원가입 버튼 클릭
-					btn_signup.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							btn_signup.setForeground(Color.blue);
-							SignUp.main(null);
-							frame.dispose(); // 기존에 있던 창을 없애주는 메서드
-						}
-					});
+				btn_signup.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						btn_signup.setForeground(Color.blue);
+						SignUp.main(null);
+						frame.dispose(); // 기존에 있던 창을 없애주는 메서드
+					}
+				});
 			
 			// 아이디 찾기 버튼 클릭
-					btn_find_id.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							btn_find_id.setForeground(Color.blue);
-							Find_id.main(null);
-							frame.dispose(); // 기존에 있던 창을 없애주는 메서드
-						}
-					});
+				btn_find_id.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						btn_find_id.setForeground(Color.blue);
+						Find_id.main(null);
+						frame.dispose(); // 기존에 있던 창을 없애주는 메서드
+					}
+				});
 			
 			// 비밀번호 찾기 버튼 클릭
-					btn_find_pwd.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							btn_find_id.setForeground(Color.blue);
-							Find_pwd.main(null);
-							frame.dispose(); // 기존에 있던 창을 없애주는 메서드
-						}
-					});
+				btn_find_pwd.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						btn_find_id.setForeground(Color.blue);
+						Find_pwd.main(null);
+						frame.dispose(); // 기존에 있던 창을 없애주는 메서드
+					}
+				});
 	}
 
 	
