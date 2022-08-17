@@ -25,9 +25,9 @@ public class Find_id {
 
 	// 멤버변수
 	Connection con = null;  		// 데이터베이스 연동
-	PreparedStatement pstmt = null; // 데이터베이스에 sql 전송
+	PreparedStatement pstmt = null; 	// 데이터베이스에 sql 전송
 	ResultSet rs = null; 			// 값 저장
-	String sql = null;				// sql문
+	String sql = null;			// sql문
 	
 	public JFrame frame;
 	public JTextField txtf_name;
