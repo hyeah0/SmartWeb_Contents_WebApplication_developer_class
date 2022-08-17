@@ -29,9 +29,9 @@ public class Find_id {
 	ResultSet rs = null; 			// 값 저장
 	String sql = null;				// sql문
 	
-	private JFrame frame;
-	private JTextField txtf_name;
-	private JTextField txtf_phone;
+	public JFrame frame;
+	public JTextField txtf_name;
+	public JTextField txtf_phone;
 
 	// 메인메서드
 	public static void main(String[] args) {
@@ -66,6 +66,7 @@ public class Find_id {
 		btn_back.setBounds(22, 30, 70, 70);
 		btn_back.setIcon(icon_back);
 		btn_back.setBorder(null);
+		btn_back.setContentAreaFilled(false); // 버튼 투명하게
 		frame.getContentPane().add(btn_back);
 		
 		JLabel logo = new JLabel(" ");
@@ -108,6 +109,7 @@ public class Find_id {
 		btn_find_id.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		btn_find_id.setForeground(Color.RED);
 		btn_find_id.setBounds(239, 640, 215, 65);
+		btn_find_id.setContentAreaFilled(false); // 버튼 투명하게
 		frame.getContentPane().add(btn_find_id);
 		
 		// * 이벤트 -------------------------------------------------------------------------------
