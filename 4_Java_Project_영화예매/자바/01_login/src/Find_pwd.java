@@ -26,11 +26,11 @@ public class Find_pwd {
 	ResultSet rs = null; 			// 값 저장
 	String sql = null;				// sql문
 	
-	private JFrame frame;
-	private JTextField txtf_id;
+	public JFrame frame;
+	public JTextField txtf_id;
 
-	private JTextField txtf_name;
-	private JTextField txtf_phone;
+	public JTextField txtf_name;
+	public JTextField txtf_phone;
 
 
 	// 메인메서드
@@ -69,6 +69,7 @@ public class Find_pwd {
 		btn_back.setBounds(22, 30, 70, 70);
 		btn_back.setIcon(icon_back);
 		btn_back.setBorder(null);
+		btn_back.setContentAreaFilled(false); // 버튼 투명하게
 		frame.getContentPane().add(btn_back);
 		
 		// 중앙 ----------------------------------------------------------------------------------
@@ -124,6 +125,7 @@ public class Find_pwd {
 		btn_find_pwd.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		btn_find_pwd.setForeground(Color.RED);
 		btn_find_pwd.setBounds(239, 640, 215, 65);
+		btn_find_pwd.setContentAreaFilled(false); // 버튼 투명하게
 		frame.getContentPane().add(btn_find_pwd);
 		
 		// * 이벤트 -------------------------------------------------------------------------------
