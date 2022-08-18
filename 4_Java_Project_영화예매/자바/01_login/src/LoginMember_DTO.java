@@ -3,41 +3,36 @@ package movie_01_login;
 public class LoginMember_DTO {
 
 	// 변수
-	private String id;
-	private String memberName;
-	private String cardNum;
-	private int cardPwd;
+	private static String id;
+	private static String memberName;
+	private static String cardNum;
+	private static int cardPwd;
 	
 	// getter/setter
-	
-	public String getId() {
+	public static String getId() {
 		return id;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public static void setId(String id) {
+		LoginMember_DTO.id = id;
 	}
-	
-	public String getMemberName() {
+	public static String getMemberName() {
 		return memberName;
 	}
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
+	public static void setMemberName(String memberName) {
+		LoginMember_DTO.memberName = memberName;
 	}
-	
-	public String getCardNum() {
+	public static String getCardNum() {
 		return cardNum;
 	}
-	public void setCardNum(String cardNum) {
-		this.cardNum = cardNum;
+	public static void setCardNum(String cardNum) {
+		LoginMember_DTO.cardNum = cardNum;
 	}
-	public int getCardPwd() {
+	public static int getCardPwd() {
 		return cardPwd;
 	}
-	public void setCardPwd(int cardPwd) {
-		this.cardPwd = cardPwd;
+	public static void setCardPwd(int cardPwd) {
+		LoginMember_DTO.cardPwd = cardPwd;
 	}
-	
-	
 	
 
 }
