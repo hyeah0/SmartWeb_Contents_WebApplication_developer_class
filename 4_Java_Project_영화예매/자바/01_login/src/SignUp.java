@@ -11,6 +11,14 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.Arrays;
 
+// 회원가입 페이지
+/*
+   코드변경일 : 2022.08.18 
+   as-is : 회원가입시 비밀번호, 카드비밀번호 이상있어도 회원가입 o, 팝업메세지 아이콘 유
+   to-be : 회원가입시 비밀번호, 카드비밀번호 이상있어도 회원가입 x, 팝업메세지 아이콘 무
+   변경부분 : 이벤트 -> 회원가입 버튼 클릭 부분 코드  , 메서드 - 회원 등록 부분
+*/
+
 public class SignUp {
 
 	// * 변수 -----------------------------------------------------
@@ -254,7 +262,9 @@ public class SignUp {
 					}else {
 						label_pwd_txt.setText("비밀번호가 다릅니다.");
 						label_pwd_txt.setForeground(Color.red);
+						JOptionPane.showMessageDialog(null, "비밀번호 확인 부탁드립니다.", null , JOptionPane.PLAIN_MESSAGE);
 						pwd_ck = 0;
+						return;
 					}
 					
 					// 카드 비밀번호 유효성 검사
@@ -266,25 +276,21 @@ public class SignUp {
 					}else if(txtf_card_pwd.getText().length() > 4 || txtf_card_pwd.getText().length() < 4){
 						label_card_pwd_txt.setText("비밀번호는 4자리 작성해주세요"); 
 						label_card_pwd_txt.setForeground(Color.red);
+						JOptionPane.showMessageDialog(null, "카드비밀번호 확인 부탁드립니다.", null, JOptionPane.PLAIN_MESSAGE);
 						cardPwd_ck = 0;
+						return;
 					}
 					
+					// 데이터 입력값 , 아이디 유휴성 검사 여부
 					if(txtf_name.getText().length()==0 || txtf_phone.getText().length()==0 || txtf_card_num.getText().length()==0){
-						JOptionPane.showMessageDialog(null, "전체 데이터 입력 부탁드립니다.");
+						JOptionPane.showMessageDialog(null, "전체 데이터 입력 부탁드립니다.", null, JOptionPane.PLAIN_MESSAGE);
 						reset_txt();
+						return;
 						
-					}else if(id_ck == 1 && pwd_ck != 1 &&  cardPwd_ck != 1) {
-						JOptionPane.showMessageDialog(null, "비밀번호, 카드 비밀번호 확인 부탁드립니다.");
-						
-					}else if(id_ck == 1 && pwd_ck != 1 &&  cardPwd_ck == 1) {
-						JOptionPane.showMessageDialog(null, "비밀번호 확인 부탁드립니다.");
-						
-					}else if(id_ck == 1 && pwd_ck == 1 &&  cardPwd_ck != 1) {
-						JOptionPane.showMessageDialog(null, "카드비밀번호 확인 부탁드립니다.");
-	
 					}else if(id_ck != 1 && pwd_ck == 1 &&  cardPwd_ck == 1) {
-						JOptionPane.showMessageDialog(null, "아이디 확인 부탁드립니다.");
+						JOptionPane.showMessageDialog(null, "아이디 확인 부탁드립니다.", null, JOptionPane.PLAIN_MESSAGE);
 						reset_txt();
+						return;
 	
 					}else {
 						// 오라클 드라이버 로딩 및 데이터 베이스 연결 
@@ -371,9 +377,9 @@ public class SignUp {
 				// 2. sql -> 데이터베이스
 				int res = pstmt.executeUpdate();
 				if(res>0) {
-					JOptionPane.showMessageDialog(null, "회원가입이 완료되었습니다.");
+					JOptionPane.showMessageDialog(null, "회원가입이 완료되었습니다.","회원가입",JOptionPane.PLAIN_MESSAGE);
 				}else {
-					JOptionPane.showMessageDialog(null, "입력을 다시 해주세요.");
+					JOptionPane.showMessageDialog(null, "입력을 다시 해주세요.","회원가입",JOptionPane.PLAIN_MESSAGE);
 				}
 				
 				// 3. 연결 자원 종료
