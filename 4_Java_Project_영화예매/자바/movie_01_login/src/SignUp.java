@@ -1,10 +1,8 @@
 package movie_01_login;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Font;
-import java.awt.Color;
+import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,7 +14,11 @@ import java.util.Arrays;
 	코드수정일 : 2022.08.18 
 	as-is : 회원가입시 비밀번호, 카드비밀번호 이상있어도 회원가입 o, 팝업메세지 아이콘 유
 	to-be : 회원가입시 비밀번호, 카드비밀번호 이상있어도 회원가입 x, 팝업메세지 아이콘 무
-	변경부분 : 이벤트 -> 회원가입 버튼 클릭 부분 코드  , 메서드 - 회원 등록 부분
+	
+	코드수정일 : 2022.08.19
+	as-is : 핸드폰번호, 카드번호 입력시 한번에 입력
+	to-be : 핸드폰번호(3,4,4) , 카드번호(4,4,4,4) 입력시 나눠서 입력
+	
 */
 public class SignUp {
 
@@ -33,23 +35,28 @@ public class SignUp {
 	public JTextField txtf_pwd;
 	public JTextField txtf_pwd_ck;
 	public JTextField txtf_name;
-	public JTextField txtf_phone;
-	public JTextField txtf_card_num;
+	// public JTextField txtf_phone;
+	public JTextField txtf_phone1;
+	public JTextField txtf_phone2;
+	public JTextField txtf_phone3;
+	// public JTextField txtf_card_num;
+	public JTextField txtf_card_num1;
+	public JTextField txtf_card_num2;
+	public JTextField txtf_card_num3;
+	public JTextField txtf_card_num4;
 	public JTextField txtf_card_pwd;
 
 	JLabel label_id_txt;
 	JLabel label_pwd_txt;
 	JLabel label_card_pwd_txt;
 	
-	String id;
-	String pwd;
-	String memberName;
 	String phone;
 	String cardNum;
-	int cardPwd;
 	
 	JButton btn_id_ck;
-	int id_ck = 0;	// 아이디 사용 가능할 경우 : 1 
+	int id_ck = 0;					// 아이디 사용 가능할 경우 : 1 
+	boolean phoneNum_ck = false; 	// 핸드폰번호 사용 가능할 경우 : true
+	boolean cardNum_ck = false; 	// 카드번호 사용 가능할 경우 : true
 	
 	// 메인메서드
 	public static void main(String[] args) {
@@ -86,7 +93,7 @@ public class SignUp {
 		btn_back.setBounds(22, 30, 70, 70);
 		btn_back.setIcon(icon_back);
 		btn_back.setBorder(null);
-		// btn_back.setContentAreaFilled(false); // 버튼 투명하게
+		btn_back.setContentAreaFilled(false); // 버튼 투명하게
 		frame.getContentPane().add(btn_back);
 		
 		JLabel logo = new JLabel(" ");
@@ -102,9 +109,9 @@ public class SignUp {
 		frame.getContentPane().add(label_id);
 		
 		txtf_id = new JTextField();
+		txtf_id.setFocusable(true);
 		txtf_id.setBounds(277, 127, 316, 44);
 		frame.getContentPane().add(txtf_id);
-		txtf_id.setColumns(10);
 		
 		label_id_txt = new JLabel("※ 숫자 또는 영문 최대 20자 가능합니다.");
 		label_id_txt.setForeground(Color.GRAY);
@@ -156,7 +163,7 @@ public class SignUp {
 		frame.getContentPane().add(label_name);
 		
 		txtf_name = new JTextField();
-		txtf_name.setColumns(10);
+		txtf_name.requestFocus();
 		txtf_name.setBounds(277, 405, 316, 44);
 		frame.getContentPane().add(txtf_name);
 		
@@ -166,29 +173,88 @@ public class SignUp {
 		label_phone.setBounds(63, 477, 202, 44);
 		frame.getContentPane().add(label_phone);
 		
-		txtf_phone = new JTextField();
-		//txtf_phone.setText("000-0000-0000");
-		txtf_phone.setColumns(10);
-		txtf_phone.setBounds(277, 477, 316, 44);
-		frame.getContentPane().add(txtf_phone);
+		// ----- 핸드폰번호 컴포넌트 시작 ----------------------------------------------- //		
+		// 핸드폰번호 1 ( 000-0000-0000 )
+		txtf_phone1 = new JTextField();
+		txtf_phone1.setColumns(3);
+		txtf_phone1.setBounds(277, 477, 75, 44); 
+		frame.getContentPane().add(txtf_phone1);
+		
+		JLabel label_phone1 = new JLabel("-");
+		label_phone1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_phone1.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		label_phone1.setBounds(355, 477, 15, 44);
+		frame.getContentPane().add(label_phone1);
+		
+		// 핸드폰번호 2 ( 000-0000-0000 )
+		txtf_phone2 = new JTextField();
+		txtf_phone2.setColumns(5);
+		txtf_phone2.setBounds(373, 477, 100, 44);
+		frame.getContentPane().add(txtf_phone2);
+		
+		JLabel label_phone2 = new JLabel("-");
+		label_phone2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_phone2.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		label_phone2.setBounds(476, 477, 15, 44);
+		frame.getContentPane().add(label_phone2);
+		
+		// 핸드폰번호 3 ( 000-0000-0000 )
+		txtf_phone3 = new JTextField();
+		txtf_phone3.setColumns(5);
+		txtf_phone3.setBounds(493, 478, 100, 44);
+		frame.getContentPane().add(txtf_phone3);
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(63, 542, 582, 12);
 		frame.getContentPane().add(separator_1);
 		
-		// ---------------------------------------------------------------------------- //
-		
+		// ----- 핸드폰번호 컴포넌트 끝 ------------------------------------------------ //
+
 		JLabel label_card_num = new JLabel("결제 카드번호");
 		label_card_num.setHorizontalAlignment(SwingConstants.CENTER);
 		label_card_num.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		label_card_num.setBounds(63, 578, 202, 44);
 		frame.getContentPane().add(label_card_num);
 		
-		txtf_card_num = new JTextField();
-		txtf_card_num.setColumns(10);
-		txtf_card_num.setBounds(277, 578, 316, 44);
-		frame.getContentPane().add(txtf_card_num);
+		// ----- 카드 넘버 컴포넌트 시작 ----------------------------------------------- //
+		txtf_card_num1 = new JTextField();
+		txtf_card_num1.setColumns(4);
+		txtf_card_num1.setBounds(277, 578, 66, 44);
+		frame.getContentPane().add(txtf_card_num1);
 		
+		JLabel label_card_num1 = new JLabel("-");
+		label_card_num1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_card_num1.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		label_card_num1.setBounds(346, 578, 15, 44);
+		frame.getContentPane().add(label_card_num1);
+		
+		txtf_card_num2 = new JTextField();
+		txtf_card_num2.setColumns(4);
+		txtf_card_num2.setBounds(364, 578, 66, 44);
+		frame.getContentPane().add(txtf_card_num2);
+		
+		JLabel label_card_num2 = new JLabel("-");
+		label_card_num2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_card_num2.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		label_card_num2.setBounds(427, 578, 15, 44);
+		frame.getContentPane().add(label_card_num2);
+		
+		txtf_card_num3 = new JTextField();
+		txtf_card_num3.setColumns(4);
+		txtf_card_num3.setBounds(447, 578, 66, 44);
+		frame.getContentPane().add(txtf_card_num3);
+		
+		JLabel label_card_num3 = new JLabel("-");
+		label_card_num3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_card_num3.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		label_card_num3.setBounds(508, 578, 15, 44);
+		frame.getContentPane().add(label_card_num3);
+		
+		txtf_card_num4 = new JTextField();
+		txtf_card_num4.setColumns(4);
+		txtf_card_num4.setBounds(527, 578, 66, 44);
+		frame.getContentPane().add(txtf_card_num4);
+		// ----- 카드 넘버 컴포넌트 끝 ------------------------------------------------ //
 		
 		JLabel label_card_pwd = new JLabel("결제 카드 비밀번호");
 		label_card_pwd.setHorizontalAlignment(SwingConstants.CENTER);
@@ -213,6 +279,7 @@ public class SignUp {
 		btn_signUp.setBounds(239, 770, 215, 65);
 		btn_signUp.setContentAreaFilled(false); // 버튼 투명하게
 		frame.getContentPane().add(btn_signUp);
+		
 		
 		// * 이벤트 -------------------------------------------------------------------------------
 		// 뒤로가기 버튼 클릭시 로그인 화면창으로 이동
@@ -249,20 +316,51 @@ public class SignUp {
 			btn_signUp.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					
-					int pwd_ck = 0; // 비밀번호 사용가능 할 경우 : 1
-					int cardPwd_ck =0; // 카드비밀번호 사용가능 할 경우 :1 
+					boolean pwd_ck = false; 	// 비밀번호 사용가능 할 경우 : true
+					boolean cardPwd_ck = false; // 카드비밀번호 사용가능 할 경우 : true
+					
+					// 아이디 유효성 검사
+					if(id_ck != 1) {
+						JOptionPane.showMessageDialog(null, "아이디 확인 부탁드립니다.", null, JOptionPane.WARNING_MESSAGE);
+						return;
+					}
 					
 					// 비밀번호 유효성 검사
 					if(txtf_pwd.getText().equals(txtf_pwd_ck.getText()) && txtf_pwd.getText().length()>0) {
 						label_pwd_txt.setText("사용 가능합니다.");
 						label_pwd_txt.setForeground(Color.green);
-						pwd_ck =1;
+						pwd_ck = true;
 						
 					}else {
 						label_pwd_txt.setText("비밀번호가 다릅니다.");
 						label_pwd_txt.setForeground(Color.red);
-						JOptionPane.showMessageDialog(null, "비밀번호 확인 부탁드립니다.", null , JOptionPane.PLAIN_MESSAGE);
-						pwd_ck = 0;
+						JOptionPane.showMessageDialog(null, "비밀번호 확인 부탁드립니다.", null , JOptionPane.WARNING_MESSAGE);
+						pwd_ck = false;
+						return;
+					}
+					
+					// 이름 공백 유효성 검사
+					if(txtf_name.getText().length()==0){
+						JOptionPane.showMessageDialog(null, "이름 입력 부탁드립니다.", null, JOptionPane.WARNING_MESSAGE);
+						return;
+					}
+					
+					// 핸드폰번호 유효성 검사 메서드
+					txtf_phone1.setBackground(new Color(255, 255, 255));
+					txtf_phone2.setBackground(new Color(255, 255, 255));
+					txtf_phone3.setBackground(new Color(255, 255, 255));
+					checkPhoneNum();
+					if(phoneNum_ck == false) {
+						return;
+					}
+				
+					// 카드 넘버 유효성 검사 메서드
+					txtf_card_num1.setBackground(new Color(255, 255, 255));
+					txtf_card_num2.setBackground(new Color(255, 255, 255));
+					txtf_card_num3.setBackground(new Color(255, 255, 255));
+					txtf_card_num4.setBackground(new Color(255, 255, 255));
+					checkCardNum();
+					if(cardNum_ck == false) {
 						return;
 					}
 					
@@ -270,48 +368,35 @@ public class SignUp {
 					if(txtf_card_pwd.getText().length()==4) {
 						label_card_pwd_txt.setText("사용 가능합니다.");
 						label_card_pwd_txt.setForeground(Color.green);
-						cardPwd_ck =1;
+						cardPwd_ck = true;
 						
-					}else if(txtf_card_pwd.getText().length() > 4 || txtf_card_pwd.getText().length() < 4){
+					}else if(txtf_card_pwd.getText().length() != 4){
 						label_card_pwd_txt.setText("비밀번호는 4자리 작성해주세요"); 
 						label_card_pwd_txt.setForeground(Color.red);
-						JOptionPane.showMessageDialog(null, "카드비밀번호 확인 부탁드립니다.", null, JOptionPane.PLAIN_MESSAGE);
-						cardPwd_ck = 0;
+						JOptionPane.showMessageDialog(null, "카드비밀번호 확인 부탁드립니다.", null, JOptionPane.WARNING_MESSAGE);
+						cardPwd_ck = false;
 						return;
-					}
-					
-					// 데이터 입력값 , 아이디 유휴성 검사 여부
-					if(txtf_name.getText().length()==0 || txtf_phone.getText().length()==0 || txtf_card_num.getText().length()==0){
-						JOptionPane.showMessageDialog(null, "전체 데이터 입력 부탁드립니다.", null, JOptionPane.PLAIN_MESSAGE);
-						reset_txt();
-						return;
-						
-					}else if(id_ck != 1 && pwd_ck == 1 &&  cardPwd_ck == 1) {
-						JOptionPane.showMessageDialog(null, "아이디 확인 부탁드립니다.", null, JOptionPane.PLAIN_MESSAGE);
-						reset_txt();
-						return;
-	
-					}else {
-						// 오라클 드라이버 로딩 및 데이터 베이스 연결 
-						con = DBConnect.getConnection();
-						
-						// mem_dto 객체에 값 저장
-						mem_dto.setId(txtf_id.getText());
-						mem_dto.setPwd(txtf_pwd.getText());
-						mem_dto.setMemberName(txtf_name.getText());
-						mem_dto.setPhone(txtf_phone.getText());
-						mem_dto.setCardNum(txtf_card_num.getText());
-						mem_dto.setCardPwd(Integer.parseInt(txtf_card_pwd.getText()));
-					
-						// 데이터 값 호출 메서드 
-						insert(mem_dto);
-						
-						// 입력값 초기화 
-						reset_txt();
-						reset();
 						
 					}
 					
+					// 오라클 드라이버 로딩 및 데이터 베이스 연결 
+					con = DBConnect.getConnection();
+					
+					// mem_dto 객체에 값 저장
+					mem_dto.setId(txtf_id.getText());
+					mem_dto.setPwd(txtf_pwd.getText());
+					mem_dto.setMemberName(txtf_name.getText());
+					mem_dto.setPhone(phone);
+					mem_dto.setCardNum(cardNum);
+					mem_dto.setCardPwd(Integer.parseInt(txtf_card_pwd.getText()));
+				
+					// mem_dto에 입력된 값 데이터에 입력 메서드
+					insert(mem_dto);
+					
+					// 입력값 초기화 
+					reset_txt();
+					reset();
+						
 				}
 			});
 		
@@ -358,11 +443,83 @@ public class SignUp {
 			}
 		}
 
+	// 메서드 - 핸드폰 번호 체크 -------------------------------------------------------------
+		void checkPhoneNum() {
+			
+			String input_phone1 = txtf_phone1.getText();
+			String input_phone2 = txtf_phone2.getText();
+			String input_phone3 = txtf_phone3.getText();
+			
+			if(input_phone1.equals("") || input_phone1.length() !=3) {
+				txtf_phone1.setBackground(new Color(255, 228, 225)); // 에러날 경우 색깔 변경
+				JOptionPane.showMessageDialog(null, "핸드폰 번호 확인 부탁드립니다.\n(3자리 입력해주세요.)",null,JOptionPane.WARNING_MESSAGE);
+				phoneNum_ck = false;
+				return;
+			}else if (input_phone2.equals("") || input_phone2.length() !=4) {
+				txtf_phone2.setBackground(new Color(255, 228, 225)); // 에러날 경우 색깔 변경
+				JOptionPane.showMessageDialog(null, "핸드폰 번호 확인 부탁드립니다.\n(4자리 입력해주세요.)",null,JOptionPane.WARNING_MESSAGE);
+				phoneNum_ck = false;
+				return;
+			}else if(input_phone3.equals("") || input_phone3.length() !=4) {
+				txtf_phone3.setBackground(new Color(255, 228, 225)); // 에러날 경우 색깔 변경
+				JOptionPane.showMessageDialog(null, "핸드폰 번호 확인 부탁드립니다.\n(4자리 입력해주세요.)",null,JOptionPane.WARNING_MESSAGE);
+				phoneNum_ck = false;
+				return;
+			}else {
+				phoneNum_ck = true;
+				phone = input_phone1 + "-" + input_phone2 + "-" + input_phone3;
+			}
+			
+		};
+
+	
+	// 메서드 - 카드번호 체크 -----------------------------------------------------------------
+		void checkCardNum() {
+		
+			String[] input_cardNum = {txtf_card_num1.getText() , txtf_card_num2.getText(), txtf_card_num3.getText(), txtf_card_num4.getText()};
+
+			int errorNum = 0;
+			for(int i=0; i<input_cardNum.length; i++) {
+				if(input_cardNum[i].equals("") || input_cardNum[i].length()!=4) {
+				
+					errorNum = i;
+					JOptionPane.showMessageDialog(null, "카드 번호 확인 부탁드립니다.\n(4자리 입력해주세요.)",null,JOptionPane.WARNING_MESSAGE);	
+					cardNum_ck = false;
+				
+					switch(errorNum) {
+						case 0 :
+							txtf_card_num1.setBackground(new Color(255, 228, 225)); // 에러날 경우 색깔 변경
+							break;
+						case 1 :
+							txtf_card_num2.setBackground(new Color(255, 228, 225)); // 에러날 경우 색깔 변경
+							break;
+						case 2 :
+							txtf_card_num3.setBackground(new Color(255, 228, 225)); // 에러날 경우 색깔 변경
+							break;
+						case 3 :
+							txtf_card_num4.setBackground(new Color(255, 228, 225)); // 에러날 경우 색깔 변경
+							break;		
+					}
+				
+					return;
+					
+				}else {
+					errorNum = 4; // 에러 아님
+					cardNum_ck = true;
+					
+					cardNum = input_cardNum[0] + "-" + input_cardNum[1] + "-" + input_cardNum[2] + "-" +input_cardNum[3];
+				}
+			}
+			
+			
+			
+		};
+		
 	// 메서드 - 회원 등록 -------------------------------------------------------------------
 		void insert(Member_DTO mem_dto) {
 			try {
 				
-				// 1. sql
+				// 1. sql ( 데이터에 회원 정보 저장 )
 				sql = "insert into member_info"
 					+ "     values(?, ?, ?, ?, ?, ?)";
 				pstmt = con.prepareStatement(sql);
@@ -378,7 +535,7 @@ public class SignUp {
 				if(res>0) {
 					JOptionPane.showMessageDialog(null, "회원가입이 완료되었습니다.","회원가입",JOptionPane.PLAIN_MESSAGE);
 				}else {
-					JOptionPane.showMessageDialog(null, "입력을 다시 해주세요.","회원가입",JOptionPane.PLAIN_MESSAGE);
+					JOptionPane.showMessageDialog(null, "입력을 다시 해주세요.","회원가입",JOptionPane.WARNING_MESSAGE);
 				}
 				
 				// 3. 연결 자원 종료
@@ -396,8 +553,12 @@ public class SignUp {
 				txtf_pwd.setText("");
 				txtf_pwd_ck.setText("");
 				txtf_name.setText("");
-				txtf_phone.setText("");
-				txtf_card_num.setText("");
+				txtf_phone1.setText("");
+				txtf_phone2.setText("");
+				txtf_phone3.setText("");
+				txtf_card_num1.setText("");
+				txtf_card_num2.setText("");
+				txtf_card_num3.setText("");
 				txtf_card_pwd.setText("");
 				
 				txtf_id.requestFocus();
