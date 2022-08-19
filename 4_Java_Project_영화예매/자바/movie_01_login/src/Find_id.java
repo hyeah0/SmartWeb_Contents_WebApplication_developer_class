@@ -22,7 +22,7 @@ import javax.swing.JSeparator;
 import java.awt.Color;
 
 public class Find_id {
-	
+
 	// 멤버변수
 	Connection con = null;  		// 데이터베이스 연동
 	PreparedStatement pstmt = null; // 데이터베이스에 sql 전송
@@ -31,7 +31,10 @@ public class Find_id {
 	
 	public JFrame frame;
 	public JTextField txtf_name;
-	public JTextField txtf_phone;
+	// public JTextField txtf_phone;
+	public JTextField txtf_phone1;
+	public JTextField txtf_phone2;
+	public JTextField txtf_phone3;
 
 	// 메인메서드
 	public static void main(String[] args) {
@@ -95,15 +98,44 @@ public class Find_id {
 		label_phone.setBounds(63, 477, 202, 38);
 		frame.getContentPane().add(label_phone);
 		
-		txtf_phone = new JTextField();
-		//txtf_phone.setText("000-0000-0000");
-		txtf_phone.setColumns(10);
-		txtf_phone.setBounds(277, 475, 316, 44);
-		frame.getContentPane().add(txtf_phone);
+		
+		// ----- 핸드폰번호 컴포넌트 시작 ----------------------------------------------- //	
+		// 핸드폰번호 1 ( 000-0000-0000 )
+		txtf_phone1 = new JTextField();
+		txtf_phone1.setColumns(3);
+		txtf_phone1.setBounds(277, 477, 75, 44); 
+		frame.getContentPane().add(txtf_phone1);
+		
+		JLabel label_phone1 = new JLabel("-");
+		label_phone1.setHorizontalAlignment(SwingConstants.CENTER);
+		label_phone1.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		label_phone1.setBounds(355, 477, 15, 44);
+		frame.getContentPane().add(label_phone1);
+		
+		// 핸드폰번호 2 ( 000-0000-0000 )
+		txtf_phone2 = new JTextField();
+		txtf_phone2.setColumns(5);
+		txtf_phone2.setBounds(373, 477, 100, 44);
+		frame.getContentPane().add(txtf_phone2);
+		
+		JLabel label_phone2 = new JLabel("-");
+		label_phone2.setHorizontalAlignment(SwingConstants.CENTER);
+		label_phone2.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		label_phone2.setBounds(476, 477, 15, 44);
+		frame.getContentPane().add(label_phone2);
+		
+		// 핸드폰번호 3 ( 000-0000-0000 )
+		txtf_phone3 = new JTextField();
+		txtf_phone3.setColumns(5);
+		txtf_phone3.setBounds(493, 478, 100, 44);
+		frame.getContentPane().add(txtf_phone3);
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(63, 542, 582, 12);
 		frame.getContentPane().add(separator_1);
+		
+		// ----- 핸드폰번호 컴포넌트 끝 ------------------------------------------------ //
+		
 		
 		JButton btn_find_id = new JButton("아이디 찾기");
 		btn_find_id.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
@@ -133,7 +165,6 @@ public class Find_id {
 					// 아이디 찾기 메서드
 					findId();
 					
-					
 				}
 			});
 
@@ -146,7 +177,7 @@ public class Find_id {
 				
 				// 지역변수
 				String name = txtf_name.getText();
-				String phone = txtf_phone.getText();
+				String phone = txtf_phone1.getText() + "-" + txtf_phone2.getText() + "-" + txtf_phone3.getText();
 				String input_idInfo = name + phone;	// 아이디와 핸드폰번호 동일한 값을 찾기 위한 임시 합쳐놓은 값(일련번호)
 				
 				boolean memTrue = false;		// 회원일 경우 true
@@ -170,7 +201,7 @@ public class Find_id {
 				// 데이터베이스를 확인하여 입력값이 있는지 확인 
 				while(rs.next()) {
 					String data_idInfo = rs.getString("data_idInfo");
-					
+
 					if(input_idInfo.equals(data_idInfo)) {
 						 mem_id = rs.getString("id");
 						 mem_name = rs.getString("MEMBERNAME");
