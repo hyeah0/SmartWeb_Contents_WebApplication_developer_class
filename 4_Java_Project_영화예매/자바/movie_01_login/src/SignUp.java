@@ -239,7 +239,7 @@ public class SignUp {
 						id_ck = 0;
 					}else {
 						//오라클 드라이버 로딩 및 데이터 베이스 연결
-						con = Movie_System.getConnection();
+						con = DBConnect.getConnection();
 						checkId();
 					}
 				}
@@ -293,7 +293,7 @@ public class SignUp {
 	
 					}else {
 						// 오라클 드라이버 로딩 및 데이터 베이스 연결 
-						con = Movie_System.getConnection();
+						con = DBConnect.getConnection();
 						
 						// mem_dto 객체에 값 저장
 						mem_dto.setId(txtf_id.getText());
