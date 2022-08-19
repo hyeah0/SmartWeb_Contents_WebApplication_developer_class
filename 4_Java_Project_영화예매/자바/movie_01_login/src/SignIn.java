@@ -145,7 +145,7 @@ public class SignIn {
 					public void actionPerformed(ActionEvent e) {
 						
 						// 오라클 드라이버 로딩 및 데이터 베이스 연결 
-						con = Movie_System.getConnection();
+						con = DBConnect.getConnection();
 						
 						// 멤버확인 메서드
 						check();
