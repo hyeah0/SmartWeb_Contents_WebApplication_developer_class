@@ -22,7 +22,7 @@ import javax.swing.JSeparator;
 import java.awt.Color;
 
 public class Find_id {
-	// 수정!
+	
 	// 멤버변수
 	Connection con = null;  		// 데이터베이스 연동
 	PreparedStatement pstmt = null; // 데이터베이스에 sql 전송
