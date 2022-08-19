@@ -128,7 +128,7 @@ public class Find_id {
 			btn_find_id.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					// 오라클 드라이버 로딩 및 데이터 베이스 연결 
-					con = Movie_System.getConnection();
+					con = DBConnect.getConnection();
 					
 					// 아이디 찾기 메서드
 					findId();
