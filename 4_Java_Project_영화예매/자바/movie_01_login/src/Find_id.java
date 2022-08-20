@@ -212,9 +212,9 @@ public class Find_id {
 				
 				// 일치하는 아이디가 있으면 정보 반환
 				if(memTrue == true) {
-					choice = JOptionPane.showOptionDialog(null, mem_name + "님의 ID는 " + mem_id + "입니다.", "아이디 찾기", 0, JOptionPane.PLAIN_MESSAGE, null,choose,choose[1]);
+					choice = JOptionPane.showOptionDialog(txtf_name, mem_name + "님의 ID는 " + mem_id + "입니다.", "아이디 찾기", 0, JOptionPane.PLAIN_MESSAGE, null,choose,choose[1]);
 				}else {
-					JOptionPane.showMessageDialog(null, "일치하는 회원정보가 없습니다.", "아이디 찾기", JOptionPane.PLAIN_MESSAGE);
+					JOptionPane.showMessageDialog(txtf_name, "일치하는 회원정보가 없습니다.", "아이디 찾기", JOptionPane.PLAIN_MESSAGE);
 				}
 				
 				// 연결자원 종료
