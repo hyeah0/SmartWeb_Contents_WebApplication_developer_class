@@ -115,6 +115,7 @@ public class SignUp {
 				btn_id_ck = new JButton("아이디 확인");
 				btn_id_ck.setBounds(602, 127, 74, 44);
 				btn_id_ck.setContentAreaFilled(false); // 버튼 투명하게
+				btn_id_ck.setFont(new Font("Lucida Grande", Font.PLAIN, 8));
 				frame.getContentPane().add(btn_id_ck);
 				
 				pf.frameLabel();
