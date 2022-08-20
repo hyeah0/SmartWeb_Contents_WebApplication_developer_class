@@ -1,0 +1,22 @@
+create table member_Info (
+        id varchar2(20) primary key
+      , pwd varchar2(20) not null
+      , memberName varchar2(20) not null
+      , Phone varchar2(20) not null
+      , CardNum varchar2(20) not null
+      , CardPwd number(4) not null
+);
+
+alter table member_Info modify(CardPwd  number(4));
+
+insert into member_Info
+     values ('test01', '1234', 'test', '010-1234-5678', '123-2222-3333', 1234);
+     
+delete from member_Info
+ where id = 'test04';
+     
+select id, pwd
+  from member_Info 
+ --where id = 'test01';
+ where id = lower('TEST03');
+ 
