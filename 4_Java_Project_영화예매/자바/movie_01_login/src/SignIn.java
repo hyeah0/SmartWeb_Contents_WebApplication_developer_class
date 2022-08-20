@@ -1,15 +1,12 @@
 
 package movie_01_login;
 
-import java.awt.EventQueue;
-
 import javax.swing.*;
 import java.sql.*;
-
-import movie_02_main.Mainpage;
-
+import java.awt.EventQueue;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import movie_02_main.Mainpage;
 
 // 로그인 페이지
 /*
@@ -38,7 +35,7 @@ public class SignIn {
 	JTextField txtf_id;
 	JPasswordField txtf_pwd;
 
-		
+	
 	// 메인메서드
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -66,11 +63,15 @@ public class SignIn {
 		frame.setTitle("로그인");
 
 		// 컴포넌트
-		JLabel label_id = new JLabel("아이디");
-		label_id.setHorizontalAlignment(SwingConstants.CENTER);
-		label_id.setFont(pf.font_default);
+		JLabel logo = new JLabel(" ");
+		logo.setIcon((new ImageIcon("src/img/tmplogo.png")));
+		logo.setBounds(262, 222, 244, 115);
+		frame.getContentPane().add(logo);
+		
+		pf.frameLabel();
+		JLabel label_id = pf.label;
+		label_id.setText("아이디");
 		label_id.setBounds(98, 371, 105, 34);
-		frame.getContentPane().add(label_id);
 		
 		txtf_id = new JTextField();
 		txtf_id.setBounds(226, 371, 280, 34);
@@ -81,45 +82,35 @@ public class SignIn {
 		btn_login.setBounds(526, 367, 89, 76);
 		btn_login.setContentAreaFilled(false); // 버튼 투명하게
 		frame.getContentPane().add(btn_login);
-		
-		JLabel label_pwd = new JLabel("비밀번호");
-		label_pwd.setHorizontalAlignment(SwingConstants.CENTER);
-		label_pwd.setFont(pf.font_default);
+
+		pf.frameLabel();
+		JLabel label_pwd = pf.label;
+		label_pwd.setText("비밀번호");
 		label_pwd.setBounds(98, 413, 105, 34);
-		frame.getContentPane().add(label_pwd);
 		
 		txtf_pwd = new JPasswordField();
 		txtf_pwd.setBounds(226, 413, 280, 34);
 		frame.getContentPane().add(txtf_pwd);
 		
-		JButton btn_signup = new JButton("회원가입하기");
-		btn_signup.setFont(pf.font_small);
-		btn_signup.setForeground(pf.color_btn_default);
-		btn_signup.setBounds(129, 478, 130, 44);
+		pf.frameGrayBtn();
+		JButton btn_signup = pf.btn_gray_frame;
+		btn_signup.setText("회원가입하기");
 		btn_signup.setBorder(null); 				// 버튼 테두리 없음
-		btn_signup.setContentAreaFilled(false); 	// 버튼 투명하게
-		frame.getContentPane().add(btn_signup);
-		
-		JButton btn_find_id = new JButton("아이디찾기");
-		btn_find_id.setFont(pf.font_small);
-		btn_find_id.setForeground(pf.color_btn_default);
-		btn_find_id.setBounds(285, 479, 130, 44);
+		btn_signup.setBounds(129, 478, 130, 44);
+	
+		pf.frameGrayBtn();
+		JButton btn_find_id = pf.btn_gray_frame;
+		btn_find_id.setText("아이디찾기");
 		btn_find_id.setBorder(null); 				// 버튼 테두리 없음
-		btn_find_id.setContentAreaFilled(false); 	// 버튼 투명하게
-		frame.getContentPane().add(btn_find_id);
+		btn_find_id.setBounds(285, 479, 130, 44);
 		
-		JButton btn_find_pwd = new JButton("비밀번호찾기");
-		btn_find_pwd.setFont(pf.font_small);
-		btn_find_pwd.setForeground(pf.color_btn_default);
-		btn_find_pwd.setBounds(438, 479, 130, 44);
+		pf.frameGrayBtn();
+		JButton btn_find_pwd = pf.btn_gray_frame;
+		btn_find_pwd.setText("비밀번호찾기");
 		btn_find_pwd.setBorder(null); 				// 버튼 테두리 없음
-		btn_find_pwd.setContentAreaFilled(false); 	// 버튼 투명하게
-		frame.getContentPane().add(btn_find_pwd);
+		btn_find_pwd.setBounds(438, 479, 130, 44);
 		
-		JLabel logo = new JLabel(" ");
-		logo.setIcon(new ImageIcon(SignIn.class.getResource("/img/tmplogo.png")));
-		logo.setBounds(262, 222, 244, 115);
-		frame.getContentPane().add(logo);
+		
 		
 		
 		// * 이벤트 -------------------------------------------------------------------------------
