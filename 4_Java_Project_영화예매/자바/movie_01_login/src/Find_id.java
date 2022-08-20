@@ -30,8 +30,11 @@ public class Find_id {
 	String sql = null;				// sql문
 	
 	public JFrame frame;
+	ProjectFrame pf = new ProjectFrame();	// 프레임(화면크기,배경,주사용컬러)
+	JLabel logo;
+	JButton btn_back; 
+	
 	public JTextField txtf_name;
-	// public JTextField txtf_phone;
 	public JTextField txtf_phone1;
 	public JTextField txtf_phone2;
 	public JTextField txtf_phone3;
@@ -57,25 +60,18 @@ public class Find_id {
 
 	// 컴포넌트 출력 메서드
 	private void initialize() {
-		frame = new JFrame();
+		
+		// 프레임(Jframe)
+		frame = pf.frame;
 		frame.setTitle("아이디 찾기");
-		frame.getContentPane().setBackground(Color.WHITE);
-		frame.setBounds(100, 100, 700, 900);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
 		
-		ImageIcon icon_back = new ImageIcon("src/img/back3.png"); 
-		JButton btn_back = new JButton();
-		btn_back.setBounds(22, 30, 70, 70);
-		btn_back.setIcon(icon_back);
-		btn_back.setBorder(null);
-		btn_back.setContentAreaFilled(false); // 버튼 투명하게
-		frame.getContentPane().add(btn_back);
+		// 뒤로가기 버튼 
+		pf.frameBackBtn();
+		btn_back = pf.btn_back;
 		
-		JLabel logo = new JLabel(" ");
-		logo.setIcon(new ImageIcon(SignIn.class.getResource("/img/tmplogo_small.png")));
-		logo.setBounds(295, 220, 244, 115);
-		frame.getContentPane().add(logo);
+		// 로고 위치
+		pf.frameLogoSmall();
+		logo = pf.logo;
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(63, 368, 582, 12);
@@ -83,7 +79,7 @@ public class Find_id {
 		
 		JLabel label_name = new JLabel("이름");
 		label_name.setHorizontalAlignment(SwingConstants.CENTER);
-		label_name.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		label_name.setFont(pf.font_default);
 		label_name.setBounds(63, 405, 202, 38);
 		frame.getContentPane().add(label_name);
 		
@@ -94,7 +90,7 @@ public class Find_id {
 		
 		JLabel label_phone = new JLabel("핸드폰번호");
 		label_phone.setHorizontalAlignment(SwingConstants.CENTER);
-		label_phone.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		label_phone.setFont(pf.font_default);
 		label_phone.setBounds(63, 477, 202, 38);
 		frame.getContentPane().add(label_phone);
 		
@@ -108,7 +104,7 @@ public class Find_id {
 		
 		JLabel label_phone1 = new JLabel("-");
 		label_phone1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_phone1.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		label_phone1.setFont(pf.font_default);
 		label_phone1.setBounds(355, 477, 15, 44);
 		frame.getContentPane().add(label_phone1);
 		
@@ -120,7 +116,7 @@ public class Find_id {
 		
 		JLabel label_phone2 = new JLabel("-");
 		label_phone2.setHorizontalAlignment(SwingConstants.CENTER);
-		label_phone2.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		label_phone2.setFont(pf.font_default);
 		label_phone2.setBounds(476, 477, 15, 44);
 		frame.getContentPane().add(label_phone2);
 		
@@ -133,16 +129,14 @@ public class Find_id {
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(63, 542, 582, 12);
 		frame.getContentPane().add(separator_1);
-		
 		// ----- 핸드폰번호 컴포넌트 끝 ------------------------------------------------ //
 		
-		
-		JButton btn_find_id = new JButton("아이디 찾기");
-		btn_find_id.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-		btn_find_id.setForeground(Color.RED);
+		// 아이디찾기 버튼
+		pf.framePointBtn();
+		JButton btn_find_id = pf.btn_point_frame;
+		btn_find_id.setText("아이디 찾기");
 		btn_find_id.setBounds(239, 640, 215, 65);
-		btn_find_id.setContentAreaFilled(false); // 버튼 투명하게
-		frame.getContentPane().add(btn_find_id);
+
 		
 		// * 이벤트 -------------------------------------------------------------------------------
 		// 뒤로가기 버튼 클릭시 로그인 화면창으로 이동
@@ -201,7 +195,7 @@ public class Find_id {
 				// 데이터베이스를 확인하여 입력값이 있는지 확인 
 				while(rs.next()) {
 					String data_idInfo = rs.getString("data_idInfo");
-
+					
 					if(input_idInfo.equals(data_idInfo)) {
 						 mem_id = rs.getString("id");
 						 mem_name = rs.getString("MEMBERNAME");
