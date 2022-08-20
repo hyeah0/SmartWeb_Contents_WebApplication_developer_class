@@ -198,7 +198,7 @@ public class SignUp {
 				
 				// 카드번호 1 (0000-0000-0000-0000)
 				txtf_card_num1 = new JTextField();
-				txtf_card_num1.setBounds(277, 578, 66, 44);
+				txtf_card_num1.setBounds(277, 578, 68, 44);
 				frame.getContentPane().add(txtf_card_num1);
 				
 				pf.frameLabel();
@@ -208,27 +208,27 @@ public class SignUp {
 				
 				// 카드번호 2 (0000-0000-0000-0000)
 				txtf_card_num2 = new JTextField();
-				txtf_card_num2.setBounds(364, 578, 66, 44);
+				txtf_card_num2.setBounds(361, 578, 67, 44);
 				frame.getContentPane().add(txtf_card_num2);
 				
 				pf.frameLabel();
 				JLabel label_card_num2 = pf.label;
 				label_card_num2.setText("-");
-				label_card_num2.setBounds(427, 578, 15, 44);
+				label_card_num2.setBounds(428, 578, 15, 44);
 				
 				// 카드번호 3 (0000-0000-0000-0000)
 				txtf_card_num3 = new JTextField();
-				txtf_card_num3.setBounds(447, 578, 66, 44);
+				txtf_card_num3.setBounds(443, 578, 67, 44);
 				frame.getContentPane().add(txtf_card_num3);
 				
 				pf.frameLabel();
 				JLabel label_card_num3 = pf.label;
 				label_card_num3.setText("-");
-				label_card_num3.setBounds(508, 578, 15, 44);
+				label_card_num3.setBounds(510, 578, 15, 44);
 				
 				// 카드번호 4 (0000-0000-0000-0000)
 				txtf_card_num4 = new JTextField();
-				txtf_card_num4.setBounds(527, 578, 66, 44);
+				txtf_card_num4.setBounds(525, 578, 68, 44);
 				frame.getContentPane().add(txtf_card_num4);
 			
 				pf.frameLabel();
