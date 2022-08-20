@@ -27,10 +27,12 @@ public class Find_pwd {
 	String sql = null;				// sql문
 	
 	public JFrame frame;
+	ProjectFrame pf = new ProjectFrame();	// 프레임(화면크기,배경,주사용컬러)
+	JLabel logo;
+	JButton btn_back; 
+	
 	public JTextField txtf_id;
-
 	public JTextField txtf_name;
-	// public JTextField txtf_phone;
 	public JTextField txtf_phone1;
 	public JTextField txtf_phone2;
 	public JTextField txtf_phone3;
@@ -150,12 +152,12 @@ public class Find_pwd {
 		// ----- 핸드폰번호 컴포넌트 끝 ------------------------------------------------ //
 		
 		// 하단 ----------------------------------------------------------------------------------
-		JButton btn_find_pwd = new JButton("비밀번호 찾기");
-		btn_find_pwd.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-		btn_find_pwd.setForeground(Color.RED);
+		
+		// 비밀번호찾기 버튼
+		pf.framePointBtn();
+		JButton btn_find_pwd = pf.btn_point_frame;
+		btn_find_pwd.setText("비밀번호 찾기");
 		btn_find_pwd.setBounds(239, 640, 215, 65);
-		btn_find_pwd.setContentAreaFilled(false); // 버튼 투명하게
-		frame.getContentPane().add(btn_find_pwd);
 		
 		// * 이벤트 -------------------------------------------------------------------------------
 			// 뒤로가기 버튼 클릭시 로그인 화면창으로 이동
