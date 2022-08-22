@@ -3,12 +3,12 @@ package movie_01_login;
 public class LoginMember_DTO {
 
 	// 변수
-		public static String id;
-		public static String pwd;
-		public static String memberName;
-		public static String phone;
-		public static String cardNum;
-		public static int cardPwd;
+		private static String id;
+		private static String pwd;
+		private static String memberName;
+		private static String phone;
+		private static String cardNum;
+		private static int cardPwd;
 		
 	// getter/setter
 		public static String getId() {
