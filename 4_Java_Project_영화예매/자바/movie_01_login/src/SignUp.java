@@ -53,9 +53,10 @@ public class SignUp {
 		
 		JButton btn_id_ck;
 		boolean id_ck = false;					// 아이디 사용 가능할 경우 : true 
+		boolean pwd_ck = false; 				// 비밀번호 사용가능 할 경우 : true
 		boolean phoneNum_ck = false; 			// 핸드폰번호 사용 가능할 경우 : true
 		boolean cardNum_ck = false; 			// 카드번호 사용 가능할 경우 : true
-	
+		
 	// 메인메서드
 		public static void main(String[] args) {
 			EventQueue.invokeLater(new Runnable() {
@@ -112,7 +113,7 @@ public class SignUp {
 				label_id_txt.setBounds(277, 166, 316, 40);
 				frame.getContentPane().add(label_id_txt);
 				
-				btn_id_ck = new JButton("아이디 확인");
+				btn_id_ck = new JButton("중복 확인");
 				btn_id_ck.setBounds(602, 127, 74, 44);
 				btn_id_ck.setContentAreaFilled(false); // 버튼 투명하게
 				btn_id_ck.setFont(new Font("Lucida Grande", Font.PLAIN, 8));
@@ -290,7 +291,7 @@ public class SignUp {
 					btn_signUp.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							
-							boolean pwd_ck = false; 	// 비밀번호 사용가능 할 경우 : true
+							
 							boolean cardPwd_ck = false; // 카드비밀번호 사용가능 할 경우 : true
 							
 							reset_txtField();
@@ -304,24 +305,21 @@ public class SignUp {
 							}
 							
 							// 비밀번호 유효성 검사
-							if(txtf_pwd.getText().equals(txtf_pwd_ck.getText()) && txtf_pwd.getText().length()>0) {
+							if(txtf_pwd.getText().equals(txtf_pwd_ck.getText()) && txtf_pwd.getText().length()>0 && txtf_pwd.getText().length()<20 ) {
 								label_pwd_txt.setText("사용 가능합니다.");
 								label_pwd_txt.setForeground(pf.color_guide_ok);
 								pwd_ck = true;
+							}else if(txtf_pwd.getText().equals("")) {
+								label_pwd_txt.setText("비밀번호를 입력해주세요.");
+								checkPwd();
+								return;
 							}else if(txtf_pwd.getText().length()>20){
 								label_pwd_txt.setText("비밀번호는 20자 이내로 생성가능합니다.");
-								label_pwd_txt.setForeground(pf.color_guide_error);
-								txtf_pwd.setBackground(pf.color_error_back);
-								txtf_pwd_ck.setBackground(pf.color_error_back);
-								pwd_ck = false;
+								checkPwd();
 								return;
 							}else {
 								label_pwd_txt.setText("비밀번호가 다릅니다.");
-								label_pwd_txt.setForeground(pf.color_guide_error);
-								txtf_pwd.setBackground(pf.color_error_back);
-								txtf_pwd_ck.setBackground(pf.color_error_back);
-								JOptionPane.showMessageDialog(txtf_name, "비밀번호 확인 부탁드립니다.", null , JOptionPane.WARNING_MESSAGE);
-								pwd_ck = false;
+								checkPwd();
 								return;
 							}
 							
@@ -421,6 +419,16 @@ public class SignUp {
 			}
 		}
 
+	// 메서드 - 비밀번호 체크 
+		void checkPwd() {
+				label_pwd_txt.setForeground(pf.color_guide_error);
+				txtf_pwd.setBackground(pf.color_error_back);
+				txtf_pwd_ck.setBackground(pf.color_error_back);
+				JOptionPane.showMessageDialog(txtf_name, "비밀번호 확인 부탁드립니다.", null , JOptionPane.WARNING_MESSAGE);
+				pwd_ck = false;
+		}
+		
+		
 	// 메서드 - 핸드폰 번호 체크
 		void checkPhoneNum() {
 			
