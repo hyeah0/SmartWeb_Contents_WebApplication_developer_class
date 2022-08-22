@@ -20,7 +20,7 @@ public class DBConnect {
 		
 		// 윈도우용 
 			// String driver = "oracle.jdbc.driver.OracleDriver";	
-			// String url = "jdbc:oracle:thin@localhost:1521:xe";
+			// String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			// String user = "사용자이름";
 			// String pwd = "비밀번호";
 		
