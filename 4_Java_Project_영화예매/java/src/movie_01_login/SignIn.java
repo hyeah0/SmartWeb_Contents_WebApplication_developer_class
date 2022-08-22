@@ -67,7 +67,7 @@ public class SignIn {
 			// 상단 -----------------------------------------------------------------------
 				// 로고
 					JLabel logo = new JLabel(" ");
-					logo.setIcon((new ImageIcon("src/img/tmplogo.png")));
+					logo.setIcon((new ImageIcon("img/tmplogo.png")));
 					logo.setBounds(262, 222, 244, 115);
 					frame.getContentPane().add(logo);
 				
