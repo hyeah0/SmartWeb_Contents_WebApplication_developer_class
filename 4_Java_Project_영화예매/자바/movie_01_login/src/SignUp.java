@@ -297,8 +297,9 @@ public class SignUp {
 							
 							// 아이디 유효성 검사
 							if(id_ck == false) {
+								btn_id_ck.setForeground(pf.color_guide_error);	//에러날 경우 버튼 글씨 색깔 변경
+								btn_id_ck.setBackground(pf.color_error_back);
 								JOptionPane.showMessageDialog(txtf_name, "아이디 확인 부탁드립니다.", null, JOptionPane.WARNING_MESSAGE);
-								txtf_id.setBackground(pf.color_error_back); // 에러날 경우 색깔 변경
 								return;
 							}
 							
@@ -307,21 +308,31 @@ public class SignUp {
 								label_pwd_txt.setText("사용 가능합니다.");
 								label_pwd_txt.setForeground(pf.color_guide_ok);
 								pwd_ck = true;
-								
+							}else if(txtf_pwd.getText().length()>20){
+								label_pwd_txt.setText("비밀번호는 20자 이내로 생성가능합니다.");
+								label_pwd_txt.setForeground(pf.color_guide_error);
+								txtf_pwd.setBackground(pf.color_error_back);
+								txtf_pwd_ck.setBackground(pf.color_error_back);
+								pwd_ck = false;
+								return;
 							}else {
 								label_pwd_txt.setText("비밀번호가 다릅니다.");
 								label_pwd_txt.setForeground(pf.color_guide_error);
-								JOptionPane.showMessageDialog(txtf_name, "비밀번호 확인 부탁드립니다.", null , JOptionPane.WARNING_MESSAGE);
 								txtf_pwd.setBackground(pf.color_error_back);
 								txtf_pwd_ck.setBackground(pf.color_error_back);
+								JOptionPane.showMessageDialog(txtf_name, "비밀번호 확인 부탁드립니다.", null , JOptionPane.WARNING_MESSAGE);
 								pwd_ck = false;
 								return;
 							}
 							
 							// 이름 공백 유효성 검사
 							if(txtf_name.getText().length()==0){
-								JOptionPane.showMessageDialog(txtf_name, "이름 입력 부탁드립니다.", null, JOptionPane.WARNING_MESSAGE);
 								txtf_name.setBackground(pf.color_error_back);
+								JOptionPane.showMessageDialog(txtf_name, "이름 입력 부탁드립니다.", null, JOptionPane.WARNING_MESSAGE);
+								return;
+							}else if(txtf_name.getText().length()>20) {
+								txtf_name.setBackground(pf.color_error_back);
+								JOptionPane.showMessageDialog(txtf_name, "이름은 20자 이내로 입력 부탁드립니다.", null, JOptionPane.WARNING_MESSAGE);
 								return;
 							}
 							
@@ -348,8 +359,8 @@ public class SignUp {
 							}else if(txtf_card_pwd.getText().length() != 4){
 								label_card_pwd_txt.setText("비밀번호는 4자리 작성해주세요"); 
 								label_card_pwd_txt.setForeground(pf.color_guide_error);
-								JOptionPane.showMessageDialog(txtf_name, "카드비밀번호 확인 부탁드립니다.", null, JOptionPane.WARNING_MESSAGE);
 								txtf_card_pwd.setBackground(pf.color_error_back);
+								JOptionPane.showMessageDialog(txtf_name, "카드비밀번호 확인 부탁드립니다.", null, JOptionPane.WARNING_MESSAGE);
 								cardPwd_ck = false;
 								return;
 							}
@@ -393,6 +404,7 @@ public class SignUp {
 				}else {
 						String data_id = rs.getString("id");
 						if(txtf_id.getText().equals(data_id)) {
+							txtf_id.setBackground(pf.color_error_back); 
 							label_id_txt.setText("동일 아이디가 있습니다. 다른 아이디를 입력해 주세요.");
 							label_id_txt.setForeground(pf.color_guide_error);
 							id_ck = false;
@@ -449,7 +461,6 @@ public class SignUp {
 				if(input_cardNum[i].equals("") || input_cardNum[i].length()!=4) {
 				
 					errorNum = i;
-					JOptionPane.showMessageDialog(txtf_name, "카드 번호 확인 부탁드립니다.\n(4자리 입력해주세요.)",null,JOptionPane.WARNING_MESSAGE);	
 					cardNum_ck = false;
 				
 					switch(errorNum) {
@@ -467,6 +478,7 @@ public class SignUp {
 							break;		
 					}
 				
+					JOptionPane.showMessageDialog(txtf_name, "카드 번호 확인 부탁드립니다.\n(4자리 입력해주세요.)",null,JOptionPane.WARNING_MESSAGE);	
 					return;
 					
 				}else {
