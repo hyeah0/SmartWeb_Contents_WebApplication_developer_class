@@ -34,20 +34,20 @@
 6. 카드비밀번호
    - 글자수 검사(4자리인지)
 
-   <div>
-      <p> - 아이디 사용 불가시 </p>
-      <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-1.%20id(20up).png" width="30%" height="30%"/>
-      <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-1.%20id(null).png" width="30%" height="30%"/>
-      <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-2.%20id(same).png" width="30%" height="30%"/>
-  </div>
-  <div>
-      <p> - 아이디 사용 가능 </p>
-      <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-3.%20id(ok).png" width="30%" height="30%"/>
-  </div>
-  <div>
-      <p> - 중복 확인 안했을 경우 </p>
-      <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-4.%20id(check).png" width="30%" height="30%"/>
-   </div>
+<div>
+<p> - 아이디 사용 불가시 </p>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-1.%20id(20up).png" width="30%" height="30%"/>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-1.%20id(null).png" width="30%" height="30%"/>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-2.%20id(same).png" width="30%" height="30%"/>
+</div>
+<div>
+<p> - 아이디 사용 가능 </p>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-3.%20id(ok).png" width="30%" height="30%"/>
+</div>
+<div>
+<p> - 중복 확인 안했을 경우 </p>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-4.%20id(check).png" width="30%" height="30%"/>
+</div>
 </div>
 
 <div>
