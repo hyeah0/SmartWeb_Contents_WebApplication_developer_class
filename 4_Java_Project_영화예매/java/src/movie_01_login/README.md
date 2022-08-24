@@ -13,8 +13,11 @@
 
 <div>
    <h3> 회원가입 </h3>
-   <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-0.%20signUp_20220822.png" width="30%" height="30%"/>
+   <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-0.%20signUp_20220824.png" width="30%" height="30%"/>
+
+   <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-7-1.%20siginUp(ok).png" width="30%" height="30%"/>
    
+</div>
   
    <div>
       <p> - 아이디 사용 불가시 </p>
