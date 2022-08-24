@@ -107,7 +107,7 @@
 </div>
 
 <div>
-<p> - 비밀번호 </p>
+<p> - 비밀번호 찾기 </p>
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/4-0.%20find%20pwd.png" width="30%" height="30%"/>
 
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/4-1-1.%20find%20pwd.png" width="30%" height="30%"/>
