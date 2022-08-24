@@ -31,11 +31,11 @@
 
 <div>
 <p> 비밀번호 사용불가시 </p>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/%EC%9E%90%EB%B0%94/movie_01_login/00.screenshot/2-2-2.%pwd(20up).png" width="30%" height="30%"/>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-2-2.%20pwd(20up).png" width="30%" height="30%"/>
 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/%EC%9E%90%EB%B0%94/movie_01_login/00.screenshot/2-2-3.%pwd(null).png" width="30%" height="30%"/>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-2-3.%20pwd(null).png" width="30%" height="30%"/>
 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/%EC%9E%90%EB%B0%94/movie_01_login/00.screenshot/2-2-1.%pwd(dif).png" width="30%" height="30%"/>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-2-1.%20pwd(dif).png" width="30%" height="30%"/>
 
 </div>
 
