@@ -49,10 +49,10 @@
 
 <div>
 <p> 핸드폰 번호 잘못 입력시 </p>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/%EC%9E%90%EB%B0%94/movie_01_login/00.screenshot/2-4-1.%phone1(not3).png" width="30%" height="30%"/>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-4-1.%20phone1(not3).png" width="30%" height="30%"/>
 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/%EC%9E%90%EB%B0%94/movie_01_login/00.screenshot/2-4-1.%phone2(not4).png" width="30%" height="30%"/>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-4-1.%20phone2(not4).png" width="30%" height="30%"/>
 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/%EC%9E%90%EB%B0%94/movie_01_login/00.screenshot/2-4-1.%phone3(not4).png" width="30%" height="30%"/>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-4-1.%20phone3(not4).png" width="30%" height="30%"/>
 
 </div>
