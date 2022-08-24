@@ -34,6 +34,7 @@
 6. 카드비밀번호
    - 글자수 검사(4자리인지)
 
+<br>
 <div>
 <p> - 아이디 사용 불가시 </p>
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-1.%20id(20up).png" width="30%" height="30%"/>
