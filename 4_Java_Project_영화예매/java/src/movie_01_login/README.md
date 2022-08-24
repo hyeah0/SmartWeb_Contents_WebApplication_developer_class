@@ -14,8 +14,7 @@
 <div>
    <h3> 회원가입 </h3>
    <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-0.%20signUp_20220822.png" width="30%" height="30%"/>
-   <p> - 아이디 확인 안했을 경우 </p>
-   <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-4.%20id(check).png" width="30%" height="30%"/>
+   
   
    <div>
       <p> - 아이디 사용 불가시 </p>
@@ -27,11 +26,15 @@
       <p> - 아이디 사용 가능 </p>
       <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-3.%20id(ok).png" width="30%" height="30%"/>
   </div>
+  <div>
+      <p> - 중복 확인 안했을 경우 </p>
+      <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-1-4.%20id(check).png" width="30%" height="30%"/>
+   </div>
 </div>
 
 <div>
-<p> 비밀번호 사용불가시 </p>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-2-2.%20pwd(20up).png" width="30%" height="30%"/>
+<p> - 비밀번호 사용불가시 </p>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-2-2%20pwd(20up).png" width="30%" height="30%"/>
 
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-2-3.%20pwd(null).png" width="30%" height="30%"/>
 
@@ -40,19 +43,39 @@
 </div>
 
 <div>
-<p> 이름 작성시 빈값 이나, 20자 초과일때 </p>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/%EC%9E%90%EB%B0%94/movie_01_login/00.screenshot/2-3-1.%name(20up).png" width="30%" height="30%"/>
+<p> - 이름 작성시 빈값 이나, 20자 초과일때 </p>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-3-1.%20name(20up).png" width="30%" height="30%"/>
 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/%EC%9E%90%EB%B0%94/movie_01_login/00.screenshot/2-3-2.%name(null).png" width="30%" height="30%"/>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-3-2.%20name(null).png" width="30%" height="30%"/>
 
 </div>
 
 <div>
-<p> 핸드폰 번호 잘못 입력시 </p>
+<p> - 핸드폰 번호 잘못 입력시 </p>
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-4-1.%20phone1(not3).png" width="30%" height="30%"/>
 
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-4-1.%20phone2(not4).png" width="30%" height="30%"/>
 
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-4-1.%20phone3(not4).png" width="30%" height="30%"/>
+
+</div>
+
+<div>
+<p> - 카드번호 잘못 입력시 </p>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-5-1.%20cardnum1(not4).png" width="30%" height="30%"/>
+
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-5-1.%20cardnum2(not4).png" width="30%" height="30%"/>
+
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-5-1.%20cardnum3(not4).png" width="30%" height="30%"/>
+
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-5-1.%20cardnum4(not4).png" width="30%" height="30%"/>
+
+</div>
+
+<div>
+<p> - 카드비밀번호 잘못입력시 </p>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-6-1.%20cardPwd(4up).png" width="30%" height="30%"/>
+
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/4_Java_Project_%EC%98%81%ED%99%94%EC%98%88%EB%A7%A4/java/src/movie_01_login/00.screenshot/2-6-1.%20cardPwd(4down).png" width="30%" height="30%"/>
 
 </div>
