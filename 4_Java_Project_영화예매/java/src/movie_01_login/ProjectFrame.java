@@ -1,4 +1,4 @@
-package movie_01_login;
+package login;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -63,6 +63,7 @@ public class ProjectFrame {
 		btn_back.setBounds(22, 30, 70, 70);
 		btn_back.setBorder(null);
 		btn_back.setContentAreaFilled(false); // 버튼 투명하게
+		btn_back.setFocusPainted(false); // 버튼 클릭시 글자에 테두리 제거
 		frame.getContentPane().add(btn_back);
 	}
 
@@ -72,7 +73,10 @@ public class ProjectFrame {
 		btn_gray_frame.setFont(font_small);
 		btn_gray_frame.setForeground(color_btn_default);
 		btn_gray_frame.setBorder(null); // 버튼 테두리 없음
+		// btn_gray_frame.setBackground(Color.red);
+		btn_gray_frame.setOpaque(true);
 		btn_gray_frame.setContentAreaFilled(false); // 버튼 투명하게
+		btn_gray_frame.setFocusPainted(false); // 버튼 클릭시 글자에 테두리 제거
 		frame.getContentPane().add(btn_gray_frame);
 	}
 
