@@ -1,26 +1,14 @@
-package movie_01_login;
+package login;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import java.awt.Font;
-import javax.swing.SwingConstants;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.sql.*;
 
 import connect.DBConnect;
 import netscape.javascript.JSObject;
-
-import javax.swing.JSeparator;
-import java.awt.Color;
 
 // 아이디 찾기 페이지
 
@@ -87,22 +75,20 @@ public class Find_id {
 		separator.setBounds(63, 368, 582, 12);
 		frame.getContentPane().add(separator);
 
-		JLabel label_name = new JLabel("이름");
-		label_name.setHorizontalAlignment(SwingConstants.CENTER);
-		label_name.setFont(pf.font_default);
+		pf.frameLabel();
+		JLabel label_name = pf.label;
+		label_name.setText("이름");
 		label_name.setBounds(63, 405, 202, 38);
-		frame.getContentPane().add(label_name);
 
 		txtf_name = new JTextField();
 		txtf_name.setColumns(10);
 		txtf_name.setBounds(277, 403, 316, 44);
 		frame.getContentPane().add(txtf_name);
 
-		JLabel label_phone = new JLabel("핸드폰번호");
-		label_phone.setHorizontalAlignment(SwingConstants.CENTER);
-		label_phone.setFont(pf.font_default);
+		pf.frameLabel();
+		JLabel label_phone = pf.label;
+		label_phone.setText("핸드폰번호");
 		label_phone.setBounds(63, 477, 202, 38);
-		frame.getContentPane().add(label_phone);
 
 		// 핸드폰번호 1 ( 000-0000-0000 )
 		txtf_phone1 = new JTextField();
