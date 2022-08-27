@@ -42,4 +42,4 @@ public class Empty_Blank {
 ## 문자열에서 공백이 포함되어있는지 확인 하고 싶을때
 
 - contain & indexOf & matches 메서드 참고
-  []()
+  [contain & indexOf & matches]()
