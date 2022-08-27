@@ -1,25 +1,13 @@
-package movie_01_login;
+package login;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import java.awt.Font;
-import javax.swing.SwingConstants;
+import java.awt.*;
+import java.awt.event.*;
+import java.sql.*;
+import javax.swing.*;
 
 import connect.DBConnect;
-
-import javax.swing.JSeparator;
-import java.awt.Color;
 
 // 비밀번호 찾기 페이지
 
@@ -87,33 +75,30 @@ public class Find_pwd {
 		separator.setBounds(63, 295, 582, 12);
 		frame.getContentPane().add(separator);
 
-		JLabel label_id = new JLabel("아이디");
-		label_id.setHorizontalAlignment(SwingConstants.CENTER);
-		label_id.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		pf.frameLabel();
+		JLabel label_id = pf.label;
+		label_id.setText("아이디");
 		label_id.setBounds(63, 340, 202, 44);
-		frame.getContentPane().add(label_id);
 
 		txtf_id = new JTextField();
 		txtf_id.setBounds(277, 340, 316, 44);
 		frame.getContentPane().add(txtf_id);
 		txtf_id.setColumns(10);
 
-		JLabel label_name = new JLabel("이름");
-		label_name.setHorizontalAlignment(SwingConstants.CENTER);
-		label_name.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		label_name.setBounds(63, 405, 202, 44);
-		frame.getContentPane().add(label_name);
+		pf.frameLabel();
+		JLabel label_name = pf.label;
+		label_name.setText("이름");
+		label_name.setBounds(63, 405, 202, 38);
 
 		txtf_name = new JTextField();
 		txtf_name.setColumns(10);
 		txtf_name.setBounds(277, 405, 316, 44);
 		frame.getContentPane().add(txtf_name);
 
-		JLabel label_phone = new JLabel("핸드폰번호");
-		label_phone.setHorizontalAlignment(SwingConstants.CENTER);
-		label_phone.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		label_phone.setBounds(63, 477, 202, 44);
-		frame.getContentPane().add(label_phone);
+		pf.frameLabel();
+		JLabel label_phone = pf.label;
+		label_phone.setText("핸드폰번호");
+		label_phone.setBounds(63, 477, 202, 38);
 
 		// 핸드폰번호 1 ( 000-0000-0000 )
 		txtf_phone1 = new JTextField();
