@@ -3,7 +3,7 @@
 - Mac : m1 air
 - jdk version : 11.0.15
 - Eclipse IDE : 2022-03 (4.23.0)
-- Eclipse IDE for Enterprise Java Developers : Eclipse 2020-09 (4.17)
+- 학원 : Eclipse IDE for Enterprise Java Developers : Eclipse 2020-09 (4.17)
 - Oracle : Oracle Database 19c 19.0.0.0.0
 - Visulal Studio Code : 1.70.0
 - node : v17.7.1
