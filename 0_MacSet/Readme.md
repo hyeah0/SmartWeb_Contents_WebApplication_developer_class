@@ -3,8 +3,12 @@
 - Mac : m1 air
 - jdk version : 11.0.15
 - Eclipse IDE : 2022-03 (4.23.0)
+- Eclipse IDE for Enterprise Java Developers : Eclipse 2020-09 (4.17)
 - Oracle : Oracle Database 19c 19.0.0.0.0
 - Visulal Studio Code : 1.70.0
+- node : v17.7.1
+- npm : 8.5.2
+- apache tomcat : 9.0.64
 
 ## jdk verion check
 
@@ -25,3 +29,8 @@ SQL Developer >> 쿼리문 실행
 ## Visual Studio Code version check
 
 Code >> about Visual Studio Code
+
+## node/ npm verion check
+
+iterm -> node --version
+iterm -> npm --version
