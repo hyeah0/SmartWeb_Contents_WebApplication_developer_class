@@ -93,6 +93,6 @@
 ```
  <font size ="3" color="pink" face = "AppleGothic"> font 태그 3</font><br/>
 ```
-<font size ="3" color="pink" face = "AppleGothic"> font 태그 3</font><br/>
+
 
 [맥 폰트](https://support.apple.com/en-us/HT208968)
