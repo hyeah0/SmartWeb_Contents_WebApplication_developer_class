@@ -12,6 +12,8 @@
 
 ### 테두리 선의 종류
 
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/02_css/img/css_border.png" width="80%" height="80%"/>
+
 - border-style : 테두리선의 종류
   - none : 테두리 없음
   - hidden : 테두리 숨김
@@ -25,8 +27,6 @@
   - outset : 요소 전체가 나온선
 
 ### 예시
-
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/02_css/img/css_border.png" width="80%" height="80%"/>
 
 ```
 div{
