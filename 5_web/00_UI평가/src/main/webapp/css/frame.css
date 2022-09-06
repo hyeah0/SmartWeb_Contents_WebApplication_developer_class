@@ -1,5 +1,5 @@
 :root{
-    --point-color: rgb(81, 156, 255);
+    --point-color: rgba(81, 156, 255, 0.851);
     --point-op-color: rgba(81, 156, 255, 0.586);
     
     --back-color:rgb(255, 255, 255);
