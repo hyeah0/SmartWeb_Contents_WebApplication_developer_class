@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@import url(frame.css);
+@import url(type.css);
+@import url(buy.css);
+
+/* 메인페이지 이미지크기 */
+.index_img{
+    width: 50%;
+    margin: auto;
+    display: block;
+    border-radius: 10px;
+
+    box-shadow:  rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.index01-circle{
+    animation-name: aniCirRotate;  
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.index01-container{
+    animation-name: aniConRotate;  
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes aniCirRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-90deg);
+    }
+  }
+
+@keyframes aniConRotate {
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(-12deg);
+}
+}
+
+
