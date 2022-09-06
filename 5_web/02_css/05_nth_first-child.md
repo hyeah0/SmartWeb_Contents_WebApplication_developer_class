@@ -36,4 +36,5 @@
 ## 첫번째 선택자, 마지막 선택자
 
 - first-child / last-child
+
   <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/02_css/img/css_first_last.png" width="80%" height="80%"/>
