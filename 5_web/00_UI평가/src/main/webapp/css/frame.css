@@ -1,13 +1,15 @@
 :root{
     --point-color: rgb(81, 156, 255);
+    --point-op-color: rgba(81, 156, 255, 0.586);
+    
     --back-color:rgb(255, 255, 255);
     --back-op-color:rgba(148, 198, 137, 0.2);
     --font-color: rgb(110, 110, 110);
     --font-color2: rgb(137, 137, 137);
     --font-plant-color : rgb(20, 80, 7);
+    --font-point-color: rgb(54, 108, 178);
 
-    /*  */
-    /* rgb(254, 204, 188) */
+    --box-shadow:  0px 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 *{
@@ -38,7 +40,7 @@
     transition: transform 0.5s linear;
     overflow: scroll;
 
-    box-shadow: 10px 0px 20px gray;
+    box-shadow: var(--box-shadow);
 }
 
 /*스크린 크기가 1000px 넘어가면 h1 윗여백 증가
