@@ -1,0 +1,220 @@
+:root{
+    --point-color: rgb(81, 156, 255);
+    --back-color:rgb(255, 255, 255);
+    --back-op-color:rgba(148, 198, 137, 0.2);
+    --font-color: rgb(110, 110, 110);
+    --font-color2: rgb(137, 137, 137);
+    --font-plant-color : rgb(20, 80, 7);
+
+    /*  */
+    /* rgb(254, 204, 188) */
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--back-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* --------- 본문 --------- */
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255,255,255);
+    transform-origin: top left;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding: 100px 50px 80px 50px;
+    z-index: 2;
+    transition: transform 0.5s linear;
+    overflow: scroll;
+
+    box-shadow: 10px 0px 20px gray;
+}
+
+/*스크린 크기가 1000px 넘어가면 h1 윗여백 증가
+ */
+@media screen and (min-width: 1000px) {
+    .content-container h1 {
+      padding-top: 30px;
+    }
+  }
+
+/*스크린 크기가 1300px 넘어가면 h1 윗여백 증가
+*/
+  @media screen and (min-width: 1300px) {
+    .content-container h1 {
+      padding-top: 80px;
+    }
+  }
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: var(--font-color);
+    line-height: 2em;
+    letter-spacing: 1px;
+    
+}
+.content-container h1{
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.content-container p{
+    margin-bottom: 15px;
+}
+
+/* 버튼 누를경우 본문 돌아감 */
+.rotate{
+    transform: rotate(-12deg);
+}
+
+/* --------- 원형 버튼 --------- */
+
+.circle-container{
+    position: fixed;
+    top: -150px;
+    left: -150px;
+    z-index: 3;
+    transition: 0.5s linear;
+}
+
+.circle{
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--point-color);
+    position:relative;
+    /* top: 120px; */
+    z-index: 100;
+}
+
+/* 버튼 클릭시 돌아감 */
+.circle-rotate{
+    transform: rotate(-90deg);
+}
+
+.cir{
+    width: 300px;
+    height: 300px;
+    background-color: var(--point-color);
+    border-radius: 50%;
+    position: relative;
+}
+
+.cir button{
+    background-color: transparent;
+    color: var(--back-color);
+    border: none;
+    position: absolute;
+    cursor: pointer;
+}
+
+.nav{
+    top: 63%;
+    left: 60%;
+}
+
+.close-nav{
+    top: 63%;
+    left: 22%;
+}
+
+.cir button i{
+    font-size:  3rem;
+}
+
+/* --------- 네비게이션 --------- */
+.nav-container{
+    position:fixed;
+    left: 0px;
+    bottom: 0px;
+}
+
+.nav-container ul{
+    padding: 30px;
+}
+
+.nav-container li{
+    cursor: pointer;
+    list-style: none;
+    line-height: 2em;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.nav-container a{
+    color: var(--font-color);
+    text-decoration: none;
+    opacity: 0.5;
+}
+
+.nav-container span{
+    padding-left: 5px;
+    opacity: 0.5;
+}
+
+.nav-container li:hover{
+    font-size: 1.5em;
+    transition: font-size 1s ease-in-out;
+    color: var(--point-color);
+}
+
+.nav-container li:hover,
+.nav-container span:hover {
+   opacity: 1;
+   font-weight: bold;
+   color: var(--point-color);
+   opacity: 1;
+}
+
+
+.nav-container ul li{
+    transform: translateX(-130%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.nav-container ul li:nth-of-type(1){
+    transform: translateX(-5%);
+    margin-left: -20px;
+}
+
+.nav-container ul li:nth-of-type(2){
+    margin-left: -20px;
+    transform: translateX(-5%);
+}
+
+.nav-container ul li:nth-of-type(3){
+    margin-left: -20px;
+    transform: translateX(-5%);
+}
+
+.container.rotate + .nav-container li{
+    transform: translateX(0);
+    transition-delay: 0.3s;
+    opacity: 1;
+}
+
+/*  */
+.cat-img img{
+    width: 130px;
+    height: 130px;
+    position: fixed;
+    bottom: 5px;
+    right: -30px;
+    opacity: 0.9;
+}
