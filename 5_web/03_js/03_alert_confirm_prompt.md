@@ -7,7 +7,7 @@
   <div>
   <div>
     <h3>confirm()</h3>
-    <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/03_js/img/031_js_confirm.png" width="30%" height="30%">
+    <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/03_js/img/032_js_confirm.png" width="30%" height="30%">
   <div>
   <div>
     <h3>prompt()</h3>
