@@ -43,6 +43,7 @@
 | frameset frame | &lt;frameset&gt;&lt;frame&gt;&lt;/frame&gt;&lt;/frameset&gt;    | 여러개의 html 문서를 동시에 한 화면에 나타나게 할 수 있는 태그            |
 | table          | &lt;tabel&gt;&lt;/table&gt;                                     | 표를 만들어주는 태그 <br>[링크참고]()                                     |
 | form           | &lt;form&gt;&lt;/form&gt;                                       | 사용자로부터 정보를 받을때 사용하는 태그 <br>[링크참고]()                 |
+| mark	|&lt;mark&gt;&lt;/mark&gt;    	| 형광펜 태그	|
 | br             | &lt;br&gt;                                                      | 줄바꿈, 단독태그                                                          |
 | hr             | &lt;hr&gt;                                                      | 라인, 단독태그                                                            |
 | div            | &lt;div&gt; &lt;/div&gt;                                        | 태그들을 묶을때 사용(width,height크기지정 가능)                           |
