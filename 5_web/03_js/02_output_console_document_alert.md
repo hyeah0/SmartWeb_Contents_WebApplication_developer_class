@@ -34,4 +34,4 @@ console.log("텍스트");
 alert("빈값을 입력했습니다.");
 ```
 
-[알림창 더보기]()
+[알림창 더보기](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/03_js/03_alert_confirm_prompt.md)
