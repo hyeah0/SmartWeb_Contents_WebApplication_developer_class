@@ -53,6 +53,8 @@
 2. head 태그 안 : 권장
 3. body 태그 안
 
+- [위치별 특징 참고링크](https://github.com/hyeah0/Javascript/blob/master/Javascript_dreamcoding/js1-5.html)(15)
+
 - 예시
 
 ```
