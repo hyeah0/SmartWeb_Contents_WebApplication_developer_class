@@ -1,4 +1,4 @@
-## 배열 메서드
+## Array(배열) 메서드
 
 <table border="1" cellspacing="0">
 <tr> <th> 주기능 </th> <th> 메서드 </th> <th> 사용 </th> <th> 설명 </th> </tr>
