@@ -50,7 +50,7 @@ const result2 = array2.slice(2, 3);
 
 //splice
 document.write(result1 + '<br>');   // 키위,망고,수박
-document.write(array1 + '<br>');    //사과,오렌지
+document.write(array1 + '<br>');    // 사과,오렌지
 
 // slice
 document.write(result2 + '<br>');   // 키위
