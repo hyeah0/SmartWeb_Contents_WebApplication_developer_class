@@ -10,7 +10,7 @@
 <tr> <td rowspan ="2"> 삭제 </td> <td> shift </td><td> 배열명.shift(원소) </td> <td> 배열 맨 앞에 원소 삭제 </td> </tr>
 <tr>                         <td> pop </td> <td> 배열명.pop(원소) </td> <td> 배열 맨 뒤에 원소 삭제 </td> </tr>
 <tr> <td rowspan ="2"> 추가/연결 </td><td> concat </td> <td> 배열명.concat([원소1,원소2,..원소n]) </td> <td> 배열 맨 뒤에 여러원소 추가(연결하기) </td> </tr>
-<tr>                         <td> combine </td> <td> 배열 a.pop(배열 b) </td> <td> 배열 a 와 배열 b를 연결 </td> </tr>
+<tr>                         <td> combine </td> <td> 배열 a.combine(배열 b) </td> <td> 배열 a 와 배열 b를 연결 </td> </tr>
 <tr> <td> 삭제/자르기 </td> <td> splice </td><td> 배열명.splice(인덱스 몇번부터, 몇개, 이후추가원소1, 추가원소2.. ) </td> <td> 인덱스 몇번부터 몇개 지우고 추가원소, 추가원소<br> 지운 원소 위치에 추가 원소위치 <br> 원본 배열 변경된다. <br>(추가원소는 없으면 생략가능)  </td> </tr>
 <tr> <td> 자르기   <td> slice </td><td> 배열명.slice(인덱스 몇번부터, 인덱스 몇번까지) </td> <td> 인덱스 몇번부터 몇번-1까지 보여준다. <br> 원본배열 변경되지 않는다.</td> </tr>
 
