@@ -48,7 +48,9 @@
 | hr             | &lt;hr&gt;                                                      | 라인, 단독태그                                                            |
 | div            | &lt;div&gt; &lt;/div&gt;                                        | 태그들을 묶을때 사용(width,height크기지정 가능)                           |
 | span           | &lt;span&gt;&lt;/span&gt;                                       | 태그들을 묶을때 사용(인라인속성:width,height크기지정 불가능)              |
-
+| section		| &lt;section&gt;&lt;/section&gt;  |  태그들 묶어서 구분시(width,height크기지정 가능)   |
+| code| &lt;code &gt;&lt;/code&gt;       | 코드일때 |
+| pre| &lt;pre&gt;&lt;/pre&gt;    | 입력한 문장 형태 그대로 브라우저에 표현하고 싶을때 (띄어쓰기, 엔터..)| 
 ## 텍스트 서식 태그
 
 - text 서식관련 태그
