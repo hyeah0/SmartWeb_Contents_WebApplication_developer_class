@@ -9,6 +9,7 @@
 - node : v17.7.1
 - npm : 8.5.2
 - apache tomcat : 9.0.65
+- docker : 20.10.17
 
 ## jdk verion check
 
@@ -34,3 +35,7 @@ Code >> about Visual Studio Code
 
 iterm -> node --version
 iterm -> npm --version
+
+
+## docker version check
+iterm -> docker -v
