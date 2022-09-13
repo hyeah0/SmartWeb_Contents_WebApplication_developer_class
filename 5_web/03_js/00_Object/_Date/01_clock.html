@@ -83,14 +83,14 @@
 
         function getNow(){
             const date = new Date();
-            const now = date.toLocaleDateString();
+            const now = date.toLocaleTimeString();
             clockNow.innerHTML = `${now}`
         }
         
         getClockD();
         getClockT();
         setInterval(getClockT,1000);
-        // setInterval(getNow,1000);
+        setInterval(getNow,1000);
 
     
     </script>
