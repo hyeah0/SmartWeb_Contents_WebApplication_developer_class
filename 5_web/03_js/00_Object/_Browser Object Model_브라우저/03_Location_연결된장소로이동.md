@@ -4,20 +4,24 @@
 
 ### - Location 속성
 
-- location.href : 온전한 URL을 값으로 하는 String
-- location.protocol
-- location.host
-- location.hostname
-- location.port
-- location.pathname
-- location.search
-- location.hash
+| 속성     | 사용              | 설명                            |
+| -------- | ----------------- | ------------------------------- |
+| href     | location.href     | 온전한 URL을 값으로 하는 String |
+| protocol | location.protocol |                                 |
+| host     | location.host     |                                 |
+| hostname | location.hostname |                                 |
+| port     | location.port     |                                 |
+| pathname | location.pathname |                                 |
+| search   | location.search   |                                 |
+| hash     | location.hash     |                                 |
 
 ### - Location 메서드
 
-- location.reload() : 현재 URL 리소스를 다시 불러온다.
-- location.assign(주소) : 작성한 주소로 이동, 뒤로 가기 가능(이동하기 전 페이지로 뒤로가기 가능)
-- location.replace(주소) : 작성한 주소로 이동, 뒤로가기 불가능(이동하기 전 페이지로 뒤로가기 불가)
+| 메서드  | 사용                   | 설명                                                                      |
+| ------- | ---------------------- | ------------------------------------------------------------------------- |
+| reload  | location.reload()      | 현재 URL 리소스를 다시 불러온다.                                          |
+| assign  | location.assign(주소)  | 작성한 주소로 이동<br>뒤로 가기 가능(이동하기 전 페이지로 뒤로가기 가능)  |
+| replace | location.replace(주소) | 작성한 주소로 이동<br>뒤로가기 불가능(이동하기 전 페이지로 뒤로가기 불가) |
 
 [속성 & 메서드 참고](https://developer.mozilla.org/ko/docs/Web/API/Location)
 
