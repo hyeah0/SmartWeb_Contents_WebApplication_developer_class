@@ -15,6 +15,7 @@
 | getHours           | date.getHours()      | 현재 시간                                                                     |
 | getMinutes         | date.getMinutes()    | 현재 분                                                                       |
 | getSeconds         | date.getSeconds()    | 현재 초                                                                       |
+| toLocalString | toLocalString() | 현재 날짜 + 시간 |
 | toLocaleDateString | toLocaleDateString() | 현재 날짜 |
 | toLocaleTimeString | toLocaleTimeString() | 현재 시간                                                                     |
 
