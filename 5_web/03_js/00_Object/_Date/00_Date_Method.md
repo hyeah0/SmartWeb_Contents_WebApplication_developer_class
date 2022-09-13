@@ -15,7 +15,9 @@
 | getHours           | date.getHours()      | 현재 시간                                                                     |
 | getMinutes         | date.getMinutes()    | 현재 분                                                                       |
 | getSeconds         | date.getSeconds()    | 현재 초                                                                       |
+| toLocaleDateString | toLocaleDateString() | 현재 날짜 |
 | toLocaleTimeString | toLocaleTimeString() | 현재 시간                                                                     |
+
 
 - 날짜 변수명 : date
   - `let date = new Date();` 로 변수 생성했다 가정
