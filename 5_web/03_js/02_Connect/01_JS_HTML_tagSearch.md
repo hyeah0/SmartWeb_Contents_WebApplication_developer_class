@@ -11,6 +11,12 @@
         <td>- html의 id="아이디명" 인것을 가져온다. <br>&nbsp;&nbsp;아이디명 앞에 따로 #을 작성하지 않아도 된다.
         </td>
     </tr>
+     <tr>
+        <td>getElementsByClassName</td>  
+        <td>document.getElementsByClassName("클래스명");</td>  
+        <td>- html의 class="클래스명" 인것을 가져온다. <br>&nbsp;&nbsp;클래스명 앞에 따로 .을 작성하지 않아도 된다.
+        </td>
+    </tr>
     <tr>
         <td>getElementsByTagName</td>  
         <td>document.getElementsByTagName("태그명 h1")</td>  
