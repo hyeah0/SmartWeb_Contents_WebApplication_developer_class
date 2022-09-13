@@ -31,7 +31,7 @@
         </td>
     </tr>
     <tr>
-        <td>querySelector</td>
+        <td><b>querySelector</b></td>
         <td>document.querySelector("#아이디명 또는 .클래스명")</td>
         <td>-id를 가져올때는 "#id명"
         <br>&nbsp;&nbsp;class를 가져올때는 ".class명"
