@@ -24,6 +24,13 @@
         </td>
     </tr>
     <tr>
+        <td>getElementsByName</td>  
+        <td>document.getElementsByName("네임명")</td>  
+        <td>-input 태그 name 속성명인 것을 가져온다.<br> 
+            &nbsp;&nbsp;- &lt;input type="text" name="textName"&gt;
+        </td>
+    </tr>
+    <tr>
         <td>querySelector</td>
         <td>document.querySelector("#아이디명 또는 .클래스명")</td>
         <td>-id를 가져올때는 "#id명"
