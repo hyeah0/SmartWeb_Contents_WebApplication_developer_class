@@ -5,16 +5,17 @@
 
 2. 생성된 변수로 메서드 실행
 
-| 메서드      | 사용                 | 설명                                                                          |
-| ----------- | -------------------- | ----------------------------------------------------------------------------- |
-| getYear     | 날짜변수명.getYear() | 현재년도(기준년도가 1900 년도를 기준) <br> 1900년도 0으로 인식 / 1901년도 = 1 |
-| getFullYear | date.getFullYear()   | 현재년도(따로 1900년을 더하지 않아도 현재 년도를 알 수 있다.)                 |
-| getMonth    | date.getMonth()      | 현재 월                                                                       |
-| getDate     | date.getDate()       | 현재 일                                                                       |
-| getDay      | date.getDay()        | 현재 요일(0 : 일요일 / 6: 토요일)                                             |
-| getHours    | date.getHours()      | 현재 시간                                                                     |
-| getMinutes  | date.getMinutes()    | 현재 분                                                                       |
-| getSeconds  | date.getSeconds()    | 현재 초                                                                       |
+| 메서드             | 사용                 | 설명                                                                          |
+| ------------------ | -------------------- | ----------------------------------------------------------------------------- |
+| getYear            | 날짜변수명.getYear() | 현재년도(기준년도가 1900 년도를 기준) <br> 1900년도 0으로 인식 / 1901년도 = 1 |
+| getFullYear        | date.getFullYear()   | 현재년도(따로 1900년을 더하지 않아도 현재 년도를 알 수 있다.)                 |
+| getMonth           | date.getMonth()      | 현재 월                                                                       |
+| getDate            | date.getDate()       | 현재 일                                                                       |
+| getDay             | date.getDay()        | 현재 요일(0 : 일요일 / 6: 토요일)                                             |
+| getHours           | date.getHours()      | 현재 시간                                                                     |
+| getMinutes         | date.getMinutes()    | 현재 분                                                                       |
+| getSeconds         | date.getSeconds()    | 현재 초                                                                       |
+| toLocaleTimeString | toLocaleTimeString() | 현재 시간                                                                     |
 
 - 날짜 변수명 : date
   - `let date = new Date();` 로 변수 생성했다 가정
