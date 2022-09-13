@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0px;
+       
+    }
+    #clock{
+        width: 100vw;
+        height: 100vh;
+        margin: auto;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 25px;
+    }
+</style>
+<body>
+    <div id="clock">
+        <div class="clock_date">yyyy.mm.dd aaaa</div>
+        <div class="clock_time">hh:mm:ss</div>
+    </div>
+
+    <script>
+        let clockDate = document.querySelector(".clock_date");
+        let clockTime = document.querySelector(".clock_time");
+        
+
+        function getClockD(){
+            const date = new Date();
+            const yyyy = date.getFullYear();
+            const mm = String(date.getMonth()).padStart(2,"0");
+            const dd = String(date.getDate()).padStart(2,"0");
+            let day = "요일";
+            switch( date.getDay()){
+                case 0 : 
+                        day = "일요일";
+                        break;
+                case 1 : 
+                        day = "월요일";
+                        break;
+                case 2 : 
+                        day = "화요일";
+                        break;
+                case 3 : 
+                        day = "수요일";
+                        break;
+                case 4 : 
+                        day = "목요일";
+                        break;
+                case 5 : 
+                        day = "금요일";
+                        break;
+                case 6 : 
+                        day = "토요일";
+                        break;
+            }
+
+            clockDate.innerHTML = `${yyyy} . ${mm} . ${dd}  ${day}`
+        } 
+
+        function getClockT(){
+            const date = new Date();
+            let hh = String(date.getHours()).padStart(2,"0");
+            let mm = String(date.getMinutes()).padStart(2,"0");
+            let ss = String(date.getSeconds()).padStart(2,"0");
+
+            clockTime.innerHTML = `${hh} : ${mm} : ${ss}`
+        }
+
+        getClockD();
+        getClockT();
+        setInterval(getClockT,1000);
+
+    
+    </script>
+</body>
+</html>
