@@ -15,3 +15,6 @@
 | floor(숫자)                 | Math.floor(2.1) => 2 | 소수점 첫째 자리에서 내림 / 정수반환   |
 | pow(숫자, 제곱값)           | Math.pow(2,2) => 4   | 숫자의 거듭제곱 값                     |
 | sqrt(숫자)                  | Math.sqrt(2) => 4    | 숫자의 제곱근                          |
+
+
+- [random, floor 예시](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/03_js/00_Object/_Math/method_floor_random_%EB%9E%9C%EB%8D%A4%EA%B0%92.md)
