@@ -15,17 +15,17 @@
   - innerHTML은 컨텐츠값이 빨강색으로 보여지고 태그가 보여지지 않는다.
   - innerText는 컨텐츠값 색상이 변하지 않고 텍스트 그대로 반환된다.
 
-```
-<body>
-    <div id="myDiv1"></div>
-    <div id="myDiv2"></div>
-    <script>
-        onload = () => {
-            let myDiv1 = document.querySelector("#myDiv1")
-            let myDiv2 = document.querySelector("#myDiv2")
-             myDiv1.innerHTML = "<p style='color:red'>안녕하세요</p>"
-             myDiv2.innerText = "<p style='color:red'>안녕하세요</p>"
-        }
-    </script>
-</body>
-```
+  ```
+  <body>
+      <div id="myDiv1"></div>
+      <div id="myDiv2"></div>
+      <script>
+          onload = () => {
+              let myDiv1 = document.querySelector("#myDiv1")
+              let myDiv2 = document.querySelector("#myDiv2")
+               myDiv1.innerHTML = "<p style='color:red'>안녕하세요</p>"
+               myDiv2.innerText = "<p style='color:red'>안녕하세요</p>"
+          }
+      </script>
+  </body>
+  ```
