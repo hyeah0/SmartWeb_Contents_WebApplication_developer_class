@@ -11,7 +11,7 @@
 ## innerText/ innerHTML 차이
 
 - 만약 하단과 같이 코드를 짠다면 결과는 이미지와 같다
-  <img src="" width="100%" height="100%">
+  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/03_js/00_DOM/img/04_innerHTML_innerText.png" width="100%" height="100%">
   - innerHTML은 컨텐츠값이 빨강색으로 보여지고 태그가 보여지지 않는다.
   - innerText는 컨텐츠값 색상이 변하지 않고 텍스트 그대로 반환된다.
 
