@@ -20,7 +20,7 @@
     <tr>
         <td>getElementsByTagName</td>  
         <td>document.getElementsByTagName("태그명 h1")</td>  
-        <td>-html 특정 태그를 가지고 오고 싶을때
+        <td>-html 특정 태그를 가지고 오고 싶을때<br>동일한 태그가 많을 경우 배열형태로 가져온다.
         </td>
     </tr>
     <tr>
