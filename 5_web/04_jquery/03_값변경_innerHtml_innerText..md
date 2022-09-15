@@ -1,4 +1,4 @@
-## 제이쿼리 값 변경 또는 값 불러오기
+## JQuery 값 변경 또는 값 불러오기
 
 <table border="1" cellspacing="0">
     <tr><th > 선택자 </th><th> 사용 </th><th> 설명 </th></tr>
