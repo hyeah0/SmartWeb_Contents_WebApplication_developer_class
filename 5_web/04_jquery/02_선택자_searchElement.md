@@ -9,6 +9,7 @@
 1.  직접선택
 2.  관계선택 메서드
 3.  탐색선택 메서드
+[자바에서 html 태그 선택](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/03_js/00_DOM/01_01_searchElement(tag).md)
 
 ## 1. 직접선택
 
