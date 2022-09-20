@@ -5,6 +5,7 @@
 ```
 <태그명 onload="함수명">
 ```
+태그가 load될때 함수를 실행
 
 ### 2. JavaScript
 
