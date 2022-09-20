@@ -62,4 +62,7 @@
     <tr><td> 특정위치   </td> <td> :nth-child(몇번째)   </td> <td> $("태그선택:nth-child(숫자)")   </td> <td> 선택한 요소 중 숫자번째 요소 선택   </td></tr>
     <tr><td> 특정배수   </td> <td> :nth-child(몇배수n)    </td> <td> $("태그선택:nth-child(3n)")   </td> <td> 선택한 요소 중 배수만 선택 <br> 사용예시) 3배수만 선택    </td></tr>
     <tr><td> 특정배수에서 남는값   </td> <td>:nth-child(몇배수n + 남는값)     </td> <td>  $("태그선택:nth-child(3n+1)")   </td> <td> 선택한 요소 중 __으로 나눴을때 나머지값이 __ 값만 선택 <br>사용예시) 3으로 나눴을때 나머지 값이 1인거만 선택    </td></tr>
+    <tr><td> 지정한 인덱스  </td> <td> :eq(index)    </td> <td>  $("ul li:eq(3)")   </td> <td>사용예시) 3번째 인덱스인 li(0,1,2,3)    </td></tr>
+     <tr><td> 지정한 인덱스보다 작은것 </td> <td> :lt(index)    </td> <td>  $("ul li:lt(3)")   </td> <td>사용예시) 3번째 인덱스보다 작은것 a < 3 li(0,1,2)    </td></tr>
+     <tr><td> 지정한 인덱스보다 큰것  </td> <td> :gt(index)    </td> <td>  $("ul li:gt(3)")   </td> <td>사용예시) 3번째 인덱스보다 큰것 li(4,5,6...)    </td></tr>
 </table>
