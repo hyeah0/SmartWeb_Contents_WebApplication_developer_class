@@ -208,7 +208,3 @@ public class DeptDAO {
 	}
 }
 
-
-// oracle -> app -> oracle -> product -> server -> jdbc -> lib -> ojdbc6 복사
-// /Users/hye/devDownload/ojdbc11-full/ojdbc11.jar
-// eclipse -> web-inf -> lib에 붙여넣기
