@@ -9,25 +9,19 @@
 
 ### CSS 형식
 
-1. 인라인 방식
+### 1. 인라인 방식
 
 ```
 <tag style="back.. "></tag>
 ```
 
-2. head영역 & 외부파일
 
-- 선택자{ 속성: 값; }
-
-  - 선택자 : body 태그에서 선언한 태그
-  - 하위 태그 지정 : 상위태그 하위태그{속성 : 값;}
-
-- head영역
+### 2. head영역
 
   - &lt;head&gt; 태그 안쪽 &lt;title&gt; 태그 아래에 기재
   - &lt;style type="text/css"&gt; &lt;/style&gt;
 
-- 외부파일
+### 3. 외부파일
 
   - &lt;head&gt; 태그 안쪽 &lt;title&gt; 태그 아래에 기재
   - &lt;link rel="stylesheet" href="css/style.css"&gt;
