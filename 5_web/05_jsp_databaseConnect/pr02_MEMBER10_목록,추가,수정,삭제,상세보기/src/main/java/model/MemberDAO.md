@@ -205,8 +205,7 @@ public class MemberDAO {
 
 	/**
 	 * 메서드 4 : updateMember()
-	 * - 입력받은 값으로 값 
-	 * - 회원 이름 클릭시 회원 번호에 대한 모든 정보를 조회해준다
+	 * - 입력받은 값으로 값으로 데이터 수정
 	 */
 
 	public int updateMember(MemberDTO dto) {
