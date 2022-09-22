@@ -39,7 +39,7 @@ public class SelectServlet extends HttpServlet {
 		// 2단계 : MEMVER10 테이블의 회원 전체 목록 조회된것을 list객체에 저장
 		List<MemberDTO> memberList = dao.getMemberList();
 		
-		// 3단계 : DB에서 가져온 정보를 view page로 이동
+		// 3단계 : DB에서 가져온 정보를 key에 값을 묶는다.
 		request.setAttribute("member", memberList);
 		
 		// 4단계 : 페이지 이동
