@@ -19,6 +19,8 @@ public int insertMember(MemberDTO dto) {
 ```
 public int updateMember(MemberDTO dto) {
 ```	
+
+### 
 	
 ```
 package com.member.model;
