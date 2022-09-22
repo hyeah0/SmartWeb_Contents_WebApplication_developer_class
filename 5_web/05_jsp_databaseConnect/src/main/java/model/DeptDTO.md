@@ -9,6 +9,7 @@ package com.khie.model;
  * DB상의 DEPT테이블의 컬럼명과 동일한 변수명,자료형 생성
  */
 
+```
 public class DeptDTO {
 
 	private int deptno;
@@ -37,3 +38,4 @@ public class DeptDTO {
 
 }
 
+```
