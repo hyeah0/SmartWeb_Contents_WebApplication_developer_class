@@ -1,3 +1,27 @@
+ ### 메서드 1(전체) : getMemberList()
+ - 전체 테이블 조회
+```
+public List<MemberDTO> getMemberList(){
+```
+### 메서드 3(1개전체) : getContentMember()
+* - 회원 이름 클릭시 회원 번호에 대한 모든 정보를 조회해준다.
+List 여러명 정보 / MemberDTO 한사람 정보
+```
+public MemberDTO getContentMember(int memNum) {
+```	
+### 메서드 2(추가) : insertData()
+ - 테이블에 데이터 추가
+```
+public int insertMember(MemberDTO dto) {
+```
+### 메서드 4(수정) : updateMember()
+ - 회원 이름 클릭시 회원 번호에 대한 모든 정보를 조회해준다.
+```
+public int updateMember(MemberDTO dto) {
+```	
+
+### 
+	
 ```
 package com.member.model;
 
@@ -183,8 +207,7 @@ public class MemberDAO {
 
 	/**
 	 * 메서드 4 : updateMember()
-	 * - 회원 이름 클릭시 회원 번호에 대한 모든 정보를 조회해준다.
-	 * List 여러명 정보 / MemberDTO 한사람 정보
+	 * - 입력받은 값으로 값으로 데이터 수정
 	 */
 
 	public int updateMember(MemberDTO dto) {
