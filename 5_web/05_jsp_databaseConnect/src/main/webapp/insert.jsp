@@ -13,7 +13,8 @@
 		<hr width="50%" color="gray">
 		<br><br>
 		
-		<form method="post" action="insertOk">
+ 		<!-- <form method="post" action="insertOk"> -->
+		<form method="post" action="<%=request.getContextPath() %>/insertOk">
 			<table border="1" cellspacing="0">
 				<tr> 
 					<td>부서 No.</td>
