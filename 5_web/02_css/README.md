@@ -19,21 +19,24 @@
 ### 2. head영역
 
   - &lt;head&gt; 태그 안쪽 &lt;title&gt; 태그 아래에 기재
-  - &lt;style type="text/css"&gt; &lt;/style&gt;
-
+```
+ <style type="text/css"> </style>
+```
 ### 3. 외부파일
 
   - &lt;head&gt; 태그 안쪽 &lt;title&gt; 태그 아래에 기재
-  - &lt;link rel="stylesheet" href="css/style.css"&gt;
+```
+<link rel="stylesheet" href="css/style.css">
+```
 
-    - link
-      - 현재 문서와 외부 리소스(\*.css) 파일과의 관계를 명시하는 선언
-    - rel="stylesheet"
-      - &lt;link&gt; 태그로 연결하는 파일이 외부에 있는 스타일시트 파일이라는 뜻을 가지고 있음.
-    - href
-      - 이 속성은 링크된 리소스의 url 경로를 참조함.
-      - 외부에 스타일시트 파일을 선언하고 사용하는 이유.
-      - 모든 HTML 파일에 동일하게 스타일을 적용할 수 있다는 장점이 있다.
+  - link
+    - 현재 문서와 외부 리소스(\*.css) 파일과의 관계를 명시하는 선언
+  - rel="stylesheet"
+    - &lt;link&gt; 태그로 연결하는 파일이 외부에 있는 스타일시트 파일이라는 뜻을 가지고 있음.
+  - href
+    - 이 속성은 링크된 리소스의 url 경로를 참조함.
+    - 외부에 스타일시트 파일을 선언하고 사용하는 이유.
+    - 모든 HTML 파일에 동일하게 스타일을 적용할 수 있다는 장점이 있다.
 
 ```
 <style type="text/css">
