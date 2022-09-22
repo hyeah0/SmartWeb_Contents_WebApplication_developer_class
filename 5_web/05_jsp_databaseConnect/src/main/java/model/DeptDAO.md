@@ -75,7 +75,7 @@ public class DeptDAO {
 
 			// 4단계 : sql문을 데이터베이스에 전송 및 실행
 			rs = pstmt.executeQuery();
-			// System.out.println("5단계 : SQL문을 전송 및 실행");
+			// System.out.println("4단계 : SQL문을 전송 및 실행");
 
 
 			while(rs.next()) {
