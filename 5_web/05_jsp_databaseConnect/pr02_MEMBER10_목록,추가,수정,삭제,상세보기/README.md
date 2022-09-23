@@ -7,37 +7,37 @@
 ```
 - main.jsp : 메인 페이지
 	|- SelectServlet.java : 회원 목록 요청에 응답(데이터를 받아와 member_list.jsp에 넘김)
-        |- member_list.jsp : 회원 목록 확인 페이지
-            |                 기능 : 회원가입, 상세 정보 보기
-            |
-            |- member_join.jsp : 회원 가입 폼 페이지
-            |   |- insertServlet.java : 회원 가입 폼 페이지에서 입력 받은 값 DB에 추가
-            |         |- SelectServlet.java : 회원 가입 완료 후
-            |               |                 회원 목록 요청에 응답(데이터를 받아와 member_list.jsp에 넘김)
-            |               |- member_list.jsp : 회원 목록 확인 페이지
-            |
-            |- contentServlet.java : 회원 상세 정보 요청에 응답
-                |                    특정 회원번호를 받아와 해당 데이터를 member_const.jsp에 넘김
-                |- member_cont.jsp : 회원 상세 정보 확인 페이지
-                    |                기능 : 회원수정, 회원삭제, 회원목록으로 이동
-                    |- UpdateServlet.java : 회원 수정 요청에 응답
-                    |    |                   특정 회원번호를 받아와 수정이 필요한 데이터만 member_update.jsp로
-                    |    |- member_update.jsp : 회원 수정 폼 페이지
-                    |        |- UpdateOkServlet.java : 회원 수정 폼페이지에서 비밀번호 확인 후 데이터 수정
-                    |            |- contentServlet.java : 데이터수정 완료 후
-                    |                |                    회원 상세 정보 요청에 응답
-                    |                |                    특정 회원번호인 데이터만 member_const.jsp로
-                    |                |- member_cont.jsp : 회원 상세 정보 확인 페이지
-                    |                                    기능 : 회원수정, 회원삭제, 회원목록으로 이동
-                    |- DeleteServlet.java : 회원 삭제 요청에 응답
-                    |    |                   특정 회원번호를 받아와 삭제가 필요한 데이터만 삭제
-                    |    |- contentServlet.java : 데이터수정 완료 후
-                    |                |            회원 상세 정보 요청에 응답
-                    |                |            특정 회원번호인 데이터만 member_const.jsp로
-                    |                |- member_cont.jsp : 회원 상세 정보 확인 페이지
-                    |                                    기능 : 회원수정, 회원삭제, 회원목록으로 이동
-                    | - SelectServlet.java : 회원 목록 요청에 응답
-                                            특정 회원번호를 받아와 삭제가 필요한 데이터만 삭제
+		|- member_list.jsp : 회원 목록 확인 페이지
+		    |                 기능 : 회원가입, 상세 정보 보기
+		    |
+		    |- member_join.jsp : 회원 가입 폼 페이지
+		    |   |- insertServlet.java : 회원 가입 폼 페이지에서 입력 받은 값 DB에 추가
+		    |         |- SelectServlet.java : 회원 가입 완료 후
+		    |               |                 회원 목록 요청에 응답(데이터를 받아와 member_list.jsp에 넘김)
+		    |               |- member_list.jsp : 회원 목록 확인 페이지
+		    |
+		    |- contentServlet.java : 회원 상세 정보 요청에 응답
+			|                    특정 회원번호를 받아와 해당 데이터를 member_const.jsp에 넘김
+			|- member_cont.jsp : 회원 상세 정보 확인 페이지
+			    |                기능 : 회원수정, 회원삭제, 회원목록으로 이동
+			    |- UpdateServlet.java : 회원 수정 요청에 응답
+			    |    |                   특정 회원번호를 받아와 수정이 필요한 데이터만 member_update.jsp로
+			    |    |- member_update.jsp : 회원 수정 폼 페이지
+			    |        |- UpdateOkServlet.java : 회원 수정 폼페이지에서 비밀번호 확인 후 데이터 수정
+			    |            |- contentServlet.java : 데이터수정 완료 후
+			    |                |                    회원 상세 정보 요청에 응답
+			    |                |                    특정 회원번호인 데이터만 member_const.jsp로
+			    |                |- member_cont.jsp : 회원 상세 정보 확인 페이지
+			    |                                    기능 : 회원수정, 회원삭제, 회원목록으로 이동
+			    |- DeleteServlet.java : 회원 삭제 요청에 응답
+			    |    |                   특정 회원번호를 받아와 삭제가 필요한 데이터만 삭제
+			    |    |- contentServlet.java : 데이터수정 완료 후
+			    |                |            회원 상세 정보 요청에 응답
+			    |                |            특정 회원번호인 데이터만 member_const.jsp로
+			    |                |- member_cont.jsp : 회원 상세 정보 확인 페이지
+			    |                                    기능 : 회원수정, 회원삭제, 회원목록으로 이동
+			    | - SelectServlet.java : 회원 목록 요청에 응답
+						    특정 회원번호를 받아와 삭제가 필요한 데이터만 삭제
 ```
 
 ## 파일 실행 링크
