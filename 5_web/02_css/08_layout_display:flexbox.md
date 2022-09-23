@@ -29,7 +29,7 @@
     </tr>
     <tr>
         <td> flex-direction </td>
-        <td> flex-direction : row/column; </td>
+        <td> flex-direction : row/ column; </td>
         <td> 자식요소 정렬 방향 지정 : 가로(왼쪽에서 오른쪽) 정렬 또는 세로정렬(위에서 아래) </td>
     </tr>
       <tr>
@@ -46,8 +46,8 @@
     </tr>
     <tr>
         <td> justify-content </td>
-        <td> justify-content: center/flex-end/
-        <br> space-between/space-around; 
+        <td> justify-content: center/ flex-end/ 
+        <br> space-between/ space-around; 
         </td>
         <td> 메인축 기준으로 가운데 정렬/ 오른쪽정렬
         <br> 요소의 간격을 동일하게(첫번째, 마지막 태그는 가장 끝으로)
@@ -56,7 +56,9 @@
     </tr>
     <tr>
         <td> align-items </td>
-        <td>  </td>
+        <td> align-items: stretch/ center/ 
+        <br> flex-start/ flex-end/
+        <br> baseline </td>
         <td>  </td>
     </tr>
     <tr>
