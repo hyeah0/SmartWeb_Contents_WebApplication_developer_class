@@ -1,6 +1,23 @@
 JSP 기본 내장객체 모음
+
+<table border="1" cellspacing="0">
+<tr>
+    <th>주 요청</th>
+    <th>메서드</th>
+    <th>사용</th>
+    <th>설명</th>
+</tr>
+<tr>
+    <td>주 요청</td>
+    <td>getAttributeNames()</td>
+    <td>Enumeration attrs = request.getAttributeNames();</td>
+    <td>페이지로 넘어온 전체 속성값(request, attribute) 를 확인
+    <br>관련된 모든 속성의 이름을 읽어 들인다.
+    </td>
+</tr>
+
+</table>
 void removeAttribute(key) 키값이 key인 객체를 삭제한다.
-Enumeration getAttributeNames() 관련된 모든 속성의 이름을 읽어 들인다.
 
 request 객체에서 제공하는 파라미터와 관련된 메소드
 getParameterNames() 모든 파라미터의 이름을 구한다.
