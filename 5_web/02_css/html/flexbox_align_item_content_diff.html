@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+
+  /* 공통 */
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  border : 3px solid gray;
+}
+
+p{
+	margin: 30px 0px -1px 0px;
+    font-weight: 800;
+    font-size: 20px;
+    background-color: rgba(10, 200, 200, 0.3);
+    
+}
+
+.flex-item {
+  padding: 5px;
+  width: 60px;
+  height: 50px;
+  margin: 5px;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+  /* flex align */
+.align-item { 
+  align-items: center;
+}
+
+.align-content {
+  align-content: center;
+}
+
+ /* li colors */
+
+.align-item li{ 
+  background: tomato;
+}
+
+.align-content li {
+  background: orange;
+}
+
+ul{
+  width: 250px;
+  height: 300px;
+}
+
+ul li{
+  border: 1px solid gray;
+}
+
+ul li:nth-child(even){
+  height: 80px;
+  font-size: 20px;
+}
+
+
+</style>
+</head>
+<body>
+  <p>align-item</p>
+  <ul class="flex-container align-item">
+    <li class="flex-item">1</li>
+    <li class="flex-item">2</li>
+    <li class="flex-item">3</li>
+    <li class="flex-item">4</li>
+    <li class="flex-item">5</li>
+    <li class="flex-item">6</li>
+  </ul>
+
+  <p>align-content</p>
+  <ul class="flex-container align-content">
+    <li class="flex-item">1</li>
+    <li class="flex-item">2</li>
+    <li class="flex-item">3</li>
+    <li class="flex-item">4</li>
+    <li class="flex-item">6</li>
+  </ul>
+
+</body>
+</html>
