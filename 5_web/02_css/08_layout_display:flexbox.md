@@ -72,4 +72,5 @@
 
 - [코드](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/02_css/html/flexbox.html)
 - 이미지
+- 주 축 라인 : row (가로)
   - <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/02_css/img/css_flex.png" width="70%">
