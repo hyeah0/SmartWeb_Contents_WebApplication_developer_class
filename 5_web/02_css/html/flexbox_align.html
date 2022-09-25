@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+
+  /* 공통 */
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  border : 3px solid gray;
+}
+
+p{
+	margin: 30px 0px -1px 0px;
+    font-weight: 800;
+    font-size: 20px;
+    background-color: rgba(10, 200, 200, 0.3);
+    
+}
+
+.flex-item {
+  padding: 5px;
+  width: 60px;
+  height: 50px;
+  margin: 5px;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+}
+
+  /* flex align */
+.flex-start { 
+  align-items: flex-start; 
+}
+
+.flex-end { 
+  align-items: flex-end; 
+}  
+
+.stretch { 
+  align-items: stretch;
+}  
+
+.center { 
+  align-items: center; 
+}
+
+.baseline { 
+  align-items: baseline;
+}
+
+ /* li colors */
+
+.flex-start li{ 
+  background: tomato;
+}
+
+.flex-end li {
+  background: orange;
+}
+
+.stretch li {
+  background: rgb(107, 162, 107);
+}
+
+.center li {
+  background: yellow;
+}
+
+.baseline li {
+  background: rgb(113, 113, 157); 
+}
+
+ul li{
+  border: 1px solid gray;
+}
+
+ul li:nth-child(even){
+  height: 80px;
+  font-size: 20px;
+}
+
+</style>
+</head>
+<body>
+  <p>flex-start</p>
+  <ul class="flex-container flex-start">
+    <li class="flex-item">1</li>
+    <li class="flex-item">2</li>
+    <li class="flex-item">3</li>
+    <li class="flex-item">4</li>
+    <li class="flex-item">5</li>
+  </ul>
+
+  <p>flex-end</p>
+  <ul class="flex-container flex-end">
+    <li class="flex-item">1</li>
+    <li class="flex-item">2</li>
+    <li class="flex-item">3</li>
+    <li class="flex-item">4</li>
+    <li class="flex-item">5</li>
+  </ul>
+
+  <p>stretch</p>
+  <ul class="flex-container stretch">
+    <li class="flex-item">1</li>
+    <li class="flex-item">2</li>
+    <li class="flex-item">3</li>
+    <li class="flex-item">4</li>
+    <li class="flex-item">5</li>
+  </ul>
+
+  <p>center</p>
+  <ul class="flex-container center">
+    <li class="flex-item">1</li>
+    <li class="flex-item">2</li>
+    <li class="flex-item">3</li>
+    <li class="flex-item">4</li>
+    <li class="flex-item">5</li>
+  </ul>
+
+	<p>baseline</p>
+  <ul class="flex-container baseline">
+    <li class="flex-item">1</li>
+    <li class="flex-item">2</li>
+    <li class="flex-item">3</li>
+    <li class="flex-item">4</li>
+    <li class="flex-item">5</li>
+  </ul>
+
+</body>
+</html>
