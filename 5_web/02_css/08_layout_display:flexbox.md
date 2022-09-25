@@ -99,5 +99,11 @@
 - flex-direction : row
 - flex-wrap을 한 상태일때 한줄 이상일때 가정
 - 아이템들이 2줄로 있었을때 가정 시
+
   - align-items은 1줄에서의 센터, 다음줄에서의 center를 맞춘다.
   - align-content는 두줄로 나누어 져있다 해도 요소들을 묶어 center에 맞춘다.
+
+- [코드](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/02_css/html/flexbox_align_item_content_diff.html)
+- 이미지
+- 주 축 라인 : row (가로)
+  - <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/02_css/img/css_flex_align_diff.png" width="70%">
