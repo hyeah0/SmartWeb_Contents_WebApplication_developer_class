@@ -22,7 +22,7 @@ JSP 기본 내장객체 모음
         <br>attribute
     </td> -->
     <td>자료형 변수명 = getAttribute("key")</td>
-    <td>List<String> joblist = request.setAttribute("job");</td>
+    <td>List&lt;String&gt; joblist = request.setAttribute("job");</td>
     <td>key 값의 value들을 가져온다. 
         <br>value의 자료형에 따라 변수 자료형 변경
     </td>
