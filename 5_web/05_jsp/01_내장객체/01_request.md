@@ -8,9 +8,7 @@
     <th>설명</th>
 </tr>
 <tr>
-    <td rowspan="4">객체확인
-        <br>attribute
-    </td>
+    <td rowspan="4">객체확인<br>attribute</td>
     <td>getAttributeNames()</td>
     <td>Enumeration attrs = request.getAttributeNames();</td>
     <td>페이지로 넘어온 전체 속성값(key,value) 를 확인
@@ -18,9 +16,6 @@
     </td>
 </tr>
 <tr>
-    <!-- <td>객체확인
-        <br>attribute
-    </td> -->
     <td>자료형 변수명 = getAttribute("key")</td>
     <td>List&lt;String&gt; joblist = request.setAttribute("job");</td>
     <td>key 값의 value들을 가져온다. 
@@ -28,134 +23,140 @@
     </td>
 </tr>
 <tr>
-    <!-- <td>객체확인
-        <br>attribute
-    </td> -->
     <td>setAttribute("key",value)</td>
     <td>request.setAttribute("job", jobList);</td>
     <td>key에 value들을 저장한다.
     </td>
 </tr>
 <tr>
-    <!-- <td>객체확인
-        <br>attribute
-    </td> -->
     <td>removeAttribute(key)</td>
     <td>request.removeAttribute("job");</td>
     <td>key값인 객체를 삭제한다.
     </td>
 </tr>
 <tr>
-    <td rowspan="3">파라미터
-        <br>paramete
-    </td>
+    <td rowspan="3">파라미터<br>paramete</td>
     <td>getParameterNames()</td>
     <td>request.getParameterNames();</td>
     <td>모든 파라미터의 이름 </td>
 </tr>
 <tr>
-    <!-- <td rowspan="3">파라미터
-        <br>paramete
-    </td> -->
-    <td>getParameter(String name)</td>
+    <td><b>getParameter(String name)</b></td>
     <td>request.getParameter("pnum");</td>
-    <td>지정한 이름을 가진 파라미터 중 첫 번째 파라미터 값을 구한다. </td>
+    <td>지정한 이름을 가진 파라미터 중 첫 번째 파라미터 값을 구한다. 
+    <br>존재하지 않을 경우 null 반환
+    </td>
 </tr>
 <tr>
-    <!-- <td rowspan="3">파라미터
-        <br>paramete
-    </td> -->
-    <td>getParameterValues(String name)</td>
+    <td><b>getParameterValues(String name)</b></td>
     <td>request.getParameterValues(String name);</td>
     <td>지정한 이름을 가진 파라미터의 모든 값을 String[]으로 구한다. </td>
 </tr>
 <tr>
-    <td rowspan="15">요청 해더 및 
-        <br>기타 요청 관련 메소드
-    </td>
-    <td>getHeaderNames()</td>
-    <td>request.getHeaderNames();</td>
-    <td>요청과 관련된 모든 해더의 이름을 구한다.</td>
+    <td>요청<br>character</td> 
+    <td><b>getCharacterEncoding()</b></td>
+    <td>request.getCharacterEncoding("utf-8")</td>
+    <td>요청에서 사용된 인코딩을 구한다.</td>
 </tr>
 <tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
-    <td>getHeader(name)</td>
-    <td>request.getHeader(name);</td>
-    <td>이름이 name인 해더의 값을 String/String[]으로 구한다.</td>
+    <td>요청<br>경로</td>
+    <td><b>getContextPath()</b></td>
+    <td>request.getContextPath();</td>
+    <td>String : 경로를 얻는다.(현재 프로젝트명)</td>
 </tr>
 <tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
-    <td>getIntHeader(name)</td>
-    <td>request.getIntHeader(name);</td>
-    <td>이름이 name인 헤더의 값을 int형으로 구한다.</td>
-</tr>
-<tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
-    <td>getDateHeader(name)</td>
-    <td>request.getDateHeader(name);</td>
-    <td>이름이 name인 헤더의 값을 long형으로 구한다.</td>
-</tr>
-<tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
-    <td>getCookies()</td>
-    <td>request.getCookies();</td>
-    <td>요청과 관련된 모든 쿠키를 구한다.</td>
-</tr>
-<tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
+    <td>요청<br>method</td>
     <td>getMethod()</td>
     <td>request.getMethod();</td>
-    <td>요청 방식이 GET인지 POST인지 구한다.</td>
+    <td>String : 요청 방식이 GET인지 POST인지 구한다.</td>
 </tr>
 <tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
+    <td>요청<br>전송위치</td>
+    <td><b>getRequestDispatcher(path)</b></td>
+    <td>RequestDispatcher rd = request.getRequestDispatcher("test.jsp")</td>
+    <td>자료를 보낼 위치 지정
+    </td>
+</tr>
+<tr>
+    <td rowspan="2">요청<br>server</td>
+    <td>getServerName()</td>
+    <td>request.getServerName();</td>
+    <td>String : 연결시 사용한 서버 이름</td>
+</tr>
+<tr>
+    <td>getServerPort()</td>
+    <td>request.getServerPort();</td>
+    <td>int : 서버가 실행중인 서버이름</td>
+</tr>
+<tr>
+    <td rowspan="2">요청<br>url</td>
     <td>getRequestURI()</td>
     <td>request.getRequestURI()</td>
-    <td>HTTP 요청 URL에서 줄에 있는 쿼리 문자를 제외한 부분을 구한다.</td>
+    <td>String : HTTP 요청 URL에서 줄에 있는 쿼리 문자를 제외한 부분을 구한다.</td>
 </tr>
 <tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
     <td>getQueryString()</td>
     <td>request.getQueryString()</td>
     <td>요청한 URL다음에 오는 쿼리 문자열을 구한다.</td>
 </tr>
 <tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
-    <td>getSession(flag)</td>
-    <td>request.getSession(flag)</td>
-    <td>요청과 관련된 세션 객체를 구한다. 
-        <br>만약 세션이 존재하지 않고 flag가 true이면 
-        <br>새로운 세션 객체를 생성한다.
-    </td>
+    <td>요청<br>ip주소</td>
+    <td>getReomoteAddr()</td>
+    <td>request.getReomoteAddr()</td>
+    <td>클라이언트의 ip주소를 구한다.</td>
 </tr>
 <tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
-    <td>getRequestDispatcher(path)</td>
-    <td>RequestDispatcher rd = request.getRequestDispatcher("test.jsp")</td>
-    <td>지정한 로컬 URL에 대한 요청 Dispatcher를 구한다.
-    <br>자료를 보낼 위치 지정
-    </td>
+    <td>요청<br>protocol</td>
+    <td>getProtocol()</td>
+    <td>request.getProtocol()</td>
+    <td>해당 프로토콜을 얻는다.</td>
 </tr>
 <tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
+    <td rowspan="4">요청 해더<br>header</td>
+    <td>getHeaderNames()</td>
+    <td>request.getHeaderNames();</td>
+    <td>요청과 관련된 모든 해더의 이름을 구한다.</td>
+</tr>
+<tr>
+    <td>getHeader(name)</td>
+    <td>request.getHeader(name);</td>
+    <td>이름이 name인 해더의 값을 String/String[]으로 구한다.</td>
+</tr>
+<tr>
+    <td>getIntHeader(name)</td>
+    <td>request.getIntHeader(name);</td>
+    <td>이름이 name인 헤더의 값을 int형으로 구한다.</td>
+</tr>
+<tr>
+    <td>getDateHeader(name)</td>
+    <td>request.getDateHeader(name);</td>
+    <td>이름이 name인 헤더의 값을 long형으로 구한다.</td>
+</tr>
+
+<tr>
+    <td rowspan="3">요청<br>remote</td>
     <td>getRemoteHost()</td>
     <td>request.getRemoteHost()</td>
     <td>요청한 호스트의 완전한 이름을 구한다.</td>
 </tr>
 <tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
     <td>getRemoteAddr()</td>
     <td>request.getRemoteAddr()</td>
     <td>요청한 호스트의 네트워크 주소를 구한다.</td>
 </tr>
 <tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
     <td>getRemoteUser()</td>
     <td>request.getRemoteUser()</td>
     <td>요청한 사용자의 이름이 존재할 경우 구한다.</td>
 </tr>
 <tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
+    <td>요청<br>cookies</td>
+    <td>getCookies()</td>
+    <td>request.getCookies();</td>
+    <td>요청과 관련된 모든 쿠키를 구한다.</td>
+</tr>
+<tr>
+    <td rowspan="2">요청<br>session</td>
     <td>getSession()</td>
     <td>request.getSession()</td>
     <td>요청과 관련된 세션 객체를 구한다. 
@@ -163,17 +164,14 @@
     </td>
 </tr>
 <tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
-    <td>getCharacterEncoding()</td>
-    <td>request.getCharacterEncoding()</td>
-    <td>요청에서 사용된 인코딩을 구한다.</td>
+    <td>getSession(flag)</td>
+    <td>request.getSession(flag)</td>
+    <td>요청과 관련된 세션 객체를 구한다. 
+        <br>만약 세션이 존재하지 않고 flag가 true이면 
+        <br>새로운 세션 객체를 생성한다.
+    </td>
 </tr>
-<tr>
-    <!-- <td>요청 해더 및 <br>기타 요청 관련 메소드 </td> -->
-    <td>setCharacterEncoding(env)</td>
-    <td>request.setCharacterEncoding(env)</td>
-    <td>요청에서 사용된 인코딩을 env로 지정한다.</td>
-</tr>
+
 </table>
 
 <table>
