@@ -53,13 +53,12 @@
     <td>지정한 이름을 가진 파라미터의 모든 값을 String[]으로 구한다. </td>
 </tr>
 <tr>
-    <td>요청<br>character</td> 
+    <td rowspan="2">요청<br>character</td> 
     <td><b>getCharacterEncoding()</b></td>
     <td>request.getCharacterEncoding()</td>
     <td>요청에서 사용된 인코딩을 구한다.</td>
 </tr>
 <tr>
-    <td>요청<br>character</td> 
     <td><b>setCharacterEncoding()</b></td>
     <td>request.setCharacterEncoding("utf-8")</td>
     <td>가로안 인코딩을 요청한다 .</td>
