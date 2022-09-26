@@ -8,16 +8,45 @@ JSP 기본 내장객체 모음
     <th>설명</th>
 </tr>
 <tr>
-    <td>주 요청</td>
+    <td rowspan="4">객체확인
+        <br>attribute
+    </td>
     <td>getAttributeNames()</td>
     <td>Enumeration attrs = request.getAttributeNames();</td>
-    <td>페이지로 넘어온 전체 속성값(request, attribute) 를 확인
-    <br>관련된 모든 속성의 이름을 읽어 들인다.
+    <td>페이지로 넘어온 전체 속성값(key,value) 를 확인
+        <br>관련된 모든 속성의 이름을 읽어 들인다.
+    </td>
+</tr>
+<tr>
+    <!-- <td>객체확인
+        <br>attribute
+    </td> -->
+    <td>자료형 변수명 = getAttribute("key")</td>
+    <td>List<String> joblist = request.setAttribute("job");</td>
+    <td>key 값의 value들을 가져온다. 
+        <br>value의 자료형에 따라 변수 자료형 변경
+    </td>
+</tr>
+<tr>
+    <!-- <td>객체확인
+        <br>attribute
+    </td> -->
+    <td>setAttribute("key",value)</td>
+    <td>request.setAttribute("job", jobList);</td>
+    <td>key에 value들을 저장한다.
+    </td>
+</tr>
+<tr>
+    <!-- <td>객체확인
+        <br>attribute
+    </td> -->
+    <td>removeAttribute(key)</td>
+    <td>request.removeAttribute("job");</td>
+    <td>key값인 객체를 삭제한다.
     </td>
 </tr>
 
 </table>
-void removeAttribute(key) 키값이 key인 객체를 삭제한다.
 
 request 객체에서 제공하는 파라미터와 관련된 메소드
 getParameterNames() 모든 파라미터의 이름을 구한다.
