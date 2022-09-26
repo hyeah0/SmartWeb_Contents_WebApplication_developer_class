@@ -70,7 +70,7 @@
     <td>지정한 이름을 가진 파라미터의 모든 값을 String[]으로 구한다. </td>
 </tr>
 <tr>
-    <td rowspan="15">요청 해더 및 
+    <td rowspan="16">요청 해더 및 
         <br>기타 요청 관련 메소드
     </td>
     <td>getHeaderNames()</td>
