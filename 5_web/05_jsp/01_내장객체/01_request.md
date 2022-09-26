@@ -100,12 +100,6 @@
     <td>요청한 URL다음에 오는 쿼리 문자열을 구한다.</td>
 </tr>
 <tr>
-    <td>요청<br>ip주소</td>
-    <td>getReomoteAddr()</td>
-    <td>request.getReomoteAddr()</td>
-    <td>클라이언트의 ip주소를 구한다.</td>
-</tr>
-<tr>
     <td>요청<br>protocol</td>
     <td>getProtocol()</td>
     <td>request.getProtocol()</td>
@@ -142,7 +136,7 @@
 <tr>
     <td>getRemoteAddr()</td>
     <td>request.getRemoteAddr()</td>
-    <td>요청한 호스트의 네트워크 주소를 구한다.</td>
+    <td>요청한 호스트의 네트워크 주소(ip)를 구한다.</td>
 </tr>
 <tr>
     <td>getRemoteUser()</td>
