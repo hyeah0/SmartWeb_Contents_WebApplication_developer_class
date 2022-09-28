@@ -38,4 +38,5 @@ docker run --name mysql-{containerName}-container -e MYSQL_ROOT_PASSWORD={passwo
 
 1. `docker exec -it {도커컨테이너이름} bash`
 
-2. `my -u root -p`
+2. `mysql -u root -p`
+   - Enter password : 도커생성 및 실행시 작성했던 비밀번호 입력
