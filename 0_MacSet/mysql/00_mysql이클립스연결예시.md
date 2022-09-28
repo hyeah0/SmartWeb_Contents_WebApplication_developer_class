@@ -153,4 +153,4 @@ public class ConnectMysql {
 ### - 일반
 
 - oracle 작성 부분에서 driver, url, user, password 수정만 하면 된다.
-  [oracle]()
+  [oracle](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/oracle/00_%EC%98%A4%EB%9D%BC%ED%81%B4%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4%EC%97%B0%EA%B2%B0%EC%98%88%EC%8B%9C.md)
