@@ -1,6 +1,10 @@
 - 새로 적용된 부분(pr01대비) 
 1. 데이터 일부만 보여주고 클릭시 상세보기
-2. String 객체 repeat() 동일문자 반복 메서드
+2. input 창 숨기기
+```
+<input type="hidden" name="num" value="<%=dto_update.getNum() %>">	
+```
+3. String 객체 repeat() 동일문자 반복 메서드
 
 ## 파일 실행
 
