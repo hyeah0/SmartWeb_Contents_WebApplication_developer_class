@@ -5,6 +5,8 @@
 	<input type="hidden" name="num" value="<%=dto_update.getNum() %>">	
 	```
 3. String 객체 repeat() 동일문자 반복 메서드
+String tmp = "*";
+String hidePwd = tmp.repeat(1);
 
 ## 파일 실행
 
