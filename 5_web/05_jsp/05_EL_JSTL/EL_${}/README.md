@@ -24,18 +24,18 @@
     (application > session > request > page)
 ```
 
-    - 변수 사용시에는 변수를 내장객체(pageContext)를 사용해서 설정해줘야한다.
+- 변수 사용시에는 변수를 내장객체(pageContext)를 사용해서 설정해줘야한다.
 
-    ```
-    /* pageContext : 내장객체 */
-    pageContext.setAttribute("key",변수명);
+```
+/* pageContext : 내장객체 */
+pageContext.setAttribute("key",변수명);
 
-    <%
-    int su = 235;
-    pageContext.setAttribute("Su", su);
-    %>
+<%
+int su = 235;
+pageContext.setAttribute("Su", su);
+%>
 
-    ** --- 변수 su 사용시 --- **
-    스크립틀릿 >>> <%=su %>
-    EL표시   >>> ${Su }
-    ```
+** --- 변수 su 사용시 --- **
+스크립틀릿 >>> <%=su %>
+EL표시   >>> ${Su }
+```
