@@ -11,7 +11,7 @@
 
   - jst1.jar
   - standard.jar
-  - [다운 방법]()
+  - [다운 방법](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp/05_EL_JSTL/JSTL_%3Cc:tag%3E/01_%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%EB%8B%A4%EC%9A%B4.md)
 
 - 지시어(디렉티브) 중 <% taglib %> 선언으로 사용가능
   - [지시어(디렉티브) 참고](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp/02_01_jsp%EC%A7%80%EC%8B%9C%EC%96%B4%3C%25%40%25%3E.md)
