@@ -1,0 +1,43 @@
+## <fmt:formatNumber 속성 = "" > 태그의 속성들
+
+<table border="1" cellspaicng="0">
+<tr>
+    <th> value </th>
+    <td> <fmt:formatNumber value = "${2*1000}" > </td>
+    <td> 출력될 값 지정 </td>
+</tr>
+<tr>
+    <th> type </th>
+    <td> <fmt:formatNumber type = "percent/number/currency" ></td>
+    <td> 출력될 타입 지정
+        <br>percent : %
+        <br>number : 숫자
+        <br>currency : 통화형식
+    </td>
+</tr>
+<tr>
+    <th> currencyCode </th>
+    <td></td>
+    <td> 통화 코드를 지정한다. 한국 원화는 KRW 이다.</td>
+</tr>
+<tr>
+    <th> currencySymbol </th>
+    <td></td>
+    <td> 통화를 표시할 대 사용할 기호를 표시한다.</td>
+</tr>
+<tr>
+    <th> var </th>
+    <td></td>
+    <td> 태그의 결과를 저장할 변수의 이름 </td>
+</tr>
+<tr>
+    <th> scope </th>
+    <td></td>
+    <td> 변수의 접근 범위를 지정한다.</td>
+</tr>
+<tr>
+    <th> pattern </th>
+    <td></td>
+    <td> 숫자가 출력될 양식을 지정한다.</td>
+</tr>
+</table>
