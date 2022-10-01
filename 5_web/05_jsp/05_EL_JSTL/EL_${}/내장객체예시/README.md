@@ -13,12 +13,12 @@
 
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp/05_EL_JSTL/EL_%24%7B%7D/%EB%82%B4%EC%9E%A5%EA%B0%9D%EC%B2%B4%EC%98%88%EC%8B%9C/img/01_page.png"  width="70%">
 
-    - 단 하단 코드가 없을때,
+- 단 하단 코드가 없을때,
 
-    ```
-    RequestDispatcher rd = request.getRequestDispatcher("Ex06.jsp");
-    rd.forward(request, response);
-    ```
+  ```
+  RequestDispatcher rd = request.getRequestDispatcher("Ex06.jsp");
+  rd.forward(request, response);
+  ```
 
 ### - [forward로 Ex05에서 Ex06파일로 이동시](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp/05_EL_JSTL/EL_%24%7B%7D/%EB%82%B4%EC%9E%A5%EA%B0%9D%EC%B2%B4%EC%98%88%EC%8B%9C/Ex06.jsp)
 
@@ -28,16 +28,16 @@
 
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp/05_EL_JSTL/EL_%24%7B%7D/%EB%82%B4%EC%9E%A5%EA%B0%9D%EC%B2%B4%EC%98%88%EC%8B%9C/img/02_request.png"  width="70%">
 
-    - Ex05 코드에서 하단 코드를 추가, Ex06 script code 가 없을때
+- Ex05 코드에서 하단 코드를 추가, Ex06 script code 가 없을때
 
-    ```
-    RequestDispatcher rd = request.getRequestDispatcher("Ex06.jsp");
-    rd.forward(request, response);
+  ```
+  RequestDispatcher rd = request.getRequestDispatcher("Ex06.jsp");
+  rd.forward(request, response);
 
-    <script type="text/javascript">
-    	location.href="Ex07.jsp"
-    </script>
-    ```
+  <script type="text/javascript">
+  	location.href="Ex07.jsp"
+  </script>
+  ```
 
 ### - [forward로 Ex05에서 Ex06파일로 이동 >> Ex06에서 Ex07로 이동](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp/05_EL_JSTL/EL_%24%7B%7D/%EB%82%B4%EC%9E%A5%EA%B0%9D%EC%B2%B4%EC%98%88%EC%8B%9C/Ex07.jsp)
 
@@ -45,9 +45,9 @@
 
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp/05_EL_JSTL/EL_%24%7B%7D/%EB%82%B4%EC%9E%A5%EA%B0%9D%EC%B2%B4%EC%98%88%EC%8B%9C/img/03_location.png"  width="70%">
 
-    - Ex05 코드에서 하단 코드를 추가했을때
+ - Ex05 코드에서 하단 코드를 추가했을때
 
-    ```
-    RequestDispatcher rd = request.getRequestDispatcher("Ex06.jsp");
-    rd.forward(request, response);
-    ```
+   ``` 
+   RequestDispatcher rd = request.getRequestDispatcher("Ex06.jsp");
+   rd.forward(request, response);
+   ```
