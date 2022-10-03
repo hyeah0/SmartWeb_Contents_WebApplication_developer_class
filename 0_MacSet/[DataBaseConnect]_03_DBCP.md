@@ -81,7 +81,7 @@
 
 <div>
 <span>Context<span> 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/connection_pool/02_context.png" width="450%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/connection_pool/02_context.png" width="45%">
 <span>InitialContext<span> 
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/connection_pool/03_initalcontext.png" width="45%">
 </div>
