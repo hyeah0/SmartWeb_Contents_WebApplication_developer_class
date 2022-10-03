@@ -54,7 +54,11 @@
 
 ## 예시 코드
 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp/05_EL_JSTL/JSTL_%3Cc:tag%3E/img/tag/02_format_number.png" width="70%">
+<div>
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp/05_EL_JSTL/JSTL_%3Cc:tag%3E/img/tag/02_format_date1.png" width="45%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp/05_EL_JSTL/JSTL_%3Cc:tag%3E/img/tag/02_format_date2.png" width="45%">
+
+</div>
 
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -88,26 +92,26 @@
 
 	  <h3>formatDate 속성 type='date'</h3>
 	  <p> <c:set var="now" value="<%=new Date() %>"/> </p>
-	  <p> <fmt:formatDate value="${now }" type="date" dateStyle="full" /> </p>
-	  <p> <fmt:formatDate value="${now }" type="date" dateStyle="long" /> </p>
-	  <p> <fmt:formatDate value="${now }" type="date" dateStyle="medium" /> </p>
-	  <p> <fmt:formatDate value="${now }" type="date" dateStyle="short" /> </p>
+	  <p> full   : <fmt:formatDate value="${now }" type="date" dateStyle="full" /> </p>
+	  <p> long   : <fmt:formatDate value="${now }" type="date" dateStyle="long" /> </p>
+	  <p> medium : <fmt:formatDate value="${now }" type="date" dateStyle="medium" /> </p>
+	  <p> short  : <fmt:formatDate value="${now }" type="date" dateStyle="short" /> </p>
 
 	  <hr>
 
 	  <h3>formatDate 속성 type='time'</h3>
-	  <p> <fmt:formatDate value="${now }" type="time" timeStyle="full" /> </p>
-	  <p> <fmt:formatDate value="${now }" type="time" timeStyle="long" /> </p>
-	  <p> <fmt:formatDate value="${now }" type="time" timeStyle="medium" /> </p>
-	  <p> <fmt:formatDate value="${now }" type="time" timeStyle="short" /> </p>
+	  <p> full   : <fmt:formatDate value="${now }" type="time" timeStyle="full" /> </p>
+	  <p> long   : <fmt:formatDate value="${now }" type="time" timeStyle="long" /> </p>
+	  <p> medium : <fmt:formatDate value="${now }" type="time" timeStyle="medium" /> </p>
+	  <p> short  : <fmt:formatDate value="${now }" type="time" timeStyle="short" /> </p>
 
 	  <hr>
 
 	  <h3>formatDate 속성 type='both'</h3>
-	  <p> <fmt:formatDate value="${now }" type="both" dateStyle="full" timeStyle="full" /> </p>
-	  <p> <fmt:formatDate value="${now }" type="both" dateStyle="long" timeStyle="long" /> </p>
-	  <p> <fmt:formatDate value="${now }" type="both" dateStyle="medium" timeStyle="medium" /> </p>
-	  <p> <fmt:formatDate value="${now }" type="both" dateStyle="short" timeStyle="short" /> </p>
+	  <p> full   : <fmt:formatDate value="${now }" type="both" dateStyle="full" timeStyle="full" /> </p>
+	  <p> long   : <fmt:formatDate value="${now }" type="both" dateStyle="long" timeStyle="long" /> </p>
+	  <p> medium : <fmt:formatDate value="${now }" type="both" dateStyle="medium" timeStyle="medium" /> </p>
+	  <p> short  : <fmt:formatDate value="${now }" type="both" dateStyle="short" timeStyle="short" /> </p>
 
 	  <hr>
 
