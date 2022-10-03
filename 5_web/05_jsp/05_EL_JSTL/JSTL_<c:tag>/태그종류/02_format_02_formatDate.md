@@ -2,8 +2,8 @@
 
 <table border="1" cellspaicng="0">
 <tr>
-    <td colspan="3">
-        &lt;c:set var="now" value="<%=new Date() %>"/&gt;
+    <td colspan="3" align="center">
+       <b> &lt;c:set var="now" value="<%=new Date() %>"/&gt;</b>
     </td>
 </tr>
 <tr>
@@ -48,9 +48,11 @@
     </td>
 </tr>
 </table>
-- ** timeZone 설정시 두가지 방법으로 설정 가능하다. 하단 예시 참고
-1. formatDate 태그 에서 속성 timeZone 을 사용
-2. timeZone 태그에서 속성 value="위치" 사용
+
+- timeZone 설정시 두가지 방법으로 설정 가능하다.
+  - 하단 예시 참고
+  1. formatDate 태그 에서 속성 timeZone 을 사용
+  2. timeZone 태그에서 속성 value="위치" 사용
 
 ## 예시 코드
 
