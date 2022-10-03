@@ -79,12 +79,24 @@
 
 ## 1~3 예시 코드
 
-<div>
-<span>Context<span> 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/connection_pool/02_context.png" width="45%">
-<span>InitialContext<span> 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/connection_pool/03_initalcontext.png" width="45%">
-</div>
+<table>
+	<tr>
+		<th>
+			Context	
+		</th>
+		<th>
+			InitialContext	
+		</th>
+	</tr>
+	<tr>
+		<td width="40%" height="100px">
+			<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/connection_pool/02_context.png" width="100%">
+		</td>
+		<td width="60%">
+			<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/connection_pool/03_initalcontext.png" width="100%">
+		</td>
+	</tr>
+</table>
 
 ```
 public void openCon() {
