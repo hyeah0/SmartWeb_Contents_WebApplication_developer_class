@@ -7,7 +7,7 @@
 
 - DBCP 방식
 
-### 1. JDBC(Java DataBase Connecitivity) 방식
+## 1. JDBC(Java DataBase Connecitivity) 방식
 
 - JDBC 방식
 
@@ -23,7 +23,7 @@
   - 커넥션을 생성하고 사용후 닫는데 시간이 소요되기 때문에 <br>
     동시접속자가 많은 웹 사이트에서는 전체적인 성능이 낮아진다.
 
-### 2. DBCP(DataBase Connection Pool) 방식
+## 2. DBCP(DataBase Connection Pool) 방식
 
 - 데이터베이스와 Connection을 맺고 있는 객체를 관리하기 위한 방법
   - JDBC의 단점을 극복하기 위해 사용된다.
@@ -34,7 +34,7 @@
   - 한번에 생성될 수 있는 커넥션 수를 제어하기 때문에 동시 접속자 수가 몰려도 웹 어플리케이션은 쉽게 다운 되지 않는다.
   - 따라서 커넥션 풀을 사용하면 전체적인 웹 애플리케이션의 성능과 처리량이 향상되므로 많은 웹 애플리케이션이 커넥션 풀을 기본으로 사용하고 있다.
 
-# JNDI(Java Naming DIrectory Interface)
+## JNDI(Java Naming DIrectory Interface)
 
 - 커넥션 풀에 접근하려면 JNDI 서비스를 이용해야한다.
 - JNDI는 서버에서 관리하고 있는 리소스에 대한 정보를 알고 있는 특정한 리소스를 찾아서 사용할 수 있도록 객체를 반환해 준다.
@@ -46,13 +46,7 @@
 - 찾을 때는 lookup() 메서드를 이용하여 자원을 찾고, 찾은 객체의 타입은 Object 타입이다.
 - 따라서 원래 리소스 타입으로 형변환이 필요하다.
 
-# 커넥션 풀(Connection Pool) 연결 방법
-
-1. Context 객체 생성한다.
-2. lookup() 메서드 이용하여 매칭되는 커넥션을 찾는다.
-3. DataSource.getConnection() 메서드를 이용하여 커넥션 확보한다.
-
-# 커넥션 풀을 사용하기 위해 필요한 라이브러리
+## 커넥션 풀을 사용하기 위해 필요한 라이브러리
 
 - commons-connection-3.2.1.jar
 - commons-dbcp-1.4.jar
