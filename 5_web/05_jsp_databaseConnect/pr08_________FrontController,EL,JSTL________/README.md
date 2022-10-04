@@ -48,7 +48,7 @@
 - FrontController는 servlet 파일에서
   1. 기본생성자
   2. @WebServlet(); 은 뺀다.
-     - uri에 따라 다른 메서드 실행
+     - uri에 따라 다른 
 
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/08/02.png" width="70%">
 
