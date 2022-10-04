@@ -2,7 +2,8 @@
 
 <b>- select option 태그 추가</b>
 
-- [코드링크(jsp select) 71줄](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr03_EMP_rownum%EC%88%98%EC%A0%95/src/main/webapp/view/emp_modify.jsp)
+- [추가(emp_insert.jsp) 64줄](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr03_EMP_SelectOption%2C%EC%82%AD%EC%A0%9C%EB%8D%94%EB%B8%94%EC%B2%B4%ED%81%AC%2Ccss/src/main/webapp/view/emp_insert.jsp)
+- [수정(emp_modify.jsp) 74줄](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr03_EMP_SelectOption%2C%EC%82%AD%EC%A0%9C%EB%8D%94%EB%B8%94%EC%B2%B4%ED%81%AC%2Ccss/src/main/webapp/view/emp_modify.jsp)
 
 <div>
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/03/insert.png" width="45%">
@@ -13,13 +14,13 @@
 
 <b>- 데이터 삭제시 더블체크 </b><br>
 
-- [코드링크 75줄](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr03_EMP_rownum%EC%88%98%EC%A0%95/src/main/webapp/view/emp_list_detail.jsp)
+- [코드링크 emp_list_detail.jsp 75줄](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr03_EMP_SelectOption%2C%EC%82%AD%EC%A0%9C%EB%8D%94%EB%B8%94%EC%B2%B4%ED%81%AC%2Ccss/src/main/webapp/view/emp_list_detail.jsp)
 
   <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/03/delete.png" width="50%">
 
 <br><br>
 
-<b>- css 추가 >>> [css코드](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr03_EMP_rownum%EC%88%98%EC%A0%95/src/main/webapp/css/frame.css) </b>
+<b>- css 추가 >>> [css코드](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr03_EMP_SelectOption%2C%EC%82%AD%EC%A0%9C%EB%8D%94%EB%B8%94%EC%B2%B4%ED%81%AC%2Ccss/src/main/webapp/css/frame.css) </b>
 
 - table border 설정
 
