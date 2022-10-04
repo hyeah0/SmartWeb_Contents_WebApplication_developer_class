@@ -19,7 +19,7 @@
 
 ## - 클라이언트의 요청을 받기 전에 web.xml 파일에 서블릿 매핑
 
-<img src="" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/08/01.png" width="70%">
 
 ```
   <!-- 서블릿 매핑(N:1) -->
@@ -43,4 +43,30 @@
   				-----
   				url이 **.do로 종료되면 FrontController 서블릿으로 이동
   -->
+```
+
+- FrontController는 servlet 파일에서
+  1. 기본생성자
+  2. @WebServlet(); 은 뺀다.
+     - uri에 따라 다른 메서드 실행으로 빠진다.
+
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/08/02.png" width="70%">
+
+```
+package com.member.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+public class FrontController는 extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+}
 ```
