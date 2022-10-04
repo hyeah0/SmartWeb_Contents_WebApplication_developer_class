@@ -30,8 +30,8 @@
 
     <!-- 서블릿 클래스
    	<servlet-class>com.member.controller.FrontController</servlet-class>
-                    --------------------
-   					 - com.member.controller. >> 패키지 이름-->
+                      --------------------
+   		   - com.member.controller. >> 패키지 이름-->
 
   <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
@@ -40,8 +40,8 @@
 
   <--
   <url-pattern>*.do</url-pattern>
-  				-----
-  				url이 **.do로 종료되면 FrontController 서블릿으로 이동
+  	      -----
+  	      url이 **.do로 종료되면 FrontController 서블릿으로 이동
   -->
 ```
 
