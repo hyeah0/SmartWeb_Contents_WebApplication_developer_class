@@ -16,3 +16,9 @@
 ## MVC 패턴(모델2)
 
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/MVC2.jpeg" width="70%">
+
+- Model(Java) : 데이터베이스 접근을 위한 Logic
+- View(JSP) : 사용자에게 보여질 부분
+- Controller : Model과 View를 연결
+  - FrontController(servlet) : client 의 요청을 받아 뷰와 모델로 연결
+  - Controller(action) : 비지니스 로직을 수행하는 dao 메소드 호출 및 view 포워딩
