@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+body{
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+div{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+hr{
+	width: 80vw;
+	max-width : 500px;
+	height: 3px;
+	border: 0px;
+	background: #ba2e27;
+}
+
+table{
+	width: 80vw;
+	max-width : 500px;
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+
+th{
+	background-color:  #ba2e27;
+	color: white;
+	font-weight: bold;
+}
+
+th, td{
+	padding: 10px;
+	border: 1px solid gray;
+}
+
+.dedail_th_top{
+	width: 40%;
+}
+
+button{
+	background-color: #e0e0e0;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	
+}
+
+button:hover{
+	background-color: pink;
+}
