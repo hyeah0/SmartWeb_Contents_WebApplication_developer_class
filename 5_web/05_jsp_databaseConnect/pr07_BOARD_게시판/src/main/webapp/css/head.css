@@ -1,0 +1,18 @@
+#search{
+    width: 100vw;
+    padding: 10px;
+    background-color: rgb(0, 0, 255);
+    text-align: center;
+   
+}
+
+#search input{
+    width: 250px;  
+}
+
+header ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
