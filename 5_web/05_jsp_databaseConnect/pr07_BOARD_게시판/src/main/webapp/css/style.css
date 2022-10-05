@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@import url(head.css); 
+@import url(content.css);
+@import url(content_detail.css);
+
+/* 공통 */
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li{
+    list-style: none;
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+header a:hover,
+#content_left a:hover{
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgba(163, 163, 255, 0.709);
+}
+
+/* table 공통 */
+table{
+    border: 1px solid rgb(209, 209, 209);
+    border-collapse: collapse;
+}
+
+th, td{
+    border: 1px solid  rgb(209, 209, 209);
+}
+
+td{
+    padding: 3px;
+}
+
+table tr td a:hover{
+    color: blue;
+    font-weight: bold;
+}
+
+/* 수정페이지 */
+textarea{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:  rgba(209, 209, 209, 0.179);   
+}
+
+.content_table_state td{
+    background-color: rgb(0, 0, 255);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+}
