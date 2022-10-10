@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://kit.fontawesome.com/4338ad17fa.js" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/style.css">
@@ -13,8 +14,23 @@
 <body>
 	<div>
 		<hr>
-			<h3>board 테이블 메인 페이지</h3>
+			<h3>게시판</h3>
 		<hr>
+		<!------- 검색 기능 처리 -------------------------------------------------->
+		<form class="search_form" method="post" action="<%=request.getContextPath() %>/board_search.do">
+			<select class="search_field" name="search_field">
+				<option value="search_title">제목</option>
+				<option value="search_cont">내용</option>
+				<option value="search_title_cont">제목+내용</option>
+				<option value="search_writer">작성자</option>
+			</select>
+			<input class="search_keyword" name="search_keyword" autofocus>
+			<button type="submit" class="search_btn">
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</button>
+		</form>
+		
+		<!------- 게시글 리스트 --------------------------------------------------->
 		<table>
 			<tr>
 				<th>글번호</th>
@@ -29,14 +45,14 @@
 					<tr>
 						<td> ${dto.getBoard_no() } </td>
 						<td> 
-							<a href="<%=request.getContextPath() %>/board_content.do?no=${dto.getBoard_no() }&page=${page}"> ${dto.getBoard_title() } </a>
+							<a href="<%=request.getContextPath() %>/board_content.do?no=${dto.getBoard_no() }&page=${page}&type=1"> ${dto.getBoard_title() } </a>
 						</td>
 						<td> ${dto.getBoard_hit() } </td>
 						<td> ${dto.getBoard_date().substring(0,10) } </td>
 					</tr>
 				</c:forEach>
 			</c:if>
-			
+
 			<c:if test="${empty list }">
 				<tr>
 					<td colspan="4"><b>게시물이 없습니다.</b></td>
@@ -51,7 +67,7 @@
 		</table>
 		<br>
 		
-		<!-- 페이지 처리 부트스트랩 -->
+		<!------- 페이지 처리 부트스트랩 -------------------------------------------->
 		<nav aria-label="Page navigation example">
 		  <ul class="pagination">
 		  	<c:if test="${page > block }">
@@ -109,5 +125,7 @@
 		</div> --%>
 		
 	</div>
+	
+	
 </body>
 </html>
