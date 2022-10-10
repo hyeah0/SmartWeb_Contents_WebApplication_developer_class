@@ -22,7 +22,7 @@
 <tr>
     <th> com.reply.controller_FrontController.java </th>
     <td> 실행당시에 클래스 생성 
-        <br> <a href="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/5_web/05_jsp_databaseConnect/img/11_frontcontroller2">참고</a>
+        <br> <a href="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr11_________FrontController2________/FrontController.md">참고</a>
     </td>
 <tr>
     <th> com.reply.controller_mapping.properies </th>
@@ -75,17 +75,17 @@ public class ActionForward {
 
 1. 생성
 <div>
-    <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/11_frontcontroller2/createFile01.png" width ="70%">
-    <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/11_frontcontroller2/createFile02.png" width ="70%">
-    <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/11_frontcontroller2/createFile03.png" width ="70%">
+    <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/11_frontcontroller2/createFile01.png" width ="30%">
+    <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/11_frontcontroller2/createFile02.png" width ="30%">
+    <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/11_frontcontroller2/createFile03.png" width ="30%">
 </div>
 
 - controller 패키지에 파일 생성
 
 2. 한글 인코딩 필요
 <div>
-     <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/11_frontcontroller2/changeEnc02.png" width ="70%">
-     <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/11_frontcontroller2/changeEnc03.png" width ="70%">
+     <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/11_frontcontroller2/changeEnc02.png" width ="40%">
+     <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/img/11_frontcontroller2/changeEnc03.png" width ="40%">
 </div>
 
 - mapping.properies 파일 오른쪽 클릭
