@@ -14,10 +14,6 @@
 
 ### - html
 
-<div>
-    <img src="" width="50%" height="50%">
-    <img src="" width="50%" height="50%">
-<div>
 
 ```
 <body>
@@ -34,10 +30,7 @@
 
 ### - text
 
-<div>
-    <img src="" width="50%" height="50%">
-    <img src="" width="50%" height="50%">
-<div>
+
 
 ```
 <body>
@@ -56,10 +49,7 @@
 
 ### - val
 
-<div>
-    <img src="" width="50%" height="50%">
-    <img src="" width="50%" height="50%">
-<div>
+
 
 ```
 <body>
