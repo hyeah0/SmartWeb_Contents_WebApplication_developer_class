@@ -15,5 +15,5 @@
 - as-is : studentType varchar2(3) CONSTRAINT type_ck check(type in('학부생','대학원생'))
 - to-be : studentType varchar2(3) CONSTRAINT studentType_ck check(studentType in('학부생','대학원생'))
 
-# ORA-00922 케이스
+## ORA-00922 케이스
 - 발생사유 : 테이블 생성시 () 가 아닌 {} 사용
