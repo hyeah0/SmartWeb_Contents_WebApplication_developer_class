@@ -66,4 +66,3 @@
 
 - [코드 참고 : BoardSearchAction](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr10_BOARD_%EA%B2%8C%EC%8B%9C%ED%8C%90_%ED%8E%98%EC%9D%B4%EC%A7%95%2C%EA%B2%80%EC%83%89/src/main/java/com/board/action/BoardSearchAction.md)
 
-### 3. Action 인터페이스 반환형을 ActionForward 클래스로 한경우
