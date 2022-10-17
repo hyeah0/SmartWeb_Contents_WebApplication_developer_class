@@ -5,11 +5,6 @@
 - Ajax는 빠르게 동작하는 동적인 웹페이지를 만들기 위한 개발 기법 중 하나이다.
 - Ajax는 웹 페이지를 전체 로딩하지 않고 웹페이지의 일부분만 갱신 할 수 있다.<br>
   즉, Ajax를 이용하면 백그라운 영역에서 서버와 통신하여 그 결과를 웹 페이지의<br> 일부분에만 표시할 수 있다.
-- 서버와 다양한 형태의 데이터를 주고 받을 수 있다.
-  - JSON
-  - XML
-  - HTML
-  - 텍스트 파일 등
 
 ## 비동기 통신
 
@@ -46,3 +41,24 @@ $.ajax({
     , complete 	: 작업 완료 후 처리할 내용		-- 거의 사용 안함
 }
 ```
+
+## 서버와 다양한 형태의 데이터를 주고 받을 수 있다.
+
+- JSON
+- XML
+- HTML
+- jsp 등
+
+### - 예시 이미지
+
+- JSON
+  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_json.png" width="70%">
+
+- XML
+  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_xml.png" width="70%">
+
+- HTML
+  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_html.png" width="70%">
+
+- jsp 등
+  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_jsp1.png" width="70%">
