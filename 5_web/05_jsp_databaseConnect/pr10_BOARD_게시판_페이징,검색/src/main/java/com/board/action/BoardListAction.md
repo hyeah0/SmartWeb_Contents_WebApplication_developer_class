@@ -26,7 +26,7 @@ public class BoardListAction implements Action {
 		    3. db상의 게시물의 전체수
 		    4. 전체페이지 수 - 전체게시물의 수 / 한페이지당 보여질 게시물의 수
 		 */
-		
+
 		// 페이지 변수들
 		// -- 설정값 -----------------------------------
 			int rowsize = 5;    	// 1. 게시물 수
@@ -41,28 +41,28 @@ public class BoardListAction implements Action {
 			int endBlock  = 0;  	// 9. 페이지 끝 블락 번호 	( (((page-1) / block) * block) + block; )
 		//
 
-		// 현재 페이지 
+		// 현재 페이지
 		if(request.getParameter("page")!=null) {
 			page = Integer.valueOf(request.getParameter("page").trim());
 		}else {
 			page = 1;
 		}
-		
+
 		// DB 전체 데이터 수 : db상의 게시물의 전체수 db에서 가져오는 메서드 실행
 		BoardDAO dao = BoardDAO.getInstance();
 		totalRecord = dao.getBoardCount();
-			
+
 		// 전체 페이지 수 : totalRecord / rowsize __ 나머지값 있을경우 +1
 		allPage = (int) Math.ceil(totalRecord/(double)rowsize);
-		
+
 		// 포스트 시작 번호, 끝 번호
-		startPostNo = (page * rowsize) - (rowsize - 1);			
-		endPostNo = (page * rowsize);	
-		
+		startPostNo = (page * rowsize) - (rowsize - 1);
+		endPostNo = (page * rowsize);
+
 		// 페이지 시작 블럭, 끝 블럭
-		startBlock = (((page-1) / block) * block) + 1;		
-		endBlock = (((page-1) / block) * block) + block;	
-		
+		startBlock = (((page-1) / block) * block) + 1;
+		endBlock = (((page-1) / block) * block) + block;
+
 		// 전체페이지 보다 끝 블럭이 큰경우
 		if(endBlock > allPage) {
 			endBlock = allPage;
@@ -77,11 +77,12 @@ public class BoardListAction implements Action {
 		request.setAttribute("block", block);
 		request.setAttribute("totalRecord", totalRecord);
 		request.setAttribute("allPage", allPage);
-		request.setAttribute("startNo", startNo);
-		request.setAttribute("endNo", endNo);
+		request.setAttribute("startPostNo", startPostNo);
+		request.setAttribute("endPostNo", endPostNo);
 		request.setAttribute("startBlock", startBlock);
 		request.setAttribute("endBlock", endBlock);
 		request.setAttribute("List", pageList);
+
 
 	}
 
