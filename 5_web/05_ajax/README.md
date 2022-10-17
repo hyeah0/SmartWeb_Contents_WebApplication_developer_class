@@ -52,13 +52,21 @@ $.ajax({
 ### - 예시 이미지
 
 - JSON
-  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_json.png" width="70%">
+<div>
+  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_json.png" width="100%">
+ </div>
 
 - XML
-  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_xml.png" width="70%">
+<div>
+  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_xml.png" width="100%">
+ </div>
 
 - HTML
-  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_html.png" width="70%">
+<div>
+  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_html.png" width="100%">
+</div>
 
 - jsp 등
-  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_jsp1.png" width="70%">
+<div>
+  <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_ajax/img/ajax_jsp1.png" width="100%">
+</div>
