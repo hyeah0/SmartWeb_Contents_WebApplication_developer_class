@@ -26,6 +26,11 @@
 
 - search
 
+  - [view page_board_list에서 검색](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr10_BOARD_%EA%B2%8C%EC%8B%9C%ED%8C%90_%ED%8E%98%EC%9D%B4%EC%A7%95%2C%EA%B2%80%EC%83%89/src/main/webapp/view/board_list.jsp)
+  - [Action](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr10_BOARD_%EA%B2%8C%EC%8B%9C%ED%8C%90_%ED%8E%98%EC%9D%B4%EC%A7%95%2C%EA%B2%80%EC%83%89/src/main/java/com/board/action/BoardSearchAction.md)
+  - [DAO](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr10_BOARD_%EA%B2%8C%EC%8B%9C%ED%8C%90_%ED%8E%98%EC%9D%B4%EC%A7%95%2C%EA%B2%80%EC%83%89/src/main/java/com/board/model/BoardDAO.md)
+  - [view page_board_search.jsp](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr10_BOARD_%EA%B2%8C%EC%8B%9C%ED%8C%90_%ED%8E%98%EC%9D%B4%EC%A7%95%2C%EA%B2%80%EC%83%89/src/main/webapp/view/board_search.jsp)
+
 - paging
   - [pageAction](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr10_BOARD_%EA%B2%8C%EC%8B%9C%ED%8C%90_%ED%8E%98%EC%9D%B4%EC%A7%95%2C%EA%B2%80%EC%83%89/src/main/java/com/board/action/BoardListAction.md)
   - [view page](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/05_jsp_databaseConnect/pr10_BOARD_%EA%B2%8C%EC%8B%9C%ED%8C%90_%ED%8E%98%EC%9D%B4%EC%A7%95%2C%EA%B2%80%EC%83%89/src/main/webapp/view/board_list.jsp)
