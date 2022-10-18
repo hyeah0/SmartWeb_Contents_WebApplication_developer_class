@@ -414,55 +414,26 @@ public class BoardDAO {
 
 		int count = 0;
 
-		openConn();
-
 		System.out.println("------------- DAO searchListCount메서드 -------------");
 
-		if(field.equals("search_title")) {
+		try {
+			openConn();
 
-			try {
+			if(field.equals("search_title")) {
 
 				sql = "select count(*) from board"
 						+ "  where board_title like ?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, "%" + keyword + "%");
-				rs = pstmt.executeQuery();
 
-				if(rs.next()) {
-					count = rs.getInt(1);
-				}
-
-			}catch(SQLException e) {
-				e.printStackTrace();
-
-			}finally {
-				closeConn(rs, pstmt, con);
-
-			}
-
-		}else if(field.equals("search_cont")) {
-			try {
+			}else if(field.equals("search_cont")) {
 
 				sql = "select count(*) from board"
 						+ "  where board_cont like ?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, "%" + keyword + "%");
-				rs = pstmt.executeQuery();
 
-				if(rs.next()) {
-					count = rs.getInt(1);
-				}
-
-			}catch(SQLException e) {
-				e.printStackTrace();
-
-			}finally {
-				closeConn(rs, pstmt, con);
-
-			}
-
-		}else if(field.equals("search_title_cont")) {
-			try {
+			}else if(field.equals("search_title_cont")) {
 
 				sql = "select count(*) from board"
 						+ "  where board_title like ?"
@@ -470,42 +441,22 @@ public class BoardDAO {
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, "%" + keyword + "%");
 				pstmt.setString(2, "%" + keyword + "%");
-				rs = pstmt.executeQuery();
 
-				if(rs.next()) {
-					count = rs.getInt(1);
-				}
-
-			}catch(SQLException e) {
-				e.printStackTrace();
-
-			}finally {
-				closeConn(rs, pstmt, con);
-
-			}
-
-		}else if(field.equals("search_writer")) {
-			try {
+			}else if(field.equals("search_writer")) {
 
 				sql = "select count(*) from board"
 						+ "  where board_writer like ?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, "%" + keyword + "%");
-				rs = pstmt.executeQuery();
-
-				if(rs.next()) {
-					count = rs.getInt(1);
-				}
-
-			}catch(SQLException e) {
-				e.printStackTrace();
-
-			}finally {
-				closeConn(rs, pstmt, con);
-
 			}
 
-		}
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+		}catch(SQLException e) { e.printStackTrace();
+		}finally { closeConn(rs, pstmt, con); }
+
 		return count;
 	}
 
@@ -527,21 +478,66 @@ public class BoardDAO {
 
 		System.out.println("------------- DAO searchBoardList메서드 -------------");
 
-		if(field.equals("search_title")) {
-
 			try {
 
-				sql = "select *"
-					+ "  from (select row_number() over(order by board_no desc) as rnum"
-					+ "				, b.*"
-					+ "          from board b"
-					+ "         where board_title like ?)"
-					+ " where rnum >= ? and rnum <= ?";
+				if(field.equals("search_title")) {
+						sql = "select *"
+							+ "  from (select row_number() over(order by board_no desc) as rnum"
+							+ "				, b.*"
+							+ "          from board b"
+							+ "         where board_title like ?)"
+							+ " where rnum >= ? and rnum <= ?";
 
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, "%" + keyword + "%");
-				pstmt.setInt(2, startNo);
-				pstmt.setInt(3, endNo);
+						pstmt = con.prepareStatement(sql);
+						pstmt.setString(1, "%" + keyword + "%");
+						pstmt.setInt(2, startNo);
+						pstmt.setInt(3, endNo);
+
+				}else if(field.equals("search_cont")) {
+
+						sql = "select *"
+							+ "  from (select row_number() over(order by board_no desc) as rnum"
+							+ "				, b.*"
+							+ "          from board b"
+							+ "         where board_cont like ?)"
+							+ " where rnum >= ? and rnum <= ?";
+
+						pstmt = con.prepareStatement(sql);
+						pstmt.setString(1, "%" + keyword + "%");
+						pstmt.setInt(2, startNo);
+						pstmt.setInt(3, endNo);
+
+				}else if(field.equals("search_title_cont")) {
+
+						sql = "select *"
+							+ "  from (select row_number() over(order by board_no desc) as rnum"
+							+ "				, b.*"
+							+ "          from board b"
+							+ "         where board_title like ?"
+							+ "            or board_cont like ?)"
+							+ " where rnum >= ? and rnum <= ?";
+
+						pstmt = con.prepareStatement(sql);
+						pstmt.setString(1, "%" + keyword + "%");
+						pstmt.setString(2, "%" + keyword + "%");
+						pstmt.setInt(3, startNo);
+						pstmt.setInt(4, endNo);
+
+				}else if(field.equals("search_writer")) {
+
+						sql = "select *"
+							+ "  from (select row_number() over(order by board_no desc) as rnum"
+							+ "				, b.*"
+							+ "          from board b"
+							+ "         where board_writer like ?)"
+							+ " where rnum >= ? and rnum <= ?";
+
+						pstmt = con.prepareStatement(sql);
+						pstmt.setString(1, "%" + keyword + "%");
+						pstmt.setInt(2, startNo);
+						pstmt.setInt(3, endNo);
+				}
+
 				rs = pstmt.executeQuery();
 
 				while(rs.next()) {
@@ -557,130 +553,14 @@ public class BoardDAO {
 					list.add(dto);
 				}
 
-			} catch (SQLException e) {
-				e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
 
-			} finally {
-				closeConn(rs, pstmt, con);
-			}
-
-		}else if(field.equals("search_cont")) {
-
-			try {
-
-				sql = "select *"
-					+ "  from (select row_number() over(order by board_no desc) as rnum"
-					+ "				, b.*"
-					+ "          from board b"
-					+ "         where board_cont like ?)"
-					+ " where rnum >= ? and rnum <= ?";
-
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, "%" + keyword + "%");
-				pstmt.setInt(2, startNo);
-				pstmt.setInt(3, endNo);
-				rs = pstmt.executeQuery();
-
-				while(rs.next()) {
-					BoardDTO dto = new BoardDTO();
-					dto.setBoard_no(rs.getInt("board_no"));
-					dto.setBoard_writer(rs.getString("board_writer"));
-					dto.setBoard_title(rs.getString("board_title"));
-					dto.setBoard_cont(rs.getString("board_cont"));
-					dto.setBoard_pwd(rs.getString("board_pwd"));
-					dto.setBoard_hit(rs.getInt("board_hit"));
-					dto.setBoard_date(rs.getString("board_date"));
-					dto.setBoard_update(rs.getString("board_update"));
-					list.add(dto);
-				}
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-
-			} finally {
-				closeConn(rs, pstmt, con);
-			}
-
-		}else if(field.equals("search_title_cont")) {
-
-			try {
-
-				sql = "select *"
-					+ "  from (select row_number() over(order by board_no desc) as rnum"
-					+ "				, b.*"
-					+ "          from board b"
-					+ "         where board_title like ?"
-					+ "            or board_cont like ?)"
-					+ " where rnum >= ? and rnum <= ?";
-
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, "%" + keyword + "%");
-				pstmt.setString(2, "%" + keyword + "%");
-				pstmt.setInt(3, startNo);
-				pstmt.setInt(4, endNo);
-				rs = pstmt.executeQuery();
-
-				while(rs.next()) {
-					BoardDTO dto = new BoardDTO();
-					dto.setBoard_no(rs.getInt("board_no"));
-					dto.setBoard_writer(rs.getString("board_writer"));
-					dto.setBoard_title(rs.getString("board_title"));
-					dto.setBoard_cont(rs.getString("board_cont"));
-					dto.setBoard_pwd(rs.getString("board_pwd"));
-					dto.setBoard_hit(rs.getInt("board_hit"));
-					dto.setBoard_date(rs.getString("board_date"));
-					dto.setBoard_update(rs.getString("board_update"));
-					list.add(dto);
-				}
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-
-			} finally {
-				closeConn(rs, pstmt, con);
-			}
-
-		}else if(field.equals("search_writer")) {
-
-			try {
-
-				sql = "select *"
-					+ "  from (select row_number() over(order by board_no desc) as rnum"
-					+ "				, b.*"
-					+ "          from board b"
-					+ "         where board_writer like ?)"
-					+ " where rnum >= ? and rnum <= ?";
-
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, "%" + keyword + "%");
-				pstmt.setInt(2, startNo);
-				pstmt.setInt(3, endNo);
-				rs = pstmt.executeQuery();
-
-				while(rs.next()) {
-					BoardDTO dto = new BoardDTO();
-					dto.setBoard_no(rs.getInt("board_no"));
-					dto.setBoard_writer(rs.getString("board_writer"));
-					dto.setBoard_title(rs.getString("board_title"));
-					dto.setBoard_cont(rs.getString("board_cont"));
-					dto.setBoard_pwd(rs.getString("board_pwd"));
-					dto.setBoard_hit(rs.getInt("board_hit"));
-					dto.setBoard_date(rs.getString("board_date"));
-					dto.setBoard_update(rs.getString("board_update"));
-					list.add(dto);
-				}
-
-			} catch (SQLException e) {
-				e.printStackTrace();
-
-			} finally {
-				closeConn(rs, pstmt, con);
-			}
+		} finally {
+			closeConn(rs, pstmt, con);
 		}
 
 		return list;
 	}
-
 }
-
 ```
