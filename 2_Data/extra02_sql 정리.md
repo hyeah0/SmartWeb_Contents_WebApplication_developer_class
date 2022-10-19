@@ -7,7 +7,7 @@
 | 테이블 삭제(완전)   | drop table 테이블명 purge;                                                                     |
 | 테이블 복사         | create table 사본테이블명 <br> as <br > select \* 또는 특정 컬럼명 <br> from 복사할 테이블명   |
 
-- 제약조건 [컬럼레벨, 테이블 레벨](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/2_Data/1_%EC%B6%94%EA%B0%80%EC%A0%95%EB%A6%AC/01.%EC%BB%AC%EB%9F%BC%EB%A0%88%EB%B2%A8%2C%ED%85%8C%EC%9D%B4%EB%B8%94%EB%A0%88%EB%B2%A8.md)
+- 제약조건 [컬럼레벨, 테이블 레벨](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/2_Data/extra03_%EC%BB%AC%EB%9F%BC%EB%A0%88%EB%B2%A8%2C%ED%85%8C%EC%9D%B4%EB%B8%94%EB%A0%88%EB%B2%A8.md)
 
 ## 컬럼
 
