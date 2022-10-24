@@ -8,8 +8,12 @@ from dual;
     <td>to_date(sysdate, 'yyyy-mm-dd')</td>
   </tr>
   <tr>
-    <th>특정 날짜 형식(date 타입)</th>
+    <th>특정 날짜 형식(string(varchar) 타입)</th>
     <td>to_char(sysdate,'yyy-mm-dd')</td>
+  </tr>
+  <tr>
+    <th>특정 날짜 형식(int(number) 타입)</th>
+    <td>to_number(to_char(sysdate,'yyyymmdd'))</td>
   </tr>
   <tr>
     <th>월 첫번째일자</th>
