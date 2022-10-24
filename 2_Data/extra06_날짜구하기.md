@@ -17,7 +17,7 @@ from dual;
   </tr>
    <tr>
     <th>월 마지막일자</th>
-    <td>LAST_DAY(to_date(sysdate,'yyyy-mm-dd'))</td>
+    <td>last_day(to_date(sysdate,'yyyy-mm-dd'))</td>
   </tr>
    <tr>
     <th>지난달 구하기</th>
