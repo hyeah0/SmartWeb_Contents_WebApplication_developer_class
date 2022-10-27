@@ -1,0 +1,87 @@
+/* 책 레이아웃 >> books.css */
+/* main_center >> 전체적인 틀 */
+#center{
+    margin-top: 164px;
+    /* height: 2100px;  확인 필요 */
+    overflow: scroll;
+}
+
+.center_section{
+    margin-top: var(--margin-padding);
+}
+
+.center_search{
+    height: 50px;
+    margin-bottom: 40px;
+}
+
+/* 메인 페이지 레이아웃 --------------------------------------------------------------- */
+/* center_banner_ad     */
+/* center_search        */
+/* center_best section  */
+/* center_banner_loca   */
+/* center_store_pick    */
+
+.center_banner_ad{
+    height: 400px;
+}
+
+.center_banner_loca{
+    width: 80%;
+    height: 200px;
+    margin: auto;
+    background-color: gray;
+}
+
+.center_store_pick{
+    background-color: var(--main-color);
+}
+/* ------------------------------------------------------------------------------ */
+
+
+/* 카테고리 페이지 레이아웃 ------------------------------------------------------------ */
+/* category_page                */
+/*    center_type               */
+/*    center_nav                */
+/*    center_cont               */
+/*      center_cont_txt         */
+/*      center_cont_search_pick */
+/*      center_cont_book        */
+/*      center_cont_page        */
+
+.category_page{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.center_nav{
+    background-color: beige;
+    width: 20vw;
+    min-width: 200px;
+    max-width: 300px;
+    padding: 20px 10px;
+}
+
+.center_cont{
+    width: 100vw;
+    padding: 0px 10px;
+}
+
+.center_cont_txt{
+    margin-left: 20px;
+    padding: 10px 0px;
+    font-size: var(--point-text-size); 
+}
+
+.center_cont_search_pick{  /* 내부 상세 레이아웃 searchLayout.css*/
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+
+/* ------------------------------------------------------------------------------ */
