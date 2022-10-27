@@ -7,7 +7,8 @@
 | ORA-02291 | integrity constraint       | 참조키가 없음                                  |
 | ORA-12899 | value too large for column | 들어갈수있는 특정값 외 다른값이 들어감         |
 | ORA-02438 | Column check constraint cannot reference other columns | 제약조건의 컬럼명과 실제 컬럼명이 상이할경우| 
-| ORA-00922 | missing or invalid option | 옵션이 유효하지 않음 | 
+| ORA-00922 | missing or invalid option | 옵션이 유효하지 않음 |
+|  ORA-00972 | identifier is too long | 식별자가 너무 김 |
 
 
 ## ORA-02438 케이스
