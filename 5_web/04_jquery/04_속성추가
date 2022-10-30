@@ -1,0 +1,1 @@
+$(".input_newpwd_ck").attr('disabled',true)
