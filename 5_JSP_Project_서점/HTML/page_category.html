@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종로서적 카테고리별 비쥬얼스튜디오 코드</title>
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="source/img/logo_title.jpeg">
+    <script src="https://kit.fontawesome.com/4338ad17fa.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/pageLayout.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
+            <div class="header_top">
+                <div class="headerdiv"></div>
+                <div class="headerdiv header_logo">
+                    <a href="#"> <img src="./source/img/logo.jpeg" alt="logo"> </a>
+                </div>
+                <div class="headerdiv header_login">
+                    <a href="">로그인</a>
+                    <!-- <a href="">로그아웃</a> -->
+                    <a href="">마이페이지</a>
+                    <a href="">장바구니</a>
+                </div>
+            </div>
+            <section class="header_nav">
+                <ul>
+                    <!-- foreach 예정 -->
+                    <li><a href="" class="nav_a">도서전체보기</a></li>
+                    <li><a href="" class="nav_a">소설</a></li>
+                    <li><a href="" class="nav_a">시,에세이</a></li>
+                    <li><a href="" class="nav_a">정치,사회</a></li>
+                    <li><a href="" class="nav_a">인문,종교</a></li>
+                    <li><a href="" class="nav_a">etc</a></li>
+                </ul>
+            </section>
+        </header>
+        <!-- center -->
+        <div id="center">
+            <div class="category_page">
+                <!-- <section class="center_section center_nav">
+                    <nav>
+                        <ul>
+                            <li>도서전체보기</li>
+                            <li>소설</li>
+                            <li>시·에세이</li>
+                        </ul>
+                    </nav>
+                </section> -->
+                <section class="center_section center_cont">
+                    <section class="center_section center_cont_txt">
+                        <h1>도서전체보기</h1>
+                    </section>
+                    <section class="center_section center_cont_search_pick">
+                        <div class="book_pick">
+                            <button class="btn" >누적 판매순</button>
+                            <p>|</p>
+                            <button class="btn" >낮은 가격순</button>
+                            <p>|</p>
+                            <button class="btn" >최신 등록순</button>
+                        </div>
+                        <dib class="book_search">
+                            <form class="book_search_form" method="post" action="">
+                                <select class="search_type" name="search_type">
+                                    <option name="search_total">통합검색</option>
+                                    <option name="">카테고리명</option>
+                                </select>
+                                <input class="search_input" name="search_input" placeholder="검색어를 입력해주세요">
+                                <button class="btn search_btn" type="submit">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </form>
+                            <div class="book_search_layout">
+                                <button class="btn layout_size_btn">
+                                    <i class="fa-solid fa-list"></i>
+                                </button>
+                                <button class="btn layout_size_btn">
+                                    <!-- <i class="fa-solid fa-clone"></i> -->
+                                    <i class="fa-regular fa-clone"></i>
+                                </button>
+                            </div>
+                        </dib>
+                    </section>
+                    <section class="center_section center_cont_book">
+                        <div class="center_books">
+                            <!-- version 1. default 이미지 -->
+                            <div class="center_books_div">
+                                <div class="booklist category_booklist"> 
+                                    <div class="booklist_imgArea">
+                                        <a href="" class="category_img_a">
+                                            <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist"> 
+                                        </a>
+                                    </div>
+                                    <div class="booklist_cont">
+                                        <h3>더 테라피스트</h3>
+                                        <p>16000</p>
+                                    </div>
+                                    
+                                    <form class="cart_num_form" method="post" action="">
+                                        <input type="number" class="input cart_num_input" name="cart_num" placeholder="1" max="100" min="1">
+                                        <div class="booklist_btn">
+                                            <button class="btn" type="submit"><i class="fa-brands fa-shopify"></i></button>
+                                            <button class="btn" type="submit"><i class="fa-solid fa-basket-shopping"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <hr class="category_page_hr_v">
+                                <div class="booklist"> 
+                                    <div class="booklist_imgArea">
+                                        <a href="" class="category_img_a">
+                                            <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist"> 
+                                        </a>
+                                    </div>
+                                    <div class="booklist_cont">
+                                        <h3>더 테라피스트</h3>
+                                        <p>16000</p>
+                                    </div>
+                                    
+                                    <form class="cart_num_form" method="post" action="">
+                                        <input type="number" class="input cart_num_input" name="cart_num" placeholder="1" max="100" min="1">
+                                        <div class="booklist_btn">
+                                            <button class="btn" type="submit"><i class="fa-brands fa-shopify"></i></button>
+                                            <button class="btn" type="submit"><i class="fa-solid fa-basket-shopping"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <hr class="category_page_hr_v">
+                                <div class="booklist"> 
+                                    <div class="booklist_imgArea">
+                                        <a href="" class="category_img_a">
+                                            <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist"> 
+                                        </a>
+                                    </div>
+                                    <div class="booklist_cont">
+                                        <h3>더 테라피스트</h3>
+                                        <p>16000</p>
+                                    </div>
+                                    
+                                    <form class="cart_num_form" method="post" action="">
+                                        <input type="number" class="input cart_num_input" name="cart_num" placeholder="1" max="100" min="1">
+                                        <div class="booklist_btn">
+                                            <button class="btn" type="submit"><i class="fa-brands fa-shopify"></i></button>
+                                            <button class="btn" type="submit"><i class="fa-solid fa-basket-shopping"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <hr class="category_page_hr_v">
+                                <div class="booklist"> 
+                                    <div class="booklist_imgArea">
+                                        <a href="" class="category_img_a">
+                                            <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist"> 
+                                        </a>
+                                    </div>
+                                    <div class="booklist_cont">
+                                        <h3>더 테라피스트</h3>
+                                        <p>16000</p>
+                                    </div>
+                                    
+                                    <form class="cart_num_form" method="post" action="">
+                                        <input type="number" class="input cart_num_input" name="cart_num" placeholder="1" max="100" min="1">
+                                        <div class="booklist_btn">
+                                            <button class="btn" type="submit"><i class="fa-brands fa-shopify"></i></button>
+                                            <button class="btn" type="submit"><i class="fa-solid fa-basket-shopping"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <hr class="category_page_hr_v">
+                                <div class="booklist"> 
+                                    <div class="booklist_imgArea">
+                                        <a href="" class="category_img_a">
+                                            <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist"> 
+                                        </a>
+                                    </div>
+                                    <div class="booklist_cont">
+                                        <h3>더 테라피스트</h3>
+                                        <p>16000</p>
+                                    </div>
+                                    
+                                    <form class="cart_num_form" method="post" action="">
+                                        <input type="number" class="input cart_num_input" name="cart_num" placeholder="1" max="100" min="1">
+                                        <div class="booklist_btn">
+                                            <button class="btn" type="submit"><i class="fa-brands fa-shopify"></i></button>
+                                            <button class="btn" type="submit"><i class="fa-solid fa-basket-shopping"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- version 2. list형 -->
+                            <div class="center_books_list">
+                                <div class="center_book_list_type">
+                                    <div class="list_type_img">
+                                        <a class="category_img_a">
+                                            <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                        </a>
+                                    </div>
+                                    <div class="list_type_cont">
+                                        <div class="list_type_cont_book">
+                                            <h3>더 테라피스트</h3>
+                                            <p>16000</p>
+                                        </div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    </div>
+                                    <form class="list_type_button" method="post" action="">
+                                        <input type="number" class="input cart_num_input" name="cart_num" placeholder="1" max="100" min="1">
+                                        <div class="booklist_btn">
+                                            <button class="btn" type="submit"><i class="fa-brands fa-shopify"></i></button>
+                                            <button class="btn" type="submit"><i class="fa-solid fa-basket-shopping"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <hr class="category_page_hr">
+                                <div class="center_book_list_type">
+                                    <div class="list_type_img">
+                                        <a class="category_img_a">
+                                            <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                        </a>
+                                    </div>
+                                    <div class="list_type_cont">
+                                        <div class="list_type_cont_book">
+                                            <h3>더 테라피스트</h3>
+                                            <p>16000</p>
+                                        </div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    </div>
+                                    <form class="list_type_button" method="post" action="">
+                                        <input type="number" class="input cart_num_input" name="cart_num" placeholder="1" max="100" min="1">
+                                        <div class="booklist_btn">
+                                            <button class="btn" type="submit"><i class="fa-brands fa-shopify"></i></button>
+                                            <button class="btn" type="submit"><i class="fa-solid fa-basket-shopping"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <hr class="category_page_hr">
+                                <div class="center_book_list_type">
+                                    <div class="list_type_img">
+                                        <a class="category_img_a">
+                                            <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                        </a>
+                                    </div>
+                                    <div class="list_type_cont">
+                                        <div class="list_type_cont_book">
+                                            <h3>더 테라피스트</h3>
+                                            <p>16000</p>
+                                        </div>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                    </div>
+                                    <form class="list_type_button" method="post" action="">
+                                        <input type="number" class="input cart_num_input" name="cart_num" placeholder="1" max="100" min="1">
+                                        <div class="booklist_btn">
+                                            <button class="btn" type="submit"><i class="fa-brands fa-shopify"></i></button>
+                                            <button class="btn" type="submit"><i class="fa-solid fa-basket-shopping"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <hr class="category_page_hr">
+                            </div>
+                        </div>
+                    </section>
+                    <section class="center_section center_cont_page">
+                        <nav class="page_nav">
+                            <ul class="page_ul">
+                                <!-- page back -->
+                                    <li class="page_li">
+                                        <a class="page_a page_back paging_unable" href="#">
+                                            <span><i class="fa-solid fa-chevron-left"></i></span>
+                                        </a>
+                                    </li>
+                                    <li class="page_li">
+                                        <a class="page_a page_first" href="#">
+                                            <span><i class="fa-solid fa-angles-left"></i></span>
+                                        </a>
+                                    </li>
+
+                                <!-- page -->
+                                <li class="page_li "><a class="page_a paging_active" href="#">1</a></li>
+                                <li class="page_li"><a class="page_a" href="#">2</a></li>
+                                <li class="page_li"><a class="page_a" href="#">3</a></li>
+                                <li class="page_li"><a class="page_a" href="#">4</a></li>
+                                <li class="page_li"><a class="page_a" href="#">5</a></li>
+
+                                <!-- page next -->
+                                <li class="page_li">
+                                        <a class="page_a page_next" href="#">
+                                        <span><i class="fa-solid fa-chevron-right"></i></span>
+                                        </a>
+                                </li>
+                                <li class="page_li">
+                                        <a class="page_a page_last" href="#">
+                                        <span><i class="fa-solid fa-angles-right"></i></span>
+                                        </a>
+                                </li>
+                            </ul>
+                          </nav>
+                    
+                    </section>
+                </section>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer id="footer">
+            <div class="footer_logo">
+                <img src="./source/img/logo_mini.png" alt="logo_mini">
+            </div>
+            <div class="footer_alert">
+                <p>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    반품 배송비, 반품 배송주소 등은 해당 상품 페이지 내 안내를 참고해주세요
+                </p>
+                <p>
+                    종로서적(주) 070-4487-2236
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
