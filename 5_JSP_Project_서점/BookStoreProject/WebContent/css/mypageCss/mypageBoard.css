@@ -1,0 +1,45 @@
+/* 문의 접수하기 폼 */
+.board-table_tbody td{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-table input:not(.board-table_inputFile),
+.board-table select,
+.board-table textarea{
+    width: 750px;
+}
+
+/* 문의 제목 텍스트 */
+.board-table_title input{
+    height: 50px;
+    font-weight: bold;
+}
+
+/* 문의 사진 첨부 */
+.board-table_file{
+    height: 100px; 
+}
+
+.board-table_file td{
+    position: relative;
+}
+
+.board-table_inputFile{
+    position: absolute;
+    top: 35px;
+    left: 25px;
+}
+
+/* 필수 작성 목록 */
+.must_th::after{
+    content: '*';
+    color: red;
+    padding-left: 5px;
+}
+
+
+
+
