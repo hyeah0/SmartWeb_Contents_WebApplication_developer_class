@@ -1,0 +1,99 @@
+@import url(/css/frame.css);
+@import url(/css/mypageCss/mypageNav.css);
+@import url(/css/mypageCss/mypageCont.css);
+
+/* mypageSug 는 mypage_main에서 연결 */
+
+/* 센터 구역 설정 */
+/* 가장 큰틀 */
+#center.mypageCenter{
+    width: 100%;
+    margin-top: 182px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.myPageCenterContainer{
+    width: 1400px;
+    margin: auto;
+}
+
+/* 마이페이지 메인 콘텐츠 탑 */
+.container-top{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 450px;
+    background: linear-gradient(to bottom right, #10345a 40%, #1f6dc0 100%);
+    z-index: -1;
+}
+
+/* 작은 틀 */
+/* 멤버 사진 & 추천 책 */
+#section-mem_sug{
+    width: 100%;
+    margin: auto;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #10345a 40%, #1f6dc0 100%);
+}
+
+/* 네비게이션 & 콘텐츠 */
+#section-nav_cont{
+    width: 100%;
+    height: 1300px;
+    display: flex;
+    flex-direction: row;
+    margin-top: var(--margin-padding);
+}
+
+/* 작은틀 안에 더 작은틀 */
+#section-member{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#section-suggestion{
+    width: 1100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    /* background-color: aliceblue; */
+}
+
+#section-nav{
+    width: 300px;   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#section-cont{
+    width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.mypage_hr{
+    width: 80%;
+    height: 2px;
+    margin: auto;
+    border: none;
+    background-color: var(--light-gray);
+}
