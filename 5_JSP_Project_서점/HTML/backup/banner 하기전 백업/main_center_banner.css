@@ -1,0 +1,46 @@
+/* 배너이미지가 들어갈 부분 */
+.banner_slide{ 
+    background-color: pink;
+    border: 2px solid green;
+}
+
+.center_banner_ad a{ 
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner_arrow{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-gray);
+}
+
+.banner_arrow button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.banner_arrow i{
+    font-size: 60px;
+    color: white;
+}
+
+.banner_arrow_left{
+    left: 0;
+}
+
+.banner_arrow_right{
+    right: 0;
+}
