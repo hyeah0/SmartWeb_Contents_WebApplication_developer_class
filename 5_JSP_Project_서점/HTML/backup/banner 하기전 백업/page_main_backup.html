@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종로서적 메인 비쥬얼스튜디오 코드</title>
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="source/img/logo_title.jpeg">
+    <script src="https://kit.fontawesome.com/4338ad17fa.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/bookListLayout.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
+            <div class="header_top">
+                <div class="headerdiv"></div>
+                <div class="headerdiv header_logo">
+                    <a href="#"> <img src="./source/img/logo.jpeg" alt="logo"> </a>
+                </div>
+                <div class="headerdiv header_login">
+                    <a href="">로그인</a>
+                    <!-- <a href="">로그아웃</a> -->
+                    <a href="">마이페이지</a>
+                    <a href="">장바구니</a>
+                </div>
+            </div>
+            <section class="header_nav">
+                <ul>
+                    <!-- foreach 예정 -->
+                    <li><a href="" class="nav_a">도서전체보기</a></li>
+                    <li><a href="" class="nav_a">소설</a></li>
+                    <li><a href="" class="nav_a">시·에세이</a></li>
+                    <li><a href="" class="nav_a">정치·사회</a></li>
+                    <li><a href="" class="nav_a">인문·종교</a></li>
+                    <li><a href="" class="nav_a">etc</a></li>
+                </ul>
+            </section>
+        </header>
+        <!-- center -->
+        <div id="center">
+            <section class="center_section center_banner_ad">
+                <!-- 배너이미지 종로서적에서 가져오기 -->
+                    <a href="#" style="background-image:url(https://shop-phinf.pstatic.net/20220807_178/16598531380433lGXq_JPEG/BDBDB6F3C0CCB5E54.JPG)" >
+                        <!-- day18강의 참고 -->
+                        <div class="banner_arrow banner_arrow_left">
+                            <button>
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="banner_arrow banner_arrow_right">
+                            <button>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </a>
+            </section>
+            <section class="center_section center_search">
+                <form class="center_search_form" method="post" action="">
+                    <select class="search_type" name="search_type">
+                        <option name="search_total">통합검색</option>
+                        <option name="">카테고리명</option>
+                    </select>
+                    <input class="search_input" name="search_input" placeholder="검색어를 입력해주세요">
+                    <button class="btn search_btn" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </section>
+            <section class="center_section center_best">
+                <h2>화제의 책</h2>
+                <div class="center_books">
+                    <div class="center_books_div">
+                        <div class="booklist center_best_book"> 
+                            <div class="booklist_imgArea">
+                                <div class="booklist_imgArea_index">
+                                    <p>1</p>
+                                    <p>BEST</p>
+                                </div>
+                                <a href="">
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </a>
+                            </div>
+                            <div class="booklist_cont">
+                                <h3>더 테라피스트</h3>
+                                <p>16000</p>
+                            </div>
+                            <div class="booklist_cont_detail">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            </div>
+                        </div>
+                        <div class="booklist center_best_book"> 
+                            <div class="booklist_imgArea">
+                                <div class="booklist_imgArea_index">
+                                    <div>
+                                        <p>1</p>
+                                        <p>BEST</p>
+                                    </div>
+                                </div>
+                                <a href="">
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </a>
+                            </div>
+                            <div class="booklist_cont">
+                                <h3>더 테라피스트</h3>
+                                <p>16000</p>
+                            </div>
+                        </div>
+                        <div class="booklist center_best_book .hidden"> 
+                            <div class="booklist_imgArea">
+                                <div class="booklist_imgArea_index">
+                                    <div>
+                                        <p>1</p>
+                                        <p>BEST</p>
+                                    </div>
+                                </div>
+                                <a href="">
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </a>
+                            </div>
+                            <div class="booklist_cont">
+                                <h3>더 테라피스트</h3>
+                                <p>16000</p>
+                            </div>
+                        </div>
+                        <div id="hidden" class="booklist center_best_book" > 
+                            <div class="booklist_imgArea">
+                                <div class="booklist_imgArea_index">
+                                    <div>
+                                        <p>1</p>
+                                        <p>BEST</p>
+                                    </div>
+                                </div>
+                                <a href="">
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </a>
+                            </div>
+                            <div class="booklist_cont">
+                                <h3>더 테라피스트</h3>
+                                <p>16000</p>
+                            </div>
+                        </div>
+                        <div id="hidden" class="booklist center_best_book"> 
+                            <div class="booklist_imgArea">
+                                <div class="booklist_imgArea_index">
+                                    <div>
+                                        <p>1</p>
+                                        <p>BEST</p>
+                                    </div>
+                                </div>
+                                <a href="">
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </a>
+                            </div>
+                            <div class="booklist_cont">
+                                <h3>더 테라피스트</h3>
+                                <p>16000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="center_section center_banner_loca">
+                배너 location
+            </section>
+            <section class="center_section center_store_pick">
+                <h2>종로서적 PICK!</h2>
+                <div class="store_pick_search">
+                    <button class="btn" >누적 판매순</button>
+                    <button class="btn" >낮은 가격순</button>
+                    <button class="btn" >최신 등록순</button>
+                </div>
+                <div class="center_books">
+                    <!-- 3행 7열 총 15개 책 foreach 예정 -->
+                    <div class="center_books_div">
+                        <div class="booklist"> 
+                            <a href="">
+                                <div class="booklist_imgArea">    
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </div>
+                                <div class="booklist_cont">
+                                    <h3>더 테라피스트</h3>
+                                    <p>16000</p>
+                                </div>
+                                <div class="booklist_cont_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- --------------------------------------------- -->
+                        <div class="booklist"> 
+                            <a href="">
+                                <div class="booklist_imgArea">    
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </div>
+                                <div class="booklist_cont">
+                                    <h3>더 테라피스트</h3>
+                                    <p>16000</p>
+                                </div>
+                                <div class="booklist_cont_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="booklist"> 
+                            <a href="">
+                                <div class="booklist_imgArea">    
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </div>
+                                <div class="booklist_cont">
+                                    <h3>더 테라피스트</h3>
+                                    <p>16000</p>
+                                </div>
+                                <div class="booklist_cont_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="booklist"> 
+                            <a href="">
+                                <div class="booklist_imgArea">    
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </div>
+                                <div class="booklist_cont">
+                                    <h3>더 테라피스트</h3>
+                                    <p>16000</p>
+                                </div>
+                                <div class="booklist_cont_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="booklist"> 
+                            <a href="">
+                                <div class="booklist_imgArea">    
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </div>
+                                <div class="booklist_cont">
+                                    <h3>더 테라피스트</h3>
+                                    <p>16000</p>
+                                </div>
+                                <div class="booklist_cont_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="booklist"> 
+                            <a href="">
+                                <div class="booklist_imgArea">    
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </div>
+                                <div class="booklist_cont">
+                                    <h3>더 테라피스트</h3>
+                                    <p>16000</p>
+                                </div>
+                                <div class="booklist_cont_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="booklist"> 
+                            <a href="">
+                                <div class="booklist_imgArea">    
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </div>
+                                <div class="booklist_cont">
+                                    <h3>더 테라피스트</h3>
+                                    <p>16000</p>
+                                </div>
+                                <div class="booklist_cont_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="booklist"> 
+                            <a href="">
+                                <div class="booklist_imgArea">    
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </div>
+                                <div class="booklist_cont">
+                                    <h3>더 테라피스트</h3>
+                                    <p>16000</p>
+                                </div>
+                                <div class="booklist_cont_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="booklist"> 
+                            <a href="">
+                                <div class="booklist_imgArea">    
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </div>
+                                <div class="booklist_cont">
+                                    <h3>더 테라피스트</h3>
+                                    <p>16000</p>
+                                </div>
+                                <div class="booklist_cont_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="booklist"> 
+                            <a href="">
+                                <div class="booklist_imgArea">    
+                                    <img src="./source/img/book/book_theTherapist.jpeg" alt="book_theTherapist">
+                                </div>
+                                <div class="booklist_cont">
+                                    <h3>더 테라피스트</h3>
+                                    <p>16000</p>
+                                </div>
+                                <div class="booklist_cont_detail">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- footer -->
+        <footer id="footer">
+            <div class="footer_logo">
+                <img src="./source/img/logo_mini.png" alt="logo_mini">
+            </div>
+            <div class="footer_alert">
+                <p>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    반품 배송비, 반품 배송주소 등은 해당 상품 페이지 내 안내를 참고해주세요
+                </p>
+                <p>
+                    종로서적(주) 070-4487-2236
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
