@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종로서적 마이페이지 비쥬얼스튜디오 코드</title>
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="source/img/logo_title.jpeg">
+    <script src="https://kit.fontawesome.com/4338ad17fa.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/mypageCss/mypageLayout.css">   
+    <link rel="stylesheet" href="css/mypageCss/mypageSug.css">
+    <link rel="stylesheet" href="css/mypageCss/mypageCouMile.css">
+    <link rel="stylesheet" href="css/mypageCss/mypageOrderBook.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
+            <div class="header_top">
+                <div class="headerdiv"></div>
+                <div class="headerdiv header_logo">
+                    <a href="#"> <img src="./source/img/logo.jpeg" alt="logo"> </a>
+                </div>
+                <div class="headerdiv header_login">
+                    <a href="">로그인</a>
+                    <!-- <a href="">로그아웃</a> -->
+                    <a href="">마이페이지</a>
+                    <a href="">장바구니</a>
+                </div>
+            </div>
+            <section class="header_nav">
+                <ul>
+                    <!-- foreach 예정 -->
+                    <li><a href="" class="nav_a">도서전체보기</a></li>
+                    <li><a href="" class="nav_a">소설</a></li>
+                    <li><a href="" class="nav_a">시·에세이</a></li>
+                    <li><a href="" class="nav_a">정치·사회</a></li>
+                    <li><a href="" class="nav_a">인문·종교</a></li>
+                    <li><a href="" class="nav_a">etc</a></li>
+                </ul>
+            </section>
+        </header>
+        
+        <!-- center -->
+        <div id="center" class="mypageCenter">
+            <div class="container-top"></div>
+            <div class="myPageCenterContainer">
+                <!-- 멤버프로필사진, 추천책 -->
+                <section id="section-mem_sug">
+                    <section id="section-member">
+                        <div class="member_head">
+                            <a>
+                                <p>
+                                    <i class="fa-solid fa-house"> my</i>
+                                </p>
+                            </a>
+                        </div>
+                        <div class="member_photo_div">
+                            <a class="member_photo">
+                                <img>
+                            </a>
+                            <h3>김oo</h3>
+                        </div>
+                    </section>
+                    <section id="section-suggestion">
+                        <div class="sug_head">
+                            <h3> 김oo 님께 추천해 드려요</h3>
+                        </div>
+                        <div class="sug_area">
+                            <div class="sug_div" style="background-image: url('https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791192612591.jpg');">
+                                <a class="sug_a" href="#">
+                                    <div class="sug_img_p">
+                                        <img class="sub_img" src="/source/img/book/bookn001camino.jpeg">
+                                    </div>
+                                    <h3>카미노 아일랜드</h3>
+                                </a>
+                            </div>
+                            <div class="sug_div" style="background-image: url('../source/img/book/book_blackbook.jpeg')">
+                                <a class="sug_a">
+                                    <div class="sug_img_p">
+                                        <img class="sub_img">
+                                    </div>
+                                    <h3>검은 마음</h3>
+                                </a>
+                            </div>
+                            <div class="sug_div">
+                                <a class="sug_a">
+                                    <div class="sug_img_p">
+                                        <img class="sub_img">
+                                    </div>
+                                    <h3>불편한 편의점<br>(40만부 기념 벚꽃 에디션)</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                 <!-- nav, content -->
+                <section id="section-nav_cont">
+                    <section id="section-nav">
+                        <nav class="mypage-nav">   
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">쇼핑내역</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">주문목록</a>
+                                </li>
+                                <!-- <li class="mypage-nav_li">
+                                    <a href="#">영수증</a>
+                                </li> -->
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">혜택</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">쿠폰</a>
+                                </li>
+                                <li class="mypage-nav_li">
+                                    <a href="#">마일리지</a>
+                                </li>
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">문의</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">1:1문의</a>
+                                </li>
+                                <li class="mypage-nav_li">
+                                    <a href="#">문의내역</a>
+                                </li>
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a>회원정보</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">회원정보관리</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                    <section id="section-cont">
+                        <section class="cont-coupon_mileage">
+                            <div class="mypage-cont coupon_mileage_div">
+                                <div class="coupon_mileage_each">
+                                    <a class="coupon_mileage_a">
+                                        <h3 class="coupon_mileage_h3">쿠폰</h3>
+                                        <div class="coupon_mileage_cnt">
+                                            <p>2</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="coupon_mileage_each">
+                                    <a class="coupon_mileage_a">
+                                        <h3 class="coupon_mileage_h3">마일리지</h3>
+                                        <div class="coupon_mileage_cnt">
+                                            <p>2</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>     
+                        </section>
+                       
+                        <section class="cont-recent_order">
+                            <div class="mypage-cont recent_order_div">
+                                <div class="mypage-cont_toptext recent_order_txt">
+                                    <h3>최근 주문</h3>
+                                    <button>더보기</button>
+                                </div>
+                                <table class="mypage_table order_table">
+                                    <tbody>
+                                        <!-- for each 로 돌릴예정 -->
+                                        <!-- 3개 일주일 동안 구매한 목록 -->
+                                        <tr class="mypage_table_tr">
+                                            <td class="order_tbody_date">
+                                                <a href="#">일자</a>
+                                            </td>
+                                            <td class="order_tbody_img">
+                                                <a>
+                                                    <img src="./source/img/book/book_trandKorea.jpeg">
+                                                </a>
+                                            </td>
+                                            <td class="order_tbody_bname">책이름</td>
+                                            <td class="order_tbody_cnt">2</td>
+                                            <td class="order_tbody_price">15000</td>
+                                        </tr>
+                                        <tr class="mypage_table_tr">
+                                            <td class="order_tbody_date">
+                                                <a href="#">일자</a>
+                                            </td>
+                                            <td class="order_tbody_img">
+                                                <a>
+                                                    <img src="./source/img/book/book_trandKorea.jpeg">
+                                                </a>
+                                            </td>
+                                            <td class="order_tbody_bname">책이름</td>
+                                            <td class="order_tbody_cnt">2</td>
+                                            <td class="order_tbody_price">15000</td>
+                                        </tr>
+                                      
+                                        <tr></tr>
+                                    </tbody>
+                                </table>
+                                
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="footer_logo">
+                <img src="./source/img/logo_mini.png" alt="logo_mini">
+            </div>
+            <div class="footer_alert">
+                <p>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    반품 배송비, 반품 배송주소 등은 해당 상품 페이지 내 안내를 참고해주세요
+                </p>
+                <p>
+                    종로서적(주) 070-4487-2236
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
