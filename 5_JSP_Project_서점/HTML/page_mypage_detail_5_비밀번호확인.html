@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종로서적 마이페이지 회원정보 비쥬얼스튜디오 코드</title>
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="source/img/logo_title.jpeg">
+    <script src="https://kit.fontawesome.com/4338ad17fa.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/mypageCss/mypageLayout.css">
+    <link rel="stylesheet" href="css/mypageCss/mypageForm.css">
+    <style> /* 회원정보 관리 비밀번호 확인 부분만 적용 */
+        tr{
+            height: 80px;
+        }
+        
+        .member-info-div .mypage-cont_toptext{
+            height: 100px;
+        }
+
+        .member-ck-pwd_table tr{
+            border-top: 2px solid var(--main-color);
+        }
+
+        .member-ck-pwd_table input{
+            width: 400px;
+        }
+
+        .pwd_result{
+            padding: 10px;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
+            <div class="header_top">
+                <div class="headerdiv"></div>
+                <div class="headerdiv header_logo">
+                    <a href="#"> <img src="./source/img/logo.jpeg" alt="logo"> </a>
+                </div>
+                <div class="headerdiv header_login">
+                    <a href="">로그인</a>
+                    <!-- <a href="">로그아웃</a> -->
+                    <a href="">마이페이지</a>
+                    <a href="">장바구니</a>
+                </div>
+            </div>
+            <section class="header_nav">
+                <ul>
+                    <!-- foreach 예정 -->
+                    <li><a href="" class="nav_a">도서전체보기</a></li>
+                    <li><a href="" class="nav_a">소설</a></li>
+                    <li><a href="" class="nav_a">시·에세이</a></li>
+                    <li><a href="" class="nav_a">정치·사회</a></li>
+                    <li><a href="" class="nav_a">인문·종교</a></li>
+                    <li><a href="" class="nav_a">etc</a></li>
+                </ul>
+            </section>
+        </header>
+
+        <!-- center -->
+         <!-- 상단 디테일 nav 시작 공통 사용 예정 -->
+        <div id="center" class="mypageCenter">
+            <div class="myPageCenterContainer">
+                <!-- nav, content -->
+                <section id="section-nav_cont">
+                    <section id="section-nav">
+                        <section id="section-member" class="section-member">
+                            <div class="member_photo_div">
+                                <a class="member_photo">
+                                    <img>
+                                </a>
+                                <h3>김oo</h3>
+                            </div>
+                        </section>
+                        <nav class="mypage-nav">   
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">쇼핑내역</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">주문목록</a>
+                                </li>
+                                <!-- <li class="mypage-nav_li">
+                                    <a href="#">영수증</a>
+                                </li> -->
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">혜택</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">쿠폰</a>
+                                </li>
+                                <li class="mypage-nav_li">
+                                    <a href="#">마일리지</a>
+                                </li>
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">문의</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">문의 접수</a>
+                                </li>
+                                <li class="mypage-nav_li">
+                                    <a href="#">문의 내역</a>
+                                </li>
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a>회원정보</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">회원정보 관리</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                     <!-- 상단 디테일 nav 끝-->
+
+                    <!-- 클릭시 변경될 부분 -->
+                    <section id="section-cont">
+                        <div class="mypage-cont">
+                            <div class="mypage-cont_toptext">
+                                <h3>회원정보</h3>
+                            </div>
+                            <div class="mypage-cont_nav_divContainer">
+                                <div class="mypage-cont_nav_div">
+                                    <div class="mypage-cont_nav_each">
+                                        <a href="#">회원정보 관리</a>
+                                    </div>
+                                </div>
+                                <div class="mypage-cont_nav_effect"></div>
+                            </div>
+
+                            <!-- 컨텐츠 --------------------------------------->
+                            <div class="mypage_contents member-info-div">
+                                <!-- 회원정보 관리 -->
+                                <div class="mypage-cont_toptext">
+                                    <h3>비밀번호 확인</h3>
+                                    <p>안전한 개인 정보를 위해 비밀번호르 입력해 주세요.</p>
+                                </div>
+
+                                <form class="mypage-form">
+                                    <table class="mypage_table member-ck-pwd_table">
+                                        <tr>
+                                            <th>비밀번호</th>
+                                            <td>
+                                               <input placeholder="비밀번호를 입력하세요.">
+                                               <p class="pwd_result none" style="color: pink">비밀번호가 다릅니다.</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="mypage-form_btn">
+                                        <input class="btn" type="submit" value="확인">
+                                    </div>
+                                </form>                           
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="footer_logo">
+                <img src="./source/img/logo_mini.png" alt="logo_mini">
+            </div>
+            <div class="footer_alert">
+                <p>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    반품 배송비, 반품 배송주소 등은 해당 상품 페이지 내 안내를 참고해주세요
+                </p>
+                <p>
+                    종로서적(주) 070-4487-2236
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
+
