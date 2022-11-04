@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종로서적 마이페이지 문의하기 비쥬얼스튜디오 코드</title>
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="source/img/logo_title.jpeg">
+    <script src="https://kit.fontawesome.com/4338ad17fa.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/mypageCss/mypageLayout.css">
+    <link rel="stylesheet" href="css/mypageCss/mypageForm.css">
+    <link rel="stylesheet" href="css/mypageCss/mypageBoard.css">
+    <style>
+         .top{
+            border-top: 2px solid var(--main-color);
+        }
+        .board-table_file td{
+        	display: flex;
+        	flex-direction: row;
+        	justify-content: left;
+        }
+        
+        .board-table_beFile_div{
+        	width: 120px;
+        	height: 220px;
+			margin-left: 20px;
+			padding : 10px;
+			border-radius: 10px;
+			background-color: var(--light-gray);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			
+		}
+		
+		.board-table_beFile_btn{
+			padding: 5px;
+		}
+		
+		.board-table_beFile_btn:hover{
+			color : var(--hover-color);
+		}
+
+        .clicked{
+            color : var(--hover-color);
+        }
+
+        .clicked_btn{
+            opacity: 0.5;
+        }
+			
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
+            <div class="header_top">
+                <div class="headerdiv"></div>
+                <div class="headerdiv header_logo">
+                    <a href="#"> <img src="./source/img/logo.jpeg" alt="logo"> </a>
+                </div>
+                <div class="headerdiv header_login">
+                    <a href="">로그인</a>
+                    <!-- <a href="">로그아웃</a> -->
+                    <a href="">마이페이지</a>
+                    <a href="">장바구니</a>
+                </div>
+            </div>
+            <section class="header_nav">
+                <ul>
+                    <!-- foreach 예정 -->
+                    <li><a href="" class="nav_a">도서전체보기</a></li>
+                    <li><a href="" class="nav_a">소설</a></li>
+                    <li><a href="" class="nav_a">시·에세이</a></li>
+                    <li><a href="" class="nav_a">정치·사회</a></li>
+                    <li><a href="" class="nav_a">인문·종교</a></li>
+                    <li><a href="" class="nav_a">etc</a></li>
+                </ul>
+            </section>
+        </header>
+
+        <!-- center -->
+         <!-- 상단 디테일 nav 시작 공통 사용 예정 -->
+        <div id="center" class="mypageCenter">
+            <div class="myPageCenterContainer">
+                <!-- nav, content -->
+                <section id="section-nav_cont">
+                    <section id="section-nav">
+                        <section id="section-member" class="section-member">
+                            <div class="member_photo_div">
+                                <a class="member_photo">
+                                    <img>
+                                </a>
+                                <h3>김oo</h3>
+                            </div>
+                        </section>
+                        <nav class="mypage-nav">   
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">쇼핑내역</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">주문목록</a>
+                                </li>
+                                <!-- <li class="mypage-nav_li">
+                                    <a href="#">영수증</a>
+                                </li> -->
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">혜택</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">쿠폰</a>
+                                </li>
+                                <li class="mypage-nav_li">
+                                    <a href="#">마일리지</a>
+                                </li>
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">문의</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">문의 접수</a>
+                                </li>
+                                <li class="mypage-nav_li">
+                                    <a href="#">문의 내역</a>
+                                </li>
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a>회원정보</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">회원정보 관리</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                     <!-- 상단 디테일 nav 끝-->
+
+                    <!-- 클릭시 변경될 부분 -->
+                    <section id="section-cont">
+                        <div class="mypage-cont">
+                            <div class="mypage-cont_toptext">
+                                <h3>문의</h3>
+                            </div>
+                            <div class="mypage-cont_nav_divContainer">
+                                <div class="mypage-cont_nav_div">
+                                    <div class="mypage-cont_nav_each">
+                                        <a href="#">문의 접수</a>
+                                    </div>
+                                    <div class="mypage-cont_nav_each">
+                                        <a href="#">문의 내역</a>
+                                    </div>
+                                </div>
+                                <div class="mypage-cont_nav_effect"></div>
+                            </div>
+
+                            <!-- 컨텐츠 --------------------------------------->
+                            <div class="mypage_contents">
+                            
+                                <!-- 문의하기 폼 -->
+                                <form class="mypage-form board-form" method="post" enctype="multipart/form-data" action="mypage_board_update_ok.do">
+                                        <input type="hidden" name="board_num" value="${boardDto.getBoard_num() }">
+                                       <!-- 전에 첨부했던 이미지 삭제시 1, 기존 이미지 유지시 0 -->
+                                        <input type="hidden" name="board_beimage_result" class="board_beimage_result" value="0">
+                                        <table class="mypage_table board-table">
+                                        <tbody class="board-table_tbody">
+                                            
+                                            <!-- 문의 유형 -->
+                                            <tr class="top">
+                                                <th>게시글 번호</th>
+                                                <td>0123</td>
+                                                
+                                                <th>작성일</th>
+                                                <td>작성일</td>
+                                              
+                                            </tr>
+                                            
+                                            <tr>
+                                                <th>문의유형</th>
+                                                <td class="tmp">
+                                                  환불 / 반품 
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                    <table class="mypage_table board-table">
+                                        <tbody class="board-table_tbody">
+  
+                                            <!-- 문의 제목 -->
+                                            <tr class="board-table_title">
+                                                <th rowspan="2" class="must_th">내용</th>
+                                                <td>
+                                                    <input class="board-table_inputTitle" name="board_title" value="ddd">
+                                                </td>
+                                            </tr>
+                                            
+                                            <!-- 문의 내용 -->
+                                            <tr class="board-table_tr">
+                                                <td>
+                                                    <textarea class="board-table_inputCont" name="board_cont" id="" cols="50" rows="20">ㅇㅇㅇ</textarea>
+                                                </td>
+                                            </tr>
+                                            
+                                            <!-- 문의 사진 -->
+                                            <tr class="board-table_file none">
+                                                <th rowspan="2">사진첨부</th>
+                                                <td class="board-table_beFile">
+                                                    <div class="board-table_beFile_div">
+                                                        <div class="board-table_beFile_div_img">
+                                                            <img alt="첨부사진"  src="source/img/book/book_pachinko.jpeg" width ="100px" name="board_beimage" class="img">
+                                                        </div>
+                                                        <div class="btn board-table_beFile_btn" onclick="deleteImg()">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="board-table_file">
+                                                <th>사진첨부</th>
+                                                <td class="board-table_newFile">
+                                                    <input class="board-table_inputFile" name="board_newimage" type="file">
+                                                </td>    
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                    
+                                    <!-- 작성 버튼 -->
+                                    <div class="mypage-form_btn">
+                                        <input class="btn" type="submit" value="작성하기">
+                                        <input class="btn" type="button" value="취소하기">
+                                    </div>
+                                </form>       
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="footer_logo">
+                <img src="./source/img/logo_mini.png" alt="logo_mini">
+            </div>
+            <div class="footer_alert">
+                <p>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    반품 배송비, 반품 배송주소 등은 해당 상품 페이지 내 안내를 참고해주세요
+                </p>
+                <p>
+                    종로서적(주) 070-4487-2236
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+
+        let count = 0;
+
+        function deleteImg(){
+            let button = document.querySelector(".board-table_beFile_btn")
+            let imgDiv = document.querySelector(".img")
+            let imgResult = document.querySelector(".board_beimage_result").value
+            let imgNew = document.querySelector(".board-table_inputFile")
+            
+            console.log(button);
+            console.log(imgDiv);
+            console.log(count);
+            if(count == 0 ){
+                count ++;
+                button.classList.add('clicked')
+                imgDiv.classList.add('clicked_btn')
+                imgResult = count
+                imgNew.removeAttribute("disabled",false) 
+                console.log(`imgresult ${imgResult}`)
+            }else{
+
+                button.classList.remove('clicked')
+                imgDiv.classList.remove('clicked_btn')
+                count = 0;
+                imgResult = count
+                imgNew.setAttribute("disabled",true)
+                console.log(`imgresult ${imgResult}`)
+            }  
+        }
+        
+    </script>
+</body>
+</html>
+
+
