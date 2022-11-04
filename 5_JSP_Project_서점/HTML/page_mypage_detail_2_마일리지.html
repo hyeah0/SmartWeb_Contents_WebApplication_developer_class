@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종로서적 마이페이지 마일리지 비쥬얼스튜디오 코드</title>
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="source/img/logo_title.jpeg">
+    <script src="https://kit.fontawesome.com/4338ad17fa.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/mypageCss/mypageLayout.css">
+    <link rel="stylesheet" href="css/pagingLayout.css">
+    <link rel="stylesheet" href="css/mypageCss/mypageCouMile.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
+            <div class="header_top">
+                <div class="headerdiv"></div>
+                <div class="headerdiv header_logo">
+                    <a href="#"> <img src="./source/img/logo.jpeg" alt="logo"> </a>
+                </div>
+                <div class="headerdiv header_login">
+                    <a href="">로그인</a>
+                    <!-- <a href="">로그아웃</a> -->
+                    <a href="">마이페이지</a>
+                    <a href="">장바구니</a>
+                </div>
+            </div>
+            <section class="header_nav">
+                <ul>
+                    <!-- foreach 예정 -->
+                    <li><a href="" class="nav_a">도서전체보기</a></li>
+                    <li><a href="" class="nav_a">소설</a></li>
+                    <li><a href="" class="nav_a">시·에세이</a></li>
+                    <li><a href="" class="nav_a">정치·사회</a></li>
+                    <li><a href="" class="nav_a">인문·종교</a></li>
+                    <li><a href="" class="nav_a">etc</a></li>
+                </ul>
+            </section>
+        </header>
+
+        <!-- center -->
+         <!-- 상단 디테일 nav 시작 공통 사용 예정 -->
+        <div id="center" class="mypageCenter">
+            <div class="myPageCenterContainer">
+                <!-- nav, content -->
+                <section id="section-nav_cont">
+                    <section id="section-nav">
+                        <section id="section-member" class="section-member">
+                            <div class="member_photo_div">
+                                <a class="member_photo">
+                                    <img>
+                                </a>
+                                <h3>김oo</h3>
+                            </div>
+                        </section>
+                        <nav class="mypage-nav">   
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">쇼핑내역</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">주문목록</a>
+                                </li>
+                                <!-- <li class="mypage-nav_li">
+                                    <a href="#">영수증</a>
+                                </li> -->
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">혜택</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">쿠폰</a>
+                                </li>
+                                <li class="mypage-nav_li">
+                                    <a href="#">마일리지</a>
+                                </li>
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">문의</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">1:1문의</a>
+                                </li>
+                                <li class="mypage-nav_li">
+                                    <a href="#">문의내역</a>
+                                </li>
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a>회원정보</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">회원정보관리</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                     <!-- 상단 디테일 nav 끝-->
+
+                    <!-- 클릭시 변경될 부분 -->
+                    <section id="section-cont">
+                        <div class="mypage-cont">
+                            <div class="mypage-cont_toptext">
+                                <h3>혜택</h3>
+                            </div>
+                            <div class="mypage-cont_nav_divContainer">
+                                <div class="mypage-cont_nav_div">
+                                    <div class="mypage-cont_nav_each">
+                                        <a href="#">쿠폰</a>
+                                    </div>
+                                    <div class="mypage-cont_nav_each">
+                                        <a href="#">마일리지</a>
+                                    </div>
+                                </div>
+                                <div class="mypage-cont_nav_effect"></div>
+                            </div>
+
+                            <!-- 컨텐츠 --------------------------------------->
+                            <div class="mypage_contents">
+                                <!-- 쿠폰, 마일리지 동일 텍스트만 상이 -->
+                                <!-- 마일리지 ----------------------------->
+                                <div class="coupon_mileage_div">
+                                    <div class="coupon_mileage_each coupon_mileage_each_d">
+                                        <h3>
+                                            보유 통합 마일리지 &nbsp; | &nbsp;<span>100p</span>
+                                        </h3>
+                                    </div>
+                                    <div class="coupon_mileage_each coupon_mileage_each_d">
+                                        <h3>
+                                            이번달 소멸 예정 마일리지 &nbsp; | &nbsp; <span> 3000px</span>
+                                        </h3>
+                                    </div>
+                                </div>
+                                
+                                <!-- 쿠폰, 마일리지 상세 -->
+                                <div class="coupon_mileage_detail">
+                                    <div class="mypage-cont_toptext">
+                                        <form action="" class="">
+                                            <select name="order_term" id="">
+                                                <option value="">2010.10.01 - 2010.11.02</option>
+                                            </select>
+                                            <button class="cont_form_btn">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                    <table class="mypage_table">
+                                        <thead class="table_coupon_mileage">
+                                            <tr class="table_coupon_mileage_border">
+                                                <th class="table_coupon_mileage_cont">상세내용</th>
+                                                <th class="table_coupon_mileage_price">쿠폰금액</th>
+                                                <th class="table_coupon_mileage_Period">등록일</th>
+                                                <th class="table_coupon_mileage_result">구&nbsp;&nbsp;&nbsp;분</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table_coupon_mileage">
+                                            <!-- for each 로 돌릴예정 -->
+                                            <!-- 5 개 가능 -->
+                                            <tr class="mypage_table_tr coupon_mileage_tr">
+                                                <td class="mypage_table_td notcenter">
+                                                    구매적립 또는 구매
+                                                </td>
+                                                <td>1000</td>
+                                                <td>2022.10.22</td>
+                                                <td >
+                                                    <p>사용</p>
+                                                    <p>주문번호 : <a href="#">ddd</a></p>
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            <!-- 페이징 -->
+                            <section class="center_section center_cont_page">
+                                <nav class="page_nav">
+                                    <ul class="page_ul">
+                                        <!-- page back -->
+                                            <li class="page_li">
+                                                <a class="page_a page_back paging_unable" href="#">
+                                                    <span><i class="fa-solid fa-chevron-left"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="page_li">
+                                                <a class="page_a page_first" href="#">
+                                                    <span><i class="fa-solid fa-angles-left"></i></span>
+                                                </a>
+                                            </li>
+        
+                                        <!-- page -->
+                                        <li class="page_li "><a class="page_a paging_active" href="#">1</a></li>
+                                        <li class="page_li"><a class="page_a" href="#">2</a></li>
+                                        <li class="page_li"><a class="page_a" href="#">3</a></li>
+                                        <li class="page_li"><a class="page_a" href="#">4</a></li>
+                                        <li class="page_li"><a class="page_a" href="#">5</a></li>
+        
+                                        <!-- page next -->
+                                        <li class="page_li">
+                                                <a class="page_a page_next" href="#">
+                                                <span><i class="fa-solid fa-chevron-right"></i></span>
+                                                </a>
+                                        </li>
+                                        <li class="page_li">
+                                                <a class="page_a page_last" href="#">
+                                                <span><i class="fa-solid fa-angles-right"></i></span>
+                                                </a>
+                                        </li>
+                                    </ul>
+                                  </nav>
+                            </section>
+
+                            
+
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="footer_logo">
+                <img src="./source/img/logo_mini.png" alt="logo_mini">
+            </div>
+            <div class="footer_alert">
+                <p>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    반품 배송비, 반품 배송주소 등은 해당 상품 페이지 내 안내를 참고해주세요
+                </p>
+                <p>
+                    종로서적(주) 070-4487-2236
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
+
