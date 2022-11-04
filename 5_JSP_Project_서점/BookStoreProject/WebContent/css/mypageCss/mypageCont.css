@@ -1,0 +1,137 @@
+/* 레이아웃 테스트용 */
+/* .mypage-cont{
+    background-color: pink;
+    border: 1px solid black;
+}
+
+.coupon_mileage_div{
+    background-color: lavender;
+}
+
+.mypage_table tr{
+    background-color: thistle;
+}
+
+.mypage-cont_toptext{
+    background-color: azure;
+}
+
+.mypage_contents{
+    border: 1px solid black;
+    background-color: rgb(166, 189, 120);
+}
+
+.member-ck-pwd_form{
+    background-color: seashell;
+}
+
+.member-ck-pwd_div_input label{ 
+    background-color: pink;
+} */
+
+/* ------------------------------------------ */
+/* 마이페이지 공통 콘텐츠 레이아웃 */
+.mypage-cont{
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mypage-cont_toptext{
+    margin-top: var(--margin-padding);
+    margin-bottom: var(--margin-padding);
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.mypage-cont_toptext h3{
+    position: absolute;
+    left: 50px;
+    font-size: var(--point-text-size);
+}
+
+.mypage-cont_toptext p{
+    position: absolute;
+    left: 50px;
+    bottom: var(--margin-padding);
+}
+
+.mypage_contents{
+    height: 1000px;
+    overflow: scroll;
+}
+
+/* 테이블 공통 */
+.mypage_table{
+    width: 1000px;
+    border-collapse: collapse;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.mypage_table thead{
+    height: 45px;
+}
+
+.mypage_table_tr{  /*문의 내역 제외 테이블 외 해당 클래스명 에 적용*/
+    height: 150px;
+}
+
+.mypage_table td{
+    padding: 10px;
+}
+
+.mypage_table tr{
+   border-bottom: 1px solid var(--light-gray);
+}
+
+.mypage_table tr:last-child{
+    border-bottom: 2px solid var(--main-color);
+}
+
+/* 찾기 버튼 공통 */
+.mypage-cont_toptext button{
+    background-color: transparent;
+    border: 1px solid var(--light-gray);
+    cursor: pointer;
+    position: absolute;
+}
+
+.mypage-cont_toptext button:hover{
+    background-color: var(--main-color);
+    color: white;
+}
+
+/* 테이블 상단 선택사항(일자, 정렬방식) */
+.mypage-cont_toptext form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mypage-cont_toptext select{
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 50px;
+}
+
+.cont_form_btn{
+    position: absolute;
+    right: 0px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+
+
