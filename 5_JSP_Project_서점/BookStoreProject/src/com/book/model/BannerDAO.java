@@ -13,8 +13,8 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class BannerDAO {
-
- // 멤버변수
+    // 수정 테스트
+    // 멤버변수
     Connection con = null;                      // 데이터 베이스와 연동하는 객체
     PreparedStatement pstmt = null;             // 데이터 베이스에 sql문을 전송하는 객체
     ResultSet rs = null;                        // sql문을 실행 후에 결과값을 가지고 있는 객체
