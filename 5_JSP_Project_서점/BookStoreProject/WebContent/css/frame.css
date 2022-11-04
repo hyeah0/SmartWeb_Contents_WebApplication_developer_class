@@ -1,0 +1,60 @@
+@import url(header_footer.css);
+
+:root{
+    --main-color : #10345A;
+    --hover-color : #1f6dc0;
+    --point-text-size : 25px;
+    --margin-padding : 20px;
+    --pale-white : rgba(240, 240, 240, 0.266);
+    --light-gray : rgba(240, 240, 240, 0.598);
+    --pale-main-color : #10345a54;
+    --box-shadow : rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    --box-shadow-hover :  #10345a54 0px 0px 5px 0px, #10345a54 0px 0px 1px 0px;
+}
+
+/* 공통 */
+*{
+    font-family: Helvetica, '나눔고딕', 'Nanum Gothic', '나눔스퀘어', 'Nanum Square', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', Dotum, '돋움', sans-serif;
+    box-sizing: border-box;
+    margin: 0px; 
+    letter-spacing: 1px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+a{  /* 밑줄 제거, 텍스트 색상 검정 */
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+li{ /* list style none*/
+    list-style: none;
+}
+
+.btn{  /* 버튼 공통 사항 */
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.input{ /* input 공통 사항 */
+    outline: none;
+    border: none;
+}
+
+
+/* 책 레이아웃 >> books.css */
+/* main_center >> 전체적인 틀 */
+#center{
+    margin-top: 164px;
+    /* height: 2100px;  확인 필요 */
+    overflow: scroll;
+}
