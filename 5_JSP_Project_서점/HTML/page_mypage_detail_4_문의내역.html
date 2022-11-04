@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종로서적 마이페이지 문의내역 비쥬얼스튜디오 코드</title>
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="source/img/logo_title.jpeg">
+    <script src="https://kit.fontawesome.com/4338ad17fa.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/mypageCss/mypageLayout.css">
+    <link rel="stylesheet" href="css/pagingLayout.css">
+    <style> /* 문의 내역 테이블 */   
+        .table_body tr{
+            height: 80px;
+        }
+
+        .board_date{
+            width: 200px;
+        }
+
+        .board_type{
+            width: 300px;
+        }
+
+        .board_cont{
+            width: 400px;
+        }
+
+        .board_tr td:not(.board_cont){
+            text-align: center;
+        }
+
+        .board_tr td:nth-of-type(4) button:hover{
+            color: var(--hover-color);
+        }
+
+        .board_tr a:hover{
+            font-weight: bold;
+            color: var(--hover-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header id="header">
+            <div class="header_top">
+                <div class="headerdiv"></div>
+                <div class="headerdiv header_logo">
+                    <a href="#"> <img src="./source/img/logo.jpeg" alt="logo"> </a>
+                </div>
+                <div class="headerdiv header_login">
+                    <a href="">로그인</a>
+                    <!-- <a href="">로그아웃</a> -->
+                    <a href="">마이페이지</a>
+                    <a href="">장바구니</a>
+                </div>
+            </div>
+            <section class="header_nav">
+                <ul>
+                    <!-- foreach 예정 -->
+                    <li><a href="" class="nav_a">도서전체보기</a></li>
+                    <li><a href="" class="nav_a">소설</a></li>
+                    <li><a href="" class="nav_a">시·에세이</a></li>
+                    <li><a href="" class="nav_a">정치·사회</a></li>
+                    <li><a href="" class="nav_a">인문·종교</a></li>
+                    <li><a href="" class="nav_a">etc</a></li>
+                </ul>
+            </section>
+        </header>
+
+        <!-- center -->
+         <!-- 상단 디테일 nav 시작 공통 사용 예정 -->
+        <div id="center" class="mypageCenter">
+            <div class="myPageCenterContainer">
+                <!-- nav, content -->
+                <section id="section-nav_cont">
+                    <section id="section-nav">
+                        <section id="section-member" class="section-member">
+                            <div class="member_photo_div">
+                                <a class="member_photo">
+                                    <img>
+                                </a>
+                                <h3>김oo</h3>
+                            </div>
+                        </section>
+                        <nav class="mypage-nav">   
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">쇼핑내역</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">주문목록</a>
+                                </li>
+                                <!-- <li class="mypage-nav_li">
+                                    <a href="#">영수증</a>
+                                </li> -->
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">혜택</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">쿠폰</a>
+                                </li>
+                                <li class="mypage-nav_li">
+                                    <a href="#">마일리지</a>
+                                </li>
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a href="#">문의</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">문의 접수</a>
+                                </li>
+                                <li class="mypage-nav_li">
+                                    <a href="#">문의 내역</a>
+                                </li>
+                            </ul>
+                            <hr class="mypage_hr">
+                            <ul class="mypage-nav_ul">
+                                <h3 class="mypage-nav_h3">
+                                    <a>회원정보</a>
+                                </h3>
+                                <li class="mypage-nav_li">
+                                    <a href="#">회원정보 관리</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                     <!-- 상단 디테일 nav 끝-->
+
+                    <!-- 클릭시 변경될 부분 -->
+                    <section id="section-cont">
+                        <div class="mypage-cont">
+                            <div class="mypage-cont_toptext">
+                                <h3>문의</h3>
+                            </div>
+                            <div class="mypage-cont_nav_divContainer">
+                                <div class="mypage-cont_nav_div">
+                                    <div class="mypage-cont_nav_each">
+                                        <a href="#">문의 접수</a>
+                                    </div>
+                                    <div class="mypage-cont_nav_each">
+                                        <a href="#">문의 내역</a>
+                                    </div>
+                                </div>
+                                <div class="mypage-cont_nav_effect"></div>
+                            </div>
+
+                            <!-- 컨텐츠 --------------------------------------->
+                            <div class="mypage_contents">
+
+                                <!-- <div class="mypage-cont_toptext">
+                                    <h3>문의 내역</h3>
+                                </div> -->
+
+                                <!-- 문의내역 -->                   
+                                <div class="mypage-cont_toptext">
+                                    <form action="" class="">
+                                        <select name="order_term" id="">
+                                            <option value="">2010.10.01 - 2010.11.02</option>
+                                        </select>
+                                        <button class="cont_form_btn">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                                <table class="mypage_table">
+                                    <thead class="table_head">
+                                        <tr class="table_head_tr">
+                                            <th class="board_date">등록일</th>
+                                            <th class="board_type">문의유형</th>
+                                            <th class="board_cont">게시글</th>
+                                            <th class="board_delete">삭제</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table_body">
+                                        <!-- for each 로 돌릴예정 -->
+                                        <tr class="board_tr">
+                                            <td>
+                                                <a href="#">2020.02.10</a>
+                                            </td>
+                                            <td>
+                                                dd
+                                            </td>
+                                            <td class="board_cont">게시글</td>
+                                            <td>
+                                                <button class="btn">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr> 
+                                    </tbody>
+                                </table>                        
+                            </div>
+
+                            <!-- 페이징 -->
+                            <section class="center_section center_cont_page">
+                                <nav class="page_nav">
+                                    <ul class="page_ul">
+                                        <!-- page back -->
+                                            <li class="page_li">
+                                                <a class="page_a page_back paging_unable" href="#">
+                                                    <span><i class="fa-solid fa-chevron-left"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="page_li">
+                                                <a class="page_a page_first" href="#">
+                                                    <span><i class="fa-solid fa-angles-left"></i></span>
+                                                </a>
+                                            </li>
+        
+                                        <!-- page -->
+                                        <li class="page_li "><a class="page_a paging_active" href="#">1</a></li>
+                                        <li class="page_li"><a class="page_a" href="#">2</a></li>
+                                        <li class="page_li"><a class="page_a" href="#">3</a></li>
+                                        <li class="page_li"><a class="page_a" href="#">4</a></li>
+                                        <li class="page_li"><a class="page_a" href="#">5</a></li>
+        
+                                        <!-- page next -->
+                                        <li class="page_li">
+                                                <a class="page_a page_next" href="#">
+                                                <span><i class="fa-solid fa-chevron-right"></i></span>
+                                                </a>
+                                        </li>
+                                        <li class="page_li">
+                                                <a class="page_a page_last" href="#">
+                                                <span><i class="fa-solid fa-angles-right"></i></span>
+                                                </a>
+                                        </li>
+                                    </ul>
+                                  </nav>
+                            </section>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer id="footer">
+            <div class="footer_logo">
+                <img src="./source/img/logo_mini.png" alt="logo_mini">
+            </div>
+            <div class="footer_alert">
+                <p>
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    반품 배송비, 반품 배송주소 등은 해당 상품 페이지 내 안내를 참고해주세요
+                </p>
+                <p>
+                    종로서적(주) 070-4487-2236
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
+
