@@ -69,9 +69,35 @@ public class BoardDAO {
     }
 
     /**
-     * @see .게시글 갯수 구하기
+     * @see .게시글 카테고리 
      */
-    public int getDBCount() {
+    public List<BoardDTO> getCgy(){
+    	List<BoardDTO> cgyList = new ArrayList<BoardDTO>();
+    	
+    	try {
+    		openConn();
+    		sql = "select * from board_category order by board_cgy_num";
+    		pstmt = con.prepareStatement(sql);
+    		rs = pstmt.executeQuery();
+    		
+    		while(rs.next()) {
+    			BoardDTO dto = new BoardDTO();
+    			dto.setBoard_cgy_num(rs.getString("board_cgy_num"));
+    			dto.setBoard_cgy_name(rs.getString("board_cgy_name"));
+    			cgyList.add(dto);
+    		}
+    		
+    	} catch (Exception e) { e.printStackTrace();
+		} finally { closeConn(rs, pstmt, con);
+		}
+    	
+    	return cgyList;
+    }
+    
+    /**
+     * @see .게시글 갯수 구하기 - 전체
+     */
+    public int getDBCount(int mem_num) {
         
         int result = 0;
         
@@ -79,8 +105,38 @@ public class BoardDAO {
             
             openConn();
             
-            sql= "select count(*) from board";
+            sql= "select count(*) from board where mem_num = ?";
             pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, mem_num);
+            rs = pstmt.executeQuery();
+            
+            if(rs.next()) {
+                result = rs.getInt(1);
+            }
+            
+        } catch (Exception e) { e.printStackTrace();
+        } finally { closeConn(rs, pstmt, con);
+        }
+        
+        
+        return result;
+    }
+    
+    /**
+     * @see .게시글 갯수 구하기 - 특정 게시글만
+     */
+    public int getDBCount(int mem_num, String board_cgy_num) {
+        
+        int result = 0;
+        
+        try {
+            
+            openConn();
+            
+            sql= "select count(*) from board where mem_num = ? and board_cgy_num = ?";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, mem_num);
+            pstmt.setString(2, board_cgy_num);
             rs = pstmt.executeQuery();
             
             if(rs.next()) {
@@ -191,9 +247,9 @@ public class BoardDAO {
    }
    
    /**
-    * @see. 특정 사용자 게시물 전체 보기
+    * @see. 특정 사용자 게시물 전체 리스트 보기
     */
-   public List<BoardDTO> getBoard(int mem_num){
+   public List<BoardDTO> getBoard(int mem_num, int page, int rowsize){
        
        List<BoardDTO> boardList = new ArrayList<BoardDTO>();
        
@@ -201,19 +257,30 @@ public class BoardDAO {
            
            openConn();
            
-           sql = "select b.*, bc.board_cgy_name "
+           // 포스트 시작, 끝 번호
+           int startNo = (page * rowsize) - (rowsize -1);
+           int endNo = (page * rowsize);
+           
+           sql = "with boardList as ("
+           	   + " select ROW_NUMBER() over(order by b.board_num desc) as row_num"
+           	   + "     , b.*, bc.board_cgy_name , br.reply_num "
                + "  from board b"
+               + "  left join board_reply br"
+               + "    on b.board_num = br.board_num"
                + "  join board_category bc"
                + "    on b.board_cgy_num = bc.board_cgy_num "
                + "  where mem_num = ?"
-               + "  order by b.board_num desc";
+               + " ) "
+               + " select * from boardList where row_num >= ? and row_num <= ? ";
            pstmt = con.prepareStatement(sql);
            pstmt.setInt(1, mem_num);
+           pstmt.setInt(2, startNo);
+           pstmt.setInt(3, endNo);
            rs = pstmt.executeQuery();
            
            while(rs.next()) {
                BoardDTO boardDto = new BoardDTO();
-               boardDto.setRow(rs.getRow());
+               boardDto.setRow(rs.getInt("row_num"));
                boardDto.setBoard_num(rs.getInt("board_num"));
                boardDto.setBoard_title(rs.getString("board_title"));
                boardDto.setBoard_cont(rs.getString("board_cont"));
@@ -222,6 +289,7 @@ public class BoardDAO {
                boardDto.setBoard_cgy_num(rs.getString("board_cgy_num"));
                boardDto.setBoard_cgy_name(rs.getString("board_cgy_name"));
                boardDto.setBoard_image(rs.getString("board_image"));
+               boardDto.setReply_num(rs.getInt("reply_num"));
                
                boardList.add(boardDto);
            }
@@ -232,6 +300,65 @@ public class BoardDAO {
        
        return boardList;
    }
+   
+   /**
+    * @see. 특정 사용자 특정 게시물 카테고리의 리스트 보기
+    */
+   public List<BoardDTO> getBoard(int mem_num, String board_cgy_num, int page, int rowsize){
+       
+       List<BoardDTO> boardList = new ArrayList<BoardDTO>();
+       
+       try {
+           
+           openConn();
+           
+           // 포스트 시작, 끝 번호
+           int startNo = (page * rowsize) - (rowsize -1);
+           int endNo = (page * rowsize);
+           
+           sql = "with boardList as ("
+           	   + " select ROW_NUMBER() over(order by b.board_num desc) as row_num"
+           	   + "     , b.*, bc.board_cgy_name, br.reply_num "
+               + "  from board b"
+               + "  left join board_reply br"
+               + "    on b.board_num = br.board_num"
+               + "  join board_category bc"
+               + "    on b.board_cgy_num = bc.board_cgy_num "
+               + " where mem_num = ?"
+               + "   and b.board_cgy_num = ?"
+               + " ) "
+               + " select * from boardList where row_num >= ? and row_num <= ? ";
+           pstmt = con.prepareStatement(sql);
+           pstmt.setInt(1, mem_num);
+           pstmt.setString(2, board_cgy_num);
+           pstmt.setInt(3, startNo);
+           pstmt.setInt(4, endNo);
+           rs = pstmt.executeQuery();
+           
+           while(rs.next()) {
+               BoardDTO boardDto = new BoardDTO();
+               
+               boardDto.setRow(rs.getInt("row_num"));
+               boardDto.setBoard_num(rs.getInt("board_num"));
+               boardDto.setBoard_title(rs.getString("board_title"));
+               boardDto.setBoard_cont(rs.getString("board_cont"));
+               boardDto.setBoard_date(rs.getString("board_date"));
+               boardDto.setBoard_update(rs.getString("board_update"));
+               boardDto.setBoard_cgy_num(rs.getString("board_cgy_num"));
+               boardDto.setBoard_cgy_name(rs.getString("board_cgy_name"));
+               boardDto.setBoard_image(rs.getString("board_image"));
+               boardDto.setReply_num(rs.getInt("reply_num"));
+               
+               boardList.add(boardDto);
+           }
+        
+        } catch (Exception e) { e.printStackTrace();
+        } finally { closeConn(rs, pstmt, con);
+        }
+       
+       return boardList;
+   }
+   
    
    /**
     * @see. 특정 사용자 특정 게시물 상세 보기
@@ -296,5 +423,55 @@ public class BoardDAO {
        }
        
        return result;
+   }
+   
+   /**
+    * @see .답변 보기
+    */
+   public BoardReplyDTO getBoardReply(int reply_num) {
+	   BoardReplyDTO boardReplyDto = null;
+	   
+	   try {
+		   openConn();
+		   
+		   sql = "select b.board_num"
+	   		+ "     , b.board_title"
+	   		+ "     , b.board_date"
+	   		+ "     , b.board_update"
+	   		+ "     , b.board_cgy_num"
+	   		+ "     , bc.board_cgy_name"
+	   		+ "     , br.reply_num"
+	   		+ "     , br.reply_cont"
+	   		+ "     , br.reply_date"
+	   		+ "     , br.reply_update"
+	   		+ "  from board b"
+	   		+ "  join board_reply br "
+	   		+ "    on b.board_num = br.board_num"
+	   		+ "  join board_category bc"
+	   		+ "    on b.board_cgy_num = bc.board_cgy_num"
+	   		+ " where br.reply_num = ?";
+		   pstmt = con.prepareStatement(sql);
+		   pstmt.setInt(1, reply_num);
+		   rs = pstmt.executeQuery();
+		   
+		   if(rs.next()) {
+			   boardReplyDto = new BoardReplyDTO();
+			   boardReplyDto.setBoard_num(rs.getInt("board_num"));
+			   boardReplyDto.setBoard_title(rs.getString("board_title"));
+			   boardReplyDto.setBoard_date(rs.getString("board_date"));
+			   boardReplyDto.setBoard_update(rs.getString("board_update"));
+			   boardReplyDto.setBoard_cgy_num(rs.getString("board_cgy_num"));
+			   boardReplyDto.setBoard_cgy_name(rs.getString("board_cgy_name"));
+			   boardReplyDto.setReply_num(rs.getInt("reply_num"));
+			   boardReplyDto.setReply_cont(rs.getString("reply_cont"));
+			   boardReplyDto.setReply_date(rs.getString("reply_date"));
+			   boardReplyDto.setReply_update(rs.getString("reply_update"));
+		   }
+				   
+	   } catch (Exception e) { e.printStackTrace();
+	   } finally { closeConn(rs, pstmt, con);
+	   }
+	   
+	   return boardReplyDto;
    }
 }
