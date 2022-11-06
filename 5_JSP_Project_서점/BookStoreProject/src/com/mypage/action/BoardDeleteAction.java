@@ -20,7 +20,7 @@ public class BoardDeleteAction implements Action {
         // 넘어온값
         // 받아온 세션
         HttpSession session = request.getSession();
-        int mem_num = (Integer)session.getAttribute("mem_num");
+        int mem_num = (Integer)session.getAttribute("userNum");
         String board_num = request.getParameter("board_num");
         System.out.println("board_num : " + board_num + ", mem_num : " + mem_num);
         
