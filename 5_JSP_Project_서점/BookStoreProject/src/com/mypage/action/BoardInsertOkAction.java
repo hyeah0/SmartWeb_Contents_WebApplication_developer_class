@@ -28,7 +28,7 @@ public class BoardInsertOkAction implements Action {
         MultipartRequest multi = null;
         
         // 로그인시 세션으로 받아온 회원 번호
-        int mem_num = (Integer)session.getAttribute("mem_num");
+        int mem_num = (Integer)session.getAttribute("userNum");
 
         // 파일 경로 지정
         String saveFolder = request.getServletContext().getRealPath("/boardUpload");
