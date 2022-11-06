@@ -15,7 +15,7 @@ import com.book.model.CategoryDAO;
 import com.book.model.CategoryDTO;
 import com.book.model.MemberDAO;
 import com.book.model.MemberDTO;
-import com.mysql.cj.Session;
+
 
 public class MemberPwdCkAction implements Action {
 
@@ -26,18 +26,14 @@ public class MemberPwdCkAction implements Action {
         // 비밀번호가 맞다면 수정 페이지로 이동
 
         // 헤더 카테고리
-        CategoryDAO cgyDao = CategoryDAO.getInstance();
         BookDAO bookDao = BookDAO.getInstance();
-        
-        List<CategoryDTO> cgyList = cgyDao.getCategory();
-        request.setAttribute("cgyList", cgyList);
         
         // 회원번호 & 비밀번호 저장
         // 회원번호 로그인시 세션설정 한 거로 받아오기
         System.out.println("--------------- MemberPwdCkAction 클래스");
-        // int mem_num = 1;    // 회원번호
         HttpSession session = request.getSession();
-        int mem_num = (Integer)session.getAttribute("mem_num");
+        int mem_num = (Integer)session.getAttribute("userNum");
+        session.getAttribute("cgyList");
         String input_pwd = request.getParameter("input_pwd");
         int result = 0;
         
@@ -74,7 +70,7 @@ public class MemberPwdCkAction implements Action {
               
             forward = new ActionForward();
             forward.setRedirect(false);
-            forward.setPath("view/mypage_member_update.jsp");
+            forward.setPath("bookmain/mypage_member_update.jsp");
         
         }
           
