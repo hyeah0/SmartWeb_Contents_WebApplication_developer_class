@@ -23,8 +23,8 @@ public class MemberUpdateOkAction implements Action {
         CategoryDAO cgyDao = CategoryDAO.getInstance();
         BookDAO bookDao = BookDAO.getInstance();
         
-        List<CategoryDTO> cgyList = cgyDao.getCategory();
-        request.setAttribute("cgyList", cgyList);
+        //List<CategoryDTO> cgyList = cgyDao.getCategoryList();
+        //request.setAttribute("cgyList", cgyList);
         
         // 넘어온 mem_num
         int mem_num = Integer.valueOf(request.getParameter("mem_num"));
