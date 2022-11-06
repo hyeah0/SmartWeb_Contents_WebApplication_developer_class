@@ -18,7 +18,7 @@ public class BoardContAction implements Action {
       
         // 받아온 세션
         HttpSession session = request.getSession();
-        int mem_num = (Integer)session.getAttribute("mem_num");
+        int mem_num = (Integer)session.getAttribute("userNum");
         
         // 받아온 게시글 고유 번호
         String board_num = request.getParameter("board_num");
@@ -33,12 +33,12 @@ public class BoardContAction implements Action {
         if(request.getParameter("update")== null) {
             
             forward.setRedirect(false);
-            forward.setPath("view/mypage_board_cont.jsp");
+            forward.setPath("bookmain/mypage_board_cont.jsp");
         
         }else if(request.getParameter("update").equals("1")){
             
             forward.setRedirect(false);
-            forward.setPath("view/mypage_board_update.jsp");
+            forward.setPath("bookmain/mypage_board_update.jsp");
             
         }
         
