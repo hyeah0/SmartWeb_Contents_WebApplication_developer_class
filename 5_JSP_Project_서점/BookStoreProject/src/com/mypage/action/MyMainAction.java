@@ -24,17 +24,13 @@ public class MyMainAction implements Action {
      
         // 받아온 회원 번호
         HttpSession session = request.getSession();
-        int mem_num = (Integer)session.getAttribute("mem_num");
-        
-        CategoryDAO cgyDao = CategoryDAO.getInstance();
-        List<CategoryDTO> cgyList = cgyDao.getCategory();
-        session.setAttribute("cgyList", cgyList );
+        int mem_num = (Integer)session.getAttribute("userNum");
         
         // 회원 마일리지, 회원 최근 주문건, 회원 자주 구매하는 카테고리의 한달 주문건 top3 
         // 추천 책 , 최근주문건
         BookDAO bookDao = BookDAO.getInstance();
         List<BookDTO> bookList = bookDao.recommendBook(mem_num);
-        List<OrderDTO> orderList = bookDao.getWeekOrder(mem_num);
+        // List<OrderDTO> orderList = bookDao.getWeekOrder(mem_num);
         
         // 회원정보 마일리지, 이름
         MemberDAO memDao = MemberDAO.getInstance();
@@ -43,14 +39,11 @@ public class MyMainAction implements Action {
         // 추천책, 회원정보(이름,마일리지), 최근주문건
         request.setAttribute("bookList", bookList);
         request.setAttribute("memberList", memberList);
-        request.setAttribute("orderList", orderList);
-        
+        // request.setAttribute("orderList", orderList);
         
         ActionForward forward = new ActionForward();
         forward.setRedirect(false);
-        forward.setPath("view/mypage_main.jsp");
-        
-        
+        forward.setPath("bookmain/mypage_main.jsp");
         
         return forward;
     }
