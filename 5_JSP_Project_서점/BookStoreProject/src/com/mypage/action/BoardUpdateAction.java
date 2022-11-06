@@ -16,12 +16,12 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class BoardUpdateAction implements Action {
 
-    @Override
-    public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
        
         System.out.println("------------------ BoardUpdateAction 클래스");
         HttpSession session = request.getSession();
-        int mem_num = (Integer)session.getAttribute("mem_num");
+        int mem_num = (Integer)session.getAttribute("userNum");
         System.out.println("넘어온 mem_num : " + mem_num);
         
         // 파일 경로 지정
@@ -29,6 +29,10 @@ public class BoardUpdateAction implements Action {
         int fileSize = 10 * 1024 * 1024; //10mb
         MultipartRequest multi = null;
         multi = new MultipartRequest(request, saveFolder, fileSize, "UTF-8", new DefaultFileRenamePolicy());
+
+        // 첨부 이미지 유지, 삭제, 새로 변경
+        int board_beimage_result = Integer.valueOf(multi.getParameter("board_beimage_result"));
+        System.out.println("board_beimage_result : " + board_beimage_result);
         
         // 게시물 번호 + 수정 내용
         int board_num = Integer.valueOf(multi.getParameter("board_num")); 
@@ -40,14 +44,16 @@ public class BoardUpdateAction implements Action {
         boardDto.setBoard_title(board_title);
         boardDto.setBoard_cont(board_cont);
         boardDto.setMem_num(mem_num);
-        System.out.println("board_img");
         
+        // 이미지 삭제 요청 후 새로운 이미지 등록
         if(multi.getFile("board_newimage")!=null) {
+             
             // 변경 이미지
             File upload_file = multi.getFile("board_newimage");
             boardDto.setBoard_image(upload_file.getName());
+        	 
         }else {
-            // 전 이미지
+            // 전 이미지 그대로 사용
            boardDto.setBoard_image(request.getParameter("board_beimage")); 
         }
         
@@ -64,7 +70,6 @@ public class BoardUpdateAction implements Action {
         }else {
             System.out.println("문의글 수정 실패!");
         }
-        
         
         return forward;
     }
