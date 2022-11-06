@@ -11,7 +11,7 @@
 		
 		$.ajax({
 			type : "post",
-			url : "/BookStoreProject/mypage_member_update_ck_pwd.do",
+			url : "/project_jsp/mypage_member_update_ck_pwd.do",
 			data : {input_pwd : $(".input_pwd").val()},
 			datatype : "jsp",
 			success : function(result){
@@ -26,7 +26,7 @@
 				}else if(result == 1){
 					$(".pwd_result").addClass('none')
 					$(".mypage-form").html('<input type="hidden" name="mem_num" value="1">')
-					$(location).attr("href", "/BookStoreProject/mypage_member_update.do?result="+result)
+					$(location).attr("href", "/project_jsp/mypage_member_update.do?result="+result)
 				}
 				
 			},
