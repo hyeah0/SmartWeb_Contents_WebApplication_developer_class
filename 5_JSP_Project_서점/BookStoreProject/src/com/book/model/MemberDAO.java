@@ -1,77 +1,139 @@
 package com.book.model;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import com.book.controller.Action;
-import com.book.controller.ActionForward;
-
 public class MemberDAO {
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	String sql = null;
 
-    // 멤버변수
-    Connection con = null;                      // 데이터 베이스와 연동하는 객체
-    PreparedStatement pstmt = null;             // 데이터 베이스에 sql문을 전송하는 객체
-    ResultSet rs = null;                        // sql문을 실행 후에 결과값을 가지고 있는 객체
-    String sql = null;                          // 쿼리문을 저장할 변수
-    
-    // 객체 변수
-    public static MemberDAO instance;             // 싱글턴 : 2단계
-    
-    // 생성자
-    public MemberDAO() {  }                       // 싱글턴 : 1단계
-    
-    /**
-     * @see .객체 생성 메서드
-     */
-    public static MemberDAO getInstance() {   // 싱글턴 : 3단계
-        
-        if(instance == null) {
-            instance = new MemberDAO();
-        }
-        
-        return instance;
-    }
+	private static MemberDAO instance;
 
-    /**
-     * @see .DB연동 메서드
-     */
-    public void openConn() {
-        try {
-            Context ctx = new InitialContext();
-            DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/myoracle");
-            con = ds.getConnection();
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("* ----- 데이터베이스 연결 실패! ----- *");
-        }
-    }
-    
-    /**
-     * @see .DB연결 종료 메서드 
-     */
-    public void closeConn(ResultSet rs, PreparedStatement pstmt, Connection con) {
-        
-        try{
-            // ResultSet rs 종료 
-            if(rs != null) { rs.close(); }
-            // PreparedStatement pstmt 종료
-            if(pstmt != null) { pstmt.close(); }
-            // Connection con 종료
-            if(con != null) { con.close(); }
-            
-        }catch(Exception e) { e.printStackTrace(); }
-    }
+	private MemberDAO() {
+	}
 
-    
+	public static MemberDAO getInstance() {
+
+		if (instance == null) {
+			instance = new MemberDAO();
+		}
+
+		return instance;
+	}
+
+	public void openConn() {
+
+		try {
+			Context ctx = new InitialContext();
+
+			DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/myoracle");
+
+			con = ds.getConnection();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void closeConn(ResultSet rs, PreparedStatement pstmt, Connection con) {
+
+		try {
+			if (rs != null)
+				rs.close();
+
+			if (pstmt != null)
+				pstmt.close();
+
+			if (con != null)
+				con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public List<MemberDTO> getMemberList() {
+		List<MemberDTO> list = new ArrayList<MemberDTO>();
+		openConn();
+		
+		try {
+			sql = "select * from member order by mem_num desc";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MemberDTO dto = new MemberDTO();
+				dto.setMem_num(rs.getInt("mem_num"));
+				dto.setMem_addr(rs.getString("mem_addr"));
+				dto.setMem_card_num(rs.getString("mem_card_num"));
+				dto.setMem_card_pwd(rs.getInt("mem_card_pwd"));
+				dto.setMem_id(rs.getString("mem_id"));
+				dto.setMem_mail(rs.getString("mem_mail"));
+				dto.setMem_mileage(rs.getInt("mem_mileage"));
+				dto.setMem_name(rs.getString("mem_name"));
+				dto.setMem_pwd(rs.getString("mem_pwd"));
+				dto.setMem_phone(rs.getString("mem_phone"));
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return list;
+	}
+
+	public MemberDTO getMember(int mem_num) {
+		MemberDTO dto = null;
+		openConn();
+		
+		// 확인용 지워질 예정
+		System.out.println("memberDto : getMember() 메서드 실행 : 받아온 mem_num  :" + mem_num);
+		
+		try {
+			sql = "select * from member where mem_num = ? ";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, mem_num);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dto = new MemberDTO();
+				dto.setMem_num(rs.getInt("mem_num"));
+				dto.setMem_addr(rs.getString("mem_addr"));
+				dto.setMem_card_num(rs.getString("mem_card_num"));
+				dto.setMem_card_pwd(rs.getInt("mem_card_pwd"));
+				dto.setMem_id(rs.getString("mem_id"));
+				dto.setMem_mail(rs.getString("mem_mail"));
+				dto.setMem_mileage(rs.getInt("mem_mileage"));
+				dto.setMem_name(rs.getString("mem_name"));
+				dto.setMem_pwd(rs.getString("mem_pwd"));
+				dto.setMem_phone(rs.getString("mem_phone"));
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return dto;
+	}
+	
+	// -----------------------------------------------------------------------------
+	  
     /**
      * @see .회원 비밀번호 확인 메서드
      */
@@ -106,39 +168,6 @@ public class MemberDAO {
         }
         
         return result;
-    }
-    
-    /**
-     * @see .멤버 정보 가져오는 메서드
-     */
-    public MemberDTO getMember(int mem_num) {
-        MemberDTO memDto = null;
-
-        try {
-            
-            openConn();
-            
-            sql ="select * from member where mem_num = ?";
-            pstmt = con.prepareStatement(sql);
-            pstmt.setInt(1, mem_num);
-            rs = pstmt.executeQuery();
-            
-            if(rs.next()) {
-                memDto = new MemberDTO();
-                memDto.setMem_num(rs.getInt("mem_num"));
-                memDto.setMem_id(rs.getString("mem_id"));
-                memDto.setMem_name(rs.getString("mem_name"));
-                memDto.setMem_phone(rs.getString("mem_phone"));
-                memDto.setMem_addr(rs.getString("mem_addr"));
-                memDto.setMem_mail(rs.getString("mem_mail"));
-                memDto.setMem_mileage(rs.getInt("mem_mileage"));
-            }
-                    
-        } catch (Exception e) { e.printStackTrace();
-        } finally { closeConn(rs, pstmt, con);
-        }
-        
-        return memDto;
     }
     
     /**
@@ -196,8 +225,6 @@ public class MemberDAO {
         
         return result;
     }
-    
-    // ----------------------------- 마이페이지 
-    
-    
+	
+	// -----------------------------------------------------------------------------
 }
