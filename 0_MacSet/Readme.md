@@ -10,6 +10,7 @@
 - npm : 8.5.2
 - apache tomcat : 9.0.65
 - docker : 20.10.17
+- Spring : 3.9.17
 
 ## jdk verion check
 
