@@ -10,3 +10,7 @@
 ```
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 ```
+
+## 서버 포트번호 변경하기
+
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/06_Spring/00_img/SpringMakeProject/changePortNum.png" width="70%">
