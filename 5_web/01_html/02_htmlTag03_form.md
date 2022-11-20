@@ -37,12 +37,16 @@
             <input type="" id="" name="변수이름" value="변수에 저장될 값"><br/> - > 사용자에게 데이터를 입력받을 값
 
             ** select, option **
-            <select> ------------------------------------------------------ > 드롭다운
-                <optgroup> ------------------------------------------------ > option 그룹
-                    <option></option> ------------------------------------- > 드롭다운에 들어갈 값
+            <select name="selectType"> ------------------------------------------------------ > 드롭다운
+                <optgroup> ------------------------------------------------------------------ > option 그룹
+                    <option value="a"></option> --------------------------------------------- > 드롭다운에 들어갈 값
                 </optgroup>
             </select>
-
+            ** selectType = a;
+            ** selectType >> select 태그에서 name 값
+            ** a >> option 태그에서 value 값
+            ** 옵션이 선택되면 option value 값이 select태그 네임의 값으로 들어간다.
+            
             ** input, datalist, option **
             <input type="text" list="listname">
                 <datalist id="listname"> ----------------------------------- > 리스트
