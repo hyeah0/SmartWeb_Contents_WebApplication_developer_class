@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 
+		스프링과 관련하여 설정 파일을 설정하는 공간 ==> 대부분 DB 연결 설정 공간.
+	-->
+	
+	<!-- 1. DataSource 정보 설정 ==> DB와 관계된 connection(연결) 정보를 담고있는 객체 -->
+	<!-- Window -->
+	<!-- 
+	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:this:@Localhost:1512:XE"></property>
+		<property name="username" value="web"></property>
+		<property name="password" value="[비밀번호]"></property>
+	</bean> 
+	-->
+	<!-- MAC 전자지갑 사용 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	    <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	    <property name="url" value="jdbc:oracle:thin:@[DB이름]_medium?TNS_ADMIN=[전자지갑주소]"/>
+	    <property name="username" value="ADMIN"/>
+	    <property name="password" value="[비밀번호]"/>
+	</bean>
+	
+	<!-- 2. Spring JDBCTemplate 클래스 설정 -->
+	<bean name="template" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>	
+		
+</beans>
