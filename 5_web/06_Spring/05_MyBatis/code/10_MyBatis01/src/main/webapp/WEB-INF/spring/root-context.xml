@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 1. DataSource 정보 설정 ==> DB와 관계된 connection(연결) 정보를 담고있는 객체 -->
+	<!-- 2. SqlSessionFactoryBean 클래스 설정 -->
+	<!-- 3. SqlSessionTemplate 클래스 설정 -->
+
+	<!-- 1. DataSource 정보 설정 ==> DB와 관계된 connection(연결) 정보를 담고있는 객체 -->
+	<!-- MAC 전자지갑 사용 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	    <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+	    <property name="url" value="jdbc:oracle:thin:@[DB이름]_high?TNS_ADMIN=[전자지갑주소/위치]"/>
+	    <property name="username" value="admin"/>
+	    <property name="password" value="[비밀번호]"/>
+	</bean>
+	
+	<!-- 2. SqlSessionFactoryBean 클래스 설정 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	    <property name="dataSource" ref="dataSource"/>
+	    <property name="mapperLocations" value="classpath:/mapper/*.xml" />
+	    <!-- <property name="configLocation" value="classpath:mapper/*.xml"/> -->
+	</bean>
+	
+	<!-- 3. SqlSessionTemplate 클래스 설정 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+	    <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
+	
+</beans>

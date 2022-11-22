@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD(Document Type Definition)
+	- 작성한 문서가 어떤 문서인지 정의해 놓은것
+	- 하나의 시스템 내에서 사용할 xml 데이터의 구조를 정의하여 유효성 점검시 사용하는 태그
+ -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!--  
+	<mapper namespace="[패키지명을 포함한 DAO 인터페이스 이름으로 작성하는 것이 관례이다.]"> 
+	namespace 명은 mapper 틀을 구분하는데 식별자로 사용이 된다.
+-->
+ <mapper namespace="com.spring.model.MemberDAO">
+ 
+	<!-- id는 memberDAOImpl 클래스에서 
+	     sqlsession.selectList("[]") 작성한 값을 작성한다.
+	     <select id="[all]" resultType="[반환타입]"></select>  -->	
+	
+	<!-- 
+		쿼리문 작성시 조건식 기호(> , <, &) 를 사용 할 때 
+		xml에서는 이런 기호들을 쿼리문 조건식 기호로 인식하는 것이 아닌 태그로 인식하는 경우가 있다.
+		이런 경우 에러가 발생 하므로, 조건식 기호들을 단순 문자열로 인식 시켜주어야 한다.
+		형식 ) <![CDATA[쿼리문]]>
+	 -->
+	
+	<select id="all" resultType="com.spring.model.MemberDTO">
+		select * from member10 order by num desc
+	</select>
+	
+	<!-- 회원 상세 -->
+	<select id="content" parameterType="int" resultType="com.spring.model.MemberDTO">
+		select * from member10 where num = #{num}
+	</select>
+	
+	<!-- 회원 비밀번호 -->
+	<select id="ck" parameterType="int" resultType="String">
+		select pwd from member10 where num = #{num}
+	</select>
+	
+	<!-- 등록 -->
+	<insert id="add" parameterType="com.spring.model.MemberDTO">
+		
+		insert into member10 values(
+		 	(select max(num) from member10)+1, 
+		 	#{memid}, #{memname}, #{pwd}, #{age},
+		 	#{mileage}, #{job}, #{addr}, sysdate
+		)
+	</insert>
+	
+	<!-- 수정 -->
+	<update id="edit" parameterType="com.spring.model.MemberDTO">
+		update member10 
+		   set age = #{age},
+		       mileage = #{mileage},
+		       job = #{job},
+		       addr = #{addr}
+		 where num = #{num} 
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="del" parameterType="int">
+		delete from member10 where num = #{num}
+	</delete>
+	
+	<!-- 회원번호 수정 -->
+	<update id="updateSeq" parameterType="int">
+		<![CDATA[update member10 set num = num -1 where num > #{num}]]>
+	</update>
+	
+	<!-- 검색 -->
+	<select id="memid" parameterType="String" resultType="com.spring.model.MemberDTO">
+		select * from member10 where memid like '%' || #{keyword} || '%'
+	</select> 
+	<select id="memname" parameterType="String" resultType="com.spring.model.MemberDTO">
+		select * from member10 where memname like '%' || #{keyword} || '%'
+	</select> 
+	<select id="job" parameterType="String" resultType="com.spring.model.MemberDTO">
+		select * from member10 where job like '%' || #{keyword} || '%'
+	</select>
+		
+ </mapper>
