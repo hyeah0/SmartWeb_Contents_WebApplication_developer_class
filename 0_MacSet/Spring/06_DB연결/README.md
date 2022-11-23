@@ -41,8 +41,8 @@
 
 ### 2. DataSource 정보 작성
 
-- [외부에서 연결하는 방법]()
-- [root-context.xml 파일에서 연결]()
+- [외부에서 연결하는 방법](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/Spring/06_DB%EC%97%B0%EA%B2%B0/01_%EC%99%B8%EB%B6%80%EC%97%90%EC%84%9C%EC%97%B0%EA%B2%B0.md)
+- [root-context.xml 파일에서 연결](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/Spring/06_DB%EC%97%B0%EA%B2%B0/02_root_context.xml%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C%EB%B0%94%EB%A1%9C%EC%97%B0%EA%B2%B0.md)
 
 ### 3. Controller 클래스가 속해있는 패키지를 자동으로 빈으로 등록해주는 태그작성
 
