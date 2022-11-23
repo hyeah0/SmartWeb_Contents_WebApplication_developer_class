@@ -1,0 +1,149 @@
+/* 메인페이지 통합 검색  button----------------------------------*/
+.center_search_form{  /*search form area*/
+    width: 80vw;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 4px solid var(--main-color);
+    border-radius: 20px;
+    position: relative;
+}
+
+.search_type,
+.search_input{
+    height: 40px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: transparent;
+}
+
+.search_input{
+    width: 70vw;
+}
+
+.search_btn{
+    position: absolute;
+    right: 0px;
+    font-size: 1rem;
+}
+
+.search_btn:hover{
+    color: var(--hover-color);
+    background-color: white;
+}
+
+/* 메인페이지 화제의 픽  button----------------------------------*/
+.store_pick_search{
+    height: 40px;
+    margin-bottom: var(--margin-padding);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.store_pick_search button{
+    color: white;
+}
+
+.store_pick_search button:hover{
+    border-bottom: 2px solid white;
+}
+
+.store_pick_search .active{
+    border-bottom: 2px solid white;
+}
+
+/* .default_pick{
+	 border-bottom: 2px solid white;
+} */
+
+/* 카테고리별 페이지 search ----------------------------------*/
+/* center_cont_search_pick          */
+/*    book_pick                     */
+/*    book_search                   */
+/*        book_search_form          */
+/*        book_search_layout        */
+.book_pick{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.book_pick .btn{
+    margin-left: 5px;
+    font-size: 0.7rem;
+    border-radius: 20px;
+    color: gray;
+}
+
+.book_search{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0px;
+    padding: 0px;
+}
+
+.book_search_form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    border-radius: 20px;
+    position: relative;
+}
+
+.book_search_form .search_input{
+    width: 100%;
+}
+
+.book_search_form .search_btn{
+    position: absolute;
+    top: 40%;
+    right: 20px;
+    margin: 0px;
+    padding: inherit;
+}
+
+.book_search_layout{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.book_search_layout .layout_size_btn{
+    width: 50px;
+    height: 30px;
+    font-size: 1rem;
+}
+
+.book_pick .btn:hover,
+.layout_size_btn:hover{
+    color: var(--hover-color);
+}
+
+.book_pick .btn.active,
+.layout_size_btn.active{
+    color: var(--hover-color);
+}
+
+
+@media screen and (max-width: 1100px) {
+    .book_pick .btn{
+        font-size: 0.5rem;
+    }
+}
+

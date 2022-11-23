@@ -1,0 +1,372 @@
+/* 책 리스트들 레이아웃 ------------------------------------------------------------- */
+#center h2{
+    font-size: var(--point-text-size);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: var(--margin-padding);
+}
+
+.center_store_pick h2{
+    padding-top: var(--margin-padding);
+    color: white;
+}
+
+/* ------------------ 책 하나 공통 레이아웃 ------------------ */
+.center_books{
+    width: 100%;
+    margin: auto;
+}
+
+.center_books_div{
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: center;
+    align-content: center;
+}
+
+/* 책 하나 */
+.booklist{
+    width: 18%;
+    height: 380px;
+    margin: 0px 10px 50px 10px;
+    border-radius: 5px;
+    background-color: var(--light-gray);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    position: relative;
+    /* background-color: sienna; */
+}
+
+/* 책 하나 _ 이미지 구역 */
+.booklist_imgArea{
+    height: 279px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 책 하나 _ 이미지 구역 _ 이미지 */
+.booklist_imgArea a{ 
+    width: 150px;
+    height: 225px;
+    box-shadow: var(--box-shadow);
+}
+
+.booklist_imgArea img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 책 하나 _ 콘텐츠 영역 */
+.booklist_cont{
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.booklist_cont h3{
+    height: 50px;
+}
+
+/* ------------------ 특정 부분만 적용 ------------------ */
+/* 메인 - 베스트 --------------------------------------- */
+/* 메인 페이지 _ 책 베스트만 높이 적용 */
+.center_best .booklist{
+    height: 390px;
+}
+
+.center_best .booklist_imgArea{
+    position: relative;
+}
+
+/* 메인 페이지 _ 이미지 구역 _ 인덱스 */
+.booklist_imgArea_index{
+    width: 50px;
+    height: 50px;
+    border-top-left-radius: 5px;
+    text-align: center;
+    background-color: var(--main-color);
+    color: white;
+    font-weight:bolder;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.booklist_imgArea_index p{
+    padding: 5px 3px 2px 3px;
+}
+
+.booklist_imgArea_index p:nth-child(2){ /* best */
+    font-size: 15px;
+}
+
+/* img a a tag */
+.center_best_book .booklist_imgArea a{
+    margin-top: 67px;
+}
+
+.booklist_imgArea a:hover{
+    box-shadow: var(--box-shadow-hover);
+}
+
+/* 메인 페이지 _ 책 베스트_텍스트부분  */
+.center_best .booklist_cont{
+    margin-top: var(--margin-padding);
+    background-color: white;
+}
+
+/* 메인 - 종로서적 pick ------------------------------------------------ */
+.center_store_pick img{
+    width: 150px;
+    height: 225px;
+}
+
+.center_store_pick .booklist_cont{
+    color: white;
+    background-color: var(--pale-white);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* 메인 페이지 _ 책 테이블 적용 _ 책 간단 요약 hover --------*/
+.booklist_cont_detail{
+    background-color: #fff;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.5s ease-in;
+}
+
+.booklist_cont_detail p{
+    width: 100%;
+}
+
+.booklist:hover .booklist_cont_detail{
+    transform: translateY(0);
+}
+
+.center_store_pick .booklist_imgArea img{
+    margin-top: 20px;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+
+/* 카테고리 페이지 북 레이아웃 ------------------------------------------------------------------------ */
+.center_cont_book{
+    padding-top: var(--margin-padding); 
+}
+
+.category_img_a:hover{
+    box-shadow: var(--box-shadow-hover);
+}
+.list_type_img .category_img_a:hover{
+    box-shadow: var(--box-shadow-hover);
+}
+
+/* 앨범형 */
+.center_cont_book .booklist{
+    height: 470px;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+/* 앨범형 이미지 사이즈 */
+.category_booklist .booklist_imgArea{
+    padding: 0px;
+}
+
+.booklist_imgArea .category_img_a{
+    width: 200px;
+    height: 275px;
+}
+
+/* 바로주문, 장바구니 */
+/* 리스트형 버튼 */
+.booklist_btn_list{ 
+	 width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.booklist_btn .btn{
+    background-color: var(--pale-main-color);
+    border-radius: 5px;
+    color: white;
+    padding: 10px 15%;
+    font-size: 1rem;
+}
+
+.booklist_btn .btn:hover{
+    background-color: var(--main-color);
+}
+
+/* 리스트형 ------------------------------------------- */
+.center_book_list_type{
+    height: 250px;
+    margin: var(--margin-padding) 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* 이미지 부분 */
+.list_type_img{
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 리스트형 이미지 사이즈 */
+.list_type_img .category_img_a{
+    width: 150px;
+    height: 225px;
+    box-shadow: var(--box-shadow);
+}
+
+.list_type_img img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 책 컨텐츠 부분 */
+.list_type_cont{
+    width: 80%;
+    height: 250px;
+    padding: 20px 10px;
+    overflow: scroll;
+}
+
+.list_type_cont_book{
+    margin-bottom: var(--margin-padding);
+}
+
+.list_type_cont_book h3{
+    margin-bottom: 10px;
+}
+
+.list_type_cont_book p{
+    margin-bottom: 5px;
+}
+
+/* 책 버튼 부분 */
+.list_type_button{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.list_type_button .cart_num_input{
+    margin: 0px var(--margin-padding);
+}
+
+.list_type_button .booklist_btn{
+    width: 120px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list_type_button .booklist_btn .btn{
+    width: 90%;
+}
+
+/* hr 구분선 */
+.category_page_hr{
+    height: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    background-color: var(--light-gray);
+}
+
+.category_page_hr_v{
+    width: 2px;
+    height: 450px;
+    border: none;
+    background-color: var(--light-gray);
+}
+
+/* 카테고리 페이지 */
+.wrap2{
+    display: grid;
+    grid-template-columns: repeat(5, 320px);
+}
+
+.wrap2 div{
+    padding: 10px;
+}
+
+.wrap2 div .booklist{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+/* 반응형 모음 --------------------------------- */
+/* 책 화면 크기 1370px 미만 부터 적용 */
+@media screen and (max-width: 1370px) { 
+    .center_books .booklist{
+        width: 22%;
+    }
+
+    .center_best{
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .center_store_pick{
+        height: 960px;
+        overflow: hidden;
+    }
+    
+    .wrap2{
+        grid-template-columns: repeat(4, 320px);
+    }
+} 
+
+/* 화면 크기 1150px 미만 부터 적용 */
+@media screen and (max-width: 1150px) { 
+    .center_books .booklist{
+        width: 27%;
+    }
+
+    .center_store_pick{
+        height: 960px;
+        overflow: hidden;
+    }
+    
+    .wrap2{
+         grid-template-columns: repeat(3, 320px);
+    }
+} 
+
+/* 화면 크기 920px 미만 부터 적용 */
+@media screen and (max-width: 920px) { 
+    .wrap2{
+        grid-template-columns: repeat(2, 320px);
+    }
+}
+
+
+

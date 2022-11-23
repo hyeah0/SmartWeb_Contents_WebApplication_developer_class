@@ -1,0 +1,62 @@
+@charset "UTF-8";
+.mypage_contents{
+    width: 100%;
+}
+
+.mypage-cont_deleteArea{
+    width: 90%;
+    margin: auto;
+}
+
+.mypage-cont_toptext{
+	margin-bottom: 30px;
+}
+
+.coupon_mileage_each{
+    width: 450px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    background-color: var(--light-gray);
+    margin-bottom: 20px;
+}
+
+.mypage-cont_delete_guide{
+    margin-top: var(--margin-padding);
+    margin-bottom: 50px;
+    padding: var(--margin-padding);
+    background-color: rgba(240, 240, 240, 0.822);
+    border-radius: 10px;
+}
+
+.mypage-cont_delete_guide h3{
+    margin-bottom: 5px;
+}
+
+.mypage-cont_delete_guide p{
+    margin-bottom: 20px;
+}
+
+.mypage-cont_deleteBtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn{
+    width: 200px;
+    margin: 35px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 10px;
+    font-size: 15px; 
+    box-shadow: var(--box-shadow);
+    background-color: var(--main-color);
+    color: white;
+}
+
+.btn:hover{
+    background-color: var(--hover-color);
+    color: white;
+}

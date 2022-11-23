@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+
+body {
+    margin-top: 230px;
+    /* height: 2100px;  확인 필요 */
+    overflow: scroll;
+}
+
+.container {
+	margin-left: 15%;
+	margin-right: 15%;
+}
+	
+/*-------------------------------*/
+.top_top {
+    flex: 0.05;
+    margin: 3.5px -8px 0px 30px;
+    padding: 5px;
+}
+/*-------------------------------*/
+.content_title{
+	display: flex;
+	margin: 3px 0px -5px 10px;
+}
+
+	.top_left {
+	    /*전체 너비의 0.3*/
+	    flex: 0.3;
+	    margin: 10px;
+	}
+		.book_img {
+			width: 250px;
+			height: 340px;
+			object-fit: cover;
+			box-shadow: 3px 3px 15px #000;
+		}
+	
+	.top_right {
+		flex: 0.7;
+		margin-left: 5%;
+	}
+	
+		.book_title {
+			font-size: 1.5em;
+		}
+		.book_price{
+			display: flex;
+			font-size: 1.3em;
+			justify-content: flex-end;
+		}
+		#book_page_view{
+			border:none;
+			width:35px;
+			font-size:1em;
+		}
+		
+		.mileage_info{
+			font-size: 1em;
+			text-align: right;
+		}
+		.book_count{
+			float:right;
+		}
+			#count{
+				width:18px;
+			}
+			
+		.buy{
+			float:right;
+		}
+		.total{
+			float:right;
+		}
+			#totalprice_view{
+				width:110px;
+				size:2em;
+				border:none;
+				font-size:2em;
+				text-align:right;
+				margin: 1.5px;
+			}
+		
+		.button_bundle{
+			float: right;
+		}	
+			#gobuy{
+				margin: 0 0 0 10px;
+			}
+/*-------------------------------*/
+.content_page {
+    flex: 0.05;
+    margin: 35px -4px 0px 30px;
+    padding: 5px;
+}		
+
+		.subtitle{
+			font-size: 1.2em;
+		}
+		
+		#timeinfo{
+			width:200px;
+			border:none;
+			font-size: 1.2em;
+		}
+		
+		.timeinfoinfo{
+			display:block;
+			font-size: 0.7em;
+			color: gray;
+		}

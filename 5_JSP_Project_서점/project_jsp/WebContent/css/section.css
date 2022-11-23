@@ -1,0 +1,163 @@
+/* @charset "UTF-8";
+
+body {
+	text-align: center;
+	color: #242121;
+	padding-left: 2.5em;
+	padding-right: 2.5em;
+}
+
+body .wapper {
+	width: 100%;
+	text-align: left;
+	margin: 0 auto;
+	font-family: serif,돋움;
+	font-size: 18px;
+	color: #000000;
+}
+
+header, footer, nav, aside, section {
+	border: 1px solid #999;
+	margin: 20px;
+	padding-bottom: 20px;
+
+}
+
+
+nav, section, aside { 
+	display : inline-block;
+	overflow: auto;
+}
+
+nav {
+	width: 10%;
+	position: fixed;
+	left: 2%;
+	top:155px;
+	border-radius: 20px 5px 20px 5px;
+	background-size: 600px;
+	background-repeat: no-repeat;
+}
+
+nav a, aside a {
+	color: blue;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: red;
+	text-decoration: underline;
+}
+nav img{
+	height: 100px;
+	width: 100px;
+	display : block;
+	margin: auto;
+}
+nav ul li{
+	font-family: fantasy, 돋움체;
+	font-size: 20px;
+}
+
+
+nav .home a {
+	font-family : system-ui,돋움;
+	color: black;
+	padding-left:10px;
+	text-decoration: none;
+	text-shadow: 3px 3px 3px #5e3c3c;
+}
+
+nav .home a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+nav .home {
+	text-align: center;
+	padding-right: 40%;
+}
+내용
+section {
+	width: 74%;
+	position: relative;
+	left: 12%;
+	min-height: 500px;
+}
+
+article {
+	width: 90%;
+	margin: 20px;
+}
+
+article div{
+	min-height: 220px;
+}
+
+article .iconRight {
+	height: 150px;
+	width: 150px;
+	float: right;
+	clear: close;
+}
+
+article .iconLeft {
+	height: 150px;
+	width: 150px;
+	float: left;
+	clear: close;
+}
+
+article span{
+	font-weight: bold;
+	font-size: 22px;
+	color: #0037ff;	
+}
+
+aside {
+	width: 10%;
+	position: fixed;
+	text-align: left;
+	right: 2%;
+	top:155px;
+	border-radius: 20px 5px 20px 5px;
+}
+
+aside ul li {
+	padding-right: 20%;
+	font-family: monospace;
+	font-weight: lighter;
+	font-size: 15px;
+}
+aside img{
+	height: 100px;
+	width: 100px;
+	display : block;
+	margin: auto;
+}
+aside a:hover{
+	color: #0080ff;
+	text-decoration: underline;
+}
+
+footer {
+	height: 50px;
+	position: relative;
+	border-radius: 5px;
+	padding: 0.6em 1em;
+	bottom: 10px;
+}
+footer ul{position: relative;bottom: 15px;}
+
+footer a {
+	font-family: 바탕체;
+	text-decoration : none;
+	color: #112e12;
+	text-decoration: none;
+	color: #000000;
+	font-family: fantasy, 돋움체;
+}
+footer a:hover{
+	color: #7777f9;
+	text-decoration: underline;
+} */

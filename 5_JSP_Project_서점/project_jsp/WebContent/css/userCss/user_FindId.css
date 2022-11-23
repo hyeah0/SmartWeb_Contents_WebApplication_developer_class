@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/* CSS Libraries Used 
+
+*Animate.css by Daniel Eden.
+*FontAwesome 4.7.0
+*Typicons
+
+*/
+
+body, html{
+	font-family: 'source Sans Pro', sans-serif;
+	background-color: #d6d6d6;
+	padding: 1;
+	margin: 1;
+}
+
+.search-title h3{
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #5c6bc0; 
+  font-size: 18px;
+  margin-top:80px;;
+}
+
+.box input[type = "text"],.box input[type = "tel"]{
+  display: block;
+  margin: 14px auto;
+  background: #d6d6d6;
+  border: 0;
+  border-radius: 5px;
+  padding: 14px 5px;
+  width: 250px;
+  outline: none;
+  color: #262e49;
+      -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+.box{
+  margin: 0;
+  top: 50px;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border-radius: 9px;
+  border-top: 10px solid #79a6fe;
+  border-bottom: 10px solid #79a6fe;
+  width: 400px;
+  height: 400px;
+  box-shadow: 1px 1px 108.8px 19.2px #ffffff;	
+}
+
+label {
+  padding-left :inherit;
+  line-height: 40px;
+  width: 90px;
+  display: inline-block;
+  position: relative;
+  float: left;
+  left: 7.5%;
+  font-size: 15px;
+}
+
+.btnSearch input[type = "button"]{
+	border-radius: 9px;
+	width : 70px;
+	height : 35px;
+	size: 20px;
+}
+
+.btn-11 {
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.btn-11:hover {
+   background: #000;
+  color: #fff;
+}
+.btn-11:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+.btn-11:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
