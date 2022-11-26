@@ -8,26 +8,26 @@
 
 <div>
 <h3> - 라이브러리(Apache Commons FileUpload)</h3>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%201.png" width="70%">
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%202.png" width="70%">
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%203.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File01.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File02.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File03.png" width="70%">
 </div>
 <br>
 <div>
 <h3> - 라이브러리(Apache Commons IO)</h3>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%204.png" width="70%">
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%205.png" width="70%">
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%206.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File04.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File05.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File06.png" width="70%">
 </div>
 <br>
 <div>
 <h3> - 라이브러리 Servelt-context.xml 파일에 등록</h3>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%208-1.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File07.png" width="70%">
 </div>
 <br>
 <div>
 <h3> - 라이브러리 root-context.xml 파일에 등록</h3>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%208-2.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File08.png" width="70%">
 <code>
 <bean id="multipartResolver"
 class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
@@ -40,14 +40,14 @@ class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 <div>
 <h3> - 업로드한 파일이 들어갈 파일 생성</h3>
 <p>위치 : src >> main >> webapp >> resources</p>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%209.png" width="70%">
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%210.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File09.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File10.png" width="70%">
 </div>
 <br>
 <div>
 <h3> - 생성한 파일의 위치 확인</h3>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%211.png" width="70%">
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%212.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File11.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File12.png" width="70%">
 </div>
 <br>
 <div>
