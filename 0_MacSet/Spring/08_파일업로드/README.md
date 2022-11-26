@@ -30,11 +30,13 @@
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File08.png" width="70%">
 <br>
 <code>
-&lt;bean id="multipartResolver"<br>
-class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt;<br>
-&lt;property name="maxInMemorvSize" value="10485760"<br>
+<pre>
+&lt;bean id="multipartResolver"
+class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt;
+&lt;property name="maxInMemorvSize" value="10485760"
 &lt;property name=" defaultEncodina" value="UTF-8"
-&lt;/bean&gt;<br>
+&lt;/bean&gt;
+</pre>
 </code>
 </div>
 <br>
