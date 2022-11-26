@@ -17,7 +17,7 @@
 <h3> - 라이브러리(Apache Commons IO)</h3>
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%204.png" width="70%">
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%205.png" width="70%">
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%207.png" width="70%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File%206.png" width="70%">
 </div>
 <br>
 <div>
