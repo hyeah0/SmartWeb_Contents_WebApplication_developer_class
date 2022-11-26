@@ -28,12 +28,13 @@
 <div>
 <h3> - 라이브러리 root-context.xml 파일에 등록</h3>
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/image/spring_fileupload/File08.png" width="70%">
+<br>
 <code>
-&lt;bean id="multipartResolver"
-class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt;
-&lt;property name="maxInMemorvSize" value="10485760"
+&lt;bean id="multipartResolver"<br>
+class="org.springframework.web.multipart.commons.CommonsMultipartResolver"&gt;<br>
+&lt;property name="maxInMemorvSize" value="10485760"<br>
 &lt;property name=" defaultEncodina" value="UTF-8"
-&lt;/bean&gt;
+&lt;/bean&gt;<br>
 </code>
 </div>
 <br>
