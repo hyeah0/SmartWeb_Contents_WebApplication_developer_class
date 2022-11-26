@@ -28,7 +28,6 @@
   - BEFORE : 원래 쿼리문 이전에 selectKey 태그가 실행된다.
   - AFTER : 원래 쿼리문 이후에 selectKey 태그가 실행된다.
 - 주의사항 : 반드시 멤버 변수에 해당하는 setter()와 getter() 메서드가 존재해야한다.
-- [관련 코드](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/06_Spring/05_MyBatis/code/MyBatis02_board/src/main/resources/mapper/board.xml)
 
 ```
 <insert id="insert" parameterType="boardDto">
@@ -44,6 +43,7 @@
 		)
 	</insert>
 ```
+- [관련 코드](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/06_Spring/05_MyBatis/code/MyBatis02_board/src/main/resources/mapper/board.xml)
 
 ## 페이징 
 - [관련코드 pageDTO](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/06_Spring/05_MyBatis/code/MyBatis02_board/src/main/java/com/mybatis/model/PageDTO.md)
