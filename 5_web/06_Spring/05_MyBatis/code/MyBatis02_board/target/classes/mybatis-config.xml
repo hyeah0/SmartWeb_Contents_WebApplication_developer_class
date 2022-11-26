@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	com.spring.model.EmpDTO >> 에서 com.spring.model 부분을 별칭으로 지정하여 
+	간편하게 사용
+ -->
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.mybatis.model.BoardDAO" alias="boardDao"/>
+		<typeAlias type="com.mybatis.model.BoardDTO" alias="boardDto"/>
+		<typeAlias type="com.mybatis.model.PageDTO" alias="pageDto"/>
+	</typeAliases>
+</configuration>
