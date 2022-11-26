@@ -1,3 +1,7 @@
+## DB 연결 방식 - 외부에서 가져오기
+- [연결 방식 참고](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/Spring/06_DB%EC%97%B0%EA%B2%B0/01_%EC%99%B8%EB%B6%80%EC%97%90%EC%84%9C%EC%97%B0%EA%B2%B0.md)
+- [관련코드]()
+
 ## 쿼리문 작성시 조건식 기호(> , <, &) 를 사용 할 때 주의
 - xml에서는 이런 기호들을 쿼리문 조건식 기호로 인식하는 것이 아닌 태그로 인식하는 경우가 있다.
 	<br> 이런 경우 에러가 발생 하므로, 조건식 기호들을 단순 문자열로 인식 시켜주어야 한다.
