@@ -45,3 +45,7 @@
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_JSP_Project_%EC%84%9C%EC%A0%90/%E1%84%83%E1%85%A1%E1%86%B7%E1%84%83%E1%85%A1%E1%86%BC%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB_img/page7.png" width="100%">
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_JSP_Project_%EC%84%9C%EC%A0%90/%E1%84%83%E1%85%A1%E1%86%B7%E1%84%83%E1%85%A1%E1%86%BC%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB_img/page8.png" width="100%">
 
+## 프로젝트를 통해 목표사항
+- 부트스트랩을 사용하지 않고 코드 작성해보기(목표성공)
+- jquery, javascript 둘 다 사용해보기(목표성공)
+
