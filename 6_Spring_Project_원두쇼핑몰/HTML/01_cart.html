@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="./resources/orderimg/coffeebean04.png">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/contents.css">
+    <script src="https://kit.fontawesome.com/4338ad17fa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 해더 -->
+    <header class="header">
+        header
+    </header>
+    <!-- 컨텐츠 부분 -->
+    <section class="content">
+        <section class="order_wrap">
+            <section class="order_top">
+                <!-- 홈 > 장바구니 > 주문서작성 > 결제완료 > 주문완료 -->
+                <section class="order_path">
+                    <ul class="list order_path_list">
+                        <li>
+                            <a href="#" class="a order_path_a">홈</a>
+                        </li>
+                        <li>
+                            <a href="./01_cart.html" class="a last order_path_a"><b>장바구니</b></a>
+                        </li>
+                        <!-- <li>
+                            <a href="#" class="a order_path_a">주문서작성</a>
+                        </li>
+                        <li>
+                            <a href="#" class="a order_path_a">결제완료</a>
+                        </li>
+                        <li>
+                            <a href="#" class="a order_path_a">주문완료</a>
+                        </li> -->
+                    </ul>
+                </section>
+                <!-- 현재 페이지 -->
+                <section class="order_path_now">
+                    <h4>장바구니</h4>
+                </section>
+            </section>
+            <!-- 현재 진행상황 -->
+            <section class="order_progress">
+                <ul class="list order_progress_list">
+                    <li class="now">
+                        <img src="./resources/orderimg/coffeebean01.png" class="progress_list_img">
+                        <span>1. 장바구니</span>
+                    </li>
+                    <li class="notnow">
+                        <img src="./resources/orderimg/coffeebean02.png" class="progress_list_img">
+                        <span>2. 주문서작성</span>
+                    </li>
+                    <li class="notnow">
+                        <img src="./resources/orderimg/coffeebean03.png" class="progress_list_img">
+                        <span>3. 결제완료</span>
+                    </li>
+                    <li class="notnow">
+                        <img src="./resources/orderimg/coffeebean04.png" class="progress_list_img">
+                        <span>4. 주문완료</span>
+                    </li>
+                </ul>
+            </section>
+            <!-- 카트 목록 -->
+            <section class="order_table">
+                <table class="table order_table_t">
+                    <colgroup>
+                        <col style="width: 40px">
+                        <col style="width: 110px">
+                        <col style="width: 400px">
+                        <col style="width: 100px">
+                        <col style="width: 100px">
+                        <col style="width: 100px">
+                        <col style="width: 100px">
+                        <col style="width: 100px">
+                        <col style="width: 100px">
+                    </colgroup> 
+                    <thead class="order_table_t_head">
+                        <tr>
+                            <th colspan="9">일반상품</th>
+                        </tr>
+                    </thead>
+                    <tbody class="order_table_t_body">
+                        <tr>
+                            <th><input type="checkbox" class="table_all_checkbox"></th>
+                            <th>이미지</th>
+                            <th>상품정보</th>
+                            <th>판매가</th>
+                            <th>수량</th>
+                            <th>적립금</th>
+                            <th>배송비</th>
+                            <th>합계</th>
+                            <th>선택</th>
+                        </tr>
+                        <!-- 주문 -->
+                        <tr class="table_tr">
+                            <td><input type="checkbox" class="table_ck"></td>
+                            <td>
+                                <a href="#" class="table_order_img">
+                                    <img src="./resources/orderimg/coffeebean.png" alt="#" >
+                                </a>
+                            </td>
+                            <td class="table_order_name">
+                                <p><b>상품명</b></p>
+                                <p>옵션</p>
+                            </td>
+                            <td>
+                                <span class="row_price">10000</span>원
+                            </td>
+                            <td>
+                                <div class="table_cnt_updown">
+                                    <input type="number" min="1" max="10" class="table_cnt" value="1">
+                                    <div class="table_cnt_btn_area">
+                                        <button class="btn table_btn_up"><i class="fa-solid fa-caret-up"></i></button>
+                                        <button class="btn table_btn_down"><i class="fa-solid fa-caret-down"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="row_point">100</span>원
+                            </td>
+                            <td>무료</td>
+                            <td>
+                                <span class="row_total">10000</span>원
+                            </td>
+                            <td>
+                                <div class="table_btn_area">
+                                    <button class="btn table_btn_order">주문하기 <i class="fa-solid fa-caret-right"></i></button>
+                                    <button class="btn cancel_btn table_btn_delte"><i class="fa-sharp fa-solid fa-xmark"></i> 삭 제</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- 주문 -->
+                        <tr class="table_tr">
+                            <td><input type="checkbox" class="table_ck"></td>
+                            <td>
+                                <a href="#" class="table_order_img">
+                                    <img src="./resources/orderimg/coffeebean.png" alt="#" >
+                                </a>
+                            </td>
+                            <td class="table_order_name">
+                                <p><b>상품명</b></p>
+                                <p>옵션</p>
+                            </td>
+                            <td>
+                                <span class="row_price">10000</span>원
+                            </td>
+                            <td>
+                                <div class="table_cnt_updown">
+                                    <input type="number" min="1" max="10" class="table_cnt" value="1">
+                                    <div class="table_cnt_btn_area">
+                                        <button class="btn table_btn_up"><i class="fa-solid fa-caret-up"></i></button>
+                                        <button class="btn table_btn_down"><i class="fa-solid fa-caret-down"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="row_point">100</span>원
+                            </td>
+                            <td>무료</td>
+                            <td>
+                                <span class="row_total">10000</span>원
+                            </td>
+                            <td>
+                                <div class="table_btn_area">
+                                    <button class="btn table_btn_order">주문하기 <i class="fa-solid fa-caret-right"></i></button>
+                                    <button class="btn cancel_btn table_btn_delte"><i class="fa-sharp fa-solid fa-xmark"></i> 삭 제</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="order_table_t_foot">
+                        <tr>
+                            <td colspan="9">
+                                <p>
+                                    상품 구매금액 <span><b class="table_all_total">10000</b></span> 원 + 
+                                    배송비 <span><b class="table_delivery_fee">0</b></span> 원(무료) = 
+                                    합계 : <span><b class="table_last_total">10000</b></span> 원</p>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="order_table_bottom">
+                    <p>선택 상품을 
+                        <button class="btn cancel_btn cart_select_delete">
+                            <i class="fa-sharp fa-solid fa-xmark"></i> 삭제하기
+                        </button>
+                    </p>
+                    <p><button class="btn cart_empty">장바구니 비우기</button></p>
+                </div>
+            </section>
+            <!-- 총 상품 금액 -->
+            <section class="order_total">
+                <table class="table order_total_t">
+                    <tbody>
+                        <tr>
+                            <th>총 상품 금액</th>
+                            <th>총 배송비</th>
+                            <th>결제예정금액</th>
+                        </tr>
+                        <tr>
+                            <td><b class="table_all_total">10000</b>원</td>
+                            <td><b class="table_delivery_fee">0</b>원</td>
+                            <td><b class="table_last_total">10000</b>원</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="order_total_bottom">
+                    <div class="empty"></div>
+                    <div class="btn_order">
+                        <button class="btn btn_all_order">전체상품주문</button>
+                        <button class="btn btn_select_order">선택상품주문</button>
+                    </div>
+                    <div class="btn_shop">
+                        <button class="btn btn_shop_continue">쇼핑계속하기</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+     <!-- 푸터 -->
+    <footer class="footer">
+        footer
+    </footer>
+    <script src="./js/cart.js"></script>
+</body>
+</html>

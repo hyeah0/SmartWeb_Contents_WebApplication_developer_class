@@ -1,0 +1,279 @@
+:root{
+    --xsmall-text : 14px;
+    --small-text : 15px;
+
+    --table_bold_color : rgb(78, 78, 78);
+    --table_border_color :  rgb(214, 214, 214);
+    --table_back_color : rgb(243, 243, 243);
+
+    --cancel-color : rgb(131, 131, 131);
+}
+
+/* 구역 확인용 ------------------------------------------------ */
+/* .order_top{
+    background-color: pink;
+}
+
+.order_path{
+    background-color: beige;
+}
+
+.order_path_a{
+    background-color: rgb(192, 192, 149);
+}
+
+.order_progress_list li{
+    background-color: aquamarine;
+}
+
+.order_table_bottom{
+    background-color: pink;
+} */
+
+
+/* --------------------------------------------------------- */
+
+/* 버튼 공통사항 */
+.btn{
+    border: 1px solid var(--table_border_color);
+    background-color: transparent;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+.cancel_btn{
+    background-color: var(--cancel-color);
+    color: white;
+}
+
+/* order_top ----------------------------------------------- */
+/* section : order_top >> order_path */
+.order_path{
+    display: flex;
+    justify-content: right;
+    height: var(--xsmall-text);
+    font-size: var(--xsmall-text);
+}
+
+.order_path_list{
+    display: flex;
+    margin: 0px;
+}
+
+.order_path_a{
+    padding-left: 10px;
+}
+
+.a:not(.last):after{
+    content: " > ";
+}
+
+/* section : order_top >> order_path_now */
+.order_path_now{
+    display: flex;
+    align-items: center;
+    height: var(--xsmall-text);
+    font-size: var(--xsmall-text);
+}
+
+
+/* order_progress ----------------------------------------------- */
+.order_progress_list{
+    display: flex;
+    padding: 0px;
+}
+
+.order_progress_list li{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress_list_img{
+    padding: 10px;
+    width: 30px;
+}
+
+/* 현재 페이지일 경우 강조표시 / 아닐경우 글씨 회색 */
+.now {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.now .progress_list_img{
+    width: 40px;
+}
+
+.notnow{
+    color: gray;
+}
+
+/* order_table ----------------------------------------------- */
+.table{
+    width: 100%;
+    border: 1px solid var(--table_border_color);
+    border-collapse: collapse;
+    font-size: var(--xsmall-text);
+}
+
+.table_tr{
+    border-bottom: 1px solid var(--table_border_color);
+}
+
+.table th{
+    padding: 5px;
+}
+
+.order_table_t_head,
+.order_table_t_body th,
+.order_table_t_foot{
+    background-color: var(--table_back_color);
+}
+
+.order_table_t_head th{
+    text-align: left;
+    font-size: var(--small-text);
+    padding-left: 10px;
+}
+
+.order_table_t_body th{
+    font-weight: 400;
+    color: var(--table_bold_color);
+    border: 1px solid var(--table_border_color);
+}
+
+.order_table_t_body td:not(.table_order_name){
+    text-align: center;
+}
+
+/* 상품이미지 */
+.table_order_img{
+    width: 100px;
+    display: block;
+    padding: 10px;
+}
+
+.table_order_img img{
+    width: 90%;
+}
+
+/* 상품정보 */
+.table_order_name{
+    padding: 10px;
+}
+
+/* 상품수량 */
+.table_cnt_updown{
+    display: flex;
+    justify-content: center;
+}
+
+.table_cnt_updown input{
+    width: 40px;
+    border: 1px solid var(--table_border_color);
+    outline: none;
+}
+
+/* input number 화살표 제거 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.table_cnt_btn_area{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--table_border_color);
+}
+
+.table_cnt_btn_area button{
+    height: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.table_cnt_btn_area button i{
+    font-size: var(--xsmall-text);
+}
+
+/* 상품선택 */
+.table_btn_area button{
+    width: 80px;
+    margin-bottom: 5px;
+}
+
+.table_btn_order{
+    background-color: var(--point-color);
+}
+
+/* 주문 테이블 하단 */
+.order_table_t_foot td{
+    text-align: right;
+    font-size: var(--small-text);
+    padding-right: 10px;
+}
+
+.table_last_total{
+    color: blue;
+    font-size: 1.2rem;
+}
+
+.order_table_bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.order_table_bottom button{
+    width: 100px;
+}
+
+/* order_total ----------------------------------------------- */
+.order_total_t{
+    margin-bottom: var(--margin-bottom);
+}
+
+.order_total_t tr{
+    height: 70px;
+    text-align: center;
+}
+
+.order_total_t tr:nth-child(1){
+    background-color: var(--table_back_color);
+}
+
+.order_total_t th,
+.order_total_t td{
+    border: 1px solid var(--table_border_color);
+}
+
+.order_total_t td{
+    font-size: 1.2rem;
+}
+
+/* order_total 버튼구역 */
+.order_total_bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.order_total_bottom .btn{
+    padding: 5px 15px 5px 15px;
+}
+
+.btn_all_order{
+    margin-left: 10px;
+}
+
+.btn_all_order{
+    background-color: var(--point-color);
+}
+
+/* ----------------- 삭제시 display none --------------------------- */
+.display_none{
+    display: none;
+}
