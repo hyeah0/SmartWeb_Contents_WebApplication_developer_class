@@ -1,0 +1,12 @@
+## untracked working tree files overwritten 오류 발생시
+```
+$ git clean -d -f -f
+```
+- 명령어 실행
+- 추적되지 않은 파일들을 모두 지울 수 있다.
+[참고 링크](https://hubring.tistory.com/38)
+
+- 단! stash 하지 않은 파일들을 사라질 수 있다.
+- git stash 란?
+  - commit  하지 않은 파일들을 스택에 임시로 저장
+  [참고 링크](https://gmlwjd9405.github.io/2018/05/18/git-stash.html)
