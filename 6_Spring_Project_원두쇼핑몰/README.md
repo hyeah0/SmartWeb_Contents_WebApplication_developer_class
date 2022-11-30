@@ -1,0 +1,2 @@
+- [프로젝트 스케줄 관리](https://docs.google.com/spreadsheets/d/1dyp5GsrBrywq1jHbqxtnnueAX33mugWEkqiNYHWwU48/edit#gid=441105338) 
+- 프로젝트 기간 : 2022.11.25(금) - 2022.12.28(수)
