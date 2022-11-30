@@ -1,34 +1,32 @@
-
-
 -- coffee_test --
-drop table coffee_brew;
-drop table coffee_add;
-drop table coffee_decaff;
-drop table coffee_taste_acid;
-drop table coffee_taste;
-drop table coffee_grind;
+drop table coffee_brew purge;
+drop table coffee_add purge;
+drop table coffee_decaff purge;
+drop table coffee_taste_acid purge;
+drop table coffee_taste purge;
+drop table coffee_grind purge;
 
 -- cart_order --
-drop table coffee_cart;
-drop table coffee_order;
+drop table coffee_cart purge;
+drop table coffee_order purge;
 
 -- product --
-drop table member_star;
-drop table coffee_write;
-drop table coffee_beans;
+drop table member_star purge;
+drop table coffee_write purge;
+drop table coffee_beans purge;
 
 -- board_write --
-drop table admin_reply;
-drop table member_board;
+drop table admin_reply purge;
+drop table member_board purge;
 
 -- member --
-drop table final_admin;
-drop table final_member;
+drop table final_admin purge;
+drop table final_member purge;
 
 -- coffee_result -- 
-drop table coffee_test;
-drop table coffee_match;
-drop table coffee_test_result;
+drop table coffee_test purge;
+drop table coffee_match purge;
+drop table coffee_test_result purge;
 
 ---------------- test_result(테스트 결과_경우의 수)----------------
 create table coffee_test_result(
