@@ -1,0 +1,62 @@
+/* 구역 확인용 ------------------------------------------------ */
+.cart_row_section{
+    background-color: bisque;
+    height: 100px;
+}
+
+.rows_area{
+    background-color: pink;
+}
+
+.row_area{
+    background-color: blanchedalmond;
+}
+
+.total_price_area1{
+    background-color: orange;
+}
+
+.total_price_area2{
+    background-color: lightgray;
+}
+
+/* --------------------------------------------------------- */
+/* input number 화살표 제거 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.hr_div{
+    height: 2px;
+    background-color: blue;
+}
+
+/* --------------------------------------------------------- */
+/* 장바구니 내역 레이아웃 */
+.cart_row_section{
+    display: flex;
+    align-items: flex-start;
+}
+
+.rows_area{
+    width: 70%;
+}
+
+.total_price_area1{
+    width: 30%;
+    position: sticky;
+    top: 0px;
+}
+
+/* 장바구니 rows 구역 안쪽 & 총 주문내역 안쪽 */
+.row_area, 
+.total_price_area2{
+    width: 90%;
+ 
+    margin: auto;
+}
+
+.row_area{
+    height: 350px;
+}

@@ -1,0 +1,108 @@
+:root{
+    --xsmall-text : 14px;
+    --small-text : 15px;
+}
+
+/* 구역 확인용 ------------------------------------------------ */
+.order_top{
+    background-color: pink;
+}
+
+.order_path{
+    background-color: beige;
+}
+
+.order_path_a{
+    background-color: rgb(192, 192, 149);
+}
+
+.order_progress_list li{
+    /* background-color: aquamarine;
+    border: 1px solid black; */
+}
+
+/* --------------------------------------------------------- */
+
+/* 버튼 공통사항 */
+.btn{
+    border: 1px solid var(--table_border_color);
+    background-color: transparent;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+.cancel_btn{
+    background-color: var(--cancel-color);
+    color: white;
+}
+
+/* order_top ----------------------------------------------- */
+/* section : order_top >> order_path */
+.order_path{
+    display: flex;
+    justify-content: right;
+    height: var(--xsmall-text);
+    font-size: var(--xsmall-text);
+}
+
+.order_path_list{
+    display: flex;
+    margin: 0px;
+}
+
+.order_path_a{
+    padding-left: 10px;
+}
+
+.a:not(.last):after{
+    content: " > ";
+}
+
+/* section : order_top >> order_path_now */
+.order_path_now{
+    display: flex;
+    align-items: center;
+    height: var(--xsmall-text);
+    font-size: var(--xsmall-text);
+}
+
+
+/* order_progress ----------------------------------------------- */
+.order_progress_list{
+    display: flex;
+    padding: 0px;
+}
+
+.order_progress_list li{
+    width: 100px;
+    padding: 10px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 현재 페이지일 경우 강조표시 / 아닐경우 글씨 회색 */
+.now {
+    font-weight: bold;
+    font-size: 1.2em;
+    border-bottom: 3px solid var(--color_greyish);
+}
+
+.notnow{
+    color: gray;
+}
+
+/* ----------------- 삭제시 display none --------------------------- */
+.display_none{
+    display: none;
+}
+
+/* margin_button */
+.order_top,
+.order_progress,
+.main_cont,
+.recommend_product{
+    margin-bottom: var(--margin-bottom);
+}

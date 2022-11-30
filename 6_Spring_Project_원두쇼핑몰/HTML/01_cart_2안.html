@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="./resources/orderimg/coffeebean04.png">
+        <title>장바구니</title>
+        <link rel="stylesheet" href="css/frame.css">
+        <link rel="stylesheet" href="./css/secondCartCss.css/contents.css">
+        <link rel="stylesheet" href="./css/secondCartCss.css/cart_row.css">
+        <script src="https://kit.fontawesome.com/4338ad17fa.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- 해더 -->
+        <header class="header">
+            header
+        </header>
+        <!-- 컨텐츠 부분 -->
+        <section class="content">
+            <section class="order_wrap">
+                <section class="order_top">
+                    <!-- 홈 > 장바구니 > 주문서작성 > 결제완료 > 주문완료 -->
+                    <section class="order_path">
+                        <ul class="list order_path_list">
+                            <li>
+                                <a href="#" class="a order_path_a">홈</a>
+                            </li>
+                            <li>
+                                <a href="./01_cart.html" class="a last order_path_a"><b>장바구니</b></a>
+                            </li>
+                            <!-- <li>
+                                <a href="#" class="a order_path_a">주문서작성</a>
+                            </li>
+                            <li>
+                                <a href="#" class="a order_path_a">결제완료</a>
+                            </li>
+                            <li>
+                                <a href="#" class="a order_path_a">주문완료</a>
+                            </li> -->
+                        </ul>
+                    </section>
+                </section>
+                <!-- 현재 진행상황 -->
+                <section class="order_progress">
+                    <ul class="list order_progress_list">
+                        <li class="now">
+                            <span>1. 장바구니</span>
+                        </li>
+                        <li class="notnow">
+                            <span>2. 주문서작성</span>
+                        </li>
+                        <li class="notnow">
+                            <span>3. 결제완료</span>
+                        </li>
+                        <li class="notnow">
+                            <span>4. 주문완료</span>
+                        </li>
+                    </ul>
+                </section>
+                <!-- 카트 목록 컨텐츠 -->
+                <section class="main_cont cart_row_section">
+                    <!-- 카트 목록 -->
+                    <div class="rows_area">
+                        <div class="row_area">
+                            <div class="row_img_area">
+                                <div class="row_img">
+                                    <img src="./resources/orderimg/coffeebean.png" alt="상품1">
+                                </div>
+                            </div>
+                            <div class="row_cont_area">
+                                <div class="product_name">
+                                    <h2>상품명</h2>
+                                    <h4>원두맛 / 원두 무게</h4>
+                                </div>
+                                <div class="product_cnt_delete">
+                                    <div class="cnt_updown">
+                                        <input type="number" min="1" max="10" class="table_cnt" value="1">
+                                        <div class="table_cnt_btn_area">
+                                            <button class="btn btn_up"><i class="fa-solid fa-caret-up"></i></button>
+                                            <button class="btn btn_down"><i class="fa-solid fa-caret-down"></i></button>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn_delete">삭제</button>
+                                </div>
+                            </div>
+                            <div class="row_price_area">
+                                <div class="row_price_txt">
+                                    1000원
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hr_div"></div>
+                    </div>
+                    <!-- 총 금액 -->
+                    <div class="total_price_area1">
+                        <div class="total_price_area2">
+                            <!-- 총 주문가격 -->
+                            <div class="total_price_txt_area">
+                                <h4>주문내역</h4>
+                                <div class="total_price_txt">
+                                    <h5>상품가격</h5> 
+                                    <h5><span>10000</span>원</h5>
+                                </div>
+                                <div class="total_delivery">
+                                    <h5>전체배송비</h5> 
+                                    <h5><span>무료배송</span></h5>
+                                </div>
+                                <hr>
+                                <!-- 상품가격 + 배송비 -->
+                                <div class="all_price">
+                                    <h3>총 주문금액</h3> 
+                                    <h5><span>10000</span>원</h5>
+                                </div>
+                            </div>
+                            <!-- 결제하기 버튼 구역 -->
+                            <div class="total_price_button_area">
+                                <button class="total_price_button">
+                                    <span>결제하기</span>
+                                    <div>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- 추천제품 -->
+                <section class="recommend_product">
+
+                </section>
+            </section>
+        </section>
+         <!-- 푸터 -->
+        <footer class="footer">
+            footer
+        </footer>
+        <script src="./js/cart.js"></script>
+    </body>
+    </html>

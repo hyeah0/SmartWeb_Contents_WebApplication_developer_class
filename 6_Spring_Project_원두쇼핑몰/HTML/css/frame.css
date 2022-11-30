@@ -1,7 +1,13 @@
 :root{
-    --point-color: #FAF7E8;
+    --color_white: #F2F2F2; 
+    --color_greyish: #A69B8D; 
+    --color_begie: #D9CEC1; 
+    --color_milk_brown: #A66B56;
+    --color_dark_brown: #734338; 
+    --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     --margin-bottom : 20px;
 }
+
 .header{
     background-color: aliceblue;
     height: 100px;
@@ -11,33 +17,12 @@
     height: 100px;
 }
 
-/* 구역 확인용 ------------------------------------------------ */
-/*
-.content{
-    background-color: palegoldenrod;
-}
-
-.order_top{
-    background-color: lightblue;
-}
-
-.order_progress{
-    background-color: lightcyan;
-}
-
-.order_total{
-    background-color: lightsalmon;
-} */
-
-/* --------------------------------------------------------- */
-
-.content{
-    margin: 0px;
+.content{ 
+    width: 90%;
+    height: 1400px;
+    margin: auto;
     padding: 0px;
     box-sizing: border-box;
-    width: 90%;
-    margin: auto;
-    height: 1400px;
     font-family: sans-serif;
 }
 
@@ -50,20 +35,4 @@
 .a{
     text-decoration: none;
     color: black;
-}
-
-.order_top{
-    margin-bottom: var(--margin-bottom);
-}
-
-.order_progress{
-    margin-bottom: var(--margin-bottom);
-}
-
-.order_table{
-    margin-bottom: var(--margin-bottom);
-}
-
-.order_total{
-    margin-bottom: var(--margin-bottom);
 }
