@@ -14,12 +14,8 @@
 
 .order_path_a{
     background-color: rgb(192, 192, 149);
-}
-
-.order_progress_list li{
-     background-color: aquamarine;
-    border: 1px solid black; 
 } */
+
 
 /* --------------------------------------------------------- */
 
@@ -28,13 +24,13 @@
 .order_path{
     display: flex;
     justify-content: right;
-    height: var(--xsmall-text);
+    /* height: var(--xsmall-text); */
     font-size: var(--xsmall-text);
 }
 
 .order_path_list{
     display: flex;
-    margin: 0px;
+    margin-right: 30px;
 }
 
 .order_path_a{

@@ -39,7 +39,7 @@
     border: 1px solid black;
 }  */
 
-/* 추천구역 */
+/* 추천구역 */ 
 /* .recommend_products_section{
     background-color: aliceblue;
 }
@@ -92,6 +92,13 @@ input::-webkit-inner-spin-button {
     width: 150px;
     height: 150px;
     padding: 10px;
+}
+
+/* 금액 input 부분 */
+.price_txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 아이콘 설정 */
@@ -222,8 +229,18 @@ input::-webkit-inner-spin-button {
 }
 
 /* 장바구니 상품 row 가격 */
+
 .row_price_txt{
+    margin-top: var(--margin);
     padding: 10px;
+}
+
+.row_price{
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    outline: none;
 }
 
 /* 총 금액 부분 --------------------------------- */
@@ -235,6 +252,10 @@ input::-webkit-inner-spin-button {
 /* 총금액 결제하기 부분 */
 .total_price_button_area{
     margin-top: 50px;
+}
+
+.total_price_txt_area h4:not(.h4_not){
+    min-width: 100px;
 }
 
 /* 결제하기 버튼 */
