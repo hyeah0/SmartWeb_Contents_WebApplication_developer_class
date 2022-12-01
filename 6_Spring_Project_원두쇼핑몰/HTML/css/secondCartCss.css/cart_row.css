@@ -67,6 +67,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
+/* 구분선 역할 div 공통 */
 .hr_div{
     margin-top: var(--margin);
     margin-bottom: var(--margin);
@@ -74,11 +75,13 @@ input::-webkit-inner-spin-button {
     background-color: var(--color_begie_op);
 }
 
+/* 장바구니 목록에 있는 div */
 .hr_content{
     margin-left: 40px;
     margin-right: 40px;
 }
 
+/* 장바구니 총 금액에 있는 div */
 .hr_price{
     background-color: var(--color_greyish_op);
 }
@@ -134,10 +137,16 @@ input::-webkit-inner-spin-button {
 }
 
 /* --------------------------------------------------------- */
-/* 장바구니 내역 레이아웃 */
+/* 
+    cart_row_section        장바구니 목록 
+     ㄴ rows_area            장바구니 담겨져있는 상품 row
+     ㄴ total_price_area1    장바구니에 담겨져있는 상품 row들의 총 금액
+        ㄴ total_price_area2
+*/
 .cart_row_section{
     display: flex;
     align-items: flex-start;
+    margin-bottom: 40px;
 }
 
 .rows_area{
@@ -150,14 +159,20 @@ input::-webkit-inner-spin-button {
     top: 0px;
 }
 
-/* 장바구니 rows 구역 안쪽 & 총 주문내역 안쪽 */ 
 .total_price_area2{
     width: 90%;
     margin: auto;
     padding-bottom: 20px;
     box-shadow: var(--box_shadow);
 }
-/* -------------------------------------------- */
+/* --------------------------------------------------------- */
+/* 
+    row_area 장바구니에 담겨져있는 상품
+     ㄴ row_img_area        : 상품 
+     ㄴ row_cont_area       : 상품정보 (수량, 삭제, 찜 포함)
+     ㄴ row_price_area      : 상품가격 (상품 단가 * 수량)
+*/
+
 .row_area{
     width: 90%;
     height: 300px;
@@ -185,12 +200,14 @@ input::-webkit-inner-spin-button {
     padding: 10px;
 }
 
+/* 수량조절 삭제, 찜 버튼 구역 */
 .product_cnt_delete{
     padding: 10px;
     display: flex;
     margin-bottom: 10px;
 }
 
+/* 수량조절 버튼 */
 .cnt_updown{
     padding: 5px;
     border-radius: var(--radius);
@@ -198,21 +215,6 @@ input::-webkit-inner-spin-button {
     box-shadow: var(--input_box_shadow);
 }
 
-.cnt_btn_area{
-    display: flex;
-    flex-direction: column;
-}
-/* ---------------------------------- */
-.row_price_area{
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-/* -------------------------------------------- */
-
-/* row 안쪽 요소들 상세 */
-/* 장바구니 상품 수량 */
 .cnt_updown input{
     width: 80px;
     padding: 10px;
@@ -220,6 +222,21 @@ input::-webkit-inner-spin-button {
     text-align: right;
 }
 
+.btn_area{
+    display: flex;
+    flex-direction: column;
+}
+
+/* 수량 1일경우 down 버튼, 수량 20일 경우 up 버튼 적용 */
+.disabled_btn{
+    color: var(--color_greyish);
+}
+
+.disabled_btn:hover{
+    color: var(--color_greyish);
+}
+
+/* 삭제버튼, 찜 버튼 공통 */
 .btn_dh{
     width: 80px;
 }
@@ -232,12 +249,25 @@ input::-webkit-inner-spin-button {
     margin-left: 10px;
 }
 
-/* 장바구니 상품 row 가격 */
+/* ---------------------------------- */
+.row_price_area{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .row_price_txt{
     padding: 10px;
 }
+/* --------------------------------------------------------- */
 
-/* 총 금액 부분 --------------------------------- */
+/* 
+    ㄴ total_price_area1    장바구니에 담겨져있는 상품 row들의 총 금액
+     ㄴ total_price_area2 
+      ㄴ total_price_txt_area     총 상품 금액
+      ㄴ total_price_button_area  결제하기 버튼구역
+*/
 .total_price_txt_area{
     padding: 20px;
 }
@@ -247,7 +277,7 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
 }
 
-/* 총금액 결제하기 부분 */
+/* 결제하기 버튼 구역*/
 .total_price_button_area{
     margin-top: 50px;
     padding-left: 20px;
@@ -269,6 +299,17 @@ input::-webkit-inner-spin-button {
     border-radius: var(--radius);
     transition: 0.3s ease-in-out;
 }
+
+.total_price_button_in{
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+}
+
+.total_price_button h2{
+    color: white;
+    letter-spacing : 1px;
+}
+
 .total_price_button:hover{
     background-color: var(--color_begie);  
 }
@@ -277,24 +318,24 @@ input::-webkit-inner-spin-button {
     color: black;
 }
 
-.total_price_button h2{
-    color: white;
-    letter-spacing : 1px;
-}
-
 .total_price_button i{
     background-color: white;
     font-size: 1rem;
     padding: 10px;
     border-radius: 50%;
 }
+/* --------------------------------------------------------- */
 
-.total_price_button_in{
-    margin-left: var(--margin);
-    margin-right: var(--margin);
-}
-
-/* 추천상품 ----------------------------------------------------- */
+/* 
+    recommend_products_section   추천상품
+     ㄴ recommend_products_section2
+      ㄴ recommend_products
+       ㄴ recommend_product
+        ㄴ recommend_product_area
+         ㄴ recommend_img_area
+         ㄴ recommend_price_heart
+         ㄴ recommend_star
+ */
 .recommend_products_section{
     height: 500px;
 }
@@ -315,7 +356,6 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
 }
 
 .recommend_product_area{
@@ -368,6 +408,7 @@ input::-webkit-inner-spin-button {
     display: none; 
 }
 
+/* indicator 확인 필요 */
 #indicator{
     position: absolute;
     left: 50%;
@@ -390,13 +431,7 @@ input::-webkit-inner-spin-button {
 }
 
 
-.disabled_btn{
-    color: var(--color_greyish);
-}
 
-.disabled_btn:hover{
-    color: var(--color_greyish);
-}
 
 /* ----------------- 삭제시 display none --------------------------- */
 .display_none{

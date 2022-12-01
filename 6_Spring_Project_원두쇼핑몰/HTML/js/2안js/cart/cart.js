@@ -56,6 +56,34 @@ btnDown.forEach(function(e,index){
     })
 })
 
+// input 창에 수량 작성시
+// inputCnt.forEach(function(e, index){
+//     inputCnt[index].addEventListener("keyup",function(){
+//         if(inputCnt[index].value > maxOrder){
+//             alert('최대 20개만 구매 가능합니다.')
+//             inputCnt[index].value = maxOrder
+//             btnUp[index].setAttribute('disabled', true)
+//             btnUp[index].classList.add('disabled_btn')
+//             btnDown[index].removeAttribute('disabled')
+//             btnDown[index].classList.remove('disabled_btn')
+
+//         }else if(inputCnt[index].value == maxOrder){
+//             btnUp[index].setAttribute('disabled', true)
+//             btnUp[index].classList.add('disabled_btn')
+//             btnDown[index].removeAttribute('disabled')
+//             btnDown[index].classList.remove('disabled_btn')
+
+//         }else if(inputCnt[index].value<=0){
+//             alert('최소 1개 이상 구매 가능합니다.')
+//             inputCnt[index].value = minOrder
+//             btnUp[index].classList.remove('disabled_btn')
+//             btnDown[index].classList.add('disabled_btn')
+//         }
+
+//         functionRowTotal()
+//     })
+// })
+
 // 함수 -----------------------------------------------------
 // 수량 증가 함수
 function up(index){
