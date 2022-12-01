@@ -60,9 +60,9 @@
                                 <!-- 상품정보 -->
                                 <div class="row_cont_area">
                                     <div class="product_name">
-                                        <h3>상품명</h3>
-                                        <p>원두맛 </p>
-                                        <p>원두 무게</p>
+                                        <h3>가나 원두</h3>
+                                        <p>다크 / 200g</p>
+                                        <p><span class="row_price">10000</span> 원</p>
                                     </div>
                                     <div class="product_cnt_delete">
                                         <div class="cnt_updown">
@@ -72,7 +72,7 @@
                                                 <button type="button" class="btn btn_down"><i class="fa-solid fa-caret-down"></i></button>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn_dh btn_delete">
+                                        <button type="button" class="btn btn_dh btn_delete" onclick="deleteRow(0)">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                         <button type="button" class="btn btn_dh btn_coffee_heart">
@@ -83,11 +83,13 @@
                                 <!-- 상품가격 -->
                                 <div class="row_price_area">
                                     <div class="price_txt row_price_txt">
-                                        <input type="number" value="10000" class="input row_price" name="cart_price" readonly><span>&nbsp;원</span>
+                                        <h3><span class="row_total">10000</span> 원</h3>
+                                        <input type="hidden" class="row_total_hidden" name="row_total_hidden">
                                     </div>
                                 </div>
                             </div>
                             <div class="hr_div hr_content"></div>
+
                             <!-- ----------------------------------- -->
                             <!-- for each 로 돌아갈 예정  -->
                             <div class="row_area">
@@ -102,9 +104,9 @@
                                 <!-- 상품정보 -->
                                 <div class="row_cont_area">
                                     <div class="product_name">
-                                        <h3>상품명</h3>
-                                        <p>원두맛 </p>
-                                        <p>원두 무게</p>
+                                        <h3>브라질 원두</h3>
+                                        <p>다크 / 200g</p>
+                                        <p><span class="row_price">10000</span> 원</p>
                                     </div>
                                     <div class="product_cnt_delete">
                                         <div class="cnt_updown">
@@ -114,7 +116,7 @@
                                                 <button type="button" class="btn btn_down"><i class="fa-solid fa-caret-down"></i></button>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn_dh btn_delete">
+                                        <button type="button" class="btn btn_dh btn_delete" onclick="deleteRow(1)">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                         <button type="button" class="btn btn_dh btn_coffee_heart">
@@ -125,11 +127,11 @@
                                 <!-- 상품가격 -->
                                 <div class="row_price_area">
                                     <div class="price_txt row_price_txt">
-                                        <input type="number" value="10000" class="input row_price" name="cart_price" readonly><span>&nbsp;원</span>
+                                        <h3><span class="row_total">10000</span> 원</h3>
+                                        <input type="hidden" class="row_total_hidden" name="row_total_hidden">
                                     </div>
                                 </div>
                             </div>
-                        
                     </div>
                     <!-- 총 금액 -->
                     <div class="total_price_area1">
@@ -140,7 +142,8 @@
                                 <div class="total total_price_txt">
                                     <h4>상품가격</h4> 
                                     <div class="price_txt">
-                                        <input type="number" value="10000" class="input total_price" name="total_price" readonly><span>&nbsp;원</span>
+                                        <h3><span class="total_price">10000</span> 원</h3>
+                                        <input type="hidden" class="total_price_hidden" name="total_price_hidden">
                                     </div>
                                 </div>
                                 <div class="total total_delivery">
@@ -152,11 +155,17 @@
                                 <div class="total all_price">
                                     <h4>총 주문금액</h4> 
                                     <div class="price_txt">
-                                        <input type="number" value="10000" class="input all_total_price" name="all_total_price" readonly><span>&nbsp;원</span>
+                                        <h3><span class="all_total_price">10000</span> 원</h3>
+                                    </div>
+                                </div>
+                                <div class="total all_t_point">
+                                    <h5>적립 포인트</h5> 
+                                    <div class="price_txt">
+                                        <h5><span class="all_point">10000</span> 원</h5>
+                                        <input type="hidden" class="all_point_hidden" name="all_point_hidden">
                                     </div>
                                 </div>
                             </div>
-                            <div class="hr_div"></div>
                             <!-- 결제하기 버튼 구역 -->
                             <div class="total_price_button_area">
                                 <button type="submit" class="btn total_price_button">

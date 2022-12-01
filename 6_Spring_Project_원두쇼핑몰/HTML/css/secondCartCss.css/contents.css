@@ -49,12 +49,6 @@
     font-size: var(--xsmall-text);
 }
 
-
-/* ----------------- 삭제시 display none --------------------------- */
-.display_none{
-    display: none;
-}
-
 /* margin_button */
 .order_top,
 .order_progress,

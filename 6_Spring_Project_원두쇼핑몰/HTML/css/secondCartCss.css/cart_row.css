@@ -101,14 +101,6 @@ input::-webkit-inner-spin-button {
     align-items: center;
 }
 
-.price_txt .input{
-    width: 100%;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: right;
-    outline: none;
-}
-
 /* 아이콘 설정 */
 .fa-heart, 
 .fa-trash{
@@ -242,7 +234,6 @@ input::-webkit-inner-spin-button {
 
 /* 장바구니 상품 row 가격 */
 .row_price_txt{
-    margin-top: var(--margin);
     padding: 10px;
 }
 
@@ -399,3 +390,15 @@ input::-webkit-inner-spin-button {
 }
 
 
+.disabled_btn{
+    color: var(--color_greyish);
+}
+
+.disabled_btn:hover{
+    color: var(--color_greyish);
+}
+
+/* ----------------- 삭제시 display none --------------------------- */
+.display_none{
+    display: none;
+}
