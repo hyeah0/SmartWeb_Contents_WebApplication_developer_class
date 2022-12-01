@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 :root{
     --color_greyish: #A69B8D; 
     --color_begie: #D9CEC1;
@@ -9,6 +11,8 @@
     --box_shadow:  rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     --margin : 20px;
     --radius : 10px;
+    --xsmall-text : 14px;
+    --small-text : 15px;
 }
 
 .header{
@@ -41,6 +45,7 @@
     color: black;
 }
 
+/* input 공통사항 */
 .input{
     border: none;
     background-color: transparent;
@@ -53,4 +58,40 @@
     background-color: transparent;
     cursor: pointer;
     border: none;
+}
+
+/* 
+	content 부분 
+	content
+	 ㄴ order_wrap
+	    ㄴ order_top			>> 홈 > 장바구니 > 주문서작성 > 결제완료 > 주문완료
+	    ㄴ order_main		>> 장바구니 목록
+	    ㄴ order_bottom		>> 장바구니 페이지 : 추천제품
+*/
+
+/* margin_button */
+.order_top,
+.order_main,
+.order_bottom{
+    margin-bottom: var(--margin);
+}
+
+/* order_top ----------------------------------------------- */
+.order_path{
+    display: flex;
+    justify-content: right;
+    font-size: var(--xsmall-text);
+}
+
+.order_path_list{
+    display: flex;
+    margin-right: 30px;
+}
+
+.order_path_a{
+    padding-left: 10px;
+}
+
+.a:not(.last):after{
+    content: " > ";
 }

@@ -41,9 +41,9 @@
                         </ul>
                     </section>
                 </section>
-                <!-- 카트 목록 컨텐츠 -->
-                <section class="main_cont cart_row_section">
-                    <!-- 카트 목록 -->
+                <!-- 장바구니 목록 컨텐츠 -->
+                <section class="order_main cart_row_section">
+                    <!-- 장바구니 담겨져있는 상품 row -->
                     <div class="rows_area">
                         <form method="post" action="">
                             <!-- ----------------------------------- -->
@@ -66,8 +66,8 @@
                                     </div>
                                     <div class="product_cnt_delete">
                                         <div class="cnt_updown">
-                                            <input type="number" min="1" max="10" class="input input_cnt" value="1" name="cart_cnt">
-                                            <div class="cnt_btn_area">
+                                            <input type="number" min="1" max="20" class="input input_cnt" value="1" name="cart_cnt" readonly>
+                                            <div class="btn_area">
                                                 <button type="button" class="btn btn_up"><i class="fa-solid fa-caret-up"></i></button>
                                                 <button type="button" class="btn btn_down"><i class="fa-solid fa-caret-down"></i></button>
                                             </div>
@@ -110,8 +110,8 @@
                                     </div>
                                     <div class="product_cnt_delete">
                                         <div class="cnt_updown">
-                                            <input type="number" min="1" max="10" class="input input_cnt" value="1" name="cart_cnt">
-                                            <div class="cnt_btn_area">
+                                            <input type="number" min="1" max="20" class="input input_cnt" value="1" name="cart_cnt" readonly>
+                                            <div class="btn_area">
                                                 <button type="button" class="btn btn_up"><i class="fa-solid fa-caret-up"></i></button>
                                                 <button type="button" class="btn btn_down"><i class="fa-solid fa-caret-down"></i></button>
                                             </div>
@@ -181,7 +181,7 @@
                 </section>
                 <div class="hr_div"></div>
                 <!-- 추천제품 -->
-                <section class="recommend_products_section">
+                <section class="order_bottom recommend_products_section">
                     <h3>추천제품</h3>
                     <div class="recommend_products_section2">
                         <div id="slider" class="recommend_products">
