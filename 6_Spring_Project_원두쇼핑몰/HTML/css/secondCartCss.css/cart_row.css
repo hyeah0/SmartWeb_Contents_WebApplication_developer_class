@@ -101,6 +101,14 @@ input::-webkit-inner-spin-button {
     align-items: center;
 }
 
+.price_txt .input{
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    outline: none;
+}
+
 /* 아이콘 설정 */
 .fa-heart, 
 .fa-trash{
@@ -152,15 +160,19 @@ input::-webkit-inner-spin-button {
 
 /* 장바구니 rows 구역 안쪽 & 총 주문내역 안쪽 */ 
 .total_price_area2{
-    width: 80%;
+    width: 90%;
     margin: auto;
+    padding-bottom: 20px;
+    box-shadow: var(--box_shadow);
 }
 /* -------------------------------------------- */
 .row_area{
     width: 90%;
     height: 300px;
+    border-radius: var(--radius);
     margin: auto;
     display: flex;
+    box-shadow: var(--box_shadow);
 }
 /* ---------------------------------- */
 .row_img_area{
@@ -191,7 +203,7 @@ input::-webkit-inner-spin-button {
     padding: 5px;
     border-radius: var(--radius);
     display: flex;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--input_box_shadow);
 }
 
 .cnt_btn_area{
@@ -229,21 +241,16 @@ input::-webkit-inner-spin-button {
 }
 
 /* 장바구니 상품 row 가격 */
-
 .row_price_txt{
     margin-top: var(--margin);
     padding: 10px;
 }
 
-.row_price{
-    width: 100%;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: right;
-    outline: none;
+/* 총 금액 부분 --------------------------------- */
+.total_price_txt_area{
+    padding: 20px;
 }
 
-/* 총 금액 부분 --------------------------------- */
 .total{
     display: flex;
     justify-content: space-between;
@@ -252,6 +259,8 @@ input::-webkit-inner-spin-button {
 /* 총금액 결제하기 부분 */
 .total_price_button_area{
     margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .total_price_txt_area h4:not(.h4_not){
