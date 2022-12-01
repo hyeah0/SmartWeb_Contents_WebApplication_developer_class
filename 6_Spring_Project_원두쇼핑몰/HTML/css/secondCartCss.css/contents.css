@@ -4,7 +4,7 @@
 }
 
 /* 구역 확인용 ------------------------------------------------ */
-.order_top{
+/* .order_top{
     background-color: pink;
 }
 
@@ -17,9 +17,9 @@
 }
 
 .order_progress_list li{
-    /* background-color: aquamarine;
-    border: 1px solid black; */
-}
+     background-color: aquamarine;
+    border: 1px solid black; 
+} */
 
 /* --------------------------------------------------------- */
 
@@ -53,32 +53,6 @@
     font-size: var(--xsmall-text);
 }
 
-
-/* order_progress ----------------------------------------------- */
-.order_progress_list{
-    display: flex;
-    padding: 0px;
-}
-
-.order_progress_list li{
-    width: 100px;
-    padding: 10px;
-    margin-left: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 현재 페이지일 경우 강조표시 / 아닐경우 글씨 회색 */
-.now {
-    font-weight: bold;
-    font-size: 1.2em;
-    border-bottom: 3px solid var(--color_greyish);
-}
-
-.notnow{
-    color: gray;
-}
 
 /* ----------------- 삭제시 display none --------------------------- */
 .display_none{

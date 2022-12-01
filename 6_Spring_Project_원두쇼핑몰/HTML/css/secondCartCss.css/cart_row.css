@@ -1,5 +1,5 @@
 /* 구역 확인용 ------------------------------------------------ */
-.cart_row_section{
+/* .cart_row_section{
     background-color: bisque;
 }
 
@@ -37,10 +37,10 @@
 
 .product_cnt_delete{
     border: 1px solid black;
-} 
+}  */
 
 /* 추천구역 */
-.recommend_products_section{
+/* .recommend_products_section{
     background-color: aliceblue;
 }
 
@@ -57,7 +57,7 @@
 
 .recommend_price_heart{
     background-color: orange
-}
+} */
 
 
 /* --------------------------------------------------------- */
@@ -102,11 +102,11 @@ input::-webkit-inner-spin-button {
 } 
 
 .fa-heart:hover{
-    color: var(--color_greyish);
+    color: var(--color_milk_brown);
 } 
 
 .fa-trash:hover{
-    color: var(--color_greyish);
+    color: var(--color_milk_brown);
 }
 
 .btn_up,
@@ -115,11 +115,11 @@ input::-webkit-inner-spin-button {
 }
 
 .btn_up:hover{
-    color: var(--color_greyish);
+    color: var(--color_milk_brown);
 }
 
 .btn_down:hover{
-    color: var(--color_greyish);
+    color: var(--color_milk_brown);
 }
 
 .heart_active{
@@ -343,9 +343,9 @@ input::-webkit-inner-spin-button {
 }
 
 /* 스크롤바 제거 */
-*::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
-}
+/* *::-webkit-scrollbar {
+    display: none; 
+} */
 
 #indicator{
     position: absolute;

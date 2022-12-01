@@ -21,7 +21,7 @@
 
 .content{ 
     width: 90%;
-    height: 1400px;
+    /* height: 1400px; */
     margin: auto;
     padding: 0px;
     box-sizing: border-box;

@@ -41,66 +41,52 @@
                         </ul>
                     </section>
                 </section>
-                <!-- 현재 진행상황 -->
-                <!-- <section class="order_progress">
-                    <ul class="list order_progress_list">
-                        <li class="now">
-                            <span>1. 장바구니</span>
-                        </li>
-                        <li class="notnow">
-                            <span>2. 주문서작성</span>
-                        </li>
-                        <li class="notnow">
-                            <span>3. 결제완료</span>
-                        </li>
-                        <li class="notnow">
-                            <span>4. 주문완료</span>
-                        </li>
-                    </ul>
-                </section> -->
                 <!-- 카트 목록 컨텐츠 -->
                 <section class="main_cont cart_row_section">
                     <!-- 카트 목록 -->
                     <div class="rows_area">
-                        <div class="row_area">
-                            <!-- 상품 이미지 -->
-                            <div class="row_img_area">
-                                <div class="row_img">
-                                    <a href="#" class="img_a">
-                                        <img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file">
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- 상품정보 -->
-                            <div class="row_cont_area">
-                                <div class="product_name">
-                                    <h3>상품명</h3>
-                                    <p>원두맛 </p>
-                                    <p>원두 무게</p>
-                                </div>
-                                <div class="product_cnt_delete">
-                                    <div class="cnt_updown">
-                                        <input type="number" min="1" max="10" class="input input_cnt" value="1">
-                                        <div class="cnt_btn_area">
-                                            <button class="btn btn_up"><i class="fa-solid fa-caret-up"></i></button>
-                                            <button class="btn btn_down"><i class="fa-solid fa-caret-down"></i></button>
-                                        </div>
+                        <form method="post" action="">
+                            <div class="row_area">
+                                <!-- 상품 이미지 -->
+                                <div class="row_img_area">
+                                    <div class="row_img">
+                                        <a href="#" class="img_a">
+                                            <img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file">
+                                        </a>
                                     </div>
-                                    <button class="btn btn_dh btn_delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                    <button class="btn btn_dh btn_coffee_heart">
-                                        <i class="fa-solid fa-heart heart_active"></i>
-                                    </button>
+                                </div>
+                                <!-- 상품정보 -->
+                                <div class="row_cont_area">
+                                    <div class="product_name">
+                                        <h3>상품명</h3>
+                                        <p>원두맛 </p>
+                                        <p>원두 무게</p>
+                                    </div>
+                                    <div class="product_cnt_delete">
+                                        <div class="cnt_updown">
+                                            <input type="number" min="1" max="10" class="input input_cnt" value="1">
+                                            <div class="cnt_btn_area">
+                                                <button class="btn btn_up"><i class="fa-solid fa-caret-up"></i></button>
+                                                <button class="btn btn_down"><i class="fa-solid fa-caret-down"></i></button>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn_dh btn_delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                        <button class="btn btn_dh btn_coffee_heart">
+                                            <i class="fa-solid fa-heart heart_active"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- 상품가격 -->
+                                <div class="row_price_area">
+                                    <div class="row_price_txt">
+                                        <input type="number" value="10000">원
+                                        <!-- <h3><span>10000</span> 원</h3> -->
+                                    </div>
                                 </div>
                             </div>
-                            <!-- 상품가격 -->
-                            <div class="row_price_area">
-                                <div class="row_price_txt">
-                                    <h3><span>10000</span> 원</h3>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                         <div class="hr_div hr_content"></div>
                         <!-- ---------------------------------------------- -->
                         <div class="row_area">
@@ -150,20 +136,20 @@
                         <div class="total_price_area2">
                             <!-- 총 주문가격 -->
                             <div class="total_price_txt_area">
-                                <h4>주문내역</h4>
+                                <h3>주문내역</h3>
                                 <div class="total total_price_txt">
-                                    <h5>상품가격</h5> 
-                                    <h5><span>10000</span> 원</h5>
+                                    <h4>상품가격</h4> 
+                                    <h4><span>10000</span> 원</h4>
                                 </div>
                                 <div class="total total_delivery">
-                                    <h5>전체배송비</h5> 
-                                    <h5><span>무료배송</span></h5>
+                                    <h4>전체배송비</h4> 
+                                    <h4><span>무료배송</span></h4>
                                 </div>
                                 <div class="hr_div hr_price"></div>
                                 <!-- 상품가격 + 배송비 -->
                                 <div class="total all_price">
-                                    <h3>총 주문금액</h3> 
-                                    <h5><span>10000</span> 원</h5>
+                                    <h4>총 주문금액</h4> 
+                                    <h4><span>10000</span> 원</h4>
                                 </div>
                             </div>
                             <div class="hr_div"></div>
@@ -403,9 +389,9 @@
                                 </div>
                             </div>   
                         </div>
-                        <div id="indicator">
+                        <!-- <div id="indicator">
                             <div id="indi_bar"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </section>
             </section>
