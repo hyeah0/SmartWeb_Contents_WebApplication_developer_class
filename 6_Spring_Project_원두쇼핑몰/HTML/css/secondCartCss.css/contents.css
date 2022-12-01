@@ -23,20 +23,6 @@
 
 /* --------------------------------------------------------- */
 
-/* 버튼 공통사항 */
-.btn{
-    border: 1px solid var(--table_border_color);
-    background-color: transparent;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    cursor: pointer;
-}
-
-.cancel_btn{
-    background-color: var(--cancel-color);
-    color: white;
-}
-
 /* order_top ----------------------------------------------- */
 /* section : order_top >> order_path */
 .order_path{
@@ -104,5 +90,9 @@
 .order_progress,
 .main_cont,
 .recommend_product{
-    margin-bottom: var(--margin-bottom);
+    margin-bottom: var(--margin);
+}
+
+.cart_row_section{
+    margin-bottom: 40px;
 }

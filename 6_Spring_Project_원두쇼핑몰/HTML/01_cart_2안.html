@@ -42,7 +42,7 @@
                     </section>
                 </section>
                 <!-- 현재 진행상황 -->
-                <section class="order_progress">
+                <!-- <section class="order_progress">
                     <ul class="list order_progress_list">
                         <li class="now">
                             <span>1. 장바구니</span>
@@ -57,40 +57,93 @@
                             <span>4. 주문완료</span>
                         </li>
                     </ul>
-                </section>
+                </section> -->
                 <!-- 카트 목록 컨텐츠 -->
                 <section class="main_cont cart_row_section">
                     <!-- 카트 목록 -->
                     <div class="rows_area">
                         <div class="row_area">
+                            <!-- 상품 이미지 -->
                             <div class="row_img_area">
                                 <div class="row_img">
-                                    <img src="./resources/orderimg/coffeebean.png" alt="상품1">
+                                    <a href="#" class="img_a">
+                                        <img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file">
+                                    </a>
                                 </div>
                             </div>
+                            <!-- 상품정보 -->
                             <div class="row_cont_area">
                                 <div class="product_name">
-                                    <h2>상품명</h2>
-                                    <h4>원두맛 / 원두 무게</h4>
+                                    <h3>상품명</h3>
+                                    <p>원두맛 </p>
+                                    <p>원두 무게</p>
                                 </div>
                                 <div class="product_cnt_delete">
                                     <div class="cnt_updown">
-                                        <input type="number" min="1" max="10" class="table_cnt" value="1">
-                                        <div class="table_cnt_btn_area">
+                                        <input type="number" min="1" max="10" class="input input_cnt" value="1">
+                                        <div class="cnt_btn_area">
                                             <button class="btn btn_up"><i class="fa-solid fa-caret-up"></i></button>
                                             <button class="btn btn_down"><i class="fa-solid fa-caret-down"></i></button>
                                         </div>
                                     </div>
-                                    <button class="btn btn_delete">삭제</button>
+                                    <button class="btn btn_dh btn_delete">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                    <button class="btn btn_dh btn_coffee_heart">
+                                        <i class="fa-solid fa-heart heart_active"></i>
+                                    </button>
                                 </div>
                             </div>
+                            <!-- 상품가격 -->
                             <div class="row_price_area">
                                 <div class="row_price_txt">
-                                    1000원
+                                    <h3><span>10000</span> 원</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="hr_div"></div>
+                        <div class="hr_div hr_content"></div>
+                        <!-- ---------------------------------------------- -->
+                        <div class="row_area">
+                            <!-- 상품 이미지 -->
+                            <div class="row_img_area">
+                                <div class="row_img">
+                                    <a href="#" class="img_a">
+                                        <img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- 상품정보 -->
+                            <div class="row_cont_area">
+                                <div class="product_name">
+                                    <h3>상품명</h3>
+                                    <p>원두맛 </p>
+                                    <p>원두 무게</p>
+                                </div>
+                                <div class="product_cnt_delete">
+                                    <div class="cnt_updown">
+                                        <input type="number" min="1" max="10" class="input input_cnt" value="1">
+                                        <div class="cnt_btn_area">
+                                            <button class="btn btn_up"><i class="fa-solid fa-caret-up"></i></button>
+                                            <button class="btn btn_down"><i class="fa-solid fa-caret-down"></i></button>
+                                        </div>
+                                    </div>
+                                    <!-- 삭제 버튼 -->
+                                    <button class="btn btn_dh btn_delete">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                    <!-- 찜하기버튼 -->
+                                    <button class="btn btn_dh btn_coffee_heart">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 상품가격 -->
+                            <div class="row_price_area">
+                                <div class="row_price_txt">
+                                    <h3><span>10000</span> 원</h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- 총 금액 -->
                     <div class="total_price_area1">
@@ -98,26 +151,27 @@
                             <!-- 총 주문가격 -->
                             <div class="total_price_txt_area">
                                 <h4>주문내역</h4>
-                                <div class="total_price_txt">
+                                <div class="total total_price_txt">
                                     <h5>상품가격</h5> 
-                                    <h5><span>10000</span>원</h5>
+                                    <h5><span>10000</span> 원</h5>
                                 </div>
-                                <div class="total_delivery">
+                                <div class="total total_delivery">
                                     <h5>전체배송비</h5> 
                                     <h5><span>무료배송</span></h5>
                                 </div>
-                                <hr>
+                                <div class="hr_div hr_price"></div>
                                 <!-- 상품가격 + 배송비 -->
-                                <div class="all_price">
+                                <div class="total all_price">
                                     <h3>총 주문금액</h3> 
-                                    <h5><span>10000</span>원</h5>
+                                    <h5><span>10000</span> 원</h5>
                                 </div>
                             </div>
+                            <div class="hr_div"></div>
                             <!-- 결제하기 버튼 구역 -->
                             <div class="total_price_button_area">
-                                <button class="total_price_button">
-                                    <span>결제하기</span>
-                                    <div>
+                                <button class="btn total_price_button">
+                                    <h2 class="total_price_button_in">결제하기</h2>
+                                    <div class="total_price_button_in">
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </div>
                                 </button>
@@ -125,9 +179,234 @@
                         </div>
                     </div>
                 </section>
+                <div class="hr_div"></div>
                 <!-- 추천제품 -->
-                <section class="recommend_product">
-
+                <section class="recommend_products_section">
+                    <h3>추천제품</h3>
+                    <div class="recommend_products_section2">
+                        <div id="slider" class="recommend_products">
+                            <!-- 추후 foreach 로 계속 돌 예정 : 추천 상품 8가지-->
+                            <!-- ------------------------------ -->
+                            <!-- 추천상품 -->
+                            <div class="recommend_product">
+                                <div class="recommend_product_area">
+                                    <!-- 추천상품이미지 -->
+                                    <div class="recommend_img_area">   
+                                        <div class="recommend_img">
+                                            <a href="#" class="img_a"><img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file"></a>
+                                        </div>
+                                    </div>
+                                    <!-- 추천상품가격 -->
+                                    <div class="recommend_price_heart">
+                                        <h3><span>10000</span>원</h3>
+                                        <button class="btn btn_coffee_heart">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <!-- 별점 -->
+                                    <div class="recommend_star">
+                                        <i class="fa-solid fa-star star"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ------------------------------ -->
+                            <!-- 추천상품 -->
+                            <div class="recommend_product">
+                                <div class="recommend_product_area">
+                                    <!-- 추천상품이미지 -->
+                                    <div class="recommend_img_area">   
+                                        <div class="recommend_img">
+                                            <a href="#" class="img_a"><img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file"></a>
+                                        </div>
+                                    </div>
+                                    <!-- 추천상품가격 -->
+                                    <div class="recommend_price_heart">
+                                        <h3><span>10000</span>원</h3>
+                                        <button class="btn btn_coffee_heart">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <!-- 별점 -->
+                                    <div class="recommend_star">
+                                        <i class="fa-solid fa-star star"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ------------------------------ -->
+                            <!-- 추천상품 -->
+                            <div class="recommend_product">
+                                <div class="recommend_product_area">
+                                    <!-- 추천상품이미지 -->
+                                    <div class="recommend_img_area">   
+                                        <div class="recommend_img">
+                                            <a href="#" class="img_a"><img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file"></a>
+                                        </div>
+                                    </div>
+                                    <!-- 추천상품가격 -->
+                                    <div class="recommend_price_heart">
+                                        <h3><span>10000</span>원</h3>
+                                        <button class="btn btn_coffee_heart">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <!-- 별점 -->
+                                    <div class="recommend_star">
+                                        <i class="fa-solid fa-star star"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ------------------------------ -->
+                            <!-- 추천상품 -->
+                            <div class="recommend_product">
+                                <div class="recommend_product_area">
+                                    <!-- 추천상품이미지 -->
+                                    <div class="recommend_img_area">   
+                                        <div class="recommend_img">
+                                            <a href="#" class="img_a"><img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file"></a>
+                                        </div>
+                                    </div>
+                                    <!-- 추천상품가격 -->
+                                    <div class="recommend_price_heart">
+                                        <h3><span>10000</span>원</h3>
+                                        <button class="btn btn_coffee_heart">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <!-- 별점 -->
+                                    <div class="recommend_star">
+                                        <i class="fa-solid fa-star star"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ------------------------------ -->
+                            <!-- 추천상품 -->
+                            <div class="recommend_product">
+                                <div class="recommend_product_area">
+                                    <!-- 추천상품이미지 -->
+                                    <div class="recommend_img_area">   
+                                        <div class="recommend_img">
+                                            <a href="#" class="img_a"><img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file"></a>
+                                        </div>
+                                    </div>
+                                    <!-- 추천상품가격 -->
+                                    <div class="recommend_price_heart">
+                                        <h3><span>10000</span>원</h3>
+                                        <button class="btn btn_coffee_heart">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <!-- 별점 -->
+                                    <div class="recommend_star">
+                                        <i class="fa-solid fa-star star"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ------------------------------ -->
+                            <!-- 추천상품 -->
+                            <div class="recommend_product">
+                                <div class="recommend_product_area">
+                                    <!-- 추천상품이미지 -->
+                                    <div class="recommend_img_area">   
+                                        <div class="recommend_img">
+                                            <a href="#" class="img_a"><img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file"></a>
+                                        </div>
+                                    </div>
+                                    <!-- 추천상품가격 -->
+                                    <div class="recommend_price_heart">
+                                        <h3><span>10000</span>원</h3>
+                                        <button class="btn btn_coffee_heart">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <!-- 별점 -->
+                                    <div class="recommend_star">
+                                        <i class="fa-solid fa-star star"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ------------------------------ -->
+                            <!-- 추천상품 -->
+                            <div class="recommend_product">
+                                <div class="recommend_product_area">
+                                    <!-- 추천상품이미지 -->
+                                    <div class="recommend_img_area">   
+                                        <div class="recommend_img">
+                                            <a href="#" class="img_a"><img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file"></a>
+                                        </div>
+                                    </div>
+                                    <!-- 추천상품가격 -->
+                                    <div class="recommend_price_heart">
+                                        <h3><span>10000</span>원</h3>
+                                        <button class="btn btn_coffee_heart">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <!-- 별점 -->
+                                    <div class="recommend_star">
+                                        <i class="fa-solid fa-star star"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ------------------------------ -->
+                            <!-- 추천상품 -->
+                            <div class="recommend_product">
+                                <div class="recommend_product_area">
+                                    <!-- 추천상품이미지 -->
+                                    <div class="recommend_img_area">   
+                                        <div class="recommend_img">
+                                            <a href="#" class="img_a"><img src="./resources/orderimg/coffeebean.png" alt="상품1" class="product_img_file"></a>
+                                        </div>
+                                    </div>
+                                    <!-- 추천상품가격 -->
+                                    <div class="recommend_price_heart">
+                                        <h3><span>10000</span>원</h3>
+                                        <button class="btn btn_coffee_heart">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    </div>
+                                    <!-- 별점 -->
+                                    <div class="recommend_star">
+                                        <i class="fa-solid fa-star star"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                        <i class="fa-solid fa-star star_empty"></i>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                        <div id="indicator">
+                            <div id="indi_bar"></div>
+                        </div>
+                    </div>
                 </section>
             </section>
         </section>
@@ -135,6 +414,6 @@
         <footer class="footer">
             footer
         </footer>
-        <script src="./js/cart.js"></script>
+        <script src="./js/2안js/cart/cart.js"></script>
     </body>
     </html>

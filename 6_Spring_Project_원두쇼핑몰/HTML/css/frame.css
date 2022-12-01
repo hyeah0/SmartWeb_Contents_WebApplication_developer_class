@@ -1,11 +1,13 @@
 :root{
-    --color_white: #F2F2F2; 
     --color_greyish: #A69B8D; 
-    --color_begie: #D9CEC1; 
+    --color_begie: #D9CEC1;
+    --color_greyish_op: #A69B8Dad; 
+    --color_begie_op :  #d9cec1ad;
     --color_milk_brown: #A66B56;
     --color_dark_brown: #734338; 
-    --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    --margin-bottom : 20px;
+    --box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;  
+    --margin : 20px;
+    --radius : 10px;
 }
 
 .header{
@@ -24,6 +26,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: sans-serif;
+    letter-spacing : 1px;
 }
 
 /* ul li 공통사항 */
@@ -35,4 +38,18 @@
 .a{
     text-decoration: none;
     color: black;
+}
+
+.input{
+    border: none;
+    background-color: transparent;
+}
+
+/* 버튼 공통사항 */
+.btn{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
 }

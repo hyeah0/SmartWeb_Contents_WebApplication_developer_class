@@ -1,7 +1,6 @@
 /* 구역 확인용 ------------------------------------------------ */
 .cart_row_section{
     background-color: bisque;
-    height: 100px;
 }
 
 .rows_area{
@@ -20,6 +19,47 @@
     background-color: lightgray;
 }
 
+.row_img_area{
+    border: 1px solid black;
+}
+
+.row_cont_area{
+    border: 1px solid black;
+}
+
+.row_price_area{
+    border: 1px solid black;
+}
+
+.product_name{
+    border: 1px solid black;
+}
+
+.product_cnt_delete{
+    border: 1px solid black;
+} 
+
+/* 추천구역 */
+.recommend_products_section{
+    background-color: aliceblue;
+}
+
+.recommend_products{
+    background-color: lightgoldenrodyellow;
+}
+.recommend_product{
+    background-color: pink;
+}
+
+.recommend_product_area{
+    border: 1px solid black;
+}
+
+.recommend_price_heart{
+    background-color: orange
+}
+
+
 /* --------------------------------------------------------- */
 /* input number 화살표 제거 */
 input::-webkit-outer-spin-button,
@@ -28,8 +68,62 @@ input::-webkit-inner-spin-button {
 }
 
 .hr_div{
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
     height: 2px;
-    background-color: blue;
+    background-color: var(--color_begie_op);
+}
+
+.hr_content{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.hr_price{
+    background-color: var(--color_greyish_op);
+}
+
+/* 이미지크기 */
+.img_a{
+    display: block;
+}
+
+.product_img_file{
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+
+/* 아이콘 설정 */
+.fa-heart, 
+.fa-trash{
+    font-size: 1rem;
+    color: var(--color_begie)
+} 
+
+.fa-heart:hover{
+    color: var(--color_greyish);
+} 
+
+.fa-trash:hover{
+    color: var(--color_greyish);
+}
+
+.btn_up,
+.btn_down{
+    color: var(--color_begie)
+}
+
+.btn_up:hover{
+    color: var(--color_greyish);
+}
+
+.btn_down:hover{
+    color: var(--color_greyish);
+}
+
+.heart_active{
+    color: var(--color_milk_brown);
 }
 
 /* --------------------------------------------------------- */
@@ -49,14 +143,229 @@ input::-webkit-inner-spin-button {
     top: 0px;
 }
 
-/* 장바구니 rows 구역 안쪽 & 총 주문내역 안쪽 */
-.row_area, 
+/* 장바구니 rows 구역 안쪽 & 총 주문내역 안쪽 */ 
 .total_price_area2{
-    width: 90%;
- 
+    width: 80%;
     margin: auto;
 }
-
+/* -------------------------------------------- */
 .row_area{
-    height: 350px;
+    width: 90%;
+    height: 300px;
+    margin: auto;
+    display: flex;
 }
+/* ---------------------------------- */
+.row_img_area{
+    min-width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ---------------------------------- */
+.row_cont_area{
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product_name{
+    padding: 10px;
+}
+
+.product_cnt_delete{
+    padding: 10px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.cnt_updown{
+    padding: 5px;
+    border-radius: var(--radius);
+    display: flex;
+    box-shadow: var(--box-shadow);
+}
+
+.cnt_btn_area{
+    display: flex;
+    flex-direction: column;
+}
+/* ---------------------------------- */
+.row_price_area{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+/* -------------------------------------------- */
+
+/* row 안쪽 요소들 상세 */
+/* 장바구니 상품 수량 */
+.cnt_updown input{
+    width: 80px;
+    padding: 10px;
+    outline: none;
+    text-align: right;
+}
+
+.btn_dh{
+    width: 80px;
+}
+
+.btn_dh i{
+    font-size: 1rem;
+}
+
+.btn_delete{
+    margin-left: 10px;
+}
+
+/* 장바구니 상품 row 가격 */
+.row_price_txt{
+    padding: 10px;
+}
+
+/* 총 금액 부분 --------------------------------- */
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 총금액 결제하기 부분 */
+.total_price_button_area{
+    margin-top: 50px;
+}
+
+/* 결제하기 버튼 */
+.total_price_button{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color_greyish);
+    border-radius: var(--radius);
+    transition: 0.3s ease-in-out;
+}
+.total_price_button:hover{
+    background-color: var(--color_begie);  
+}
+
+.total_price_button:hover h2{
+    color: black;
+}
+
+.total_price_button h2{
+    color: white;
+    letter-spacing : 1px;
+}
+
+.total_price_button i{
+    background-color: white;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.total_price_button_in{
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+}
+
+/* 추천상품 ----------------------------------------------------- */
+.recommend_products_section{
+    height: 500px;
+}
+
+.recommend_products{
+    width: 100%;
+    height: 350px;
+    overflow: scroll;
+    display: grid;
+    grid-template-columns: repeat(8, 250px);
+}
+
+.recommend_product{
+    width: 250px;
+    height: 300px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.recommend_product_area{
+    width: 80%;   
+}
+
+.recommend_img_area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--margin);
+}
+
+.recommend_img .product_img_file{
+    width: 120px;
+    height: 120px;
+}
+
+.recommend_price_heart{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--margin);
+}
+
+/* 별점 색상 */
+.recommend_star{
+    display: flex;
+    justify-content: space-around;
+}
+
+.fa-star{
+    padding-left: 3px;
+    font-size: 1.1rem;
+    color: var(--color_begie)
+}
+
+.star{
+    font-size: 1.3rem;
+    color: var(--color_milk_brown);
+}
+
+/* 추천 가로 바 */
+.recommend_products_section2{
+    position: relative;
+}
+
+/* 스크롤바 제거 */
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+#indicator{
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 10px;
+    border: 1px solid #ccc;
+}
+
+#indi_bar{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color_greyish);
+    clip-path:polygon(0% 0%, 10px 0%, 10px 100%, 0% 100%);
+    transition:all .2s;
+}
+
+
