@@ -49,6 +49,7 @@
 .input{
     border: none;
     background-color: transparent;
+    outline: none;
 }
 
 /* 버튼 공통사항 */
@@ -123,9 +124,15 @@
     margin: auto;
 }
 
+/* content 오른편 상품 가격, 전체 배송비, 총 주문금액 */
 .total{
     display: flex;
     justify-content: space-between;
+}
+
+/* 총 주문금액 */
+.all_total_price{
+    color: blue;
 }
 
 .row_area{
@@ -142,8 +149,6 @@
 }
 
 /* 결제하기 버튼 공통 */
-
-/* 결제하기 버튼 */
 .total_price_button{
     width: 100%;
     height: 100px;
@@ -178,4 +183,29 @@
     font-size: 1rem;
     padding: 10px;
     border-radius: 50%;
+}
+
+/* 구분선 역할 div 공통 */
+.hr_div{
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+    height: 2px;
+    background-color: var(--color_begie_op);
+}
+
+/* 장바구니 목록에 있는 div */
+.hr_content{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+/* 총 금액에 있는 div */
+.hr_price{
+    background-color: var(--color_greyish_op);
+}
+
+/* input number 화살표 제거 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }

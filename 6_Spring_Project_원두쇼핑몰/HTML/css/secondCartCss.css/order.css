@@ -1,16 +1,16 @@
 /* 구역 확인용 ------------------------------------------------ */
 /* 왼쪽 */
-.order_main_left{
+/* .order_main_left{
     background-color: orange;
 }
 .order_main_left_in{
     background-color: lemonchiffon;
-}
+} */
 
 /* 배송정보 기입 테이블 */
-.order_info_text{
+/* .order_info_text{
     background-color: lightcyan;
-}
+} */
 
 /* 오른쪽 */
 /* .order_main_right{
@@ -71,12 +71,17 @@
 /* --------------------------------------------------------- */
 
 .cart_row_section{
-    height: 1800px;
+    min-height: 900px;
 }
 
 /* 왼쪽 ----------------------------------------------------- */
+/* 
+    order_main_left         콘텐츠 메인 왼쪽부분
+     ㄴ order_main_left_in
+      ㄴ deliver_info        배송정보
+*/
 .order_main_left_in{
-    width: 90%;
+    width: 70%;
     margin: auto;
 }
 
@@ -93,32 +98,76 @@
     width: 170px;
 }
 
-.order_btn_area{
-    width: 30%; 
+/* input 태그 */
+.delivery_input{
+    height: 20px;
+    padding: 5px;
+    box-shadow: var(--box_shadow);
+}
+
+/* input 태그 중 텍스트 긴 타입 */
+.input_long{
+    width: 490px;
+}
+
+.can_use_point{
+    color: red;
+}
+
+.alertText{
+    color: red;
+    font-weight: bold;
+}
+
+/* 주소입력 버튼 */
+/* .delivery_addr_btn{
+    width: 80px;
+    padding: 5px;
+    color: var(--color_greyish);
+    border: 2px solid var(--color_greyish);
+    border-radius: var(--radius);
+} */
+
+/* 결제하기 버튼 */
+.pay_btn_area{
+    width: 25%;
     margin: auto;
 }
 
-.order_btn{
-    height: 60px;
-}
-
-.pay_card{
-    width: 70%;
-}
-
 .pay_btn{
-    width: 30%;
+    width: 100%;
+    height: 50px;
 }
 
+/* 결제 수단 선택 */
+/* .order_btn_area{
+    width: 30%; 
+    margin: auto;
+} */
+
+/* .order_btn{
+    height: 60px;
+} */
+
+/* .pay_card{
+    width: 80%;
+} */
 
 
 /* 오른쪽 --------------------------------------------------- */
+/* 
+    order_main_right
+     ㄴ order_main_right_in     콘텐츠 메인 왼쪽부분
+      ㄴ summary_order          주문 요약
+      ㄴ offCanvas              주문 상세
+ */
+
 /* 주문요약 */
 .summary_order{
     box-shadow: var(--box_shadow);
     border-radius: var(--radius);
 }
-/* 주문 이미지 간략 & 버튼 */
+/* 주문 이미지 간략 & 버튼 구역 */
 .summary_order_img_btn{
     display: flex;
 }

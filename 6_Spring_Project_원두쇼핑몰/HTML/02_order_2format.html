@@ -60,53 +60,56 @@
                                             <!-- 배송지 -->
                                             <tbody>
                                                 <tr>
-                                                    <th rowspan="2">배송지</th>
+                                                    <th>배송지</th>
+                                                    <!-- <td>
+                                                        <button type="button" class="btn delivery_addr_btn" type="button">주소입력</button>
+                                                    </td> -->
                                                     <td>
-                                                        <button type="button">주소입력</button>
+                                                        <input class="input delivery_input input_long">
                                                     </td>
                                                 </tr>
-                                                <tr class="except_tr">
+                                                <!-- <tr class="except_tr">
                                                     <td>
-                                                        <input>
+                                                        <input class="input delivery_input input_long">
                                                     </td>
-                                                </tr>
+                                                </tr> -->
                                                 <!-- 받으시는분 -->
                                                 <tr>
                                                     <th>받으시는 분</th>
                                                     <td>
                                                         <!-- member_name -->
-                                                        <input>
+                                                        <input class="input delivery_input input_long">
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th>휴대전화</th>
                                                     <td>
-                                                        <input type="number">
+                                                        <input type="number" class="input delivery_input">
                                                         <span> - </span>
-                                                        <input type="number">
+                                                        <input type="number" class="input delivery_input">
                                                         <span> - </span>
-                                                        <input type="number">
+                                                        <input type="number" class="input delivery_input">
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th>이메일</th>
                                                     <td>
-                                                        <input>
+                                                        <input class="input delivery_input input_long">
                                                     </td>
                                                 </tr>
                                             </tbody>
                                             <tbody>
                                                 <tr>
-                                                    <th rowspan="2">적립금</th>
+                                                    <th rowspan="2">포인트</th>
                                                     <td>
-                                                        <input type="number"> 
+                                                        <input type="number" class="input delivery_input input_use_point"> 
                                                         <span>원 (총 사용 가능 포인트 : <span class="can_use_point">1000</span>원)</span>
                                                     </td>
                                                 </tr>
                                                 <tr class="except_tr">
                                                     <td>
                                                         <ul>
-                                                            <li>적립금은 최소 1,000원 이상일때 결제 가능합니다.</li>
+                                                            <li class="pointText">적립금은 최소 1,000원 이상일때 결제 가능합니다.</li>
                                                             <li>최대 사용금액은 제한이 없습니다.</li>
                                                             <li>적립금으로만 결제할 경우 결제 금액이 0으로 보여지는 것은 정상이며
                                                             <br>[결제하기] 버튼을 누르면 주문이 완료됩니다.
@@ -116,9 +119,17 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        <div class="pay_btn_area">
+                                            <button type="submit" class="btn pay_btn total_price_button">
+                                                <h2>결제하기</h2>
+                                                <div>
+                                                    <i class="fa-solid fa-arrow-right"></i>
+                                                </div>
+                                            </button>
+                                        </div>
                                         <!-- 결제하기 버튼 -->
                                         <!-- 배송 정보 입력 -->
-                                        <div>
+                                        <!-- <div>
                                             <h3>결제수단</h3>
                                         </div>
                                         <table class="order_info_text">
@@ -128,20 +139,15 @@
                                                     <label for="input">카카오 결제</label>
                                                 </td>
                                                 <td class="pay_btn">
-                                                    <div class="order_btn_area">
-                                                        <div class="total_price_button_area">
-                                                            <button type="submit" class="btn order_btn total_price_button">
-                                                                <h2 class="total_price_button_in">결제하기</h2>
-                                                                <div class="total_price_button_in">
-                                                                    <i class="fa-solid fa-arrow-right"></i>
-                                                                </div>
-                                                            </button>
+                                                    <button type="submit" class="btn pay_btn total_price_button">
+                                                        <h2>결제하기</h2>
+                                                        <div>
+                                                            <i class="fa-solid fa-arrow-right"></i>
                                                         </div>
-                                                    </div>
+                                                    </button>   
                                                 </td>
                                             </tr>
-                                            
-                                        </table>
+                                        </table> -->
                                     </form>
                                 </div>
                             </div>
@@ -220,6 +226,10 @@
                                         <div class="total total_delivery">
                                             <h4>전체배송비</h4> 
                                             <h4 class="h4_not"><span>무료배송</span></h4>
+                                        </div>
+                                        <div class="total use_point">
+                                            <h5>사용 포인트</h5> 
+                                            <h5 class="h4_not"><span class="total_use_point">0</span>원</h5>
                                         </div>
                                         <div class="hr_div hr_price"></div>
                                         <!-- 상품가격 + 배송비 -->
@@ -337,6 +347,10 @@
                                             <div class="total total_delivery">
                                                 <h4>전체배송비</h4> 
                                                 <h4 class="h4_not"><span>무료배송</span></h4>
+                                            </div>
+                                            <div class="total use_point">
+                                                <h5>사용 포인트</h5> 
+                                                <h5 class="h4_not"><span>0</span>원</h5>
                                             </div>
                                             <div class="hr_div hr_price"></div>
                                             <!-- 상품가격 + 배송비 -->

@@ -77,6 +77,10 @@ insert into final_member values(1, 'test1', '1234', '일길동', '2011-11-11', '
 insert into final_member values(2, 'test2', '1234', '이길동', '2011-11-11', 'hong@naver.com','010-1111-1111',sysdate,'이미지2', 0, '');
 insert into final_member values(3, 'test3', '1234', '삼길동', '2011-11-11', 'hong@naver.com','010-1111-1111',sysdate,'이미지3', 0, '');
 
+-- 회원 주소 추가(2022.12.02)
+alter table final_member add(member_addr varchar2(500));
+commit;
+
 ---------------- final_admin(관리자) ----------------
 create table final_admin(
     admin_num number(10) PRIMARY Key,

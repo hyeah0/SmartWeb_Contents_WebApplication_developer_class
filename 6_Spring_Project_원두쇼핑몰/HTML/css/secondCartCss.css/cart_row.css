@@ -61,31 +61,6 @@
 
 
 /* --------------------------------------------------------- */
-/* input number 화살표 제거 */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-/* 구분선 역할 div 공통 */
-.hr_div{
-    margin-top: var(--margin);
-    margin-bottom: var(--margin);
-    height: 2px;
-    background-color: var(--color_begie_op);
-}
-
-/* 장바구니 목록에 있는 div */
-.hr_content{
-    margin-left: 40px;
-    margin-right: 40px;
-}
-
-/* 장바구니 총 금액에 있는 div */
-.hr_price{
-    background-color: var(--color_greyish_op);
-}
-
 /* 이미지크기 */
 .img_a{
     display: block;
