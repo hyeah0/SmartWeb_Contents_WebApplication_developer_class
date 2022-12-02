@@ -48,7 +48,7 @@
                             <!-- 배송정보 -->
                             <div class="deliver_info">
                                 <!-- 상단 -->
-                                <div>
+                                <div class="deliver_info_top">
                                     <h3>배송정보</h3>
                                 </div>
                                 <!-- 메인 -->
@@ -78,23 +78,25 @@
                                                     <th>받으시는 분</th>
                                                     <td>
                                                         <!-- member_name -->
-                                                        <input class="input delivery_input input_long">
+                                                        <input class="input delivery_input">
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th>휴대전화</th>
-                                                    <td>
+                                                    <td class="flex_row">
                                                         <input type="number" class="input delivery_input">
-                                                        <span> - </span>
+                                                        <span class="span"> - </span>
                                                         <input type="number" class="input delivery_input">
-                                                        <span> - </span>
+                                                        <span class="span"> - </span>
                                                         <input type="number" class="input delivery_input">
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th>이메일</th>
-                                                    <td>
-                                                        <input class="input delivery_input input_long">
+                                                    <td class="flex_row">
+                                                        <input class="input delivery_input">
+                                                        <span class="span">@</span>
+                                                        <input class="input delivery_input">
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -107,12 +109,12 @@
                                                     </td>
                                                 </tr>
                                                 <tr class="except_tr">
-                                                    <td>
-                                                        <ul>
-                                                            <li class="pointText">적립금은 최소 1,000원 이상일때 결제 가능합니다.</li>
-                                                            <li>최대 사용금액은 제한이 없습니다.</li>
-                                                            <li>적립금으로만 결제할 경우 결제 금액이 0으로 보여지는 것은 정상이며
-                                                            <br>[결제하기] 버튼을 누르면 주문이 완료됩니다.
+                                                    <td class="list">
+                                                        <ul class="use_point_txt">
+                                                            <li class="pointText">- 적립금은 최소 1,000원 이상일때 결제 가능합니다.</li>
+                                                            <li>- 최대 사용금액은 제한이 없습니다.</li>
+                                                            <li>- 적립금으로만 결제할 경우 결제 금액이 0으로 보여지는 것은 정상이며
+                                                            <br>&nbsp;&nbsp;[결제하기] 버튼을 누르면 주문이 완료됩니다.
                                                             </li>
                                                         </ul>
                                                     </td>

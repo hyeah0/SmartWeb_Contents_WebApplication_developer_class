@@ -81,21 +81,26 @@
       ㄴ deliver_info        배송정보
 */
 .order_main_left_in{
-    width: 70%;
+    width: 80%;
+    overflow: scroll;
     margin: auto;
 }
 
 .order_info_text{
     width: 100%;
+    min-width: 700px;
     margin-bottom: var(--margin);
 }
 
 .order_info_text tr:not(.except_tr){
     height: 80px;
+    display: flex;
+    align-items: center;
 }
 
 .order_info_text th{
     width: 170px;
+    min-width:170px;
 }
 
 /* input 태그 */
@@ -105,9 +110,24 @@
     box-shadow: var(--box_shadow);
 }
 
+.flex_row{
+    display: flex;
+    align-items: center;
+}
+
+.span{
+    display: block;
+    width: 30px;
+    text-align: center;
+}
+
 /* input 태그 중 텍스트 긴 타입 */
 .input_long{
-    width: 490px;
+    width: 650px;
+}
+
+.use_point_txt{
+    margin-left: 170px;
 }
 
 .can_use_point{
@@ -130,7 +150,7 @@
 
 /* 결제하기 버튼 */
 .pay_btn_area{
-    width: 25%;
+    width: 200px;
     margin: auto;
 }
 
