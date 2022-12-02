@@ -95,3 +95,25 @@
 .a:not(.last):after{
     content: " > ";
 }
+
+/* 
+    order_main, cart_row_section        장바구니 목록 
+     ㄴ order_main_left, rows_area            장바구니 담겨져있는 상품 row
+     ㄴ order_main_right total_price_area1    장바구니에 담겨져있는 상품 row들의 총 금액
+        ㄴ total_price_area2
+*/
+.cart_row_section{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.order_main_left{
+    width: 70%;
+}
+
+.order_main_right{
+    width: 30%;
+    position: sticky;
+    top: 0px;
+}
