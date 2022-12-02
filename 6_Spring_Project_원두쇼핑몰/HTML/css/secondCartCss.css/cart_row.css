@@ -141,12 +141,9 @@ input::-webkit-inner-spin-button {
     cart_row_section        장바구니 목록 
      ㄴ order_main_left, rows_area            장바구니 담겨져있는 상품 row
      ㄴ order_main_right total_price_area1    장바구니에 담겨져있는 상품 row들의 총 금액
-        ㄴ total_price_area2
+        ㄴ order_main_right_in total_price_area2
 */
-
-.total_price_area2{
-    width: 90%;
-    margin: auto;
+.total_price_area2{  
     padding-bottom: 20px;
     box-shadow: var(--box_shadow);
 }
@@ -159,19 +156,12 @@ input::-webkit-inner-spin-button {
 */
 
 .row_area{
-    width: 90%;
     height: 300px;
-    border-radius: var(--radius);
-    margin: auto;
-    display: flex;
     box-shadow: var(--box_shadow);
 }
 /* ---------------------------------- */
 .row_img_area{
     min-width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 /* ---------------------------------- */
 .row_cont_area{
@@ -273,42 +263,6 @@ input::-webkit-inner-spin-button {
     min-width: 100px;
 }
 
-/* 결제하기 버튼 */
-.total_price_button{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--color_greyish);
-    border-radius: var(--radius);
-    transition: 0.3s ease-in-out;
-}
-
-.total_price_button_in{
-    margin-left: var(--margin);
-    margin-right: var(--margin);
-}
-
-.total_price_button h2{
-    color: white;
-    letter-spacing : 1px;
-}
-
-.total_price_button:hover{
-    background-color: var(--color_begie);  
-}
-
-.total_price_button:hover h2{
-    color: black;
-}
-
-.total_price_button i{
-    background-color: white;
-    font-size: 1rem;
-    padding: 10px;
-    border-radius: 50%;
-}
 /* --------------------------------------------------------- */
 
 /* 
