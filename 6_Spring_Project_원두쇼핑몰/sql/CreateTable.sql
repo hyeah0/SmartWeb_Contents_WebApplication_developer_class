@@ -68,18 +68,19 @@ create table final_member(
     member_email varchar2(100),
     member_phone varchar2(100),
     member_date date,
+    member_addr VARCHAR2(100) DEFAULT '주소를 넣어주세요',
+    member_addr2 VARCHAR2(100) DEFAULT '주소를 넣어주세요',
+    member_addr3 VARCHAR2(100) DEFAULT '주소를 넣어주세요',
+    member_addr4 VARCHAR2(100) DEFAULT '주소를 넣어주세요',
+    member_addr5 VARCHAR2(100) DEFAULT '주소를 넣어주세요',
     member_img varchar2(1000),
     member_point number(10) DEFAULT 0,
     test_num number REFERENCES coffee_test(test_num) on delete cascade
 );
 
-insert into final_member values(1, 'test1', '1234', '일길동', '2011-11-11', 'hong@naver.com','010-1111-1111',sysdate,'이미지1', 0, '');
-insert into final_member values(2, 'test2', '1234', '이길동', '2011-11-11', 'hong@naver.com','010-1111-1111',sysdate,'이미지2', 0, '');
-insert into final_member values(3, 'test3', '1234', '삼길동', '2011-11-11', 'hong@naver.com','010-1111-1111',sysdate,'이미지3', 0, '');
-
--- 회원 주소 추가(2022.12.02)
-alter table final_member add(member_addr varchar2(500));
-commit;
+insert into final_member values(1, 'test1', '1234', '일길동', '2011-11-11', 'hong@naver.com','010-1111-1111',sysdate, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT,'이미지1', 0, '');
+insert into final_member values(2, 'test2', '1234', '이길동', '2011-11-11', 'hong@naver.com','010-1111-1111',sysdate,DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT,'이미지2', 0, '');
+insert into final_member values(3, 'test3', '1234', '삼길동', '2011-11-11', 'hong@naver.com','010-1111-1111',sysdate,DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT,'이미지3', 0, '');
 
 ---------------- final_admin(관리자) ----------------
 create table final_admin(
@@ -159,8 +160,9 @@ create table coffee_order(
      beans_num number(10), 
      beans_name varchar2(200), 
      beans_price number(10), 
-     beans_weight number(10), 
      beans_taste varchar2(300),
+     cart_weight number(10), 
+     cart_grind number(5),
      member_num number(10),
      constraint member_num foreign key(member_num) references final_member(member_num) on delete cascade
  );
@@ -169,12 +171,19 @@ create table coffee_order(
 create table coffee_cart(
       cart_num number(10) primary key, 
       beans_num number(10), 
+      beans_price number(10),
       cart_cnt number(10), 
-      cart_price number(10), 
+      cart_weight number(10), 
+      cart_grind number(5),
       member_num number(10),
       constraint beans_num_order foreign key(beans_num) references coffee_beans(beans_num) on delete cascade,
       constraint member_num_order foreign key(member_num) references final_member(member_num) on delete cascade
 );
+
+-- 변경 부분 
+-- 컬럼명 변경 cart_price ==> beans_price // 상품 단가
+-- 컬럼 추가 cart_weight number(10) // 선택한 원두 무게
+-- 컬럼 추가 cart_grind number(5)   // 선택한 원두 갈기 
 
 ---------------- coffee_brew(드립) ----------------
 create table coffee_brew(
