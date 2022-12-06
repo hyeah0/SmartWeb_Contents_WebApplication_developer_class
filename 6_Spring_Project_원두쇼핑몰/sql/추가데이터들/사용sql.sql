@@ -38,3 +38,6 @@ select ca.cart_num
  where member_num = 1
  order by cart_num desc; 
   
+-- 추천 상품
+-- 기준 : 장바구니에 가장 많이 담은 taste 의 주문건 상의 탑 10
+

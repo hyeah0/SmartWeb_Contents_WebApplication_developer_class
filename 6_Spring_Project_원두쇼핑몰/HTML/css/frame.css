@@ -194,6 +194,9 @@
 }
 
 /* 장바구니 목록에 있는 div */
+.hr_content:last-child{
+    display: none;
+}
 .hr_content{
     margin-left: 40px;
     margin-right: 40px;
