@@ -240,6 +240,10 @@
     padding: 10px;
 }
 
+.content{
+    overflow: hidden;
+}
+
 /* 버튼 클릭시 나오는 주문 내역 상세 */
 .offCanvas{
     width: 500px;
@@ -247,35 +251,25 @@
     border-bottom-left-radius: 10px;
     position: absolute;
     top: 0px;
-    right: 0px;
-    visibility: hidden;
+    right: -800px;
+    transition: all .8s ease-in-out;
     background-color: white;
     box-shadow: var(--box_shadow);
 }
 
 /* 상세보기 보여주기 */
 .show{
-    visibility: visible;
-    animation: slide-in-right 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
 /* 요약 hidden */
 .hidden{
     visibility: hidden;
+    transition: visibility .5s ease-in-out;
+    
 }
-
-@keyframes slide-in-right {
-    0% {
-      -webkit-transform: translateX(1000px);
-              transform: translateX(1000px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      opacity: 1;
-    }
-  }
   
 /* 상세보기 */
 .detail_order_btn{
