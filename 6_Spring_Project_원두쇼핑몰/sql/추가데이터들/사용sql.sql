@@ -54,19 +54,16 @@ select ca.cart_num
 -- 참고. 장바구니 + 상품 테이블
 select *
   from coffee_cart cc
-  join coffee_beans cb
-    on cc.beans_num = cb.beans_num
  where member_num = 1;
 
 -- 맛별 장바구니 수량
-select rownum
-     , beans_taste
+select beans_taste
      , sum(cart_cnt) as cart_cnt
   from coffee_cart cc
   join coffee_beans cb
     on cc.beans_num = cb.beans_num
  where member_num = 1
- group by beans_taste, rownum
+ group by beans_taste
  order by cart_cnt desc;
  
  -- 별점(평점) 총평점수/ 평점을 준 사람
@@ -78,95 +75,176 @@ select rownum
   where coffee_star not in(0)
   group by beans_num;
  
- -- 1일때 사용 
-with maxCartTaste as (select rownum as row_cart
-                             , beans_taste
-                             , sum(cart_cnt) as cart_cnt
-                          from coffee_cart cc
-                          join coffee_beans cb
-                            on cc.beans_num = cb.beans_num
-                         where member_num = 1
-                         group by beans_taste, rownum
-                         order by cart_cnt desc
-),maxOrderTaste as ( 
-                    select co.beans_num
-                         , max(co.beans_taste)
-                         , sum(co.order_cnt) as cnt
-                         , case when ma.beans_taste = co.beans_taste then 'a'||row_cart else 'b'||2  end as priority_row
-                      from maxCartTaste ma
-                     right join coffee_order co 
-                        on ma.beans_taste = co.beans_taste
-                     group by beans_num, case when ma.beans_taste = co.beans_taste then 'a'||row_cart else 'b'||2 end 
-                     order by priority_row, cnt desc
-), avgStar as (
-             select beans_num 
-                  , count(beans_num) as cnt_people
-                  , sum(coffee_star) as sum_star
-                  , sum(coffee_star)/ count(beans_num) as avg_star
-               from member_star
-              where coffee_star not in(0)
-              group by beans_num
-)
-select rownum
-      , mot.priority_row 
-      , mot.beans_num
-      , cb.beans_name
-      , cb.beans_taste
-      , mot.cnt as order_cnt
-      , cb.beans_price
-      , cb.beans_img
-      , case when ast.cnt_people is null then 0 else ast.cnt_people end as cnt_people
-      , case when ast.avg_star is null then 0 else ast.avg_star end as avg_star
-   from maxOrderTaste mot
-   join coffee_beans cb
-     on mot.beans_num = cb.beans_num  
-   left join avgStar ast
-     on mot.beans_num = ast.beans_num 
-  where beans_count>0
-    and rownum<=10;
-                 
+-- 1. 장바구니에 가장 많이 담은 taste 의 주문건 상의 탑 10 _ 10건이 안될경우 가장 많이 판매된 원두랑 합치기 
+with max_cart_taste as (  
+                select beans_taste
+                     , sum(cart_cnt) as cart_cnt
+                  from coffee_cart cc
+                  join coffee_beans cb
+                    on cc.beans_num = cb.beans_num
+                 where member_num = 1
+                 group by beans_taste
+                 order by cart_cnt desc         
+), recog_priority_row as (
+                 select row_number() OVER (order by mct.cart_cnt desc)||'_'||beans_taste AS recog_priority_row
+                       , beans_taste
+                       , cart_cnt
+                    from max_cart_taste mct
+                    order by recog_priority_row               
+), order_row as (
+                select beans_num
+                     , sum(order_cnt) as order_cnt
+                  from coffee_order
+                  group by beans_num
+), star_avg_row as (
+                select beans_num 
+                      , count(beans_num) as people_cnt
+                      , sum(coffee_star) as sum_star
+                      , sum(coffee_star)/ count(beans_num) as avg_star
+                    from member_star
+                    where coffee_star not in(0)
+                    group by beans_num
+), star_add_order_row as (
+                select cb.beans_num
+                     , beans_name
+                     , beans_price
+                     , beans_taste
+                     , beans_img
+                     , case when ord.order_cnt is null then 0 else ord.order_cnt end order_cnt
+                     , case when ar.people_cnt is null then 0 else ar.people_cnt end people_cnt
+                     , case when ar.avg_star is null then 0 else ar.avg_star end avg_star
+                  from coffee_beans cb
+                  left join order_row ord
+                    on cb.beans_num = ord.beans_num
+                  left join star_avg_row ar
+                    on cb.beans_num = ar.beans_num
+                 where beans_count >0
+                   order by beans_taste, order_cnt desc
+) select rec.recog_priority_row
+       , sta.beans_num
+       , sta.beans_name
+       , sta.order_cnt
+       , sta.people_cnt
+       , sta.avg_star
+       , sta.beans_price
+       , sta.beans_taste
+       , sta.beans_img
+    from star_add_order_row sta
+    left join recog_priority_row rec
+      on sta.beans_taste = rec.beans_taste
+   order by rec.recog_priority_row, sta.order_cnt desc;
+
+  
 -- 2. 장바구니에 담은 상품이 없을 경우 가장 많이 주문한 taste 의 주문건 상의 탑 10
 -- 참고 :주문 내역
 select *
   from coffee_order
   where member_num = 1;
-  
-select beans_taste
-     , count(beans_taste)
+-------------------------------------------------------
+with max_order_taste as (  
+                select beans_taste
+                     , sum(order_cnt) as order_cnt
+                  from coffee_order
+                 where member_num = 1
+                 group by beans_taste, member_num           
+), recog_priority_row as (
+                  select row_number() OVER (order by mot.order_cnt desc)||'_'||beans_taste AS recog_priority_row
+                       , beans_taste
+                       , order_cnt
+                    from max_order_taste mot
+                    order by recog_priority_row
+), order_row as (
+                select beans_num
+                     , sum(order_cnt) as order_cnt
+                  from coffee_order
+                  group by beans_num
+), star_avg_row as (
+                select beans_num 
+                      , count(beans_num) as people_cnt
+                      , sum(coffee_star) as sum_star
+                      , sum(coffee_star)/ count(beans_num) as avg_star
+                    from member_star
+                    where coffee_star not in(0)
+                    group by beans_num
+), star_add_order_row as (
+                select cb.beans_num
+                     , beans_name
+                     , beans_price
+                     , beans_taste
+                     , beans_img
+                     , case when ord.order_cnt is null then 0 else ord.order_cnt end order_cnt
+                     , case when ar.people_cnt is null then 0 else ar.people_cnt end people_cnt
+                     , case when ar.avg_star is null then 0 else ar.avg_star end avg_star
+                  from coffee_beans cb
+                  left join order_row ord
+                    on cb.beans_num = ord.beans_num
+                  left join star_avg_row ar
+                    on cb.beans_num = ar.beans_num
+                 where beans_count >0
+                   order by beans_taste, order_cnt desc
+) select rec.recog_priority_row
+       , sta.beans_num
+       , sta.beans_name
+       , sta.order_cnt
+       , sta.people_cnt
+       , sta.avg_star
+       , sta.beans_price
+       , sta.beans_taste
+       , sta.beans_img
+    from star_add_order_row sta
+    left join recog_priority_row rec
+      on sta.beans_taste = rec.beans_taste
+   order by rec.recog_priority_row, sta.order_cnt desc;
+
+
+-----------------------------------------------------------------------------------------------
+-------------- 상단 참고 자료 상품별 주문건 + 별점 총 자료 
+-- order_row : 각 상품 별 주문수량 집계
+-- avg_star : 커피 별점 평균 
+--1
+select beans_num
+     , sum(order_cnt)
   from coffee_order
- where member_num = 1
- group by beans_taste, beans_num;
+  group by beans_num;
   
+--2
+select beans_num 
+  , count(beans_num) as people_cnt
+  , sum(coffee_star) as sum_star
+  , sum(coffee_star)/ count(beans_num) as avg_star
+from member_star
+where coffee_star not in(0)
+group by beans_num;  
+----------------------------------
+with order_row  as (
+                    select beans_num
+                         , sum(order_cnt) as order_cnt
+                      from coffee_order
+                      group by beans_num
+), avg_row as (
+                select beans_num 
+                      , count(beans_num) as people_cnt
+                      , sum(coffee_star) as sum_star
+                      , sum(coffee_star)/ count(beans_num) as avg_star
+                    from member_star
+                    where coffee_star not in(0)
+                    group by beans_num
+)
+select cb.beans_num
+     , beans_name
+     , beans_price
+     , beans_taste
+     , beans_img
+     , case when ord.order_cnt is null then 0 else ord.order_cnt end order_cnt
+     , case when ar.people_cnt is null then 0 else ar.people_cnt end people_cnt
+     , case when ar.avg_star is null then 0 else ar.avg_star end avg_star
+  from coffee_beans cb
+  left join order_row ord
+    on cb.beans_num = ord.beans_num
+  left join avg_row ar
+    on cb.beans_num = ar.beans_num
+ where beans_count >0
+   order by beans_taste, order_cnt desc;
+-----------------------------------------------------------------------------------------------   
   
--- 3. 장바구니에 담은 상품도 없고 주문한 상품도 없을경우 가장 많이 판매된 원두
-select 
 
--- 찜 확인
-select nvl(max(COFFEE_STAR),0) as COFFEE_STAR
-     , nvl(max(COFFEE_HEART),0) as COFFEE_HEART
-     , nvl(max(MEMBER_NUM),0) as MEMBER_NUM
-     , nvl(max(BEANS_NUM),0) as BEANS_NUM
-  from member_star
- where member_num = 1
-   and beans_num = 8;
-   
-
-
--------------------------------------------------------------------------
-
---- 멤버 테스트 결과 포함
-select fm.*
-    , ct.*
- from final_member fm
- join coffee_test ct
-   on fm.test_num = ct.test_num
- where member_num='1' and member_pwd='1234';
- 
--- 찜 목록확인 
--- 커피빈 전체
-select ms.*
-     , cb.*
- from member_star ms
- join coffee_beans cb
-   on ms.beans_num = cb.beans_num
-where ms.member_num = 1;
