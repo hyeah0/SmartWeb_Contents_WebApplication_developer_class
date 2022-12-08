@@ -44,12 +44,13 @@ select ca.cart_num
   
 -- 추천 상품
 -- 기준 : 
--- 1. 장바구니에 가장 많이 담은 taste 의 주문건 상의 탑 10 (장바구니 수량 카운팅)_ 10건이 안될경우 가장 많이 판매된 원두랑 합치기
+-- 1. 장바구니에 가장 많이 담은 taste 순서대로 의 주문건 상의 탑 10 (장바구니 수량 카운팅)_ 10건이 안될경우 가장 많이 판매된 원두랑 합치기
 -- 2. 장바구니에 담은 상품이 없을 경우 가장 많이 주문한 taste 의 주문건 상의 탑 10
 -- 3. 장바구니에 담은 상품도 없고 주문한 상품도 없을경우 가장 많이 판매된 원두
 
 -- 1. 장바구니에 가장 많이 담은 taste 의 주문건 상의 탑 10 _ 10건이 안될경우 가장 많이 판매된 원두랑 합치기
 -- , RANK() OVER (PARTITION BY DEPT ORDER BY SAL DESC, COMM DESC) RANK
+--  RANK() OVER (PARTITION BY beans_taste ORDER BY cart_cnt) AS RANKING 
 -- 참고. 장바구니 + 상품 테이블
 select *
   from coffee_cart cc
@@ -58,31 +59,55 @@ select *
  where member_num = 1;
 
 -- 맛별 장바구니 수량
-select beans_taste
+select rownum
+     , beans_taste
      , sum(cart_cnt) as cart_cnt
   from coffee_cart cc
   join coffee_beans cb
     on cc.beans_num = cb.beans_num
  where member_num = 1
- group by beans_taste
+ group by beans_taste, rownum
  order by cart_cnt desc;
  
+ -- 별점(평점) 총평점수/ 평점을 준 사람
+ select beans_num 
+      , count(beans_num) as cnt_people
+      , sum(coffee_star) as sum_star
+      , sum(coffee_star)/ count(beans_num) as avg_star
+   from member_star
+  where coffee_star not in(0)
+  group by beans_num;
  
-with maxCartTaste as (select max(beans_taste) as max_taste
-                        from coffee_cart cc
-                        join coffee_beans cb
-                          on cc.beans_num = cb.beans_num
-                       where member_num = 1
-),maxOrderTaste as ( select co.beans_num
-                          --, max(co.beans_taste) as taste
-                          , count(co.beans_num) as cnt
-                          , case when ma.max_taste = co.beans_taste then 1 else 2 end as priority_row
-                       from maxCartTaste ma
-                       right join coffee_order co 
-                         on ma.max_taste = co.beans_taste
-                      group by beans_num, case when ma.max_taste = co.beans_taste then 1 else 2 end
-                      order by priority_row, cnt desc
-)select rownum
+ -- 1일때 사용 
+with maxCartTaste as (select rownum as row_cart
+                             , beans_taste
+                             , sum(cart_cnt) as cart_cnt
+                          from coffee_cart cc
+                          join coffee_beans cb
+                            on cc.beans_num = cb.beans_num
+                         where member_num = 1
+                         group by beans_taste, rownum
+                         order by cart_cnt desc
+),maxOrderTaste as ( 
+                    select co.beans_num
+                         , max(co.beans_taste)
+                         , sum(co.order_cnt) as cnt
+                         , case when ma.beans_taste = co.beans_taste then 'a'||row_cart else 'b'||2  end as priority_row
+                      from maxCartTaste ma
+                     right join coffee_order co 
+                        on ma.beans_taste = co.beans_taste
+                     group by beans_num, case when ma.beans_taste = co.beans_taste then 'a'||row_cart else 'b'||2 end 
+                     order by priority_row, cnt desc
+), avgStar as (
+             select beans_num 
+                  , count(beans_num) as cnt_people
+                  , sum(coffee_star) as sum_star
+                  , sum(coffee_star)/ count(beans_num) as avg_star
+               from member_star
+              where coffee_star not in(0)
+              group by beans_num
+)
+select rownum
       , mot.priority_row 
       , mot.beans_num
       , cb.beans_name
@@ -90,9 +115,13 @@ with maxCartTaste as (select max(beans_taste) as max_taste
       , mot.cnt as order_cnt
       , cb.beans_price
       , cb.beans_img
+      , case when ast.cnt_people is null then 0 else ast.cnt_people end as cnt_people
+      , case when ast.avg_star is null then 0 else ast.avg_star end as avg_star
    from maxOrderTaste mot
    join coffee_beans cb
-     on mot.beans_num = cb.beans_num
+     on mot.beans_num = cb.beans_num  
+   left join avgStar ast
+     on mot.beans_num = ast.beans_num 
   where beans_count>0
     and rownum<=10;
                  
