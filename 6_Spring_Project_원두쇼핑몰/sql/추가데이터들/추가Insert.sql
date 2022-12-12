@@ -35,3 +35,14 @@ insert into coffee_order values('O202212020950021',9,1,14000,to_date('2022120209
 insert into coffee_order values('O202212020950021',10,2,15000,to_date('20221202095002','yyyyMMddhhmiss'),4,'케냐 기티투 AB',7500,'새콤한산미',100,1,1);
 insert into coffee_order values('O202212062150022',11,2,52500,to_date('20221206095002','yyyyMMddhhmiss'),8,'자메이카 블루마운틴',26250,'산미가없어요',100,0,2);
 insert into coffee_order values('O202212060250301',12,3,15750,to_date('20221206025030','yyyyMMddhhmiss'),9,'과테말라 SHB 안티구아/루시아',5250,'산미가없어요',100,0,1);
+insert into coffee_order values('O202212060250303',13,3,0,to_date('20221206025030','yyyyMMddhhmiss'),1,'',0,'맛1',100,0,3);
+
+-- 커피 찜
+insert into member_star values(0,1,1,2);
+insert into member_star values(0,1,1,7);
+insert into member_star values(0,1,1,10);
+insert into member_star values(0,1,1,9);
+insert into member_star values(0,1,2,2);
+insert into member_star values(0,1,2,7);
+insert into member_star values(0,1,2,10);
+insert into member_star values(0,1,2,9);
