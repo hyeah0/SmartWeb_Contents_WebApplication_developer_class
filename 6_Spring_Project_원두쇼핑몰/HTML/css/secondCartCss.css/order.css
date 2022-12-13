@@ -245,7 +245,7 @@
 }
 
 /* 버튼 클릭시 나오는 주문 내역 상세 */
-.offCanvas{
+.slider{
     width: 500px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;

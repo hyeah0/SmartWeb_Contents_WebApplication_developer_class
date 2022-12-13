@@ -95,7 +95,9 @@
 }
 
 .btn_up,
-.btn_down{
+.btn_down,
+.gram_btn_up,
+.gram_btn_down{
     color: var(--color_begie)
 }
 
@@ -104,6 +106,14 @@
 }
 
 .btn_down:hover{
+    color: var(--color_milk_brown);
+}
+
+.gram_btn_up:hover{
+    color: var(--color_milk_brown);
+}
+
+.gram_btn_down:hover{
     color: var(--color_milk_brown);
 }
 
@@ -128,7 +138,14 @@
      ㄴ row_img_area        : 상품 
      ㄴ row_cont_area       : 상품정보 (수량, 삭제, 찜 포함)
      ㄴ row_price_area      : 상품가격 (상품 단가 * 수량)
+     empty_cart 장바구니에 담겨져있는 상품 없을때
 */
+
+.empty_cart{
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
 
 .row_area{
     height: 300px;
@@ -157,14 +174,34 @@
     margin-bottom: 10px;
 }
 
-/* 수량조절 버튼 */
-.cnt_updown{
-    padding: 5px;
-    border-radius: var(--radius);
+.gram_cnt_btn_area{
+    width: 280px;
     display: flex;
+    flex-direction: row;
     box-shadow: var(--input_box_shadow);
+    border-radius: var(--radius);
 }
 
+/* 수량조절 버튼 */
+.gram_updown,
+.cnt_updown{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gram_input_area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.gram_input_area label{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.gram_updown input,
 .cnt_updown input{
     width: 80px;
     padding: 10px;

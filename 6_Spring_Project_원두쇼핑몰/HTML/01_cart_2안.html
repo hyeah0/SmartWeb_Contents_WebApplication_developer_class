@@ -65,11 +65,22 @@
                                         <p><span class="row_price">13000</span> 원</p>
                                     </div>
                                     <div class="product_cnt_delete">
-                                        <div class="cnt_updown">
-                                            <input type="number" min="1" max="20" class="input input_cnt" value="1" name="cart_cnt" readonly>
-                                            <div class="btn_area">
-                                                <button type="button" class="btn btn_up"><i class="fa-solid fa-caret-up"></i></button>
-                                                <button type="button" class="btn btn_down"><i class="fa-solid fa-caret-down"></i></button>
+                                        <div class="gram_cnt_btn_area">
+                                            <div class="gram_updown">
+                                                <div class="gram_input_area">
+                                                    <input type="number" min="1" max="20" class="input input_gram_cnt" value="1" name="cart_cnt" readonly> <label>g</label>
+                                                </div>
+                                                <div class="btn_area">
+                                                    <button type="button" class="btn gram_btn_up"><i class="fa-solid fa-caret-up"></i></button>
+                                                    <button type="button" class="btn gram_btn_down"><i class="fa-solid fa-caret-down"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="cnt_updown">
+                                                <input type="number" min="1" max="20" class="input input_cnt" value="1" name="cart_cnt" readonly>
+                                                <div class="btn_area">
+                                                    <button type="button" class="btn btn_up"><i class="fa-solid fa-caret-up"></i></button>
+                                                    <button type="button" class="btn btn_down"><i class="fa-solid fa-caret-down"></i></button>
+                                                </div>
                                             </div>
                                         </div>
                                         <button type="button" class="btn btn_dh btn_delete" onclick="deleteRow(0)">
