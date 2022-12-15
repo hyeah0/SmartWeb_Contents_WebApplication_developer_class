@@ -27,19 +27,18 @@
                             <h3>주문내역</h3>
                         </div>
                         <!-- search -->
-                        <div>
+                        <div class="m_search">
                             <table class="m_table">
                                 <colgroup>
-                                    <col style="width: 20%">
+                                    <col style="width: 50%">
                                     <col style="width: 40%">
-                                    <col style="width: 30%">
                                     <col style="width: 10%">
                                 </colgroup>
                                 <tr>
                                     <td class="search_month">
                                         <!-- 현재월의 -6개월 -->
                                         <ul class="list s_month">
-                                            <li><button class="btn sel_month">7월</button></li>
+                                            <li><button class="btn sel_month clicked">7월</button></li>
                                             <li><button class="btn sel_month">8월</button></li>
                                             <li><button class="btn sel_month">9월</button></li>
                                             <li><button class="btn sel_month">10월</button></li>
@@ -54,50 +53,48 @@
                                             <input type="date">
                                         </div>
                                     </td>
-                                    <td>
-                                        <button class="btn">조회</button>
+                                    <td class="search_btn">
+                                        <button class="btn etc_btn">조회</button>
                                     </td>
                                 </tr>
                             </table>
                         </div>
                         <!-- main -->
-                        <div class="m_main">
+                        <div class="m_main">                
                             <!-- for each 예정(월별) -->
+                            <!-- 주문 월 -->
+                            <div class="m_order_month">
+                                <h4>2022.10</h4>
+                            </div>
                             <!-- 주문 내역 -->
-                            <div class="m_order_rows">
-                                 <!-- 주문 월 -->
-                                <div class="m_order_date">
-                                    <h4>2022.10</h4>
-                                </div> 
+                            <div class="m_order_rows">  
                                 <!-- 주문 월 주문내역  -->
-                                <table class="m_table">
+                                <table class="m_table m_rows_table">
                                     <colgroup>
                                         <col style="width: 20%">
-                                        <col style="width: 15%">
-                                        <col style="width: 35%">
-                                        <col style="width: 15%">
-                                        <col style="width: 15%">
+                                        <col style="width: 60%">
+                                        <col style="width: 20%">
                                     </colgroup>
                                     <!-- for each 예정(월별 주문내역) -->
                                     <tr class="m_order_row">
-                                        <td class="txt_center">
-                                            <a class="a" href="">주문번호</a>
+                                        <td class="p_date_area txt_center">
+                                            <a class="a p_date" href="">202212161215301</a>
+                                            <p>(2022.12.16)</p> 
                                         </td>
-                                        <td class="txt_center">주문일</td>
-                                        <td>
-                                            <div class="p_cont_area">
+                                     
+                                        <td class="p_cont_area">
+                                            <div class="p_cont_imgcont">
                                                 <div class="p_img">
                                                     <a class="p_img_a" href="">
                                                         <img src="./resources/orderimg/coffeebean.png" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="p_cont">
-                                                    상품이름 외 2
+                                                    <p>상품이름 외 2</p>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="txt_right">주문금액</td>
-                                        <td class="txt_right">사용포인트</td>
+                                        <td class="txt_right">10,000 원</td>
                                     </tr>
                                 </table>
                                 
@@ -105,8 +102,8 @@
 
                             <div class="m_page">
                                 <div>
-                                    <!-- 페이지? 더보기? -->
-                                    <button>더보기</button>
+                                    <!-- 페이지 -->
+                                    <button class="btn">더보기</button>
                                 </div>
                             </div>
                         </div>
