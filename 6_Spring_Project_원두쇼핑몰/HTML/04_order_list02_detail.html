@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="./resources/orderimg/coffeebean04.png">
+        <title>주문상세</title>
+        <link rel="stylesheet" href="css/frame.css">
+        <link rel="stylesheet" href="./css/secondCartCss.css/order_ok.css">
+        <script src="https://kit.fontawesome.com/4338ad17fa.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- 해더 -->
+        <header class="header">
+            header
+        </header>
+        <!-- 컨텐츠 부분 -->
+        <section class="content">
+            <section class="order_wrap">
+                <!-- 주문 완료 목록 -->
+                <section class="order_main"> 
+                    <div class="order_main_in">
+                        <!-- head -->
+                        <div class="m_header">
+                            <h3>주문 상세정보</h3>
+                            <div>
+                                <ul class="list">
+                                    <li>주문일 : <span> </span> </li>
+                                    <li>주문번호 : <span> </span> </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- main -->
+                        <div class="m_main">
+
+                            <!-- 주문 내역 -->
+                            <div class="m_order_rows m_main_t m_detail_t">
+                                <table class="m_table m_d_t">
+                                    <tr>
+                                        <th>순번</th>
+                                        <th colspan="2">상품 정보</th>
+                                        <th>상품 금액</th>
+                                        <th>재구매</th>
+                                    </tr>
+                                    <!-- foreach로 돌아갈 예정 -->
+                                    <tr class="t_hr">
+                                        <td>
+                                            <div>order_row</div>
+                                        </td>
+                                        <!-- 이미지 -->
+                                        <td>
+                                            <div class="p_img">
+                                                <a class="p_img_a">
+                                                    <img src="./resources/orderimg/coffeebean.png" alt="">
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="p_cont">
+                                                <h4>상품이름</h4>
+                                                <h5>그람 : <span> 100</span> </h5>
+                                                <h5>수량 : <span> 1</span> </h5>
+                                                <h5>원두갈기 : <span> 갈아주세요</span> </h5>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                10000 원
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button>재구매하기</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                            </div>
+                            <!-- ---------------------------- -->
+                            
+                           
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+         <!-- 푸터 -->
+        <footer class="footer">
+            footer
+        </footer>
+       
+    </body>
+    </html>
