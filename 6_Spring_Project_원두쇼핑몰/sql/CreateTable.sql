@@ -124,14 +124,11 @@ create table coffee_beans(
     beans_weight number(10),
     beans_taste varchar2(100),
     beans_intro varchar2(4000),
-    beans_img varchar2(4000),
-    beans_url varchar2(4000)  
+    beans_img varchar2(4000) 
 );
 
-insert into coffee_beans values(1, '원두1', 10000, 100, 200, '맛1','소개1','이미지1','url_1');
-insert into coffee_beans values(2, '원두2', 15000, 100, 100, '맛2','소개2','이미지2','url_2');
-insert into coffee_beans values(3, '원두3', 20000, 100, 200, '맛3','소개3','이미지3','url_3');
-
+alter table coffee_beans drop column beans_url;
+commit;
 ---------------- coffee_write(후기글) ----------------
 create table coffee_write(
     write_num number(10) PRIMARY Key,
@@ -171,7 +168,6 @@ create table coffee_order(
 create table coffee_cart(
       cart_num number(10) primary key, 
       beans_num number(10), 
-      beans_price number(10),
       cart_cnt number(10), 
       cart_weight number(10), 
       cart_grind number(5),
@@ -184,6 +180,9 @@ create table coffee_cart(
 -- 컬럼명 변경 cart_price ==> beans_price // 상품 단가
 -- 컬럼 추가 cart_weight number(10) // 선택한 원두 무게
 -- 컬럼 추가 cart_grind number(5)   // 선택한 원두 갈기 
+-- 컬럼 삭제 beans_price 
+alter table coffee_cart drop column beans_price;
+commit;
 
 ---------------- coffee_brew(드립) ----------------
 create table coffee_brew(

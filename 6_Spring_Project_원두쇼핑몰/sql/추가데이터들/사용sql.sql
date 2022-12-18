@@ -48,7 +48,8 @@ select ca.cart_num
   left join member_star ms
     on ca.member_num = ms.member_num
    and ca.beans_num = ms.beans_num
- where ca.member_num = 1
+ where ca.cart_num in (1,2,3)
+-- where ca.member_num = 1
  order by ca.cart_num desc; 
   
 -- 추천 상품
@@ -256,11 +257,11 @@ group by beans_num;
 select member_name
      , member_email
      , replace(member_phone,'-','')  as member_phone
-     , case when replace(member_addr,',','') = '주소를 넣어주세요' then '-' else replace(member_addr,',',' ') end as member_addr 
-     , case when replace(member_addr2,',','') = '주소를 넣어주세요' then '-' else replace(member_addr,',',' ') end as member_addr2 
-     , case when replace(member_addr3,',','') = '주소를 넣어주세요' then '-' else replace(member_addr,',',' ') end as member_addr3 
-     , case when replace(member_addr4,',','') = '주소를 넣어주세요' then '-' else replace(member_addr,',',' ') end as member_addr4 
-     , case when replace(member_addr5,',','') = '주소를 넣어주세요' then '-' else replace(member_addr,',',' ') end as member_addr5 
+     , case when replace(member_addr,',','') = '주소를 넣어주세요' then '' else replace(member_addr,',',' ') end as member_addr 
+     , case when replace(member_addr2,',','') = '주소를 넣어주세요' then '' else replace(member_addr,',',' ') end as member_addr2 
+     , case when replace(member_addr3,',','') = '주소를 넣어주세요' then '' else replace(member_addr,',',' ') end as member_addr3 
+     , case when replace(member_addr4,',','') = '주소를 넣어주세요' then '' else replace(member_addr,',',' ') end as member_addr4 
+     , case when replace(member_addr5,',','') = '주소를 넣어주세요' then '' else replace(member_addr,',',' ') end as member_addr5 
      , member_point
   from final_member
  where member_num = 1;
@@ -285,4 +286,79 @@ select ca.cart_num
    and be.beans_count not in(0)
  order by ca.cart_num desc; 
 
+ select beans_num
+      , count(member_num) 
+  from member_star 
+ where coffee_heart =1 
+ group by beans_num;
 
+-- 상품 커피 목록 + 찜 한 사람 카운팅
+with test as ( select beans_num
+                    , count(member_num) as count_heart
+              from member_star 
+             where coffee_heart =1 
+             group by beans_num 
+)select cb.*
+      , case when count_heart is null then 0 else count_heart end as count_h
+   from coffee_beans cb
+   left join test t
+     on cb.beans_num = t.beans_num ;
+
+-- 주문 정보 + beans_img
+ select co.*
+      , be.beans_img
+   from coffee_order co 
+   join coffee_beans be
+     on co.beans_num = be.beans_num; 
+     
+  where order_num = #{order_num}
+ 
+----------------------------------------
+-- 장바구니 리스트
+ select co.*
+      , be.beans_img
+    from coffee_order co 
+    join coffee_beans be
+     on co.beans_num = be.beans_num ;
+     
+-- 장바구니 리스트 그룹바이
+-- 1. 한번 주문시 몇개의 상품이 주문 되었는지 확인 (order_product_cnt)
+select order_num
+      , min(order_row) as order_row
+      , count(order_num) as order_product_cnt
+      , sum(order_price) as order_price
+      , min(order_date) as order_date
+      , min(to_char(order_date,'yyyy.mm')) as order_month 
+  from coffee_order
+ where member_num = 1
+ group by order_num
+ order by order_num desc;
+ 
+ -- 주문월
+ select distinct (to_char(order_date,'yyyy.mm')) as order_month 
+   from coffee_order
+  where member_num = 1;
+                         
+with order_product as (select order_num
+                              , min(order_row) as order_row
+                              , count(order_num) as order_product_cnt
+                              , sum(order_price) as order_price
+                              , min(order_date) as order_date
+                              , min(to_char(order_date,'yyyy.mm')) as order_month 
+                          from coffee_order
+                          where member_num = 1
+                         group by order_num
+                         order by order_num desc
+)select op.order_month
+      , op.order_date
+      , op.order_num
+      , op.order_price
+      , co.beans_num
+      , case when op.order_product_cnt>1 then co.beans_name || ' 외 ' || (op.order_product_cnt-1) else co.beans_name end beans_name
+  from coffee_order co
+  join order_product op
+    on co.order_num = op.order_num
+   and co.order_row = op.order_row;
+ 
+ 
+ 

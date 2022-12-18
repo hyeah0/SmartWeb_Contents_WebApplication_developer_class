@@ -7,6 +7,8 @@ insert into coffee_beans values(8,'자메이카 블루마운틴',52500,100,200,'
 insert into coffee_beans values(9,'과테말라 SHB 안티구아/루시아',10500,100,200,'산미가없어요','아로마 : 스모키한 향(루시아는 스모키함은 부족하나 에프터가 더 깨끗해요) ','과테말라 SHB 안티구아/루시아','https://d2wosiipoa41qn.cloudfront.net/ZXfQ92ooozks…ges/20221125/921cc439f17a49559518c25508fcedfe.png');
 insert into coffee_beans values(10,'콜롬비아 우일라 리브레 셀렉션 디카페인',15000,100,200,'약한산미','호박, 감초같은 달달함에 건무화과같은 낮은 톤의 산미가 좋은 밸런스를 이루는 커피입니다 :)','콜롬비아 우일라 리브레 셀렉션 디카페인','https://d2wosiipoa41qn.cloudfront.net/dbgwbWiSLqKz…ges/20221123/53763f969cd2401ba2927be3b7987e06.png');
 
+insert into coffee_beans values(11,'에티오피아 시다마 파피초 마이크로 내추럴',18000,100,100,'꽃향기_과일','실키한 마우스필과 슈가케인의 단맛, 망고와 고급스러운 장미의 향미가 느껴지는 커피입니다.','https://d2wosiipoa41qn.cloudfront.net/T-5N7QBo0NddHkMBCyep9gkV5rM=/650x650/s3.ap-northeast-2.amazonaws.com/koke-uploads/images/20221212/c16a1da48d474035a6af0a357387c086.png');
+
 commit;
 
 -- coffee_cart 장바구니 테이블 데이터 추가
