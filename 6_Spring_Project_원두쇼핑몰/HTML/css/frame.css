@@ -217,3 +217,8 @@ input::-webkit-inner-spin-button {
 .display_none{
     display: none;
 }
+
+/* 스크롤바 없애기 */
+*::-webkit-scrollbar {
+    display: none; 
+}
