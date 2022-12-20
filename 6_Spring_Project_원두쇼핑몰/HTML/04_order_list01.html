@@ -30,11 +30,53 @@
                         <div class="m_search">
                             <table class="m_table">
                                 <colgroup>
+                                    <col style="width: 40%">
+                                    <col style="width: 50%">
+                                    <col style="width: 10%">
+                                    <!-- 
                                     <col style="width: 50%">
                                     <col style="width: 40%">
                                     <col style="width: 10%">
+                                     -->
                                 </colgroup>
                                 <tr>
+                                     <td class="search_term">
+                                       <ul class="list s_term">
+                                           <div>
+                                               <li class="sel">
+                                                   <button class="btn s_term_btn" onclick="openLi()">
+                                                       <p>기간 선택</p>
+                                                       <i class="fa-solid fa-caret-down"></i>
+                                                   </button>
+                                               </li>
+                                               <li class="sel_term display_none" value="-">
+                                                   <button class="btn" >
+                                                       <p>-</p>
+                                                   </button >
+                                               </li>
+                                               <li class="sel_term display_none" value="1">
+                                                   <button class="btn" >
+                                                       <p>1개월 전</p>
+                                                   </button >
+                                               </li>
+                                               <li class="sel_term display_none" value="3">
+                                                   <button class="btn" >
+                                                       <p>3개월 전</p>
+                                                   </button >
+                                               </li>
+                                               <li class="sel_term display_none" value="6">
+                                                   <button class="btn" >
+                                                       <p>6개월 전</p>
+                                                   </button>
+                                               </li>
+                                               <li class="sel_term display_none" value="12">
+                                                   <button class="btn" >
+                                                       <p>12개월 전</p>
+                                                   </button>
+                                               </li>
+                                           </div>
+                                       </ul>
+                                   </td>
                                     <td class="search_month">
                                         <!-- 현재월의 -6개월 -->
                                         <ul class="list s_month">
@@ -47,10 +89,14 @@
                                         </ul>
                                     </td>
                                     <td class="search_date">
+                                        
+                                        <c:set var="now" value="<%=new java.util.Date()%>" />
+                                        <c:set var="nowFormat"><fmt:formatDate value="${now}" pattern="yyyy-MM-dd" /></c:set>
+                                        
                                         <div class="s_date">
-                                            <input type="date">
+                                            <input type="date" class="start_date">
                                             <span>-</span>
-                                            <input type="date">
+                                            <input type="date" class="end_date">
                                         </div>
                                     </td>
                                     <td class="search_btn">
@@ -109,13 +155,27 @@
                         </div>
                     </div>
                 </section>
+                
+                <!-- <section class="alert_date">
+                    <div class="alert_date_in">
+                        <div class="s_date a_d_div">
+                            <p class="alert_txt_1">dd</p>
+                            <input type="date" class="re_date"> 
+                            <button class="btn">수정하기</button>
+                        </div>
+                    </div>
+                </section> -->
+
             </section>
+            
         </section>
          <!-- 푸터 -->
         <footer class="footer">
             footer
         </footer>
        
+
+
         <script src="./js/2안js/cart/orderlist.js"></script>
     </body>
     </html>

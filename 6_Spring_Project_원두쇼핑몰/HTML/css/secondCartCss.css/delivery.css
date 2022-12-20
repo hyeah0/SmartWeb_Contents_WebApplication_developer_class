@@ -1,0 +1,130 @@
+/* 구역 확인용 -------------------------------------- */
+.wrap{
+	border: 1px solid pink;
+}
+
+.main{
+	border: 1px solid green;
+}	
+
+.main_in{
+	border: 1px solid orange;
+}
+
+/* 요약 표 */
+/* .m_summary{
+	border: 1px solid orange;
+} */
+
+/* .m_summary_in{
+    border: 1px solid lightblue;
+} */
+
+/* .m_s_delivery{
+	border: 1px solid pink;	
+} */
+
+/* ----------------------------------------------- */
+body{
+    width: 100%;
+}
+
+.wrap{
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 400px 2fr;
+}
+
+.blank{
+	width: 400px;
+}
+
+.main{
+	width: 100%;
+	overflow: scroll;
+}	
+
+.main_in{
+	width: 90%;
+    margin: auto;
+}
+
+/* 배달 현황 요약 */
+.m_summary{
+    width: 100%;
+    margin-bottom: var(--margin);
+}
+
+.m_summary_in{
+    width: 80%;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	box-shadow: var(--box_shadow);
+}
+
+.m_s_delivery{
+	width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cnt_txt{
+    width: 100px;
+    height: 30px;
+}
+
+.m_s_delivery .a{
+    font-size: 20px;
+    transition: .4s ease-in-out;
+}
+
+.m_s_delivery .a:hover{
+    font-size: 25px;
+    color: var(--color_milk_brown);
+}
+
+
+/* 주문 현황 표 */
+.m_content_t{
+    width: 100%; 
+    border-collapse: collapse;
+    border-bottom: 1px solid var(--color_begie);
+}
+
+.m_content_t thead tr{
+    height: 40px;
+    background-color: var(--color_begie);
+}
+
+.m_content_t tbody tr{
+    height: 50px;
+}
+
+.m_content_t tbody td{
+    padding: 10px;
+    border-bottom: 1px solid var(--color_begie);
+}
+
+.m_content_t td:nth-child(1),
+.m_content_t td:nth-child(3){
+    text-align: center;
+}
+
+.m_content_t th{
+    border-left: 2px solid white;
+}
+
+/* 배송 현황 버튼 */
+.c_delivery_btn{
+    border: 1px solid var(--color_begie);
+    border-radius: var(--radius);
+}
+
+.c_delivery_btn:hover{
+    background-color: var(--color_greyish);
+    color: white;
+}

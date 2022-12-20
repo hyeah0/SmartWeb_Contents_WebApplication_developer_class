@@ -48,3 +48,8 @@ insert into member_star values(0,1,2,2);
 insert into member_star values(0,1,2,7);
 insert into member_star values(0,1,2,10);
 insert into member_star values(0,1,2,9);
+
+-- 후기
+insert into coffee_write values(0,'ddd',sysdate,'','test3',3);
+commit;
+

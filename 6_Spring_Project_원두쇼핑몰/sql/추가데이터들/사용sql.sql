@@ -331,6 +331,7 @@ select order_num
       , min(to_char(order_date,'yyyy.mm')) as order_month 
   from coffee_order
  where member_num = 1
+   and order_date between to_date('2022-10-01','yyyy-mm-dd') and to_date('2022-10-30','yyyy-mm-dd')
  group by order_num
  order by order_num desc;
  
@@ -338,7 +339,14 @@ select order_num
  select distinct (to_char(order_date,'yyyy.mm')) as order_month 
    from coffee_order
   where member_num = 1;
-                         
+  
+  select sysdate
+       , to_date('2022-12-19', 'yyyy-mm-dd')
+       , to_date('2022-12-19 00:00:00','yyyy-mm-dd hh24:mi:ss')
+       , to_date('2022-12-19 23:59:59','yyyy-mm-dd hh24:mi:ss')
+    from dual;
+            
+ -- 특정 일자 주문건 확인             
 with order_product as (select order_num
                               , min(order_row) as order_row
                               , count(order_num) as order_product_cnt
@@ -349,16 +357,28 @@ with order_product as (select order_num
                           where member_num = 1
                          group by order_num
                          order by order_num desc
-)select op.order_month
+)select row_number() over(order by op.order_num desc) as row_num
+      , op.order_month
       , op.order_date
       , op.order_num
       , op.order_price
       , co.beans_num
       , case when op.order_product_cnt>1 then co.beans_name || ' 외 ' || (op.order_product_cnt-1) else co.beans_name end beans_name
+      , be.beans_img
   from coffee_order co
   join order_product op
     on co.order_num = op.order_num
-   and co.order_row = op.order_row;
+   and co.order_row = op.order_row
+  join coffee_beans be
+    on co.beans_num = be.beans_num 
+ order by order_num desc;
+  
+  -- n개월 전
+   and co.order_date > add_months(to_date('2022-12-19', 'yyyy-mm-dd'), -2);
+   
+   
+   and co.order_date between to_date('2022-12-19 00:00:00','yyyy-mm-dd hh24:mi:ss') and to_date('2022-12-19 23:59:59','yyyy-mm-dd hh24:mi:ss');
  
+
  
  
