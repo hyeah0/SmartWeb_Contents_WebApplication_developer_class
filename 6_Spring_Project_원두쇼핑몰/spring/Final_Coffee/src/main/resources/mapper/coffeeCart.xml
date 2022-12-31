@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cartDAO">
+
+	<!-- 상품 정보(beans num) -->
+	<select id="product" parameterType="int" resultType="coffeeBeanDTO">
+		select * from coffee_beans where beans_num = #{beans_num}
+	</select>
+	
+	<!-- 장바구니에 있는 상품인지 확인 -->
+	<select id="findCart" parameterType="hashmap" resultType="coffeeCartDTO">
+		select nvl(max(cart_num),0) as cart_num
+		     , nvl(max(cart_cnt),0) as cart_cnt
+		     , nvl(max(cart_weight),0) as cart_weight
+		     , nvl(max(cart_grind),0) as cart_grind
+		  from coffee_cart
+		 where member_num = #{member_num}
+		   and beans_num = #{beans_num}
+		   and cart_grind = #{select_grind}
+	</select>
+	
+	<!-- 장바구니 등록(row가 하나라도 있을때) -->
+	<insert id="insertCart" parameterType="coffeeCartDTO">
+		
+		<selectKey resultType="int" keyProperty="cart_num" order="BEFORE">
+			select nvl(max(cart_num),0) from coffee_cart
+		</selectKey>
+		
+		insert into coffee_cart 
+		values(#{cart_num} +1 , #{beans_num}, #{cart_cnt}, #{cart_weight}, #{cart_grind}, #{member_num})
+	
+	</insert>
+	
+	<!-- 장바구니 수정(모든상품페이지, 상세페이지에서 온 정보 기준) -->
+	<update id="updateCart" parameterType="coffeeCartDTO">
+		update coffee_cart 
+		   set cart_cnt = #{cart_cnt}
+		     , cart_weight = #{cart_weight}
+		 where cart_num = #{cart_num}
+	</update> 
+	
+	<!-- 장바구니 리스트 -->
+	<select id="getCartList" parameterType="int" resultType="coffeeCartDTO">
+		select ca.cart_num
+		     , ca.beans_num
+		     , ca.cart_cnt
+		     , ca.cart_weight
+		     , ca.cart_grind
+		     , be.beans_name
+		     , be.beans_price
+		     , be.beans_taste
+		     , be.beans_img
+		     , be.beans_count
+		     , case when ms.coffee_heart is null then 0 else ms.coffee_heart end as coffee_heart
+		  from coffee_cart ca
+		  join coffee_beans be
+		    on ca.beans_num = be.beans_num
+		  left join member_star ms
+		    on ca.member_num = ms.member_num
+		   and ca.beans_num = ms.beans_num
+		 where ca.member_num = #{member_num}
+		 order by ca.cart_num desc
+	</select>
+	
+	<!-- 찜 리스트(없으면 0, 있을경우 beans_num) -->
+	<select id="heartMap" parameterType="hashmap" resultType="coffeeCartDTO">
+		select nvl(max(beans_num),0) as beans_num
+			 , nvl(max(coffee_heart),0) as coffee_heart
+		  from member_star
+		 where member_num = #{memNum}
+		   and beans_num = #{beansNum}
+	</select>
+	
+	<!-- 찜 등록 -->
+	<insert id="insertHeart" parameterType="hashmap">
+		insert into member_star values(0, #{heart}, #{memNum}, #{beansNum})
+	</insert>
+	
+	<!-- 찜 수정 -->
+	<update id="updateHeart" parameterType="hashmap">
+		update member_star 
+		   set coffee_heart = #{heart} 
+		 where member_num = #{memNum}
+		   and beans_num = #{beansNum}
+	</update>
+	
+	<!-- 장바구니에서 행 삭제 -->
+	<delete id="deleteCartNum">
+		delete from coffee_cart where cart_num = #{cartNum}
+	</delete>
+	
+	<!-- 장바구니에서 수량 수정 -->
+	<update id="updateCartCnt" parameterType="hashmap">
+		update coffee_cart 
+		   set cart_cnt = #{cartCnt}
+		 where cart_num = #{cartNum}
+	</update>
+	
+	<!-- 장바구니에서 그람 수정 -->
+	<update id="updateCartGram" parameterType="hashmap">
+		update coffee_cart 
+		   set cart_weight = #{cartGram}
+		 where cart_num = #{cartNum}
+	</update>
+	
+	<sql id="max_cart">
+		select beans_taste
+                  , sum(cart_cnt) as cart_cnt
+               from coffee_cart cc
+               join coffee_beans cb
+                 on cc.beans_num = cb.beans_num
+              where member_num = #{member_num}
+              group by beans_taste
+              order by cart_cnt desc
+	</sql>
+	
+	<sql id="max_order">
+		 select beans_taste
+              , sum(order_cnt) as order_cnt
+           from coffee_order
+          where member_num = #{member_num}
+          group by beans_taste, member_num
+	</sql>
+	
+	<sql id="recog_priority_order">
+	  select row_number() OVER (order by mot.order_cnt desc)||'_'||beans_taste AS recog_priority_row
+           , beans_taste
+           , order_cnt
+        from max_order_taste mot
+        order by recog_priority_row
+	</sql>
+	
+	<sql id="recog_priority">
+		select row_number() OVER (order by mct.cart_cnt desc)||'_'||beans_taste AS recog_priority_row
+             , beans_taste
+             , cart_cnt
+          from max_cart_taste mct
+          order by recog_priority_row   
+	</sql>
+	
+	<sql id="order_row_all">
+		select beans_num
+                , sum(order_cnt) as order_cnt
+             from coffee_order
+             group by beans_num
+	</sql>
+	
+	<sql id="star_avg">
+		select beans_num 
+                , count(beans_num) as people_cnt
+                , sum(coffee_star) as sum_star
+                , sum(coffee_star)/ count(beans_num) as avg_star
+              from member_star
+              where coffee_star not in(0)
+              group by beans_num 
+	</sql>
+	
+	<sql id="star_add">
+		 <![CDATA[ select cb.beans_num
+                  , beans_name
+                  , beans_price
+                  , beans_taste
+                  , beans_img
+                  , case when ord.order_cnt is null then 0 else ord.order_cnt end order_cnt
+                  , case when ar.people_cnt is null then 0 else ar.people_cnt end people_cnt
+                  , case when ar.avg_star is null then 0 else ar.avg_star end avg_star
+               from coffee_beans cb
+               left join order_row ord
+                 on cb.beans_num = ord.beans_num
+               left join star_avg_row ar
+                 on cb.beans_num = ar.beans_num
+              where beans_count >0
+              order by beans_taste, order_cnt desc]]>
+	</sql>
+	
+	<sql id="fin">
+		  select row_number() over(order by rec.recog_priority_row, sta.order_cnt desc) as row_pri
+               , rec.recog_priority_row
+               , sta.*
+            from star_add_order_row sta
+            left join recog_priority_row rec
+              on sta.beans_taste = rec.beans_taste
+           order by rec.recog_priority_row, sta.order_cnt desc
+	</sql>
+
+	<!-- 장바구니에 상품이 있을 경우 -->
+	<select id="getRecListCart" parameterType="int" resultType="coffeeCartDTO">
+		
+		with max_cart_taste as (  <include refid="max_cart"/>
+		                        
+		), recog_priority_row as (  <include refid="recog_priority"/>
+		                             
+		), order_row as (  <include refid="order_row_all"/>
+		                
+		), star_avg_row as (  <include refid="star_avg"/>
+		                
+		), star_add_order_row as (  <include refid="star_add"/>
+		              
+		), fin as(	<include refid="fin"/>
+		
+		) select recog_priority_row
+		       , beans_num
+		       , beans_name
+		       , order_cnt
+		       , people_cnt
+		       , avg_star
+		       , beans_price
+		       , beans_taste
+		       , beans_img
+		    from fin
+		   where row_pri between 1 and 8
+	</select>
+	
+	<!-- 장바구니에 상품이 없을 경우 -->
+	<select id="getRecListOrder" parameterType="int" resultType="coffeeCartDTO">
+		
+		with max_order_taste as (  <include refid="max_order"/>
+		                        
+		), recog_priority_row as (  <include refid="recog_priority_order"/>
+		                             
+		), order_row as (  <include refid="order_row_all"/>
+		                
+		), star_avg_row as (  <include refid="star_avg"/>
+		                
+		), star_add_order_row as (  <include refid="star_add"/>
+		              
+		), fin as(	<include refid="fin"/>
+		
+		) select recog_priority_row
+		       , beans_num
+		       , beans_name
+		       , order_cnt
+		       , people_cnt
+		       , avg_star
+		       , beans_price
+		       , beans_taste
+		       , beans_img
+		    from fin
+		   where row_pri between 1 and 8
+	</select>
+	
+</mapper>

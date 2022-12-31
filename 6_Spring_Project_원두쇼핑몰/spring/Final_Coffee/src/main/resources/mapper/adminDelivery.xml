@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orderDAO">
+
+	<!-- 타입별 주문건수 확인 -->
+	<select id="getDeliveryTypeCntAdmin" resultType="map">
+		select type_num
+		      , count(distinct order_num) as rowCnt
+		   from coffee_order
+		  group by type_num
+	</select>
+
+	<!-- 주문건 수 확인 (배송 타입선택안함)-->
+	<select id="getRowCountAdmin" resultType="int">
+	   select count(distinct order_num) as rowCnt
+	     from coffee_order
+	</select>
+	
+	<!-- 주문건 수 확인 (배송 타입선택) -->
+	<select id="getTypeRowCountAdmin" parameterType="int" resultType="int">
+	   select count(distinct order_num) as rowCnt
+	     from coffee_order
+        where type_num = #{type_num} 
+	</select>
+
+	<!-- 주문내역 -->
+	<sql id="order_product_admin">
+		select row_number() over(order by order_num desc) as row_num
+		     , order_num
+             , min(order_row) as order_row
+             , count(order_num) as order_product_cnt
+             , sum(order_price) as order_price
+             , min(order_date) as order_date
+             , min(to_char(order_date,'yyyy.mm')) as order_month 
+         from coffee_order
+        <if test="type_num !=null">
+        where type_num = #{type_num} 
+		</if>
+        group by order_num
+        order by order_num desc
+	</sql>
+	
+	<select id="getOrderListAdmin" parameterType="int" resultType="coffeeOrderDTO">
+		with order_product as ( <include refid="order_product_admin"/>
+				)select op.row_num
+				      , op.order_month
+				      , op.order_date
+				      , op.order_num
+				      , op.order_price
+				      , co.beans_num
+				      , case when op.order_product_cnt>1 then co.beans_name || ' 외 ' || (op.order_product_cnt-1) else co.beans_name end beans_name
+				      , be.beans_img
+				      , co.type_num
+				  from coffee_order co
+				  join order_product op
+				    on co.order_num = op.order_num
+				   and co.order_row = op.order_row
+				   and op.row_num between ${startNo} and ${endNo}
+				  join coffee_beans be
+				    on co.beans_num = be.beans_num 
+				 order by order_num desc
+	</select>
+	
+	<select id="getTypeOrderListAdmin" parameterType="int" resultType="coffeeOrderDTO">
+		with order_product as ( <include refid="order_product_admin"/>
+				)select op.order_month
+				      , op.order_date
+				      , op.order_num
+				      , op.order_price
+				      , co.beans_num
+				      , case when op.order_product_cnt>1 then co.beans_name || ' 외 ' || (op.order_product_cnt-1) else co.beans_name end beans_name
+				      , be.beans_img
+				      , co.type_num
+				  from coffee_order co
+				  join order_product op
+				    on co.order_num = op.order_num
+				   and co.order_row = op.order_row
+				  join coffee_beans be
+				    on co.beans_num = be.beans_num 
+				 where co.type_num = #{type_num}
+				 order by order_num desc
+	</select>
+	
+	<!-- 배송중으로 변경 (row) -->
+	<update id="updateRowTypeNum" parameterType="String">
+		update coffee_order
+		   set type_num = 1
+		 where order_num = #{order_num}
+	</update>
+	
+	<!-- 타입이 0인 것 배송중으로 변경 -->
+	<update id="updateAllTypeNum">
+		update coffee_order
+		   set type_num = 1
+		 where type_num = 0
+	</update>
+	
+</mapper>

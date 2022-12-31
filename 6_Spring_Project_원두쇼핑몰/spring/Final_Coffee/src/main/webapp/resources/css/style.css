@@ -1,0 +1,909 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'YESMyoungjo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cafe24Danjunghae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*************************/
+/* Container
+/*************************/
+#container {
+    padding-top: 80px;
+    min-height: 500px;
+}
+.container {
+    max-width: 1440px;
+    padding: 0;
+}
+.container-full {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+.container-wide {
+    position: relative;
+    margin: 0 auto;
+}
+
+@media(max-width:1840px) {
+    .container-wide {
+        width: 100%;
+    } 
+}
+
+/*************************/
+/* Variable
+/*************************/
+:root {
+    --xpadding: 50px;
+    --xpadding2: 25px;
+    --xpadding3: 10px;
+    --color: #cd5c5c;
+}
+
+
+
+
+/*************************/
+/* tag reset
+/*************************/
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, img {
+    margin: 0;
+    padding: 0;
+}
+html {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+html.noscroll {
+    overflow: hidden !important;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background: #fff;
+    -webkit-backface-visibility: hidden;
+}
+body,
+code,
+pre {
+
+    font-size: 14px;
+    font-family: 'Noto Sans KR'; 
+    color: #333;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.5px;
+}
+ul,
+ol,
+dl,
+p,
+span
+     {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+}
+
+div {
+    display: block;
+}
+button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+li {
+    font-family: 'Noto Sans KR';    
+    list-style: none;
+    color: #333;
+}
+
+select,
+option,
+input,
+textarea {
+    font-size: 100%;
+    font-family: 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', 'verdana', '굴림', 'Gulim', 'AppleGothic', 'sans-serif';
+    color: #333;
+    vertical-align: middle;
+}
+select {
+    height: 38px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: url('../images/select_arrow.png') no-repeat 90% 50%;
+    background-size: 20px 20px;
+    padding: 0 35px 0 10px;
+    appearance: none;
+    font-weight: 400;
+    color: #181818;
+    vertical-align: middle;
+    outline: none;
+}
+select:focus {
+    border-color: var(--color);
+}
+
+label {
+    cursor: pointer;
+}
+
+
+img {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+audio {
+    display: none;
+}
+
+a, button, input {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition:all .2s ease-in-out
+}
+a,
+a:link,
+a:active,
+a:visited {
+    font-size: 14px;
+    font-family: 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', 'verdana', '굴림', 'Gulim', 'AppleGothic', 'sans-serif';
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+a:hover {
+    text-decoration: none !important;
+    color: var(--color);
+}
+*:focus {
+    outline: none !important;
+}
+
+
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+th,td {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+table th img,
+table td img {
+    vertical-align: middle;
+}
+
+
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+}
+legend {
+    display: none;
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0){ 
+    div, a, img, li {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) and (display:flow-root) {
+        div, a, img, li {
+            image-rendering: auto !important;
+        }
+    }
+}
+
+
+
+/******************************/
+/*******  header  *************/
+/******************************/
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    z-index: 20;
+    background-color: #fff;
+    display: block;
+    position: fixed;
+}
+
+.header .h-wrap {
+    width: 100%;
+    margin: auto;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+.header .h-wrap .h-logo {
+	margin-top: 10px;
+}
+.header .h-wrap .h-logo img {
+	width: 180px;
+	height: 80px;
+}
+
+
+.header .h-wrap .h-gnb { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .h-wrap .h-nav .nav-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .header .h-wrap .h-gnb .h-nav{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .header .h-wrap .h-gnb .h-nav .h-menu {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        width: 100%;
+    }
+
+    .header .h-wrap .h-nav ul li a {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+.header .h-wrap .h-gnb .h-nav { 
+    padding: 0;
+    padding-right: 10px;
+    align-items: center;
+}
+
+
+.header .h-wrap .h-nav .h-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.header .h-wrap .h-nav ul li a {
+	font-size: 20px;
+	font-weight: 500;
+    font-family: 'Cafe24Danjunghae';
+   	color: #000;
+   	padding: 20px 30px;
+   	align-items: center;
+
+}
+
+.header .h-wrap .h-nav ul li a:hover {
+	color:  #734338;
+    transition: .3s;
+
+}
+
+.header .h-wrap .h-nav .nav-toggle {
+    color: #734338;
+}
+
+.header .h-wrap .menu-etc {
+	display: flex;
+	align-items: center; 
+    margin-left: 20px;
+
+}
+
+.header .h-wrap .menu-etc .login-pop,
+.header .h-wrap .menu-etc .join-pop {
+	font-size: 14px;
+    font-family: 'Cafe24Danjunghae';
+   	color: #734338;
+	margin: 25px 25px 25px 25px;
+	display: block;
+    letter-spacing: 1px;
+
+}
+
+.header .h-wrap .menu-etc .login-pop:after,
+.header .h-wrap .menu-etc .join-pop:after {
+	  display: block;
+	  content: '';
+	  border-bottom: solid 1px #734338;
+	  padding-bottom: 5px;
+	  transform: scaleX(0);  
+	  transition: transform 250ms ease-in-out;
+
+}
+
+.header .h-wrap .menu-etc .login-pop:hover::after,
+.header .h-wrap .menu-etc .join-pop:hover::after {
+	transform-origin:  0% 50%;
+	transform: scaleX(1);
+}
+
+
+/*************************/
+/* 로그인 모달 
+/************************/
+
+.log-modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.13);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+.log-modal .login-form .login-title {
+    text-align: center;
+    font-family: 'YESMyoungjo-Regular';
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+.log-modal .login-form .login-title p {
+    margin-top: 13px;
+}
+
+.log-modal .login-form .login-title img {
+	width: 180px;
+	height: 80px;
+}
+
+.log-modal .login-title span {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+.log-modal .login-title .icon-close{ 
+    cursor: pointer;
+}
+
+.log-modal .login-form{
+
+    background-color: #fff;
+    width: 360px;
+    height: 440px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    box-shadow: 0 0 15px rgb(0, 0, 0.15);
+    font-family: 'YESMyoungjo-Regular';
+    text-align: center;
+
+}
+
+.login-form .mf-wrap {
+    margin-top: 15px;
+}
+
+.login-form .mf-form input{
+    width: 100%;
+    padding: 5px;
+    margin-top: 15px;
+    color: rgb(0, 0, 0.13);
+
+}
+.login-form .mf-form .log-input {
+    width: 13px;
+    height: 13px;
+    vertical-align: text-top;
+}
+.login-form .mf-form .log-check {
+    vertical-align: -12px;
+    margin-left: 5px;
+}
+
+.login-form .mf-form input:focus::placeholder{
+    color: transparent;
+}
+
+.login-form .mf-btn {
+    background-color: #D9CEC1;
+    border-radius: 5px;
+    font-size: 17px;
+    color: #734338;
+    font-family: 'YESMyoungjo-Regular';
+    margin-top: 10px;
+    height: 50px;
+    width: 100%;
+}
+
+.login-form .mf-btn:hover {
+    background-color: #734338;
+    color:  #D9CEC1;
+    transition: all .3s ease-in-out;
+}
+
+.login-form .mf-etc {
+    display: flex;
+    font-size: 12px;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+
+.login-form .mf-etc a{ 
+    cursor: pointer;
+    font-family: 'YESMyoungjo-Regular';
+    color: #734338;
+}
+
+.login-form .mf-etc a:hover {
+    color:  #D9CEC1;
+}
+
+.login-form .mf-etc .icon-question {
+    cursor: pointer;
+}
+
+/*************************/
+/* 계정찾기 모달 
+/************************/
+
+.find-modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.13);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+.find-modal .find-form .find-title {
+    text-align: center;
+    font-family: 'YESMyoungjo-Regular';
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
+
+.find-modal .find-form .find-title p {
+    margin-top: 13px;
+}
+
+.find-modal .find-form .find-title img {
+	width: 180px;
+	height: 80px;
+}
+
+.find-modal .find-title span {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+.find-modal .find-title .icon-close{ 
+    cursor: pointer;
+}
+
+.find-modal .find-form{
+    background-color: #fff;
+    width: 360px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    box-shadow: 0 0 15px rgb(0, 0, 0.15);
+    font-family: 'YESMyoungjo-Regular';
+    text-align: center;
+
+}
+
+.find-form .fd-wrap {
+    margin-top: 15px;
+}
+
+.find-form .fd-form input{
+    width: 100%;
+    padding: 5px;
+    margin-top: 15px;
+    color: rgb(0, 0, 0.13);
+
+}
+.find-form .fd-form .log-input {
+    width: 13px;
+    height: 13px;
+    vertical-align: text-top;
+}
+.find-form .fd-form .log-check {
+    vertical-align: -12px;
+    margin-left: 5px;
+}
+
+.find-form .fd-form input:focus::placeholder{
+    color: transparent;
+}
+
+.find-form .fd-btn {
+    background-color: #D9CEC1;
+    border-radius: 5px;
+    font-size: 17px;
+    color: #734338;
+    font-family: 'YESMyoungjo-Regular';
+    margin-top: 10px;
+    height: 50px;
+    width: 100%;
+}
+
+.find-form .fd-btn:hover {
+    background-color: #734338;
+    color:  #D9CEC1;
+    transition: all .3s ease-in-out;
+}
+
+.find-form .fd-etc {
+    display: flex;
+    font-size: 12px;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+
+.find-form .fd-etc a{ 
+    cursor: pointer;
+    font-family: 'YESMyoungjo-Regular';
+    color: #734338;
+}
+
+.find-form .fd-etc a:hover {
+    color:  #D9CEC1;
+}
+
+.find-form .fd-etc .icon-question {
+    cursor: pointer;
+}
+
+/*************************/
+/* 회원가입 모달 
+/************************/
+
+
+.join-modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.13);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+.join-modal .join-form {
+    background-color: #fff;
+    width: 360px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    box-shadow: 0 0 15px rgb(0, 0, 0.15);
+    font-family: 'YESMyoungjo-Regular';
+    text-align: center;
+
+}
+
+
+.join-modal .join-form .join-title {
+    text-align: center;
+    font-family: 'YESMyoungjo-Regular';
+    letter-spacing: 3px;
+}
+
+.join-modal .join-form .join-title p {
+    margin-top: 13px;
+}
+
+.join-modal .join-form .join-title img {
+	width: 180px;
+	height: 80px;
+}
+
+.join-modal .join-form .join-title span {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+.join-form .jf-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -22px;
+}
+
+
+.join-form .jf-form input{
+    width: 300px;
+    margin-top: 4px;
+    padding: 7px;
+    color: rgb(0, 0, 0.13);
+}
+
+.join-form .jf-form input:focus::placeholder{
+    color: transparent;
+}
+
+.join-form .jf-form label {
+    margin-top: 20px;
+}
+
+.join-form .jf-form .error {
+    font-size: 12px;
+    margin: 5px 0;
+    color: #800000;
+    opacity: .7;
+    display: none;
+
+}
+
+.join-form .jf-btn {
+    background-color: #D9CEC1;
+    border-radius: 5px;
+    font-size: 17px;
+    color: #734338;
+    font-family: 'YESMyoungjo-Regular';
+    margin-top: 10px;
+    height: 50px;
+    width: 100%;
+}
+
+.join-form .jf-btn:hover {
+    background-color: #734338;
+    color:  #D9CEC1;
+    transition: all .3s ease-in-out;
+}
+
+.join-form .join-agr {
+    color: 696969;
+    margin: 10px;
+}
+
+.join-form .join-agr .join-agr-all {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.join-form .join-agr .join-agr-per {
+    font-size: 12px;
+}
+
+
+.join-form .join-agr .join-agr-shop {
+    font-size: 12px;
+}
+
+.join-form .join-agr .join-agr-age {
+    font-size: 12px;
+
+}
+
+.join-form .join-agr .join-agr-mak{
+    font-size: 12px;
+
+}
+
+
+
+/******************************/
+/*******  footer  *************/
+/******************************/
+
+footer{
+     position: relative;
+     width: 100%;
+     box-sizing: border-box;
+     background-color: #fff;
+     margin-top: 100px;
+     padding: 40px 0;
+
+}
+
+.footer .f-wrap { 
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
+
+.footer .f-wrap .f-logo {
+    min-width: 150px;
+    
+}
+
+.footer .f-wrap .f-logo img {
+    width: 150px;
+}
+
+.footer .f-wrap .ft-cs { 
+    width: 350px;
+    border-right: 1px solid #734338;
+    padding-right: 10px;
+
+}
+
+.footer .f-wrap .ft-cs p {
+    font-family: 'YESMyoungjo-Regular';
+    font-size: 14px;
+}
+.footer .f-wrap .ft-cs p small {
+    font-size: 12px;
+    padding-left: 5px;
+    color: #696969;
+}
+
+.footer .f-wrap .cs-title {
+    font-family: 'Cafe24Danjunghae';
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    font-size: 15px;
+
+}
+
+.footer .f-wrap .ft-info {
+    position: relative;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.footer .f-wrap .ft-info .ft-text {
+    display: inline-block;
+    font-family: 'YESMyoungjo-Regular';
+    font-size: 8px;
+    padding-right: 10px;
+    margin: 5px 0 0 10px;
+}
+
+.footer .f-wrap .ft-info .fwi-copy {
+    position: relative;
+    margin-top: 30px;
+    margin-left: 10px;
+    padding-top: 5px;
+    width: 100%;
+    font-family: 'YESMyoungjo-Regular';
+
+}
+
+/*김홍기 수정  */
+.result-img{
+	margin-left: 20%;
+}
+.result_name{
+	margin-top: 30px;
+	margin-left: 150px;
+	font-size :20px;
+	font-family: 'Cafe24Danjunghae';
+}
+#unlogin{
+  width: 170px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 19px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin-right: 100px;
+	
+}
+#unlogin:hover{
+  background-color: red;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+	
+}
+
+.point-banner{
+	margin-left: 5%;
+	margin-top: 5%;
+	
+}
+
+.point{
+	font-size: 18px;
+	font-family: fantasy;
+	
+	
+}
+
+.point2{
+	font-size: 18px;
+}
+.nav-link{
+	margin-top: 5%;
+	margin-left: 5%;
+}
+a{
+	
+	font-size: 20px;
+}
+
+.header__username{	
+	margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+.header_contenttt {
+    background-color: #a69b8d;
+    -webkit-text-size-adjust: 100%;
+    font: 100% sans-serif;
+    --ikea-font: 'Noto IKEA', 'Noto Sans KR', 'Noto Sans', 'Roboto', 'Open Sans', system-ui, sans-serif !important;
+    font-family: var(--ikea-font);
+    font-size: .875rem;
+    line-height: 1.571;
+    visibility: visible;
+    text-align: left;
+    pointer-events: all;
+    color: rgb(var(--colour-text-and-icon-5, 255, 255, 255));
+    box-sizing: inherit;
+    outline: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 80px 80px 50px 30px;
+}
