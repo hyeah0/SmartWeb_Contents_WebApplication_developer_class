@@ -135,9 +135,14 @@ create table coffee_write(
     write_cont varchar2(4000),
     write_date date,
     write_img varchar2(1000),
-    member_id varchar2(100) REFERENCES final_member(member_id) on delete cascade,
-    beans_num number(10) REFERENCES coffee_beans(beans_num) on delete cascade
+    member_num number,
+    beans_num number(10) REFERENCES coffee_beans(beans_num) on delete cascade,
+    member_id varchar2(100) REFERENCES final_member(member_id) on delete cascade
 );
+
+commit;
+-- 컬럼명 수정 (22.12.22)
+-- member_num >> 컬럼 추가
 
 ---------------- member_star(별점, 찜) ----------------
 create table member_star(
@@ -163,6 +168,25 @@ create table coffee_order(
      member_num number(10),
      constraint member_num foreign key(member_num) references final_member(member_num) on delete cascade
  );
+ 
+-- coffee_order 테이블 컬럼 추가 
+alter table coffee_order add(type_num number(5) default 0 );
+ 
+-- 테이블 추가 
+-- 배송 관련
+create table coffee_delivery(
+    type_num number(5), 
+    type_cont varchar2(100)
+);
+
+insert into coffee_delivery values(0, '배송대기');
+insert into coffee_delivery values(1, '배송중');
+insert into coffee_delivery values(2, '배송완료');
+insert into coffee_delivery values(3, '주문취소');
+insert into coffee_delivery values(4, '반품');
+insert into coffee_delivery values(5, '환불');
+
+commit;
 
 ---------------- coffee_cart(장바구니) ----------------
 create table coffee_cart(

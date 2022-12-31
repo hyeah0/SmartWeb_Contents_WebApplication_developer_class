@@ -335,6 +335,30 @@ select order_num
  group by order_num
  order by order_num desc;
  
+ -- 타입별 주문건수
+ select type_num
+      , count(distinct order_num) as rowCnt
+   from coffee_order
+  where member_num = 1
+  group by type_num;
+   -- and type_num =2
+    --and order_date between to_date('2022-12-20 00:00:00','yyyy-mm-dd hh24:mi:ss') and to_date('2022-12-21 23:59:59','yyyy-mm-dd hh24:mi:ss')
+  --order by order_num desc;
+ 
+select row_number() over(order by order_num desc) as row_num
+      , order_num
+      , min(order_row) as order_row
+      , count(order_num) as order_product_cnt
+      , sum(order_price) as order_price
+      , min(order_date) as order_date
+      , min(to_char(order_date,'yyyy.mm')) as order_month 
+  from coffee_order
+  where member_num = 1
+   and type_num in (1,2,3)
+   and order_date between to_date('2022-12-19 00:00:00','yyyy-mm-dd hh24:mi:ss') and to_date('2022-12-22 23:59:59','yyyy-mm-dd hh24:mi:ss')
+ group by order_num
+ order by order_num desc;
+ 
  -- 주문월
  select distinct (to_char(order_date,'yyyy.mm')) as order_month 
    from coffee_order
@@ -347,7 +371,8 @@ select order_num
     from dual;
             
  -- 특정 일자 주문건 확인             
-with order_product as (select order_num
+with order_product as (select row_number() over(order by order_num desc) as row_num 
+                              , order_num
                               , min(order_row) as order_row
                               , count(order_num) as order_product_cnt
                               , sum(order_price) as order_price
@@ -357,7 +382,7 @@ with order_product as (select order_num
                           where member_num = 1
                          group by order_num
                          order by order_num desc
-)select row_number() over(order by op.order_num desc) as row_num
+)select op.row_num
       , op.order_month
       , op.order_date
       , op.order_num
@@ -365,13 +390,18 @@ with order_product as (select order_num
       , co.beans_num
       , case when op.order_product_cnt>1 then co.beans_name || ' 외 ' || (op.order_product_cnt-1) else co.beans_name end beans_name
       , be.beans_img
+      , co.type_num
   from coffee_order co
   join order_product op
+      -- where co.order_date between to_date('2022-12-20 00:00:00','yyyy-mm-dd hh24:mi:ss') and to_date('2022-12-21 23:59:59','yyyy-mm-dd hh24:mi:ss')
     on co.order_num = op.order_num
    and co.order_row = op.order_row
+   and op.row_num between 5 and 10
   join coffee_beans be
     on co.beans_num = be.beans_num 
+  -- and co.order_date between to_date('2022-12-20 00:00:00','yyyy-mm-dd hh24:mi:ss') and to_date('2022-12-21 23:59:59','yyyy-mm-dd hh24:mi:ss')
  order by order_num desc;
+ 
   
   -- n개월 전
    and co.order_date > add_months(to_date('2022-12-19', 'yyyy-mm-dd'), -2);
@@ -379,6 +409,43 @@ with order_product as (select order_num
    
    and co.order_date between to_date('2022-12-19 00:00:00','yyyy-mm-dd hh24:mi:ss') and to_date('2022-12-19 23:59:59','yyyy-mm-dd hh24:mi:ss');
  
+--- 배송 타입별 주문건수 가져오기
+select order_num 
+     , type_num
+     , max(type_num) as type_num_cnt
+ from coffee_order
+ where member_num = 1
+ group by type_num, order_num
+ order by type_num;
+ 
+-- 
 
+select case when 0 = 0 then 1 else test_num end as test_result_num
+  from coffee_test_result
+ where test_rs_brew =1 and test_rs_add =1 and test_rs_taste_acid=1 and test_rs_taste=1;
  
+select case when test_rs_decaff = 0 then 1 else test_num end as test_result_num
+  from coffee_test_result ctr
+ where test_rs_brew =1 and test_rs_add =1 and test_rs_taste_acid=1 and test_rs_taste=1;
+
+select to_number(ctr.test_result_num)
+     , ct.test_name
+     , ct.test_img
+  from coffee_test ct
+  join (
+        select case when test_rs_decaff = 0 then 1 else test_num end as test_result_num
+          from coffee_test_result
+         where test_rs_brew =1 and test_rs_add =1 and test_rs_taste_acid=1 and test_rs_taste=1 ) ctr
+    on ct.test_num = ctr.test_result_num;
  
+--- 결과값 db
+ select ct1.*, ct2.*
+   from coffee_test ct1
+   join coffee_test ct2 on ct1.test_mate = ct2.test_name 
+  where ct1.test_num =4;
+  
+-- 취소건을 제외한 주문건의 마일리지
+select sum(order_price) * 0.05
+  from coffee_order
+ where member_num = 1
+   and type_num not in 3;
