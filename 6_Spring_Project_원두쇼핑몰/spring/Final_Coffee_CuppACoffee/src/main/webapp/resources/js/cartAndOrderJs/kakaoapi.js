@@ -85,7 +85,6 @@
 				// 카카오 api에 데이터 넘기기--------------------------------
 				$.ajax({
 					url:'/coffee/kakaopay.do',
-					traditional: true,	// ajax 배열 넘기기 옵션
 					data : {itemName: itemName, quantity : quantity, totalAmout: totalAmout },
 					async : false,
 					dataType: 'json',
