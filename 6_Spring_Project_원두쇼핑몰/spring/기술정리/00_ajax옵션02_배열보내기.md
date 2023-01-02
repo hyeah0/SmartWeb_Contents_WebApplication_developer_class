@@ -10,9 +10,9 @@
 1. view 단 : 자바스크립트 옵션 설정
 2. 서버(controller)단 : 뷰에서 넘어온 데이터를 배열로 받아오기
 
-[order.js](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/Final_Coffee_CuppACoffee/src/main/webapp/resources/js/cartAndOrderJs/order.js)
-[kakaoapi.js](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/Final_Coffee_CuppACoffee/src/main/webapp/resources/js/cartAndOrderJs/kakaoapi.js)
-[CoffeeOrderController](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/Final_Coffee_CuppACoffee/src/main/java/com/spring/coffee/CoffeeOrderController.java)
+- [order.js](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/Final_Coffee_CuppACoffee/src/main/webapp/resources/js/cartAndOrderJs/order.js)
+- [kakaoapi.js](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/Final_Coffee_CuppACoffee/src/main/webapp/resources/js/cartAndOrderJs/kakaoapi.js)
+- [CoffeeOrderController](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/Final_Coffee_CuppACoffee/src/main/java/com/spring/coffee/CoffeeOrderController.java)
 
 #### 1. 자바스크립트
 
