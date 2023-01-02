@@ -84,12 +84,13 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
-<!-- jackson -->
-<dependency>
-    <groupId>org.codehaus.jackson</groupId>
-    <artifactId>jackson-mapper-asl</artifactId>
-    <version>1.8.11</version>
-</dependency>		
+		
+		<!-- jackson -->
+		<dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-mapper-asl</artifactId>
+		    <version>1.8.11</version>
+		</dependency>		
 
 		<!--첨부파일 라이브러리 commons-fileupload(추가) -->
 		<dependency>
