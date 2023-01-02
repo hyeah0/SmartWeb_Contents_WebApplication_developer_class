@@ -4,7 +4,7 @@
 
 - 진행기간 : 2022.11.25(금) - 2022.12.29(목)
 - 참여인원 : 4명
-- 커피원두 쇼핑몰 / 사용자의 원두 취향을 알 수 있는 테스트도 포함 
+- 커피원두 쇼핑몰 + 사용자의 원두 취향을 알 수 있는 테스트
 - [참고 홈페이지_코케](https://smartstore.naver.com/jnbooks) 
 - [참고 홈페이지_이케아](https://www.ikea.com/kr/ko/)
 - [프로젝트 스케줄 관리](https://docs.google.com/spreadsheets/d/1dyp5GsrBrywq1jHbqxtnnueAX33mugWEkqiNYHWwU48/edit#gid=441105338) 
