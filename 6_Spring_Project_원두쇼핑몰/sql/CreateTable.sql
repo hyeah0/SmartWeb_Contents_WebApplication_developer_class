@@ -78,9 +78,6 @@ create table final_member(
     test_num number REFERENCES coffee_test(test_num) on delete cascade
 );
 
-insert into final_member values(1, 'test1', '1234', '일길동', '2011-11-11', 'hong@naver.com','010-1111-1111',sysdate, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT,'이미지1', 0, '');
-insert into final_member values(2, 'test2', '1234', '이길동', '2011-11-11', 'hong@naver.com','010-1111-1111',sysdate,DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT,'이미지2', 0, '');
-insert into final_member values(3, 'test3', '1234', '삼길동', '2011-11-11', 'hong@naver.com','010-1111-1111',sysdate,DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT,'이미지3', 0, '');
 
 ---------------- final_admin(관리자) ----------------
 create table final_admin(
@@ -93,7 +90,7 @@ create table final_admin(
     admin_date date
 );
 
-insert into final_admin values(1, 'admin', 'admin1234', '관리자', 'hwan_hing@naver.com','010-1111-1111',sysdate);
+insert into final_admin values(1, 'admin', '1234', '관리자', 'hwan_hing@naver.com','010-1111-1111',sysdate);
 
 ---------------- member_board(고객센터) ----------------
 create table member_board(
@@ -127,8 +124,6 @@ create table coffee_beans(
     beans_img varchar2(4000) 
 );
 
-alter table coffee_beans drop column beans_url;
-commit;
 ---------------- coffee_write(후기글) ----------------
 create table coffee_write(
     write_num number(10) PRIMARY Key,
@@ -141,8 +136,6 @@ create table coffee_write(
 );
 
 commit;
--- 컬럼명 수정 (22.12.22)
--- member_num >> 컬럼 추가
 
 ---------------- member_star(별점, 찜) ----------------
 create table member_star(
@@ -166,11 +159,10 @@ create table coffee_order(
      cart_weight number(10), 
      cart_grind number(5),
      member_num number(10),
+     use_point number(10),
+     type_num number(5),
      constraint member_num foreign key(member_num) references final_member(member_num) on delete cascade
  );
- 
--- coffee_order 테이블 컬럼 추가 
-alter table coffee_order add(type_num number(5) default 0 );
  
 -- 테이블 추가 
 -- 배송 관련
@@ -183,8 +175,8 @@ insert into coffee_delivery values(0, '배송대기');
 insert into coffee_delivery values(1, '배송중');
 insert into coffee_delivery values(2, '배송완료');
 insert into coffee_delivery values(3, '주문취소');
-insert into coffee_delivery values(4, '반품');
-insert into coffee_delivery values(5, '환불');
+insert into coffee_delivery values(4, '교환');
+insert into coffee_delivery values(5, '환불/반품');
 
 commit;
 
@@ -199,14 +191,6 @@ create table coffee_cart(
       constraint beans_num_order foreign key(beans_num) references coffee_beans(beans_num) on delete cascade,
       constraint member_num_order foreign key(member_num) references final_member(member_num) on delete cascade
 );
-
--- 변경 부분 
--- 컬럼명 변경 cart_price ==> beans_price // 상품 단가
--- 컬럼 추가 cart_weight number(10) // 선택한 원두 무게
--- 컬럼 추가 cart_grind number(5)   // 선택한 원두 갈기 
--- 컬럼 삭제 beans_price 
-alter table coffee_cart drop column beans_price;
-commit;
 
 ---------------- coffee_brew(드립) ----------------
 create table coffee_brew(
