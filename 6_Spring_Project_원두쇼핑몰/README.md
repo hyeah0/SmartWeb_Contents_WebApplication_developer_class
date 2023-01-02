@@ -42,6 +42,7 @@
 - 사용자_원두 취향 테스트(테스트 결과화면 전까지)
 - 관리자_배송 관리
 
+## 진행 순서
 - visual studio를 사용하여 디자인 가안 완료 후 spring에 데이터 출력 및 디자인 보완
 - [디자인 가안](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/HTML)
 - [Spring 코드](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/Final_Coffee_CuppACoffee)
