@@ -7,7 +7,6 @@
 - 커피원두 쇼핑몰 + 사용자의 원두 취향을 알 수 있는 테스트
 - [참고 홈페이지_코케](https://smartstore.naver.com/jnbooks) 
 - [참고 홈페이지_이케아](https://www.ikea.com/kr/ko/)
-- [프로젝트 스케줄 관리](https://docs.google.com/spreadsheets/d/1dyp5GsrBrywq1jHbqxtnnueAX33mugWEkqiNYHWwU48/edit#gid=441105338) 
 
 ## 총 페이지
 ### [사용자]
@@ -43,6 +42,11 @@
 - 사용자_원두 취향 테스트(테스트 결과화면 전까지)
 - 관리자_배송 관리
 
+- visual studio를 사용하여 디자인 가안 완료 후 spring에 데이터 출력 및 디자인 보완
+- [디자인 가안](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/HTML)
+- [Spring 코드](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/Final_Coffee_CuppACoffee)
+- [프로젝트 스케줄 관리](https://docs.google.com/spreadsheets/d/1dyp5GsrBrywq1jHbqxtnnueAX33mugWEkqiNYHWwU48/edit#gid=441105338) 
+ 
 ## 담당페이지 기능
 
 ## 프로젝트를 통해 목표사항
