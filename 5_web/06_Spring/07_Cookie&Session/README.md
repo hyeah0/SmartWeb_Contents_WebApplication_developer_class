@@ -1,6 +1,62 @@
 ## 쿠키와 세션
 
-[참고](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/5_web/05_jsp/05_EL_JSTL/EL_%24%7B%7D/%EB%82%B4%EC%9E%A5%EA%B0%9D%EC%B2%B4%EC%98%88%EC%8B%9C)
+### 쿠키(Cookie)
+
+- 이름과 값으로 이루어진 정보, 야스키 문자만 가능하다.
+- 서버에서 생성 후 전송, 브라우저에 저장된다.
+- 설정한 유효기간 이후에 자동 삭제 된다.
+- 서버 요청시 domain, path가 일치하는 경우에만 자동 전송된다.
+
+#### 1. 쿠키 생성
+
+```
+Cookie cookie = new Cookie("name", "value") // 쿠키생성
+cooke.setMaxAge(60*60*24);                  // 유효기간 설정(초) .. (60*60*24) >> 24시간
+response.addCookie(cookie);                 // 응답에 쿠키추가
+```
+
+#### 2. 쿠키 삭제
+
+```
+Cookie cookie = new Cookie("name","");      // 변경할 쿠키이름과 값 작성
+cookie.setMaxAge(0);                        // 유효기간 0으로 설정
+response.addCookie(cookie);                 // 응답에 쿠키추가
+```
+
+#### 3. 쿠키 변경
+
+```
+Cookie cookie = new Cookie("name","");      // 변경할 쿠키이름
+cookie.setValue("abc");                     // 값이 영어일때
+cookie.setValue(URLEncoder.encode("김아무개"))// 값이 한글일때 url 인코딩처리
+cookie.setDomain("www.dd.co.kr);            // 도메인 변경시
+cookie.setPath("/경로");                     // 경로 변경
+cookie.setMaxAge(60*60*24*7);               // 유효기간 변경
+response.addCookie(cookie);                 // 응답에 쿠키추가
+```
+
+#### 4. 쿠키 읽기
+
+```
+// 쿠키가 여러개 일때
+Cookie[] cookies = request.getCookies();
+
+// 쿠키가 하나일때
+Cookie aCookie = request.getACookie();
+
+for(Cookie cookie:cookies){
+    String name = cookie.getName();
+    String value = cookie.getValue():
+}
+
+// 출력
+System.out.printf("[cookie]name=%s, value=%s%n", name, value);
+```
+
+- [출력시 지정형식 참고](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day01_%EC%9E%90%EB%B0%94%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md)
+
+- ++
+  [참고](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/5_web/05_jsp/05_EL_JSTL/EL_%24%7B%7D/%EB%82%B4%EC%9E%A5%EA%B0%9D%EC%B2%B4%EC%98%88%EC%8B%9C)
 
 ## page < request < session < application
 
