@@ -6,6 +6,7 @@
 - 서버에서 생성 후 전송, 브라우저에 저장된다.
 - 설정한 유효기간 이후에 자동 삭제 된다.
 - 서버 요청시 domain, path가 일치하는 경우에만 자동 전송된다.
+- [쿠키코드 예시](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_web/06_Spring/07_Cookie%26Session/%EC%BD%94%EB%93%9C%EC%98%88%EC%8B%9C/%EC%BF%A0%ED%82%A4.md)
 
 #### 1. 쿠키 생성
 
@@ -54,6 +55,11 @@ System.out.printf("[cookie]name=%s, value=%s%n", name, value);
 ```
 
 - [출력시 지정형식 참고](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day01_%EC%9E%90%EB%B0%94%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.md)
+
+### 세션(Session)
+
+- 서로 관련된 요청, 응답을 하나로 묶은것(쿠키 이용)
+- browser 마다 개별 저장소(session객체)를 서버에서 제공한다. (브라우저 요청 1 : 서버 응답 1)
 
 - ++
   [참고](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/5_web/05_jsp/05_EL_JSTL/EL_%24%7B%7D/%EB%82%B4%EC%9E%A5%EA%B0%9D%EC%B2%B4%EC%98%88%EC%8B%9C)
