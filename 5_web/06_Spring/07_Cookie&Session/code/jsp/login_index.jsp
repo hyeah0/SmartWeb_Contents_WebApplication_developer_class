@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page session="false" %>
+<!-- <%@ page session="false" %> -->
+<!-- 로그인, 로그아웃 구분 불가로 사용 x -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
