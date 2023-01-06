@@ -24,7 +24,7 @@ cookie.setMaxAge(0);                        // 유효기간 0으로 설정
 response.addCookie(cookie);                 // 응답에 쿠키추가
 ```
 
-#### 3. 쿠키 변경
+#### 3. 쿠키 수정
 
 ```
 Cookie cookie = new Cookie("name","");      // 변경할 쿠키이름
@@ -61,11 +61,43 @@ System.out.printf("[cookie]name=%s, value=%s%n", name, value);
 - 서로 관련된 요청, 응답을 하나로 묶은것(쿠키 이용)
 - browser 마다 개별 저장소(session객체)를 서버에서 제공한다. (브라우저 요청 1 : 서버 응답 1)
 
-- ++
-  [참고](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/5_web/05_jsp/05_EL_JSTL/EL_%24%7B%7D/%EB%82%B4%EC%9E%A5%EA%B0%9D%EC%B2%B4%EC%98%88%EC%8B%9C)
+#### 1. 세션 생성, 수정
+
+```
+HttpSession session = request.getSession();
+session.setAttribute(String name, Object value);
+```
+
+- name ==> "name"
+
+#### 2. 세션 삭제
+
+```
+session.invalidate();             // 세션 객체 제거
+또는
+session.setMaxInactiveInterval(0) // 지정 시간 후에 세션 종료
+
+또는
+session.removeAttribute("세션이름") // 특정 세션 제거
+```
+
+#### 3. 세션 읽기
+
+```
+session.getAttribut("세션이름")     // 특정 세션값 받기
+```
 
 ## page < request < session < application
 
+- 4가지 공통 사용 메서드
+  | 메서드 | 설명|
+  |----| ----|
+  |setAttribute("name", value); | 지정된 name에 value 값 지정|
+  | getAttribute("name") | 지정된 name의 value 값 반환|
+  | removeAttribute("name") | 지정된 name 삭제 |
+
+- ++
+[참고](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/5_web/05_jsp/05_EL_JSTL/EL_%24%7B%7D/%EB%82%B4%EC%9E%A5%EA%B0%9D%EC%B2%B4%EC%98%88%EC%8B%9C)
 <p>pageContext >>> ex05페이지에서만 값 유효</p>
 <p>request >>> forward로 넘어갈 경우에만 값 유효</p>
 <p>session >>> 유효시간까지 값 유효</p>
