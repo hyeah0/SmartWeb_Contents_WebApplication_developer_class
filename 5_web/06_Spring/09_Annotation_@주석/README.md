@@ -35,14 +35,14 @@
     </td>
 </tr>
 <tr>
-    <th colspan="2"> 예외주석 </th>
+    <th colspan="2"> 예외주석 
+    <br>
+    <a href="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/5_web/06_Spring/08_Exception_%EC%98%88%EC%99%B8">예외참고</a> 
+    </th>
 </tr>
 <tr>
     <td>@ExceptionHandler(예외.class)</td>
     <td>컨트롤러 내부에서 예외 발생시 해당 메서드가 실행</td>
-    <td>
-        <a src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/tree/main/5_web/06_Spring/08_Exception_%EC%98%88%EC%99%B8">예외참고</a>
-    </td>
 </tr>
 <tr>
     <td>@ControllerAdvice</td>
