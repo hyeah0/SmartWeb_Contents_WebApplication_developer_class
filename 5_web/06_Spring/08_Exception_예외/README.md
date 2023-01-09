@@ -97,7 +97,16 @@ public class ExceptionGlobal {
 
 ### 4. @ResponseStatus(HttpStatus.---) : web.xml에 응답상태 코드별로 뷰지정
 
-- HttpStatus.INTERNAL_SERVER_ERROR : 상태번호를 200 에서 500으로 변경
+<table>
+    <tr>
+        <td>HttpStatus.INTERNAL_SERVER_ERROR</td>
+        <td>상태번호를 200 에서 500으로 변경</td>
+    </tr>
+    <tr>
+        <td>HttpStatus.BAD_REQUEST</td>
+        <td>상태번호를 500 에서 400으로 변경</td>
+    </tr>
+</table>
 
 ```
 @RequestMapping("/ex")
