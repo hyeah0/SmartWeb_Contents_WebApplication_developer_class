@@ -1,6 +1,6 @@
 # Version
 
-- Mac : m1 air
+- Mac : m1
 - jdk version : 11.0.15
 - Eclipse IDE : 2022-03 (4.23.0)
 - 학원 : Eclipse IDE for Enterprise Java Developers : Eclipse 2020-09 (4.17)
