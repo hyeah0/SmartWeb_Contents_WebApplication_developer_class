@@ -6,7 +6,7 @@
 - 학원 : Eclipse IDE for Enterprise Java Developers : Eclipse 2020-09 (4.17)
 - Oracle : Oracle Database 19c 19.0.0.0.0
 - Visulal Studio Code : 1.70.0
-- node : v17.7.1
+- node : v17.7.1 >> v16.12.0으로 변경(23.01.18)
 - npm : 8.5.2
 - apache tomcat : 9.0.65
 - docker : 20.10.17
@@ -37,6 +37,6 @@ Code >> about Visual Studio Code
 iterm -> node --version
 iterm -> npm --version
 
-
 ## docker version check
+
 iterm -> docker -v
