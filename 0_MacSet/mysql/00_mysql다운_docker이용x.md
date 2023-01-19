@@ -12,19 +12,19 @@
 
 2. MySQL Community Server 클릭
 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/mysql/image/mysql_download/02.png" width="100%">
+   - <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/mysql/image/mysql_download/02.png" width="100%">
 
 3. 운영체제에 맞는 파일 다운로드 버튼 클릭
 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/mysql/image/mysql_download/03.png" width="100%">
+   - <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/mysql/image/mysql_download/03.png" width="100%">
 
 4. [ No thanks, just start my download. ] 클릭
 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/mysql/image/mysql_download/04.png" width="100%">
+   - <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/mysql/image/mysql_download/04.png" width="100%">
 
 5. 다운받은 파일 클릭
 
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/mysql/image/mysql_download/05.png" width="100%">
+   - <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/mysql/image/mysql_download/05.png" width="100%">
 
 6. 설치 (continue > continue > agree > install > 사용할 비밀번호 작성 > finish 클릭)
 
