@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="coffeeTestDAO">
+
+	<!-- clob 데이터 가져오기 -->
+	<resultMap type="HashMap" id="getClobTest">
+
+		<result property="test_type_num" column="test_type_num" />
+		<result property="test_type_name" column="test_type_name" />
+		<result property="test_type_img" column="test_type_img" jdbcType="CLOB" javaType="java.lang.String" />
+	
+	</resultMap>
+
+	<select id="getBrewTest" resultMap="getClobTest">
+		select brew_num as test_type_num
+		     , brew_type as test_type_name
+		     , brew_img as test_type_img
+		  from coffee_brew
+	</select>
+	
+	<select id="getAddTest" resultMap="getClobTest">
+		select add_num as test_type_num
+		     , add_type as test_type_name
+		     , add_img as test_type_img
+		  from coffee_add
+	</select>
+	
+	<resultMap type="HashMap" id="getTwoTest">
+		<result property="test_type_num" column="test_type_num" />
+		<result property="test_type_name" column="test_type_name" />
+	</resultMap>
+	
+	<select id="getDecafTest" resultMap="getTwoTest">
+		select decaf_num as test_type_num
+		     , decaf_type as test_type_name
+		  from coffee_decaff
+	</select>
+	
+	<select id="getTasteTest" resultMap="getTwoTest">
+		select taste_num as test_type_num
+		     , taste_info as test_type_name
+		  from coffee_taste
+	</select>
+	
+	<select id="getGrindTest" resultMap="getTwoTest">
+		select grind_num as test_type_num
+		     , grind_type as test_type_name
+		  from coffee_grind
+	</select>
+	
+	<resultMap type="HashMap" id="getTreeTest">
+		<result property="test_type_num" column="test_type_num" />
+		<result property="test_type_name" column="test_type_name" />
+		<result property="test_type_info" column="test_type_info" />
+	</resultMap>
+	
+	<select id="getAcidTest" resultMap="getTreeTest">
+		select acid_num as test_type_num
+		     , acid_type as test_type_name
+		     , acid_info as test_type_info
+		  from coffee_taste_acid
+	</select>
+	
+	<select id="getTestResultTypeNum" parameterType="hashmap" resultType="map">
+		select ctr.test_result_num
+			 , ct.test_name
+	      	 , ct.test_img
+		  from coffee_test ct
+		  join (select case when #{testRsDecaff} = 0 then 1 else test_num end as test_result_num
+				  from coffee_test_result
+				 where test_rs_brew = #{testRsBrew} 
+				   and test_rs_add = #{testRsAdd} 
+				   and test_rs_taste_acid = #{testRsAcid} 
+				   and test_rs_taste = #{testRsTaste} ) ctr
+		    on ct.test_num = ctr.test_result_num
+	</select> 
+	
+	<update id="updateTestResultTypeNum" parameterType="hashmap">
+		update final_member
+		   set test_num = #{test_result_num}
+		 where member_num = #{member_num}
+	</update>
+	
+</mapper>

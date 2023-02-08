@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/* 페이지 */
+.m_page div{
+    display: flex;
+    justify-content: center;
+}
+
+.m_page_in{
+    margin: auto;
+}
+
+.m_page_area{
+    display: flex;
+}
+
+.m_page_area .a{
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    color: var(--color_begie);
+    transition: color .3s ease-in-out;
+}
+
+.m_page_area .a:hover{
+    color: var(--color_milk_brown);
+    font-weight: bold;
+}
+
+.num_div .active_a{
+    color: var(--color_milk_brown);
+    font-weight: bold;
+}
+
+.back_div{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.forward_div{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.back_div a:nth-child(1){
+    padding-left: 20px;
+}
+
+.forward_div a:nth-child(2){
+    padding-right: 20px;
+}

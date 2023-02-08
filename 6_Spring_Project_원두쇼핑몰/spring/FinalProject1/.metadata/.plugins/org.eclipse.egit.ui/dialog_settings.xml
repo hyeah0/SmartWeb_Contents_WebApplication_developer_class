@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="GitSelectRepositoryPage.lastRepository" value="/Users/jihyechoi/git/FinalProject1/.git"/>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/hwanhing/FinalProject1.git"/>
+	</list>
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
+	</list>
+</section>

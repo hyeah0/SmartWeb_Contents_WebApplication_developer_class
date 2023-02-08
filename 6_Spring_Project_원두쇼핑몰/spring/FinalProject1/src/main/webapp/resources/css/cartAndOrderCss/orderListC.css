@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+/* m_order_rows
+    ㄴ m_order_num
+    ㄴ m_table
+        ㄴ m_tr
+            ㄴ p_row
+            ㄴ p_cont_area
+                ㄴ p_img
+                ㄴ p_cont
+            ㄴ p_price
+            ㄴ p_reorder
+*/
+/* 주문일, 주문번호 */
+.m_order_num{
+    margin-bottom: var(--margin);
+}
+
+.m_order_num ul{
+    display: flex;
+}
+
+.m_order_num .list li{
+    width: 300px;
+    padding: 10px 5px 10px 5px;
+    font-size: 18px;
+}
+
+/* 이미지, 상품 정보 */
+.p_cont_imgcont{
+    margin-left: var(--margin) !important;
+}
+
+.p_cont{
+    margin-left: 30px !important;
+}
+
+/* 재구매 버튼 */
+.p_reorder{
+    text-align: center ;
+}
+
+.p_reorder .btn{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    margin-bottom: 10px;
+    padding: 5px 10px 5px 10px;
+    
+    border-radius: var(--radius);
+    box-shadow: var(--box_shadow);
+}
+
+.p_reorder .btn:hover{
+    font-weight: bold;
+}
+
+/* 주문 결제 정보 */
+.o_all{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* 주문 금액 & 결제 금액 */
+.o_pay_point{
+    width: 60% ;
+    display: flex ;
+    flex-direction: column ;
+}
+
+.o_pay_point h5{
+    margin: 0px ;
+    padding: 5px 10px 5px 10px !important;
+    background-color: var(--color_begie);
+}
+
+.o_pay_point table{
+    width: 100%;
+    padding-right: 10px;
+}
+
+.o_pay_point table th{
+    width: 40%;
+}
+
+.o_order_pay{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.o_order_pay div,
+.o_point table{
+    width: 50%;
+    margin-bottom: var(--margin) !important;
+}
+
+.o_order{
+    margin-right: 3px;
+}
+
+/* 결제 정리 */
+.o_conclusion{
+    width: 40%;
+    margin-left: 3px;
+    background-color: var(--color_begie);
+}
+
+.o_conclusion_d{
+	padding: 20px 10px 20px 10px;
+}
+
+.o_conclusion_t{
+    width: 90%;
+    margin: auto;
+}
+
+.o_conclusion_t .middle_text{
+	font-weight: bold;
+}
+
+.o_conclusion table tr:not(.sep_tr){
+    height: 30px;
+}
+
+.o_conclusion table th{
+    width: 40%;
+    text-align: left !important;
+    padding-left: 10px;
+}
+
+.sep_tr{
+    padding-top: 20px !important;
+    height: 2px !important;
+    background-color: var(--color_greyish);
+}
+
+/* 배송중인 상품일 경우 */
+.delivery_ing_txt{
+	padding-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

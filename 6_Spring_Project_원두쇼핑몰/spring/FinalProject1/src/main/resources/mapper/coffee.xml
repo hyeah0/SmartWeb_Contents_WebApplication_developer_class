@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	DTD(Document Type Definition)
+	- 작성한 문서가 어떤 문서인지에 대해서 정의해 놓은 것.
+	- 하나의 시스템 내에서 사용할 XML 데이터의 구조를 정의하여
+	  유효성을 점검시 사용하는 태그.
+ -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="beanDAO">
+
+	<!-- 환희 -->
+	<!-- 전체 원두 목록 뽑는 문 -->
+	<select id="list" resultType="coffeeBeanDTO">
+		select * from coffee_beans order by beans_num
+	</select>
+	
+	<!-- 원두 전체 개수 뽑는 문 -->
+	<select id="beansCount" resultType="String">
+		select count(*) from coffee_beans
+	</select>
+	
+	<!-- 회원 전체 인원 뽑는 문 -->
+	<select id="memberCount" resultType="String">
+		select count(*) from final_member
+	</select>
+	
+	<!-- 찜많은 목록 뽑는 문 -->	
+	<select id="heartlist" resultType="coffeeBeanDTO">
+		with test as ( select beans_num
+		                    , count(member_num) as count_heart
+		              from member_star 
+		             where coffee_heart = 1
+		             group by beans_num 
+		)select cb.*
+		      , case when count_heart is null then 0 else count_heart end as count_h
+		   from coffee_beans cb
+		   left join test t
+		     on cb.beans_num = t.beans_num order by count_h desc
+	</select>
+
+	<!-- 가격이 낮은 원두 뽑는 문 -->	
+	<select id="pricedownlist" resultType="coffeeBeanDTO">
+		select * from coffee_beans order by beans_price
+	</select>
+
+	<!-- 가격이 높은 원두 뽑는 문 -->	
+	<select id="priceuplist" resultType="coffeeBeanDTO">
+		select * from coffee_beans order by beans_price desc
+	</select>
+
+	<!-- 별점이 5점 원두 뽑는 문 -->
+	<select id="star5list" resultType="coffeeBeanDTO">
+		select DISTINCT ms.coffee_star, cb.* from member_star ms join coffee_beans cb on ms.beans_num = cb.beans_num where ms.coffee_star = 5
+	</select>
+	<!-- 별점이 4점 원두 뽑는 문 -->
+	<select id="star4list" resultType="coffeeBeanDTO">
+		select DISTINCT ms.coffee_star, cb.* from member_star ms join coffee_beans cb on ms.beans_num = cb.beans_num where ms.coffee_star = 4
+	</select>
+	<!-- 별점이 3점 원두 뽑는 문 -->
+	<select id="star3list" resultType="coffeeBeanDTO">
+		select DISTINCT ms.coffee_star, cb.* from member_star ms join coffee_beans cb on ms.beans_num = cb.beans_num where ms.coffee_star = 3
+	</select>
+	<!-- 별점이 2점 원두 뽑는 문 -->
+	<select id="star2list" resultType="coffeeBeanDTO">
+		select DISTINCT ms.coffee_star, cb.* from member_star ms join coffee_beans cb on ms.beans_num = cb.beans_num where ms.coffee_star = 2
+	</select>
+	<!-- 별점이 1점 원두 뽑는 문 -->
+	<select id="star1list" resultType="coffeeBeanDTO">
+		select DISTINCT ms.coffee_star, cb.* from member_star ms join coffee_beans cb on ms.beans_num = cb.beans_num where ms.coffee_star = 1
+	</select>
+
+	<!-- 후기글 리스트 -->
+	<select id="writeList" resultType="coffeeWriteDTO" parameterType="int">
+		select distinct cw.write_num, cw.write_cont,cw.write_date, cw.write_img, cw.member_id, ms.coffee_star from member_star ms join coffee_write cw on cw.beans_num = ms.beans_num and cw.member_num = ms.member_num where ms.beans_num = #{beans_num}	
+	</select>
+
+	<!-- 로그인 체크 -->
+	<select id="check" resultType="finalMemberDTO" parameterType="finalMemberDTO">
+		select fm.*, ct.*from final_member fm join coffee_test ct on fm.test_num = ct.test_num where member_id=#{member_id} and member_pwd=#{member_pwd}
+	</select>
+	
+	<!-- 관리자일 경우 -->
+	<select id="a_check" resultType="finalAdminDTO" parameterType="finalMemberDTO">
+		select * from final_admin where admin_id = #{admin_id} and admin_pwd = #{admin_pwd}
+	</select>
+	
+	<!-- 원두 상세정보 -->
+	<select id="Cont" parameterType="int" resultType="coffeeBeanDTO">
+		with test as ( select beans_num
+		                    , count(member_num) as count_heart
+		              from member_star 
+		             where coffee_heart = 1
+		             group by beans_num 
+		)select cb.*
+		      , case when count_heart is null then 0 else count_heart end as count_h
+		   from coffee_beans cb
+		   left join test t
+		     on cb.beans_num = t.beans_num where cb.beans_num = #{beans_num}
+	</select>
+	
+	<!-- 별점 있는지 없는지 확인 -->
+	<select id="Bean_select" parameterType="map" resultType="coffeeStarDTO">
+		select * from member_star where beans_num = #{beans_num} and member_num = #{member_num} 
+	</select>
+
+	<!-- 하트 찜 -->
+	<select id="heartmap1" parameterType="map" resultType="coffeeStarDTO">
+		select nvl(max(beans_num),0) as beans_num , nvl(max(coffee_heart),0) as coffee_heart from member_star where member_num = #{member_num} and beans_num = #{beans_num}
+	</select>
+
+	<!-- 하트 찜 추가 -->
+	<insert id="insertHeart1" parameterType="map">
+		insert into member_star values(0, #{coffee_heart}, #{member_num}, #{beans_num})
+	</insert>
+
+	<!-- 하트 찜 업데이트 -->
+	<update id="updateHeart1" parameterType="map">
+		update member_star set coffee_heart = #{coffee_heart} where member_num = #{member_num} and beans_num = #{beans_num}
+	</update>
+
+	<!-- 후기글 개수 -->
+	<select id="writeCount" parameterType="int" resultType="int">
+		select count(beans_num) from coffee_write where beans_num = #{beans_num}
+	</select>
+	
+	<!-- 후기글 추가 -->
+	<insert id="insertWrite" parameterType="map">
+		<selectKey resultType="int" keyProperty="write_num" order="BEFORE">
+			select max(write_num) from coffee_write
+		</selectKey>
+		insert into coffee_write values(#{write_num} + 1, #{write_cont}, sysdate, #{write_img}, #{member_num}, #{beans_num},#{member_id})
+	</insert>
+
+	<!-- 후기글 별점 추가 -->
+	<insert id="writeStar" parameterType="map">
+		insert into member_star values(#{coffee_star}, 0, #{member_num}, #{beans_num})
+	</insert>
+	
+	<!-- 후기글 별점 업데이트 -->
+	<update id="writeUpdateStar" parameterType="map">
+		update member_star set coffee_star = #{coffee_star} where member_num = #{member_num} and beans_num = #{beans_num}
+	</update>
+	
+	<!-- 후기글 별점 있는지 없는지 확인 -->
+	<select id="checkWrite" parameterType="map" resultType="int">
+		select count(*) from member_star where member_num = #{member_num} and beans_num = #{beans_num}
+	</select>
+
+	<!-- 후기글 삭제 -->
+	<delete id="deleteWrite" parameterType="int">
+		delete from coffee_write where write_num = #{write_num}
+	</delete>
+
+	<!-- 후기글 삭제하면서 별점도 삭제 -->
+	<update id="deleteStar" parameterType="map">
+		update member_star set coffee_star = 0 where member_num = #{member_num} and beans_num = #{beans_num}
+	</update>
+
+	<!-- 후기글 별점 평균 -->
+	<select id="starAvg" parameterType="int" resultType="int">
+		select avg(coffee_star) from member_star where beans_num = #{beans_num}
+	</select>
+
+	<!-- 후기글 몇 명 남겼는지 별점 개수로 확인 -->
+	<select id="starCheck" parameterType="int" resultType="int">
+		select count(coffee_star) from member_star where beans_num = #{beans_num}
+	</select>
+	
+	<!-- 후기글 체크 -->
+	<select id="writeCheck" parameterType="map" resultType="int">
+		select count(*) from coffee_write where beans_num = #{beans_num} and member_num = #{member_num}
+	</select>
+
+	<!-- 이 상품을 샀는지 안샀는지 체크 -->
+	<select id="buyCheck" parameterType="map" resultType="int">
+		select count(*) from coffee_order where beans_num = #{beans_num} and member_num = #{member_num}
+	</select>
+
+	<!-- 이 회원이 탈퇴회원인지 이용회원인지 체크 -->
+	<select id="member_use_check" parameterType="String" resultType="int">
+		select member_use from final_member where member_id = #{member_id}
+	</select>
+
+	<!-- 회원의 테스트 결과 -->
+	<select id="test_result" parameterType="int" resultType="coffeeTestDTO">
+		select ct.* , ct2.test_img as test_match_img, ct2.test_match_coffee as match_coffee from coffee_test ct join coffee_test ct2 on ct.test_mate = ct2.test_name where ct.test_num = #{test_num}
+	</select>
+
+
+
+	<!-- 홍기 -->
+	<select id="MyPage" parameterType="int" resultType="finalMemberDTO">
+		select * from final_member where member_num=#{member_num}
+	</select>
+	
+	<update id="addrmodify" parameterType="finalMemberDTO">
+		update final_member set member_addr =#{member_addr} where member_num=#{member_num}
+	</update>
+	
+	<update id="addrmodify2" parameterType="finalMemberDTO">
+		update final_member set member_addr2 =#{member_addr2} where member_num=#{member_num}
+	</update>
+	
+	<update id="addrmodify3" parameterType="finalMemberDTO">
+		update final_member set member_addr3 =#{member_addr3} where member_num=#{member_num}
+	</update>
+	
+	<update id="addrmodify4" parameterType="finalMemberDTO">
+		update final_member set member_addr4 =#{member_addr4} where member_num=#{member_num}
+	</update>
+	
+	<update id="addrmodify5" parameterType="finalMemberDTO">
+		update final_member set member_addr5 =#{member_addr5} where member_num=#{member_num}
+	</update>
+	
+	<insert id="Add" parameterType="map">
+		insert into member_star(coffee_heart, member_num) values(#{heart} + 1, #{no})
+	</insert>
+
+
+
+
+	<update id="member_Delete" parameterType="int">
+		update final_member set member_use = 1 where member_num=#{member_num}
+	</update>
+	
+	<update id="phone_modify" parameterType="finalMemberDTO" > 
+		update final_member set member_phone =#{member_phone} where member_num=#{member_num}
+	</update>
+	
+	<update id="Email_modify" parameterType="finalMemberDTO">
+		update final_member set member_email=#{member_email} where member_num=#{member_num}
+	</update>
+	
+	<update id="pwd_modify" parameterType="finalMemberDTO">
+		update final_member set member_pwd=#{member_pwd} where member_num=#{member_num}
+	</update>
+
+	<select id="heart_list" resultType="finalMemberDTO" parameterType="finalMemberDTO">
+		select ms.*, cb.* from member_star ms join coffee_beans cb on ms.beans_num = cb.beans_num where member_num=#{member_num}
+	</select>
+	
+	<delete id="myheartdelete"  parameterType="int" > 
+		delete from member_star where beans_num=#{num}
+	</delete>
+	
+	
+	<select id="board_list" resultType="finalMemberDTO" parameterType="finalMemberDTO">
+		select fm.*, mb.* from final_member fm join member_board mb on fm.member_num = mb.member_num where fm.member_num=#{member_num}
+	</select>
+	
+	<select id="board_cont" resultType="finalMemberDTO"  parameterType="finalMemberDTO">
+		select * from member_board where board_num=#{board_num}
+	</select>
+	
+	<select id="board_reply" resultType="boardReplyDTO"  parameterType="boardReplyDTO">
+		select * from admin_reply where board_num=#{board_num}
+	</select>
+	<delete id="myboard_delete"  parameterType="int" > 
+		delete from member_board where board_num=#{num}
+	</delete>
+	
+	
+	
+	<insert id="w_write_ok" parameterType="finalMemberDTO" >
+		<selectKey resultType="int" keyProperty="board_num" order="BEFORE">
+			select nvl(max(board_num),0) from member_board
+		</selectKey>	
+		insert into member_board values(#{board_num}+1,#{board_title},#{board_cont},'',sysdate,0,#{member_num})
+	</insert>
+	
+	<update id="memberUpdateImg" parameterType="finalMemberDTO">
+		update final_member set member_img = #{member_img} where member_num=#{member_num}
+	</update>
+	
+	
+<!--관리자   -->
+	
+	<select id="count" resultType="int">
+        select count(*) from final_member
+    </select>
+	
+<!-- 	<select id="admin_check" resultType="finalAdminDTO" parameterType="finalAdminDTO">
+		select * from final_admin where admin_id=#{admin_id} and admin_pwd=#{admin_pwd}
+	</select> -->
+	
+	<select id="memberList" resultType="finalMemberDTO" parameterType="pageDTO">
+		<![CDATA[select * from (select b.*, row_number() over(order by member_num desc) rnum from final_member b) where rnum >= #{startNo} and rnum <= #{endNo}]]>
+	</select>
+	<select id="admin_cont"  parameterType="int" resultType="finalMemberDTO">
+		select * from final_member where member_num=#{member_num}
+	</select>
+	
+	<select id="admin_beans" resultType="coffeeBeanDTO" parameterType="pageDTO">
+		<![CDATA[select * from (select b.*, row_number() over(order by beans_num) rnum from coffee_beans b) where rnum >= #{startNo} and rnum <= #{endNo}]]>
+	</select>
+	
+	<select id="countb" resultType="int">
+		select count(*) from coffee_beans
+	</select>
+	<select id="admin_order" parameterType="coffeeOrderDTO" resultType="coffeeOrderDTO">
+	select fm.*,co.* from final_member fm join coffee_order co on fm.member_num = co.member_num where fm.member_num=#{member_num}
+	</select>
+	
+	
+	<select id="counto" resultType="int">
+		select count(*) from member_board
+	</select>
+	
+		<select id="admin_board" resultType="finalMemberDTO" parameterType="pageDTO">
+		<![CDATA[select * from (select b.*, row_number() over(order by board_num) rnum from member_board b)a,final_member b where a.member_num = b.member_num and rnum >= #{startNo} and rnum <= #{endNo}]]>	
+		</select>
+		 
+		<select id="yescount" resultType="int">
+			select count(*) from member_board where board_reply =1
+		</select>	
+	
+		<select id="nocount" resultType="int">
+		select count(*) from member_board where board_reply =0
+	</select>
+	
+	<select id="beans_cont" parameterType="int" resultType="coffeeBeanDTO">
+		select * from coffee_beans where beans_num = #{beans_num}
+	</select>
+	
+	<update id="bean_modify" parameterType="coffeeBeanDTO">
+		update coffee_beans set beans_name = #{beans_name}, beans_price = #{beans_price}, beans_count = #{beans_count}, beans_taste = #{beans_taste}, beans_intro = #{beans_intro} where beans_num = #{beans_num}
+	</update>
+	
+	<delete id="bean_delete" parameterType="int">
+		delete from coffee_beans where beans_num = #{beans_num}
+	</delete>
+	
+
+	
+	<select id="beanSearch" resultType="coffeeBeanDTO">
+		select * from coffee_beans where beans_name like '%' || #{keyword} || '%' order by beans_num 
+	</select>
+	
+	<select id="searchCount" resultType="int">
+		select count(*) from coffee_beans where beans_name like '%' || #{keyword} || '%' order by beans_num 
+	</select>
+	
+	<select id="memberSearch" resultType="finalMemberDTO">
+		select * from final_member where member_id like '%' || #{keyword} || '%' order by member_num 
+	</select>	
+	
+	<select id="searchCountMem" resultType="int">
+		select count(*) from final_member where member_id like '%' || #{keyword} || '%' order by member_num 
+	</select>
+	
+	
+	<insert id="bean_insert" parameterType="map">
+		insert into coffee_beans values(#{beans_num}, #{beans_name}, #{beans_price}, #{beans_count}, 100, #{beans_taste}, #{beans_intro}, default, #{beans_add_image})
+	</insert>
+	
+	<select id="centerwrite" parameterType="int" resultType="finalMemberDTO">
+		select fm.*,mb.* from final_member fm join member_board mb on fm.member_num = mb.member_num where board_num=#{board_num}
+	</select>
+	
+	<insert id="centerOk" parameterType="map">
+		<selectKey resultType="int" keyProperty="reply_num" order="BEFORE">
+			select nvl(max(reply_num),0) from admin_reply
+		</selectKey>
+		insert into admin_reply values(#{reply_num}+1,#{reply_cont},sysdate,#{admin_num},#{board_num})
+	</insert>
+	
+	<update id="centerupdate" parameterType="int">
+		update member_board set board_reply=1 where board_num=#{board_num} 
+	</update>
+	
+	<select id="greenbtn" parameterType="int" resultType="finalMemberDTO">
+		select ar.*,mb.* from admin_reply ar join member_board mb on ar.board_num = mb.board_num where mb.board_num=#{board_num}
+	</select>
+	
+	<select id="afterCount" resultType="int">
+		select count(*) from coffee_write
+	</select>
+	
+	<select id="afterlike" parameterType="pageDTO" resultType="finalMemberDTO">
+	<![CDATA[select * from (select b.*, row_number() over(order by write_num) rnum from coffee_write b)a,coffee_beans b where a.beans_num = b.beans_num and rnum >=  #{startNo} and rnum <= #{endNo}]]>
+	</select>
+	
+	<select id="write_Cont" parameterType="int" resultType="finalMemberDTO">
+		select cb.*,cw.* from coffee_beans cb join coffee_write cw on cb.beans_num = cw.beans_num where write_num=#{write_num}
+	</select>
+
+	<select id="wadada" parameterType="int" resultType="finalMemberDTO">
+		select cw.*,cb.* from coffee_write cw join coffee_beans cb on cw.beans_num= cb.beans_num where write_num=#{write_num}
+	</select>
+	<select id="allofmylove" parameterType="int" resultType="finalMemberDTO">
+		select fm.*,cw.* from final_member fm join coffee_write cw on fm.member_num= cw.member_num where write_num=#{write_num}
+	</select>
+	
+	<delete id="write_delete" parameterType="int" >
+		delete from coffee_write where write_num = #{write_num}
+	</delete>
+	
+	<select id="admin_test" parameterType="int" resultType="finalMemberDTO">
+		select fm.*,ct.* from final_member fm join coffee_test ct on fm.test_num= ct.test_num where member_num=#{num}
+	</select>
+
+	<select id="buyNumber" parameterType="int" resultType="int">
+		select count(*) from coffee_order where beans_num = #{beans_num}
+	</select>
+	
+	<!-- 후기글 별점 평균 -->
+	<select id="starAvg1" parameterType="int" resultType="String">
+		select avg(coffee_star) from member_star where beans_num = #{beans_num}
+	</select>	
+	
+</mapper>  
+
+  
