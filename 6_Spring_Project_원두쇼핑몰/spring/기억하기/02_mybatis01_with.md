@@ -3,7 +3,7 @@
 - &lt;sql id="sql조각 이름설정"/&gt; : 다른 구문에서 재사용하기 위한 SQL 조각
 - &lt;include refid="sql조각 이름"/&gt; : SQL 조각 이름
 
-[coffeeCart.xml](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/Final_Coffee_CuppACoffee/src/main/resources/mapper/coffeeCart.xml)
+[coffeeCart.xml](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/FinalProject/src/main/resources/mapper/coffeeCart.xml)
 
 ```
 <!-- 1-1. 가장 많이 주문한 상품 맛 -->

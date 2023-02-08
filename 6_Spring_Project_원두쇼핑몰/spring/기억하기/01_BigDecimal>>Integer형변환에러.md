@@ -31,7 +31,7 @@ int row_cnt = Integer.parseInt(String.valueOf(deliveryList.get(i).get("ROWCNT"))
 
 ### 에러 해결하여 사용한 코드
 
-[CoffeeOrderController](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/Final_Coffee_CuppACoffee/src/main/java/com/spring/coffee/CoffeeOrderController.java)
+[CoffeeOrderController](https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/6_Spring_Project_%EC%9B%90%EB%91%90%EC%87%BC%ED%95%91%EB%AA%B0/spring/FinalProject/src/main/java/com/spring/coffee/CoffeeOrderController.java)
 
 ```
 // 관리자
