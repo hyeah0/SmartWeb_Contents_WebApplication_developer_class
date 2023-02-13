@@ -102,12 +102,36 @@ CREATE TABLE nodejs.users(
     <tr><td>DEFAULT 디폴트값</td><td>해당 컬럼에 값이 없을경우 디폴트값을 넣는다.</td></tr>
 </table>
 
-### - PRIMARY KEY(기본키), UNIQUE INDEX
+### - PRIMARY KEY(기본키), FOREGIN KEY(외래키), UNIQUE INDEX
 
 <table>
     <tr><td>PRIMARY KEY('컬럼명')</td><td>기본키로 설정할 컬럼명, 기본키는 자동으로 UNIQUE INDEX 이다.</td></tr>
+    <tr><td>CONSTRAINT [제약조건명] FOREIGN KEY([컬럼명1]) REFERENCES [DB명.테이블명([컬럼명2])] 옵션</td><td>컬럼명1은 컬럼명2를 참조한다.</td></tr>
     <tr><td>UNIQUE INDEX 인덱스이름(컬럼명 오름차순ASC,내림차순DESC)</td><td>중복값을 허용하지 않는 인덱스</td></tr>
 </table>
+
+- 외래키 참고
+
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/0_MacSet/mysql/image/terminal/foreignKey.png" width="100%">
+
+```
+CREATE TABLE nodejs.comments(
+    id INT NOT NULL AUTO_INCREMENT,
+    commenter INT NOT NULL,
+    comment VARCHAR(100) NOT NULL,
+    create_at DATETIME NOT NULL DEFAULT now(),
+    PRIMARY KEY(id),
+    INDEX commenter_idx(commenter ASC),
+    CONSTRAINT commenter FOREIGN KEY(commenter)
+    REFERENCES nodejs.users(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+    COMMENT = '댓글'
+    ENGINE=InnoDB;
+```
+
+- ON DELETE CASCADE : 컬럼2 row가 삭제시 컬럼1 row도 삭제된다.
+- ON UPDATE CASCADE : 컬럼2 row가 수정시 컬럼1 row도 수정된다.
 
 ### - COMMENT, ENGINE
 
