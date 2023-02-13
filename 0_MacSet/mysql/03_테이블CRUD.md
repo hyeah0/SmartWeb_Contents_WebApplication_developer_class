@@ -2,7 +2,7 @@
 
 <table>
     <tr>
-        <td>show tables;</td>
+        <td>SHOW TABLES;</td>
         <td>테이블 목록 보기</td>
     </tr>
      <tr>
@@ -18,11 +18,11 @@
         <td>테이블 생성</td>
     </tr>
     <tr>
-        <td>INSERT INTO [DB명.테이블명] ([컬럼1], email) VALUES("[컬럼1데이터]", "orange@gmail.com"); </td>
+        <td>INSERT INTO [DB명.테이블명] ([컬럼1], email)<br>VALUES("[컬럼1데이터]", "orange@gmail.com"); </td>
         <td>테이블 행 데이터추가</td>
     </tr>
     <tr>
-        <td>DELETE FROM [DB명.테이블명] WHERE [컬럼] = 0;
+        <td>DELETE FROM [DB명.테이블명]<br>WHERE [컬럼] = 0;
             <br>DELETE FROM [DB명.테이블명]
         </td>
         <td>특정 컬럼이 지정한 값인 행 삭제 또는
@@ -30,7 +30,7 @@
         </td>
     </tr>
     <tr>
-        <td>UPDATE [DB명.테이블명] SET [컬럼명]='[값]' WHERE [조건컬럼]='[조건값]'; </td>
+        <td>UPDATE [DB명.테이블명]<br>SET [컬럼명]='[값]'<br>WHERE [조건컬럼]='[조건값]'; </td>
         <td>데이터 수정</td>
     </tr>
     <tr>
