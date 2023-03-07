@@ -28,10 +28,10 @@
 
 ## 담당페이지 기능
 <h4>메인페이지</h4>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_JSP_Project_%EC%84%9C%EC%A0%90/%E1%84%83%E1%85%A1%E1%86%B7%E1%84%83%E1%85%A1%E1%86%BC%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB_img/page1_main.png" width="100%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_JSP_Project_%EC%84%9C%EC%A0%90/%EB%8B%B4%EB%8B%B9%EA%B5%AC%ED%98%84_img/page1_main.png" width="100%">
 <br>
 <h4>카테고리페이지</h4>
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_JSP_Project_%EC%84%9C%EC%A0%90/%E1%84%83%E1%85%A1%E1%86%B7%E1%84%83%E1%85%A1%E1%86%BC%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB_img/page2_category.png" width="100%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_JSP_Project_%EC%84%9C%EC%A0%90/%EB%8B%B4%EB%8B%B9%EA%B5%AC%ED%98%84_img/page2_category.png" width="100%">
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_JSP_Project_%EC%84%9C%EC%A0%90/%E1%84%83%E1%85%A1%E1%86%B7%E1%84%83%E1%85%A1%E1%86%BC%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB_img/page3_category.png" width="100%">
 <br>
 <h4>마이페이지 : 메인</h4>
