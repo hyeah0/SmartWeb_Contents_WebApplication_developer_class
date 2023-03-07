@@ -98,4 +98,4 @@
 <h4>메인페이지 : 회원정보</h4>
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_JSP_Project_%EC%84%9C%EC%A0%90/%EB%8B%B4%EB%8B%B9%EA%B5%AC%ED%98%84_img/page6_mypage_userinfo.png" width="100%">
 <img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_JSP_Project_%EC%84%9C%EC%A0%90/%EB%8B%B4%EB%8B%B9%EA%B5%AC%ED%98%84_img/page7_mypage_userinfo.png" width="100%">
-<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_JSP_Project_%EC%84%9C%EC%A0%90/%EB%8B%B4%EB%8B%B9%EA%B5%AC%ED%98%84_img/page8_unregister.png" width="100%">
+<img src="https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/5_JSP_Project_%EC%84%9C%EC%A0%90/%EB%8B%B4%EB%8B%B9%EA%B5%AC%ED%98%84_img/page8_mypage_unregister.png" width="100%">
