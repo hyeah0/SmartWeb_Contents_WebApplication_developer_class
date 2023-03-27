@@ -43,7 +43,7 @@ public List<Map<String, Object>> getTestResultTypeNum(Map<String, Integer> testC
 </select>
 ```
 
-### controller 예시
+### controller 
 
 ```
 @RequestMapping("bean_test_result.do")
