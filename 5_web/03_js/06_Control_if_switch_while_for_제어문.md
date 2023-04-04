@@ -1,4 +1,4 @@
-## Control(제어문)
+# Control(제어문)
 
 1. 조건문
    - if문, if~else문, 다중 if~else문
@@ -6,12 +6,14 @@
 2. 반복문
    - while문, do~while문
    - for문
+3. return
+4. 문제
 
 [Java 제어문](<https://github.com/hyeah0/SmartWeb_Contents_WebApplication_developer_class/blob/main/1_Java/day02~04_%EC%A0%9C%EC%96%B4%EB%AC%B8(Control).md>)
 
-### 1. 조건문
+## 1. 조건문
 
-#### 1. if
+### 1. if
 
 - <details> 
     <summary>if</summary>
@@ -68,7 +70,7 @@
   조건 이 true 일때 값1 반환 false 일때 값2 반환
   ```
 
-#### 2. switch
+### 2. switch
 
 - 다중 if else 문과 유사한 구조
 - 다중 if else 문을 switch case 문으로 변경할 수 있는 경우는 <br>
@@ -97,17 +99,17 @@
 
   </details>
 
-### 2. 반복문
+## 2. 반복문
 
-[for while 참고자료](https://github.com/hyeah0/Javascript/blob/master/Javascript_udemy/9_For_While/index9_For_While.js)
+### 1. while
 
-#### 1. while
+- 정확한 범위를 알 수 없을때
 
-```
-while(조건){
-  조건이 참이 될 때 까지 반복할 값
-}
-```
+  ```
+  while(조건){
+    조건이 참이 될 때 까지 반복할 값
+  }
+  ```
 
 - 1~100 사이의 숫자 중에서 홀수인 경우에는 글자를 빨간색으로,<br>
   짝수인 경우에는 글자를 파란색으로 화면에 출력
@@ -129,21 +131,61 @@ while(조건){
 
   </details>
 
-#### 2. for
+### 2. for
 
-```
-for(let i =초기값; i<종료값; i++){
-    초기값이 종료값이 될동안 반복할 값
+- 정확한 범위를 알때 사용
+
+  ```
+  for(let i =초기값; i<종료값; i++){
+      초기값이 종료값이 될동안 반복할 값
+  }
+  ```
+
+- <details>
+  <summary>0부터 9까지 작성</summary>
+
+  ```
+  for(let i =0; i<10; i++){
+      console.log("for",i);
+  }
+  ```
+
+</details>
+
+- <details>
+    <summary>배열과 함께 사용</summary>
+
+  ```
+  let fruit = ["apple","banna","mango","tomato"];
+
+  for(let i=0; i<fruit.length; i++){
+  console.log("배열(인덱스):" + i + "," + fruit[i]);
+  }
+  ```
+
+  </details>
+
+## 3. return
+
+조건이 맞지 않을 경우를 먼저 작성하여 빨리 리턴하기
+
+<pre>
+👍 good case
+if(user.point <= 10){
+    <b>return;</b>
+}else{
+
 }
 
-for(let i =0; i<10; i++){
-    console.log("for",i);
+👎 bad case
+if(user.point >= 10){
+    console.log()
+}else{
+    
 }
-```
+</pre>
 
-##### - 예시
-
-###### - 문제
+## - 문제
 
 - 하단과 같이 출력
   - 첫번째
@@ -177,7 +219,7 @@ for(let i =0; i<10; i++){
       </tr>
     </table>
 
-###### - 풀이
+#### - 풀이
 
 - 첫번째
 
