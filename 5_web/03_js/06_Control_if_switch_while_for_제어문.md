@@ -13,7 +13,60 @@
 
 #### 1. if
 
-[if 참고자료](https://github.com/hyeah0/Javascript/blob/master/Javascript_udemy/6_If/index6_If.js)
+- <details> 
+    <summary>if</summary>
+
+  ```
+  if(조건){
+      console.log("조건은 참입니다.")
+  }
+  else{
+      console.log("조건은 거짓입니다.")
+  }
+  ```
+
+  </details>
+
+- <details> 
+    <summary>다중 if</summary>
+
+  ```
+  if(age > 20){
+      console.log("운전이 가능합니다.");
+  }
+  else if(age >= 18){
+      console.log("오토바이 운전이 가능합니다.");
+  }
+  else{
+      console.log("운전이 불가능합니다.");
+  }
+  ```
+
+  </details>
+
+- <details> 
+    <summary>다중 if (and 또는 or)</summary>
+
+  ```
+  if( 18 < age && age < 20 ){
+      console.log("운전이 가능합니다.");
+  }
+  else if(18 <= age || age < 20){
+      console.log("오토바이 운전이 가능합니다.");
+  }
+  else{
+      console.log("운전이 불가능합니다.");
+  }
+  ```
+
+  </details>
+
+- if 축약(삼항연산식)
+
+  ```
+  조건 ? 값1 : 값2;
+  조건 이 true 일때 값1 반환 false 일때 값2 반환
+  ```
 
 #### 2. switch
 
@@ -23,7 +76,26 @@
 - 즉, 조건식이 == 인 경우를 제외하고 나머지 관계연산자(>=, >, <=, <, !=)와
   같은 비교연산자를 사용한 경우에는 switch case 문으로 변경할 수 없다.
 
-[switch 참고자료](https://github.com/hyeah0/Javascript/blob/master/Javascript_udemy/8_Switch/index8_Switch.js)
+- <details>
+    <summary> 예시 : menu == 1 일때 2일때...</summary>
+
+  ```
+  switch (menu){
+      case 1 :
+          console.log("파스타");
+          break;
+      case 2 :
+          console.log("치킨");
+          break;
+      case 3 :
+          console.log("피자");
+          break;
+      default :
+          console.log("메뉴를 골라주세요");
+  }
+  ```
+
+  </details>
 
 ### 2. 반복문
 
@@ -31,22 +103,43 @@
 
 #### 1. while
 
+```
+while(조건){
+  조건이 참이 될 때 까지 반복할 값
+}
+```
+
 - 1~100 사이의 숫자 중에서 홀수인 경우에는 글자를 빨간색으로,<br>
   짝수인 경우에는 글자를 파란색으로 화면에 출력
 
+  <details>
+    <summary> 코드 </summary>
+
   ```
   let num2 = 1;
-          while(num2 <= 100){
-              if(num2%2 != 0){
-                  document.write("<p style='color : red'>"+num2 +" <<< 홀수입니다.</p>");
-              }else{
-                  document.write("<font color = 'blue'>"+num2 +" <<< 짝수입니다.</font>");
-              }
-              num2++;
-          }
+  while(num2 <= 100){
+      if(num2%2 != 0){
+          document.write("<p style='color : red'>"+num2 +" <<< 홀수입니다.</p>");
+      }else{
+          document.write("<font color = 'blue'>"+num2 +" <<< 짝수입니다.</font>");
+      }
+      num2++;
+  }
   ```
 
+  </details>
+
 #### 2. for
+
+```
+for(let i =초기값; i<종료값; i++){
+    초기값이 종료값이 될동안 반복할 값
+}
+
+for(let i =0; i<10; i++){
+    console.log("for",i);
+}
+```
 
 ##### - 예시
 
@@ -89,47 +182,61 @@
 - 첫번째
 
   - row(행), colum(열), 값이 들어갈 변수 지정
+
   - 테이블을 만들 HTML 값을 따로 변수로 지정하지 않음
 
-  ```
-  let row = 4;
-  let colum = 4;
-  let count =1;
-  document.write("<table border='1' cellspacing ='0' width ='150px'");
+    <details>
+      <summary> 코드 </summary>
 
-    for(let i=1; i<=row; i++){ // 행
-        document.write("<tr>");
-            for(let j=1; j<=colum; j++){ // 열
-                document.write("<td align ='right'>" + count + "</td>");
-                count++;
-            }
-        document.write("</tr>");
-    }
+    ```
+    let row = 4;
+    let colum = 4;
+    let count =1;
+    document.write("<table border='1' cellspacing ='0' width ='150px'");
 
-  document.write("</table>");
-  ```
+      for(let i=1; i<=row; i++){ // 행
+          document.write("<tr>");
+              for(let j=1; j<=colum; j++){ // 열
+                  document.write("<td align ='right'>" + count + "</td>");
+                  count++;
+              }
+          document.write("</tr>");
+      }
+
+    document.write("</table>");
+    ```
+
+    </details>
 
 - 두번째
 
   - row(행), colum(열), 값이 들어갈 변수 지정
+
   - 테이블을 만들 HTML 값을 따로 변수로 지정, 마지막줄에 document.write(테이블변수명)
 
-  ```
-  let row = 4;
-  let colum = 4;
+    <details>
+      <summary> 코드 </summary>
 
-  let table = "<table border='1' cellspacing='0' width='150px'>";
-  for(let i=1; i<=row; i++){    // 행
-      table += "<tr>";
-          for(let j=0; j<colum; j++){
-              table += "<td align = 'center'>" + (j*row+i)+ "</td>";
-          }
-      table += "</tr>";
-  }
-  table += "</table>";
+    ```
 
-  document.write(table);
-  ```
+    let row = 4;
+    let colum = 4;
+
+    let table = "<table border='1' cellspacing='0' width='150px'>";
+    for(let i=1; i<=row; i++){    // 행
+        table += "<tr>";
+            for(let j=0; j<colum; j++){
+                table += "<td align = 'center'>" + (j*row+i)+ "</td>";
+            }
+        table += "</tr>";
+    }
+    table += "</table>";
+
+    document.write(table);
+
+    ```
+
+    </details>
 
 - 행부분 계산식
 
