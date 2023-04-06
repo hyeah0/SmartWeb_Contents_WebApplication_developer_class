@@ -1,11 +1,11 @@
 ## Object(객체)
 
-[객체 참고링크 : 드림코딩](https://github.com/hyeah0/Javascript/blob/master/Javascript_dreamcoding/js7_object.js)
-
-- 객체는 key 와 value 의 집합체이다
+- 객체는 속성(key 와 value)의 집합체이다
   - `let object = { key : value }`;
 - 객체와 배열 동시사용도 가능하다.
 - value 값에 function(함수)도 가능하다.
+
+- [참고 코드](https://replit.com/@hyeah0/Object)
 
 ### - 객체 생성, 추가 및 삭제, 출력
 
@@ -57,7 +57,7 @@
 ```
 let person = {
                 name : "홍길동"
-                , eat : function(food){
+               ,eat : function(food){
                                     document.write(this.name + "님이 " + food + "를 먹습니다.<br>")
                                 }
                 }
@@ -74,9 +74,9 @@ person.eat("사과");
 ```
 // 객체 생성
 let product ={
-        name : "Galaxy S22"
-        , type : "핸드폰"
-        , company : "삼성"
+        name : "Galaxy S22",
+        type : "핸드폰",
+        company : "삼성"
 }
 
 // 객체의 속성을 화면에 출력

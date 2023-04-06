@@ -21,7 +21,7 @@
 
 \*\* unshift, shift 는 push, pop 보다 느리다.
 
-- [배열메서드 추가 참고링크 : 드림코딩 수업내용](https://github.com/hyeah0/Javascript/blob/master/Javascript_dreamcoding/js8_array.js)
+- [배열메서드 추가 참고링크 : 드림코딩 수업내용](https://replit.com/@hyeah0/ArrayAPI#index.js)
 
 ### 예시
 

@@ -86,6 +86,8 @@
 ### 3. boolean(논리형)
 
     - true/false(참/거짓) 두가지 값을 가지는 자료형
+      - false : 0 ,null, undefined, NaN, ''
+      - true : any other value
 
 ### 4. typeof 연산자
 
