@@ -11,6 +11,7 @@
 - apache tomcat : 9.0.65
 - docker : 20.10.17
 - Spring : 3.9.17
+- homebrew : 4.0.13
 
 ## jdk verion check
 
