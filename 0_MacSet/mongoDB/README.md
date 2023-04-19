@@ -59,16 +59,18 @@ mongosh
 
 ### 1~3. 계정 생성 & 종료
 
-#### 1. ~2. 계정 생성
+#### 1. ~2. 데이터베이스 사용 혹은 생성
 
 - use [생성할 데이터베이스이름]
 
-  ```
-  test> use admin
-  ...
-  admin> db.createUser({user: 'name', pwd: 'password', roles: ['root']})
-  ...
-  ```
+  - 생성할 데이터베이스명이 같은게 있다면 사용
+
+    ```
+    test> use admin
+    ...
+    admin> db.createUser({user: 'name', pwd: 'password', roles: ['root']})
+    ...
+    ```
 
 - roles : root -> 모든 권한부여
 
