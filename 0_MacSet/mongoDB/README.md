@@ -2,6 +2,18 @@
 
 - 자바스크립트 문법을 사용하는 NoSQL
 
+- Mongodb는 BSON documents으로 데이터를 저장 (SQL에서 rows)
+
+  > BSON : JSON 형태의 문서를 바이너리 형태로 인코딩한 바이트 문자열
+  >
+  > > 바이너리 : 0과 1, 두 숫자로만 이루어진 이진법
+
+- document(row)들을 collection이라는 곳에 저장 (SQL에서 table)
+
+- 모든 document들은 \_id라는 field를 필수적으로 갖는다.
+- \_id의 값은 각 컬렌션 속에서도 unique하며 불변성을 갖으며, array를 뺀 모든 type가 될 수 있다. (기본키)
+- MongoDB에서 알아서 \_id index값을 생성
+
 # 목차
 
 1. Homebrew를 통해 몽고디비를 설치
@@ -49,16 +61,16 @@ mongosh
 
 #### 1. ~2. 계정 생성
 
-```
-test> use admin
-...
-admin> db.createUser({user: 'name', pwd: 'password', roles: ['root']})
-...
-```
+- use [생성할 데이터베이스이름]
+
+  ```
+  test> use admin
+  ...
+  admin> db.createUser({user: 'name', pwd: 'password', roles: ['root']})
+  ...
+  ```
 
 - roles : root -> 모든 권한부여
-
--
 
 #### 3. 프롬프트 종료
 
